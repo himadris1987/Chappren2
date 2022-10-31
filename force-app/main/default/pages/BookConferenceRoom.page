@@ -1,0 +1,172 @@
+<apex:page controller="BookConferenceRoomController" docType="html-5.0" applyBodyTag="false" standardStylesheets="false"
+    sidebar="false" showHeader="false">
+
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-109037308-1"></script>
+        <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-109037308-1');
+        </script>
+        <!-- Meta -->
+        <meta charset="UTF-8" />
+        <link href="//www.google-analytics.com" rel="dns-prefetch"/>
+        <link href="{!URLFOR($Resource.hashtagfaviconico)}" rel="shortcut icon" />
+        <link href="{!URLFOR($Resource.hastagtabicon)}" rel="apple-touch-icon-precomposed" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- CSS -->
+        <apex:stylesheet value="{!URLFOR($Resource.BookConferenceRoom, '/css/BookConferenceRoom.css')}" />
+        <apex:stylesheet value="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <apex:stylesheet value="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" />
+        <apex:stylesheet value="https://fonts.googleapis.com/css?family=Raleway&display=swap" />
+        <apex:stylesheet value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <apex:stylesheet value="{!URLFOR($Resource.HashtagStyles)}" />
+       
+       <script>
+            var submitFormRemoteFunction = '{!$RemoteAction.BookConferenceRoomController.submitFormRemoting}';
+        </script>
+        <!-- Javascript -->
+        <apex:includeScript value="https://code.jquery.com/jquery-3.4.1.min.js" />
+        <apex:includeScript value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
+        <apex:includeScript value="{!URLFOR($Resource.BookConferenceRoom, '/js/BookConferenceRoom.js')}" />
+
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '372675993424993');
+            fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=372675993424993&ev=PageView&noscript=1"
+        /></noscript>
+        <!-- End Facebook Pixel Code -->
+    </head>
+
+    <body class="body_gradient_violet_coral">
+        <div id="spinner" class="spinner" style="display:none;">
+            <div class="lds-dual-ring"></div>
+        </div>
+        <!-- Navbar -->
+        <c:HashtagHeader />
+        <!-- Main -->
+        <div class="conference_pricing_row">
+            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-md-3 white_text pricing_container conference_price_container pricing_background">
+                <p class="conference_price_header center_text">CONFERENCE ROOM</p>
+                <br/>
+                <p class="center_text conference_subheader">MEMBER PRICING</p>
+                <h2 class="center_text">$10 / hour</h2>
+                <p class="conference_price_subtext center_text">Free Daily Conference Hour Included</p>
+                <br/>
+                <p class="center_text conference_subheader"> GENERAL PRICING</p>
+                <h2 class="center_text">$40 / hour</h2>
+                <p class="center_text conference_price_subtext">Day Pass Included</p>
+            </div>
+            <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-md-3 white_text pricing_container podcast_price_container pricing_background">
+                <p class="conference_price_header center_text"> PODCAST BOOTH</p>
+                <br/>
+                <p class="center_text conference_subheader">MEMBER PRICING</p>
+                <h2 class="center_text " style="margin-top: 25px; margin-bottom: 26px;">$50 / 3-hour block</h2>
+                <br/>
+                <p class="center_text conference_subheader" style=""> GENERAL PRICING</p>
+                <h2 class="center_text ">$100 / 3-hour block</h2>
+                <p class="center_text conference_price_subtext">Day Pass Included</p>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                <!-- <apex:outputText value="{! memberId}"></apex:outputText> -->
+                <apex:outputText value="{! email}"></apex:outputText>
+                
+                <div id="spinner" class="spinner" style="display:none;">
+                    <div class="lds-dual-ring"></div>
+                </div>
+                <apex:form styleClass="col-sm-10 col-sm-offset-1 conference_schedule_form">
+
+
+                    <!-- Redirect Logic 
+                    <!-- This renders if the controller sets the redirect flag to true. 
+                    <apex:outputPanel id="redirector" style="display:none;">
+                        <apex:outputText value="{!redirect}"></apex:outputText>
+                        <apex:outputPanel rendered="{!redirect}">
+                            <script>
+                            
+                                console.log('Redirecting to: {!redirectUrl}');
+                                window.top.location.replace('{!redirectUrl}');
+                            </script>
+                            REDIRECT
+                        </apex:outputPanel>
+                    </apex:outputPanel>-->
+
+                    <apex:actionFunction name="rerenderForm" action="{!renderForm}" oncomplete="pageRerendered()" reRender="slotSelection, formDuration"
+                    />
+                    <!-- <apex:actionFunction name="submitFormToController" action="{!submitForm}" reRender="redirector"> 
+                        <apex:param name="chosen_time" value="" assignTo="{!chosenString}" />
+                    </apex:actionFunction> -->
+
+
+
+
+                    <h4 class="white_text conference_form_header">Reserve a room.</h4>
+                    <apex:input html-element="email" type="email" label="Email" value="{!email}" html-placeholder="Email" styleClass="conference_schedule_input" />
+                    <div id="invalidEmailAddress" class="alert-warning" style="display:none;margin-bottom:25px;">
+                        Please enter a valid email.
+                    </div>
+                    <apex:input type="date" label="Date" value="{!apptDate}" onchange="formChange()" styleClass="conference_schedule_input" />
+                    <br/>
+                    <apex:selectList label="Room Type" value="{!roomType}" multiselect="false" size="1" onchange="formChange()" styleClass="conference_schedule_input conference_schedule_select" html-element="roomType">
+                        <apex:selectOption itemValue="Conference Room" itemLabel="Conference Room" />
+                        <apex:selectOption itemValue="Podcast Booth" itemLabel="Podcast Booth" />
+                    </apex:selectList>
+                    <apex:outputPanel id="formDuration">
+                        <apex:selectList value="{!duration}" multiselect="false" size="1" rendered="{!roomType == 'Conference Room'}" onchange="formChange()"
+                            styleClass="conference_schedule_input conference_schedule_select" html-element="duration">
+                            <p class="white_text" id="invalidTime" style="display:none">
+                                Please Select a Timeslot.
+                            </p>
+                            <apex:selectOptions value="{!timeOptions}" />
+                        </apex:selectList>
+                    </apex:outputPanel>
+                    <apex:outputPanel id="slotSelection">
+                        <div class="row">
+                            <apex:repeat value="{!availableSpaces}" var="space">
+                                <div class="col-xs-12 col-sm-12 col-md-4 conference_room_time_col">
+                                    <h3 class="conference_room_times_header">{!space.Name}</h3>
+                                    <p class="white_text conference_room_times_text">Please choose a start time</p>
+                                    <div class="conference_room_times_container">
+                                        <apex:repeat value="{!availableTimeSlots[space.Id]}" var="timeSlot">
+                                            <label for="timeslot" class="white_text conference_room_time">
+                                                <input type="radio" name="timeslot" value="{!space.Id}.{!timeSlot.start}" class="radio" />
+                                                <span class="time_slot_label">{!timeSlot.label}</span>
+                                            </label>
+                                        </apex:repeat>
+                                    </div>
+                                </div>
+                            </apex:repeat>
+                        </div>
+
+
+                        <script>
+                            var roomType = {!roomType};
+                        </script>
+                    </apex:outputPanel>
+                    <apex:commandButton onclick="submitForm(); return false" oncomplete="submitFinished()" value="BOOK NOW" Styleclass="form_button white_text"></apex:commandButton>
+                    <!-- <button onclick="submitForm(); return false;" class="form_button white_text">BOOK NOW</button> -->
+                    <p class="white_text">Member payments are charged with card on file.</p>
+                </apex:form>
+                </div>
+            </div>
+        <!-- Footer -->
+        <c:HashtagFooter />
+    </body>
+</apex:page>

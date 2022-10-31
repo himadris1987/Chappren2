@@ -1,0 +1,266 @@
+<apex:page controller="BLDGCheckinController" showHeader="false" name="home" sidebar="false" docType="html-5.0" applyBodyTag="false" applyHtmlTag="false" standardStylesheets="false">
+    <head>
+        <c:bldgIncludes ></c:bldgIncludes>
+        <style>
+            body{
+                background: url('https://i.pinimg.com/originals/fd/bd/81/fdbd811780272e4808008b4029a11f9a.jpg') no-repeat center center fixed; 
+            }
+
+            .BWSS {
+                background: url('{!$Resource.BWSS}') no-repeat center center fixed;
+                background-size: contain;
+            }
+            .BWH {
+                background: url('{!$Resource.BWH}') no-repeat center center fixed;
+                background-size: contain;
+            }
+
+            .BW41{
+                background: url('{!$Resource.BW41}') no-repeat center center fixed;
+                background-size: contain;
+            }
+            .hide {
+                display: none;
+            }
+            .show {
+                display: block;
+            }
+            .home-section {
+                color: white;
+                height: 90vh;
+                display: flex;
+                align-items: center;
+            }
+            .bottom-home {
+                height: 10vh;
+                display: flex;
+                align-items: flex-start;
+                color: white;
+                font-size: 20px;
+            }
+            .margin-top50 {
+                margin-top: 50px;
+            }
+            .margin-top25 {
+                margin-top: 25px;
+            }
+            .no-a-style {
+                color: white;
+            }
+            .no-a-style:hover{
+                text-decoration: none;
+                color: white;
+                opacity: .7;
+            }
+            .back-button {
+                color: black;
+            }
+            .back-button:hover{
+                text-decoration: none;
+                color: black;
+                opacity: .7;
+            }
+            .invalid {
+                border: 2px solid red;
+            }
+            .spinner {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 0, .5);
+                z-index: 10000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .lds-dual-ring {
+                display: inline-block;
+                width: 64px;
+                height: 64px;
+            }
+
+            .lds-dual-ring:after {
+                content: " ";
+                display: block;
+                width: 46px;
+                height: 46px;
+                margin: 1px;
+                border-radius: 50%;
+                border: 5px solid #fff;
+                border-color: #fff transparent #fff transparent;
+                animation: lds-dual-ring 1.2s linear infinite;
+            } 
+            @keyframes lds-dual-ring {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+
+        </style>
+    </head>
+    <body class="{!location}">
+        <div id="spinner" class="spinner" style="display:none;">
+            <div class="lds-dual-ring"></div>
+        </div>
+        <div class="container-fluid">
+            <div id="startSection" class="">
+                <div id="homeSection" class="row home-section">
+                    <div class="col-sm-6 offset-sm-3 text-center">
+                        <h1>Vistors</h1>
+                        <h3>Tap To Check In</h3>
+                    </div>
+                </div>
+                <div id="bottomSection" class="row bottom-home text-center">
+                    <div class="col-sm-6 offset-sm-3" >
+                        <a id="deliveryButton" href="/apex/bwDelivery?location={!location}" class="no-a-style">
+                            <i id="deliveryBox" class="fa fa-archive fa-2x" aria-hidden="true"></i>
+                            <span id="deliveryText">Deliveries</span>
+                        </a>
+                        <!-- <i class="fas fa-box fa-2x" aria-hidden="true"></i> -->
+                    </div>
+                </div>
+            </div>
+            <apex:form id="form" styleClass="containingForm">
+                <div id="infoSection" class="hide">
+                    <div class="row margin-top25">
+                        <div class="col-sm-2 offset-sm-1">
+                            <apex:commandLink action="{!backToHome}" styleClass="back-button">
+                                <i class="fa fa-arrow-left fa-2x" aria-hidden="true"></i>
+                            </apex:commandLink>
+                        </div>
+                    </div>
+                    <div class="row info-section margin-top50">
+                        <div class="col-sm-6 offset-sm-3">
+                                <div class="form-row">
+                                    <div class="form-group col-sm-12">
+                                        <label for="firstName">First Name</label>
+                                        <apex:inputText html-placeholder="First Name" value="{!contactFirstName}" styleClass="form-input-required form-control" label="First Name" onchange="updateHighlights(event)" onclick="clickField(event)"
+                                        onblur="blurField(event)"></apex:inputText>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-sm-12">
+                                        <label for="lastName">Last Name</label>
+                                        <apex:inputText html-placeholder="Last Name" value="{!contactLastName}" styleClass="form-input-required form-control" label="Last Name" onchange="updateHighlights(event)" onclick="clickField(event)"
+                                        onblur="blurField(event)"></apex:inputText>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-sm-12">
+                                        <!-- <apex:inputText html-placeholder="Last Name" styleClass="form-control" label="Pronouns"></apex:inputText> -->
+                                        <label for="pronouns">Pronouns</label>
+                                        <apex:selectList size="1" styleClass="form-input-required form-control" value="{!contactPronoun}" onchange="updateHighlights(event)" onclick="clickField(event)"
+                                        onblur="blurField(event)">
+                                            <apex:selectOptions value="{!PronounList}"></apex:selectOptions>
+                                        </apex:selectList>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-sm-12">
+                                        <label for="email">Email</label>
+                                        <apex:inputText id="emailField" html-placeholder="Email" value="{!contactEmail}" styleClass="form-input-required form-control" label="Email" onchange="updateHighlights(event)" onclick="clickField(event)"
+                                        onblur="blurField(event)"></apex:inputText>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-sm-12">
+                                        <label for="companyName">Company Name (Optional)</label>
+                                        <apex:inputText html-placeholder="Company Name" value="{!contactCompany}" styleClass="form-control" label="Company Name" onchange="updateHighlights(event)" onclick="clickField(event)"
+                                        onblur="blurField(event)"></apex:inputText>
+                                    </div>
+                                </div>
+                                <div class="form-row flex-row-reverse">
+                                    <!-- <div class="col-sm-4 offset-sm-8"> -->
+                                        <apex:commandButton id="submitButton" onclick="showSpinner()" action="{! navigateToMeetingWith}" styleClass="btn btn-primary" value="Next"></apex:commandButton>
+                                    <!-- </div> -->
+                                </div>
+                        </div>
+                    </div>
+                </div>
+        </apex:form>
+
+        </div>
+        <script>
+            var body = document.body;
+            var startSection = document.getElementById('startSection');
+            var homeSection = document.getElementById('homeSection');
+            var bottomSection = document.getElementById('bottomSection');
+            var infoSection = document.getElementById('infoSection');
+            var emailCheck = /[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}/g;
+            var submitButton = document.getElementById('{!$Component.form.submitButton}');
+            submitButton.setAttribute('disabled', true);
+            
+
+            // startSection.addEventListener('click', function(event) {
+            //     homeSection.classList.add('hide');
+            //     bottomSection.classList.add('hide');
+            //     infoSection.classList.remove('hide');
+            //     body.style.backgroundImage= 'url()';
+            //     console.log(event.target.id)
+            // });
+            startSection.addEventListener('click', function(event) {
+                if(!event.target.id.includes('delivery')) {
+                    startSection.classList.add('hide');
+                    homeSection.classList.add('hide');
+                    bottomSection.classList.add('hide');
+                    infoSection.classList.remove('hide');
+                    body.style.backgroundImage= 'url()';
+                }
+            });
+            function updateHighlights(event) {
+
+            $(".form-input-required").removeClass("invalid");
+
+            var validForm = true;
+
+            for (var i of $(".form-input-required")) {
+                if (i.id.includes('email')) {
+                    if(!i.value.match(emailCheck)) {
+                        validForm = false;
+                        if(i.hasAttribute('visited')) {
+                            i.classList.add('invalid');
+                        }
+                    }
+                }
+                if (i.value == ''){
+                    validForm = false;
+
+                    if(i.hasAttribute('visited')) {
+                        i.classList.add('invalid');
+                    }
+                    
+                }
+            }
+
+            if (validForm) {
+                document.getElementById('{!$Component.form.submitButton}').removeAttribute('disabled');
+            } else {
+                document.getElementById('{!$Component.form.submitButton}').setAttribute('disabled',true);
+            }
+            }
+
+
+            function clickField(event) {
+            event.target.setAttribute("visited", true);
+            }
+
+            function blurField(event) {
+            updateHighlights(undefined);
+            }
+
+            function showSpinner() {
+                $("#spinner").show();
+                console.log('hi');
+            }
+            function hideSpinner() {
+                $("#spinner").hide();
+            }
+        </script>
+    </body>
+</apex:page>

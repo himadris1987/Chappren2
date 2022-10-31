@@ -1,0 +1,77 @@
+<apex:page standardStylesheets="false" showHeader="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false">
+<html>
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- CSS -->
+    <apex:stylesheet value="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <apex:stylesheet value="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" />
+    <apex:stylesheet value="https://fonts.googleapis.com/css?family=Raleway&display=swap" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"/>
+
+
+    <!-- Javascript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <style>
+       .box{
+           height: 200px;
+       } 
+       .border {
+           border: 1px solid red;
+       }
+       .margin-top10 {
+           margin-top: 10vh;
+       }
+       .my-img {
+           margin-top: 5%;
+       }
+       .header1 {
+           margin-top: 15px;
+           
+       }
+       .header2{
+           margin-top: 15px;
+           
+       }
+
+       .subHeaderText {
+            font-size: 18px;
+       }
+
+       .list {
+           display: inline-block;
+       }
+       
+    </style>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row margin-top10">
+            <div class="col-md-4 offset-md-4 text-center">
+                <img src="{!URLFOR($Resource.BW ,'/BW_Favicons_512xAndroidCropped.png')}" class="img-responsive my-img center-block"/>
+            </div>
+            <div class="col-sm-6 offset-sm-3 text-center">
+                <h1>Sorry, something went wrong</h1>
+                <h3>Please do not attempt again</h3>
+                <p class="subHeaderText header2">Email us at
+                    <a href="mailto:salesforcesupport@bitwiseindustries.com">salesforcesupport@bitwiseindustries.com</a>
+                    with the following:
+                    <ul class="subHeaderText list text-left">
+                        <li>What were you doing before receiving this error</li>
+                        <li>Any screenshots</li>
+                    </ul>
+                </p>
+            </div>
+        </div>
+        <site:previewAsAdmin ></site:previewAsAdmin>
+    </div>  
+</body>
+</html>
+</apex:page>

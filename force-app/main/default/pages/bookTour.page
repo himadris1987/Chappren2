@@ -1,0 +1,184 @@
+<apex:page standardStylesheets="false" docType="html-5.0" applyBodyTag="false" sidebar="false" showHeader="false">
+    <head>
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-109037308-1"></script>
+		<script>
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+
+				gtag('config', 'UA-109037308-1');
+		</script>
+        <!-- Meta -->
+        <meta charset="UTF-8"/>
+        <link href="//www.google-analytics.com" rel="dns-prefetch" />
+        <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"/>
+        <link href="{!URLFOR($Resource.hashtagfaviconico)}" rel="shortcut icon" />
+        <link href="{!URLFOR($Resource.hastagtabicon)}" rel="apple-touch-icon-precomposed" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+
+        <!-- CSS -->
+        <apex:stylesheet value="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <apex:stylesheet value="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" />
+        <apex:stylesheet value="https://fonts.googleapis.com/css?family=Raleway&display=swap" />
+        <apex:stylesheet value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <apex:stylesheet value="{!URLFOR($Resource.HashtagStyles)}"/>
+
+        <!-- Javascript -->
+        <apex:includeScript value="https://code.jquery.com/jquery-3.4.1.min.js" />
+        <apex:includeScript value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
+           <!-- Facebook Pixel Code -->
+		<script>
+                !function(f,b,e,v,n,t,s)
+                {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+                n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+                if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+                n.queue=[];t=b.createElement(e);t.async=!0;
+                t.src=v;s=b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t,s)}(window, document,'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+                fbq('init', '372675993424993');
+                fbq('track', 'PageView');
+            </script>
+            <noscript><img height="1" width="1" style="display:none"
+                src="https://www.facebook.com/tr?id=372675993424993&ev=PageView&noscript=1"
+            /></noscript>
+            <!-- End Facebook Pixel Code -->
+    </head>
+    <body class="body_gradient_blue_green">
+        <!-- Navbar -->
+        <c:HashtagHeader />
+        <!-- Main -->
+
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-4">
+
+                    <!--  ----------------------------------------------------------------------  -->
+                    <!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+                    <!--  If necessary, please modify the charset parameter to specify the        -->
+                    <!--  character set of your HTML page.                                        -->
+                    <!--  ----------------------------------------------------------------------  -->
+
+
+                       
+                        
+                        <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" class="weblead_form center-vert" name="webToLead" method="POST">
+
+                        <h4 class="white_text weblead_form_header">Yes! I want to book a tour.</h4>
+                        
+                        <input type="hidden" name="oid" value="00D3i000000ryRR"/>
+                        <input type="hidden" name="retURL" value="https://hashtagcoworkplace.com"/>
+                        
+                        <!--  ----------------------------------------------------------------------  -->
+                        <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+                        <!--  these lines if you wish to test in debug mode.                          -->
+                        <!--  <input type="hidden" name="debug" value="1"/>                           -->  
+                        <!-- <input type="hidden" name="debugEmail" value="dylan.bowman@roguecloud.com"/>   -->                                 
+                        <!--  ----------------------------------------------------------------------  -->
+                        
+                        <input onclick="clickField(event)" onblur="blurField(event)" placeholder="First Name" class="weblead_form_input form-input-required"  id="first_name" maxlength="40" name="first_name" size="20" type="text" />
+                        
+                        <input onclick="clickField(event)" onblur="blurField(event)" placeholder="Last Name" class="weblead_form_input form-input-required"  id="last_name" maxlength="80" name="last_name" size="20" type="text" />
+                    
+                        <input onclick="clickField(event)" onblur="blurField(event)" placeholder="Email" class="weblead_form_input form-input-required"  id="email" maxlength="80" name="email" size="20" type="text" />
+                        
+                        <input onclick="clickField(event)" onblur="blurField(event)" placeholder="Phone" class="weblead_form_input form-input-required"  id="phone" maxlength="40" name="phone" size="20" type="text" />
+                        
+                        <input onclick="clickField(event)" onblur="blurField(event)" placeholder="Company (Optional)" class="weblead_form_input"  id="company" maxlength="40" name="company" size="20" type="text" />
+                        
+                        <!-- <input onclick="clickField(event)" onblur="blurField(event)" placeholder="City" class="weblead_form_input"  id="city" maxlength="40" name="city" size="20" type="text" />
+                        
+                        <input onclick="clickField(event)" onblur="blurField(event)" placeholder="State/Province" class="weblead_form_input"  id="state" maxlength="20" name="state" size="20" type="text" /> -->
+
+                        <input onclick="clickField(event)" onblur="blurField(event)" id="recordType" type="hidden" value="0123i000000QdOC"/>
+                        
+                        <input onclick="clickField(event)" onblur="blurField(event)" name="lead_source" id="lead_source" type="hidden" value="Website"/>
+                        
+
+                        <button id="submitButton" type="submit" class="submit-button weblead_form_button" disabled="true">SUBMIT</button>
+                        
+                        </form>
+
+    
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <c:HashtagFooter />
+        <script>
+            let formbutton = document.getElementById('submitButton');
+            let pageMessage = document.getElementById('j_id0:apexForm:pageMessage');
+            let myForm = document.getElementById('j_id0:apexForm:apexForm');
+            let firstName = document.getElementById('j_id0:apexForm:firstName');
+            let lastName = document.getElementById('j_id0:apexForm:lastName');
+            let email = document.getElementById('j_id0:apexForm:emailBox');
+            let phoneNumber = document.getElementById('j_id0:apexForm:phoneNumber');
+            let company = document.getElementById('j_id0:apexForm:companyBox');
+
+            formbutton.addEventListener('click', delayFunction());
+
+            function delayFunction() {
+                setTimeout(clearForm(), 100);
+            }
+
+            function clearForm() {
+                if(firstName.value && lastName.value && email.value.includes('@') && phoneNumber.value) {  
+                    firstName.value = '';
+                    lastName.value = '';
+                    email.value = '';
+                    phoneNumber.value = '';
+                    company.value = '';
+                    // console.log('hi')
+                    // myForm.reset();
+                    let successMessage = document.createElement('div');
+                    successMessage.className = 'alert alert-success weblead_my_alert';
+                    successMessage.setAttribute('role', 'alert');
+                    successMessage.innerText = "Thank you";
+                    pageMessage.appendChild(successMessage);
+                    setTimeout(function () {pageMessage.removeChild(successMessage)}, 2000);
+                    // window.location.href = 'https://hashtagcoworkplace.com';
+                } 
+            }
+
+            // formbutton.addEventListener('click', (e) => {
+            //     e.stopImmediatePropagation();
+            // })
+
+            function updateHighlights(event) {
+
+                $(".form-input-required").removeClass("invalid");
+
+                var validForm = true;
+
+                for (var i of $(".form-input-required")) {
+                    if (i.value == ''){
+                        validForm = false;
+
+                        if(i.hasAttribute('visited')) {
+                            i.classList.add('invalid');
+                        }
+                        
+                    }
+                }
+
+                if (validForm) {
+                    document.getElementById('submitButton').removeAttribute('disabled');
+                } else {
+                    document.getElementById('submitButton').setAttribute('disabled',true);
+                }
+            }
+
+            function clickField(event) {
+                event.target.setAttribute("visited", true);
+            }
+
+            function blurField(event) {
+                updateHighlights(undefined);
+            }
+        </script>
+    </body>
+</apex:page>

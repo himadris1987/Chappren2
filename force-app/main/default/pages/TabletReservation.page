@@ -1,0 +1,189 @@
+<apex:page controller="TabletReservation" docType="html-5.0" applyBodyTag="false" applyHtmlTag="false" id="tabletReservationPage" standardStylesheets="false" showHeader="false" sidebar="false">
+    <html>    
+        <head>
+            <!-- Meta -->
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta http-equiv="refresh" content="300" />
+            <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+            <link href="{!URLFOR($Resource.hashtagfaviconico)}" rel="shortcut icon" />
+            <link href="{!URLFOR($Resource.hastagtabicon)}" rel="apple-touch-icon-precomposed" />
+
+            <!-- CSS -->
+            <apex:stylesheet value="{!URLFOR($Resource.BookConferenceRoom, '/css/BookConferenceRoom.css')}" />
+            <apex:stylesheet value="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+            <apex:stylesheet value="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" />
+            <apex:stylesheet value="https://fonts.googleapis.com/css?family=Raleway&display=swap" />
+            <apex:stylesheet value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+            <apex:stylesheet value="{!URLFOR($Resource.HashtagStyles)}" />
+            <!-- Javascript -->
+            <apex:includeScript value="https://code.jquery.com/jquery-3.4.1.min.js" />
+            <apex:includeScript value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
+
+
+        </head>
+        <style>
+            body {
+                /* height: 768px; */
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+                color: white;
+                background-color: black;
+            }
+
+            .container-fluid {
+                padding: 0px !important;
+            }
+
+            .right {
+                margin-top: 4%;
+                text-align: center;
+                height: 90vh;
+            }
+
+            .center_text {
+                margin-bottom: 20px;
+            }
+
+            .left .right{
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .left {
+                background-color: rgba(255, 255, 255, 0.2);
+                height: 100vh;
+                text-align: center;
+            }
+
+            .current-time {
+                font-size: 80px;
+            }
+
+
+            .sched-section {
+                /* text-align: left; */
+                margin-top: 8vh;
+            }
+
+            .upcoming-res {
+                margin-top: 50px;
+            }
+
+            .time-button{
+                display: none;
+            }
+            .overflow-check{
+                overflow-y: auto;
+                height: 25vh;
+                /* border: 1px solid black; */
+            }
+            .strike-through{
+                text-decoration: line-through;
+            }
+            .conference_subheader {
+                font-size: 30px;
+            }
+            .current-res{
+                margin-top: 20vh;
+                text-align: center;      
+                font-size: 26px;
+            }
+            .upcoming-res {
+                font-size: 16px;
+            }
+             .container-fluid>.right {
+                height: 100vh;
+                margin: 0;
+                background-color: white;
+            }
+            .calendar-container {
+                margin-top: 4%;
+                height: 90%;
+                width: 100%;
+                /* overflow: auto; */
+            } 
+            .bottom-left {
+                margin-top: 12vh;
+            }
+            .clock {
+                margin-top: 5vh;
+            }
+            .date {
+                font-size: 30px;
+            }
+            .logo {
+                height: 250px;
+            }
+        </style>
+        <body class="">
+            <div class="container-fluid">
+                <div class="left col-sm-6">
+                    <apex:messages ></apex:messages>
+                    <div class="white-text">
+                        <p id="currentTime" class="conference_price_header clock center_text current-time"></p>
+                        <!-- <p class="date-display white_text conference_form_header">Monday Oct. 28th</p> -->
+                        <apex:outputText styleClass="date" value="{0, date, MMMM d','  yyyy}">
+                            <apex:param value="{! getToday}" />
+                        </apex:outputText>
+                    </div>
+                    <div class="sched-section center-text">
+                        <h2>Scan to Book</h2>
+                        <apex:image url="{!$Resource.HashtagBookPodcast}" rendered="{!NOT(currentRoom.Reservation_Room_Type__c == 'Conference Room')}" StyleClass="logo"  />
+                        <apex:image url="{!$Resource.HashtagBookConferenceRoom}" rendered="{!currentRoom.Reservation_Room_Type__c == 'Conference Room'}" StyleClass="logo"  />
+                        
+                        <!-- <div class="current-res">
+                            <p class="conference_subheader">Current Reservation</p>
+                            <p>{!printReservation.contact__r.name}</p>
+                            <p id="container{!printReservation.id}">
+                                <span id="time{!printReservation.id}"></span> - <span id="endTime{!printReservation.id}"></span>
+                            </p>
+                            <button class="btn time-button" onclick="checkCurrentReservation('{!printReservation.id}', '{!printReservation.start__c}', '{!printReservation.end__c}')">Check Time</button> 
+                            
+                        </div> -->
+                       
+
+                        <!-- set the instructions for reservations -->
+                        <div class="bottom-left text-center">
+                            <h4>To reserve this room, please visit <a>www.hashtagcoworkplace.com</a> and click on “Conference Rooms"</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="right col-sm-6">
+                    <div class="calendar-container">
+                        <iframe id="calendarLink" src="{!currentRoom.calendar_link__c}" style="border-width:0" height="100%" width="100%" frameborder="0" scrolling="no"></iframe>
+                    </div>
+      
+                </div>
+            </div>
+            <script>
+            var calendarLink = document.getElementById('calendarLink');
+            var body = document.body;
+
+                // console.log('{!currentRoom.calendar_link__c}')
+
+            function getTime() {
+            var currentTime = document.getElementById('currentTime');
+            var today = new Date();
+            if (today.getMinutes() < 10) {
+            currentTime.innerText = ((today.getHours() + 24) % 12 || 12) + ":" + '0' + today.getMinutes();
+            } else {
+            currentTime.innerText = ((today.getHours() + 24) % 12 || 12) + ":" + today.getMinutes();
+            }
+
+            setTimeout(getTime, 3000);  
+
+            // if ( (today.getMinutes() == 0 && today.getSeconds() < 3 ) || (today.getMinutes() == 30 && today.getSeconds() < 3) ){
+            //         location.reload();
+            //     }              
+            }
+
+
+            getTime();
+
+            </script>
+        </body>
+    </html>
+</apex:page>

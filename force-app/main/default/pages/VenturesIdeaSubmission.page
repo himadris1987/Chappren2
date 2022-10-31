@@ -1,0 +1,323 @@
+<apex:page controller="VenturesIdeaSubmissionController" standardStylesheets="false" showHeader="false" sidebar="false" applyBodyTag="false" applyHtmlTag="false">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script src="https://kit.fontawesome.com/667b3ffdb0.js" crossorigin="anonymous"></script>
+        <apex:stylesheet value="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous" />
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <!-- <apex:includeScript value="{!URLFOR($Resource.VenturesIdeaSubmission.js)}" /> -->
+        <style>
+            .textbox {
+                background-color: #eee;
+                box-shadow: 0px 3px 5px 0px #aaa;
+                border: 1px solid #555;
+                border-radius: 5px;
+                padding: 7px;
+                
+            }
+            .textarea {
+                height: 100px;
+            
+            }
+            .section-header, .textbox, .submit-button {
+                width: 100%;
+                margin-bottom: 15px;
+            }
+            .submit-button {
+                background-color: #B1DE00;
+                color: #2A4B77;
+                border-radius: 5px;
+                padding: 5px;
+            }
+            .submit-button:hover {
+                cursor:pointer;
+            }
+            .submit-button:disabled {
+                background-color: gray;
+            }
+            .spacer {
+                margin-bottom: 30px; 
+            }
+            .invalid {
+                border: 1px solid red;
+            }
+            .disabled {
+                background-color: gray;
+            }
+
+            .header_color {
+                color: #101729;
+            }
+            
+             
+            ::placeholder {
+                color: #2A4B77;
+            }
+
+            .logo {
+                margin-top: 15px;
+                margin-bottom: 30px;
+            }
+
+            .spinner {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                top: 0;
+                left: 0;
+                background: rgba(0, 0, 0, .5);
+                z-index: 10000;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .lds-dual-ring {
+                display: inline-block;
+                width: 64px;
+                height: 64px;
+            }
+
+            .lds-dual-ring:after {
+                content: " ";
+                display: block;
+                width: 46px;
+                height: 46px;
+                margin: 1px;
+                border-radius: 50%;
+                border: 5px solid #fff;
+                border-color: #fff transparent #fff transparent;
+                animation: lds-dual-ring 1.2s linear infinite;
+            }
+            @keyframes lds-dual-ring {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+}
+        </style>
+    </head>
+    <body>
+        
+        <div id="spinner" class="spinner" style="display:none;">
+            <div class="lds-dual-ring"></div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 offset-sm-3">
+                    <apex:form id="VenturesIdeaSubmissionForm">
+                    <apex:actionFunction id="submitForm" name="submitForm" action="{!submitIdea}" rerender="none"></apex:actionFunction>
+                        <div class="row">
+                            <img class="col-lg-6 offset-lg-3 logo image-responsive" src="{!$Resource.VenturesLogoBlue01}"/>
+                        </div>
+                        <div class="row">
+                            <h5 class = "col-lg-8 offset-lg-2 section-header text-center" style="header_color">Please fill out the information below to submit your Project Idea.</h5>
+                        </div>
+                    
+                        <div class="row">
+                            <div class="section-header text-center">
+                                <h6 style="header_color">Submitter Information</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-6">
+                                <apex:inputText onclick="clickField(event)" onblur="blurField(event)" onchange="updateHighlights(event)" styleClass="textbox form-input-required " value="{! submitterFirstName}" id="firstName" html-placeholder="First Name" />
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <apex:inputText onclick="clickField(event)" onblur="blurField(event)" onchange="updateHighlights(event)" styleClass="textbox form-input-required " value="{! submitterLastName}" id="lastName" html-placeholder="Last Name" />
+                            </div>
+                        </div>
+                        <div class="row spacer">
+                            <div class="col-12 col-sm-6">
+                                <apex:inputText onclick="clickField(event)" onblur="blurField(event)" onchange="updateHighlights(event)" styleClass="textbox form-input-required " value="{! submitterEmail}" id="email" html-placeholder="Email" />
+                            </div>
+                            <div class="col-12 col-sm-6">
+                                <apex:inputText onclick="clickField(event)" onblur="blurField(event)" onchange="updateHighlights(event)" styleClass="textbox form-input-required " value="{! submitterPhone}" id="phone" html-placeholder="Phone" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="section-header text-center">
+                                <h6 style="header_color">Idea Information</h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-left">
+                                <h6 style="header_color">Name</h6>
+                            </div>
+                            <div class="col-12">
+                                <apex:inputText onclick="clickField(event)" onblur="blurField(event)" onchange="updateHighlights(event)" styleClass="textbox form-input-required" value="{! ideaName}" id="ideaName"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-left">
+                                <h6 style="header_color">Summary</h6>
+                            </div>
+                            <div class="col-12">
+                                <apex:inputTextarea onclick="clickField(event)" onblur="blurField(event)" onchange="updateHighlights(event)" styleClass="textbox textarea form-input-required" value="{! ideaSummary}" id="summary" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-left">
+                                <h6 style="header_color">Target Market</h6>
+                            </div>
+                            <div class="col-12">
+                                <apex:inputTextarea onclick="clickField(event)" onblur="blurField(event)" onchange="updateHighlights(event)" styleClass="textbox textarea form-input-required" value="{! ideaTargetMarket}" id="targetMarket" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-left">
+                                <h6 style="header_color">Competitive Landscape</h6>
+                            </div>
+                            <div class="col-12">
+                                <apex:inputTextarea onclick="clickField(event)" onblur="blurField(event)" onchange="updateHighlights(event)" styleClass="textbox textarea form-input-required" value="{! ideaCompetitiveLandscape}" id="competitiveLandscape" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-left">
+                                <h6 style="header_color">Pain Points</h6>
+                            </div>
+                            <div class="col-12">
+                                <apex:inputTextarea onclick="clickField(event)" onblur="blurField(event)" onchange="updateHighlights(event)" styleClass="textbox textarea form-input-required" value="{! ideaPainPoints}" id="painPoints"  />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-left">
+                                <h6 style="header_color">Value Proposition</h6>
+                            </div>
+                            <div class="col-12">
+                                <apex:inputTextarea onclick="clickField(event)" onblur="blurField(event)" onchange="updateHighlights(event)" styleClass="textbox textarea form-input-required" value="{! ideaValueProposition}" id="valueProposition" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-left">
+                                <h6 style="header_color">Existng Options</h6>
+                            </div>
+                            <div class="col-12">
+                                <apex:inputTextarea onclick="clickField(event)" onblur="blurField(event)" onchange="updateHighlights(event)" styleClass="textbox textarea form-input-required" value="{! ideaExistingOptions}" id="existingOptions" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-left">
+                                <h6 style="header_color">Key Features</h6>
+                            </div>
+                            <div class="col-12">
+                                <apex:inputTextarea onclick="clickField(event)" onblur="blurField(event)" onchange="updateHighlights(event)" styleClass="textbox textarea form-input-required" value="{! ideaKeyFeatures}" id="keyFeatures" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-left">
+                                <h6 style="header_color">Key Benefits</h6>
+                            </div>
+                            <div class="col-12">
+                                <apex:inputTextarea onclick="clickField(event)" onblur="blurField(event)" onchange="updateHighlights(event)" styleClass="textbox textarea form-input-required" value="{! ideaKeyBenefits}" id="keyBenefits" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-left">
+                                <h6 style="header_color">Product Traction</h6>
+                            </div>
+                            <div class="col-12">
+                                <apex:inputTextarea onclick="clickField(event)" onblur="blurField(event)" onchange="updateHighlights(event)" styleClass="textbox textarea form-input-required" value="{! ideaProductTraction}" id="productTraction" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 text-left">
+                                <h6 style="header_color">Team</h6>
+                            </div>
+                            <div class="col-12">
+                                <apex:inputTextarea onclick="clickField(event)" onblur="blurField(event)" onchange="updateHighlights(event)" styleClass="textbox textarea form-input-required" value="{! ideaTeam}" id="team" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <button class="submit-button" value="submit" disabled="true" onclick="submitForm()" id="submitButton">Submit Idea</button>
+                               
+                            </div>
+                        </div>
+                    </apex:form>
+                </div>
+            </div>
+        </div>
+        <script>
+            var validForm = false;
+            var formId = '{!$Component.VenturesIdeaSubmissionForm}';
+            
+                
+                var form = document.getElementById(formId);
+                console.log(form);
+                form.addEventListener('submit', function(event) {
+                    console.log("Submit clicked.");
+
+                    event.preventDefault();
+
+                    $("#spinner").show();
+                    console.log("get here");
+                    //submitForm();
+                    console.log("After Submit Form");
+                });
+             
+            function updateHighlights(event) {
+
+                    $(".form-input-required").removeClass("invalid");
+
+                    var validForm = true;
+
+                    for (var i of $(".form-input-required")) {
+
+                        if(i.id == '{!$Component.VenturesIdeaSubmissionForm.email}') {
+                            // console.log('in emailcheck');
+                            if(!validateEmail(i.value)) {
+                                validateForm = false;
+                                if (i.hasAttribute('visited')) {
+                                    i.classList.add('invalid');
+                                }
+                            }
+                        }
+                        
+                        if (i.value == '') {
+                            validForm = false;
+                            
+
+                            if (i.hasAttribute('visited')) {
+                                i.classList.add('invalid');
+                            }
+
+                        }
+                    }
+
+                    if (validForm) {
+                        document.getElementById('submitButton').removeAttribute('disabled');
+                        // document.getElementById('submitButton}').classList.remove('disabled');
+                    } else {
+                        document.getElementById('submitButton').setAttribute('disabled', true);
+                    }
+            }
+            function clickField(event) {
+                event.target.setAttribute("visited", true);
+            }
+
+               
+
+            function blurField(event) {
+                updateHighlights(undefined);
+            }
+
+            function validateEmail(email) 
+            {
+                var re = /\S+@\S+\.\S+/;
+                return re.test(email);
+            }
+                                
+            </script>
+    </body>
+</apex:page>

@@ -1,0 +1,504 @@
+<apex:page applyBodyTag="false" id="singleClassPage" controller="WFTClassRegistrationController" action="{!onPageLoad}" standardStylesheets="false" lightningStylesheets="false" showHeader="false" sidebar="false">
+
+    <html lang="en">
+    <head>
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KXRJ863');</script>
+        <!-- End Google Tag Manager -->
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{!className} Registration</title>
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="{!URLFOR($Resource.WFT, '/WFTRegistration/apple-touch-icon.png')}" />
+        <link rel="icon" type="image/png" sizes="32x32" href="{!URLFOR($Resource.WFT, '/WFTRegistration/favicon-32x32.png')}" />
+        <link rel="icon" type="image/png" sizes="16x16" href="{!URLFOR($Resource.WFT, '/WFTRegistration/favicon-16x16.png')}" />
+    
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        <apex:stylesheet value="{!URLFOR($Resource.WFT, '/WFTRegistration/style.css')}"/>
+        <apex:includeScript value="{!URLFOR($Resource.WFT, '/WFTPayment.js')}" />
+        <apex:includeScript value="https://js.stripe.com/v3/" />
+
+    
+    </head>
+    <script type="text/javascript">
+            var apiKey = "{!apiKey}";
+             var formId = '{!$Component.membershipForm}'; //Form is dynamically generated.
+    </script>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXRJ863"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+        <header>
+            <div class="content-wrapper layout">
+                <a href="https://bitwiseindustries.com">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 275 28">
+                    <title>Bitwise Industries</title>
+                    <path
+                    d="M115.1 27h-2.2V5h2.2v22zM136.1 23.6l.1-18.7h2.2v22h-2.8L122.5 8.1h-.1V27h-2.2V5h2.8l13.1 18.6zM143.1 4.9h7.3c1.4 0 2.7.2 4.1.7 1.4.5 2.6 1.1 3.7 2.1 1.1.9 2 2.1 2.7 3.5.7 1.4 1 3 1 4.8 0 1.8-.3 3.5-1 4.8-.7 1.4-1.6 2.5-2.7 3.4-1.1.9-2.4 1.6-3.7 2.1-1.4.5-2.8.7-4.1.7h-7.3V4.9zm2.3 20h4.4c1.7 0 3.1-.3 4.4-.8 1.2-.5 2.3-1.2 3.1-2 .8-.8 1.4-1.8 1.8-2.9.4-1.1.6-2.2.6-3.3s-.2-2.2-.6-3.3c-.4-1.1-1-2-1.8-2.9-.8-.8-1.8-1.5-3.1-2-1.2-.5-2.7-.8-4.4-.8h-4.4v18zM181.3 18.7c0 .9-.1 1.9-.3 2.9-.2 1-.6 2-1.2 2.8-.6.9-1.4 1.6-2.5 2.2-1.1.6-2.4.9-4 .9-1.7 0-3-.3-4-.9-1-.6-1.9-1.3-2.5-2.2-.6-.9-1-1.8-1.2-2.8-.2-1-.3-2-.3-2.9V4.9h2.2v13.6c0 1.1.1 2 .3 2.7.2.8.5 1.4.8 1.9.3.5.7.9 1.2 1.2.4.3.9.5 1.3.7.4.2.8.3 1.2.3.4.1.7.1 1 .1.3 0 .6 0 1-.1.4 0 .8-.2 1.2-.3.4-.2.9-.4 1.3-.7.4-.3.8-.7 1.2-1.2.3-.5.6-1.2.8-1.9.2-.8.3-1.7.3-2.7V4.9h2.2v13.8zM196.4 8.6c-1-1.4-2.4-2.1-4.3-2.1-.6 0-1.2.1-1.7.2-.6.2-1.1.4-1.5.7-.4.3-.8.7-1.1 1.2-.3.5-.4 1.1-.4 1.8 0 1 .3 1.8.8 2.3.6.5 1.3 1 2.1 1.4.8.4 1.7.7 2.7.9 1 .3 1.9.7 2.7 1.1.8.5 1.5 1.1 2.1 1.9.6.8.8 1.8.8 3.1 0 1-.2 1.9-.6 2.7-.4.8-1 1.5-1.7 2s-1.5 1-2.3 1.2c-.9.3-1.7.4-2.6.4-1.3 0-2.6-.3-3.8-.8-1.2-.5-2.2-1.3-3.1-2.5l2.1-1.5c.5.8 1.1 1.5 2 1.9.8.5 1.8.7 3 .7.6 0 1.1-.1 1.7-.3.6-.2 1.1-.4 1.5-.8.4-.3.8-.8 1.1-1.3.3-.5.4-1.1.4-1.7 0-.8-.2-1.4-.5-1.9s-.7-.9-1.3-1.3c-.5-.3-1.1-.6-1.8-.9-.7-.2-1.4-.5-2.1-.7-.7-.2-1.4-.5-2.1-.8-.7-.3-1.3-.7-1.8-1.1-.5-.4-1-1-1.3-1.7-.3-.7-.5-1.5-.5-2.5 0-1.1.2-2 .6-2.8.4-.8.9-1.4 1.6-2 .7-.5 1.4-.9 2.3-1.2.9-.2 1.7-.4 2.6-.4 1.2 0 2.4.2 3.4.6 1 .4 2 1.1 2.8 2.1l-1.8 2.1zM209.4 27h-2.2V7h-7.4V4.9h17V7h-7.4v20zM221.5 27h-2.2V5h6.8c2.2 0 4 .5 5.3 1.5 1.3 1 1.9 2.4 1.9 4.4 0 1.5-.5 2.8-1.4 3.9-1 1.1-2.4 1.7-4.2 1.8L234 27h-2.7l-6-10.2h-3.7V27zm0-12.3h4c1 0 1.8-.1 2.5-.3.7-.2 1.3-.5 1.7-.8.4-.3.7-.7.9-1.2.2-.5.3-1 .3-1.5s-.1-1-.3-1.5c-.2-.5-.5-.9-.9-1.2-.4-.4-1-.6-1.7-.8-.7-.2-1.5-.3-2.5-.3h-4v7.6zM239.1 27h-2.2V5h2.2v22zM246.3 24.9h11.8V27h-14V5h13.7v2h-11.4v7.5H257v2.1h-10.7v8.3zM272 8.6c-1-1.4-2.4-2.1-4.3-2.1-.6 0-1.2.1-1.7.2-.6.2-1.1.4-1.5.7-.4.3-.8.7-1.1 1.2-.3.5-.4 1.1-.4 1.8 0 1 .3 1.8.8 2.3.6.5 1.3 1 2.1 1.4.8.4 1.7.7 2.7.9 1 .3 1.9.7 2.7 1.1.8.5 1.5 1.1 2.1 1.9.6.8.8 1.8.8 3.1 0 1-.2 1.9-.6 2.7-.4.8-1 1.5-1.7 2s-1.5 1-2.3 1.2c-.9.3-1.7.4-2.6.4-1.3 0-2.6-.3-3.8-.8-1.2-.5-2.2-1.3-3.1-2.5l2.1-1.5c.5.8 1.1 1.5 2 1.9.8.5 1.8.7 3 .7.6 0 1.1-.1 1.7-.3.6-.2 1.1-.4 1.5-.8.4-.3.8-.8 1.1-1.3.3-.5.4-1.1.4-1.7 0-.8-.2-1.4-.5-1.9s-.7-.9-1.3-1.3c-.5-.3-1.1-.6-1.8-.9-.7-.2-1.4-.5-2.1-.7-.7-.2-1.4-.5-2.1-.8-.7-.3-1.3-.7-1.8-1.1-.5-.4-1-1-1.3-1.7-.3-.7-.5-1.5-.5-2.5 0-1.1.2-2 .6-2.8.4-.8.9-1.4 1.6-2 .7-.5 1.4-.9 2.3-1.2.9-.2 1.7-.4 2.6-.4 1.2 0 2.4.2 3.4.6 1 .4 2 1.1 2.8 2.1L272 8.6zM0 4.9h8.2c1 0 1.9.1 2.9.2s1.8.4 2.6.8 1.4 1 1.9 1.7.7 1.7.7 2.9-.4 2.3-1 3.1-1.6 1.4-2.8 1.8v.1c.7.1 1.4.3 2 .6.6.3 1.1.7 1.5 1.2.4.5.8 1 1 1.6.2.6.3 1.3.3 2 0 1.2-.2 2.1-.7 2.9-.5.8-1.1 1.4-1.9 1.9-.8.5-1.7.8-2.7 1-1 .2-2 .3-3 .3H0V4.9zm4.9 8.9h3.5c.4 0 .7 0 1.1-.1.4-.1.7-.2 1-.4.3-.2.5-.4.7-.7.2-.3.3-.7.3-1.1 0-.5-.1-.8-.3-1.1-.2-.3-.5-.5-.8-.7-.3-.2-.7-.3-1.1-.4-.4-.2-.8-.2-1.1-.2H4.9v4.7zm0 9.1h4.4c.4 0 .8 0 1.1-.1.4-.1.7-.2 1-.4.3-.2.6-.5.8-.8.2-.3.3-.7.3-1.2s-.1-.9-.4-1.3c-.3-.3-.6-.6-1-.7-.4-.2-.8-.3-1.3-.3-.5-.1-.9-.1-1.3-.1H4.9v4.9zM38.2 9.2h-4.6v17.7h9.9L38.2 9.2zM50.3 5.2h-8l3.5 13.9h.1l4.4-13.9zM28.7 9.2h-6.2v17.7h6.2V9.2zM52.6 11.7l-4.9 15.2h9.8l-4.9-15.2zM63.2 5.2H55l4.5 14.3h.1l3.6-14.3zM67.8 6.2l-6.1 20.7h6.1V6.2zM84.9 10.3c-.4-.5-.9-.9-1.6-1.1-.7-.2-1.3-.3-1.9-.3-.4 0-.7 0-1.1.1-.4.1-.7.2-1.1.4-.3.2-.6.4-.8.7-.2.3-.3.6-.3 1.1 0 .7.2 1.2.7 1.5.5.4 1.1.7 1.9.9.8.3 1.6.5 2.4.7.9.2 1.7.6 2.4 1.1.8.5 1.4 1.1 1.9 1.8.5.8.7 1.8.7 3.1 0 1.2-.2 2.3-.7 3.2-.5.9-1.1 1.7-1.9 2.3-.8.6-1.7 1.1-2.7 1.3-1 .3-2.1.4-3.3.4-1.4 0-2.8-.2-4-.7-1.2-.4-2.4-1.1-3.4-2.1l3.5-3.8c.5.7 1.1 1.2 1.9 1.5.8.4 1.5.5 2.4.5.4 0 .8 0 1.2-.1.4-.1.8-.2 1.1-.4.3-.2.6-.4.8-.7.2-.3.3-.6.3-1 0-.7-.3-1.2-.8-1.6-.5-.4-1.1-.7-1.9-1-.8-.3-1.6-.5-2.5-.8-.9-.3-1.7-.6-2.5-1.1-.8-.5-1.4-1.1-1.9-1.8s-.8-1.7-.8-3c0-1.2.2-2.2.7-3.1.5-.9 1.1-1.6 1.9-2.2.8-.6 1.7-1.1 2.7-1.4 1-.3 2.1-.5 3.1-.5 1.2 0 2.5.2 3.6.5 1.2.4 2.2.9 3.1 1.8l-3.1 3.8z"
+                    />
+                    <path
+                    d="M87.7 4.9h15v4.5H92.6v4.1h9.6V18h-9.6v4.5h10.7V27H87.7V4.9zM22.5 0h-4.9v4.9h4.9V0zM72.7 0h-4.9v4.9h4.9V0z"
+                    />
+                </svg>
+                
+                </a>
+                <a
+                class="btn"
+                href="https://bitwiseindustries.com/services/workforce-training/classes/"
+                >Back</a
+                >
+            </div>
+        </header>
+        <div id="spinner" class="spinner" style="display:none;">
+            <div class="lds-dual-ring"></div>
+        </div>
+        <apex:outputPanel styleClass="content-wrapper layout center-text" rendered="{!currentClass == null}">
+            <div>
+                <h2>Thank you for your interest in Bitwise Workforce Training! We are unable to find this class.</h2> 
+                <h2>Please visit our <a href="https://bitwiseindustries.com/services/workforce-training/classes/">WFT class page</a> for our current classes.</h2>
+            </div>
+        </apex:outputPanel>
+        <apex:outputPanel rendered="{!currentClass != null}">
+            <main class="content-wrapper layout">
+                <section id="class_introduction">
+                    <h1>Ready to sign up for a class with Bitwise Industries?</h1>
+                    <hr />
+                    <p>
+                        We’re stoked to have you join us! Register for your chosen class by
+                        following the instructions below. Buckle up for six weeks of awesome
+                        tech training. Nobody belongs here more than you.
+                    </p>
+                
+                    <apex:outputPanel rendered="{!currentClass.Dont_Allow_Registrations__c}" layout="block" StyleClass="blue_background">
+                        <div>
+                            <h2>Thank you for your interest in <br></br>Bitwise Workforce Training!</h2>
+                            <h2>This class is full, but check the <br></br><a href="https://bitwiseindustries.com/services/workforce-training/classes/">WFT class page</a> for our current classes.</h2>
+                        </div>
+                    </apex:outputPanel>
+                
+                </section>
+                <section id="class_details">
+                    <h2>{!className}</h2>
+                    
+                    <small>
+                    <span class="experience">
+                        <span></span>
+                        <apex:outputPanel rendered="{!(currentClass.Class_Skill_Level__c == 'Intermediate' || currentClass.Class_Skill_Level__c == 'Advanced')}"></apex:outputPanel>
+                        <apex:outputPanel rendered="{!currentClass.Class_Skill_Level__c == 'Advanced'}"></apex:outputPanel>
+            
+                    </span>
+                
+                    <span>{!currentClass.Class_Skill_Level__c}</span>
+                    
+                    <span>| {!currentClass.Market__c}</span>
+                    <div>
+                        <apex:image StyleClass="attendance_graphic" value="{!currentClass.Attendance_Type_Graphic_URL__c}"></apex:image>
+                    </div>
+                    </small>
+
+                    <p>{!currentClass.Class_Description__c}</p>
+                
+
+                    <p class="class_details">
+                    <strong>
+                        Start Date: <apex:outputText styleClass="detail_text" value="{0, date, MMMM d YYYY}">
+                                        <apex:param value="{! currentClass.start_date__c}" />
+                                    </apex:outputText><br />
+                    
+                        Weekly: <span>{!currentClass.Class_Nights__c}</span><br />
+                        
+                        Time: <span>{!currentClass.Scheduled_Time__c} {!currentClass.Time_Zone__c}</span><br />
+                        
+                        Cost: <span>${!currentClass.Class_Cost__c}</span>
+                        
+                    </strong>
+                    </p>
+                    <p>
+                    CLASS REQUIREMENTS: Students will need a laptop computer (not a Chromebook) with a
+                    front-facing camera. Recommended computer specs: Intel Core i5, 8GB
+                    RAM, 500 GB internal storage drive. Don’t have a computer? Don’t let
+                    that stop you! Email
+                    <a href="mailto:workforce@bitwiseindustries.com"
+                        >workforce@bitwiseindustries.com</a
+                    >
+                    to inquire about financial or equipment assistance options.
+                    </p>
+                    <p>
+                    Taking more than one class at a time is highly discouraged. All sales
+                    are final. Refunds will only be given for life events and will be in
+                    the form of credit to use for a future class. Email
+                    <a href="mailto:workforce@bitwiseindustries.com"
+                        >workforce@bitwiseindustries.com</a
+                    >
+                    with any questions.
+                    </p>
+                </section>
+
+                <apex:form id="membershipForm" rendered="{! NOT(currentClass.Dont_Allow_Registrations__c) && NOT(currentClass == null)}">
+                    <apex:actionFunction name="handleStripeToken" action="{!processToken}" reRender="errorPanel, enrollBox, confirmationBox, paymentTabs" oncomplete="paymentFinished()">
+                        <apex:param id="card_token" name="card_token" value="" />
+                    </apex:actionFunction>
+
+                    <section id="class_register">
+                        <fieldset>
+                            <h3>Registration</h3>
+
+                            <div>
+                                <label for="first_name">First</label>
+                                <apex:inputText html-placeholder="First Name" label="First Name" styleClass=" form-input-required" id="firstName" onchange="updateHighlights(event)" onclick="clickField(event)" value="{! paymentFirstName}" onblur="blurField(event)" />
+                            </div>
+
+                            <div>
+                                <label for="last_name">Last</label>
+                                <apex:inputText id="lastName" html-placeholder="Last Name" styleClass=" form-input-required" onchange="updateHighlights(event)" onclick="clickField(event)" value="{! paymentLastName}" onblur="blurField(event)" />
+                            </div>
+
+                            <div>
+                                <label for="email_address">Email</label>
+                                <apex:inputText id="emailBox"  html-placeholder="Email" styleClass=" form-input-required" onchange="updateHighlights(event)" onclick="clickField(event)" value="{!paymentEmail}" onblur="blurField(event)" />
+                            </div>
+
+                            <div>
+                                <label for="phone_number">Phone</label>
+                                <apex:inputText id="phoneNumber"  html-placeholder="5591234567" styleClass=" form-input-required" onchange="updateHighlights(event)" onclick="clickField(event)" value="{!paymentPhone}" onblur="blurField(event)"/>
+                            </div>
+                            <div>
+                                <label for="address">Address</label>
+                                <apex:inputText id="address"  html-placeholder="700 Van Ness Ave" styleClass=" form-input-required" onchange="updateHighlights(event)" onclick="clickField(event)" value="{!postalStreet}" onblur="blurField(event)"/>
+                            </div>
+                            <div>
+                                <label for="address">City</label>
+                                <apex:inputText id="city" html-placeholder="Fresno" styleClass="form-input-required" onchange="updateHighlights(event)" onclick="clickField(event)" value="{!postalCity}"  onblur="blurField(event)"/>
+                            </div>
+                                <label for="state">State</label>
+                                <apex:selectList id="state" size="1" multiselect="false" styleClass=" form-input-required margin-picklist" onchange="updateHighlights(event)" onclick="clickField(event)" value="{!postalState}" onblur="blurField(event)">
+                                 <apex:selectOptions value="{!states}"></apex:selectOptions>
+                                
+                                </apex:selectList>
+                            <div>
+                                <label for="zip_code">Zip Code</label>
+                                <apex:inputText id="zipCode" maxlength="5" html-placeholder="12345" styleClass=" form-input-required" onchange="updateHighlights(event)" onclick="clickField(event)" value="{! postalCode}" onblur="blurField(event)"/>
+                            </div>
+
+                            <div>
+                                <label for="referred_by">How did you hear about us?</label>
+                                <apex:selectList size="1" multiselect="false" id="studentSource" styleClass=" form-input-required source-box" onchange="updateHighlights(event), checkPicklist()" onclick="clickField(event)" value="{! studentSource}" onblur="blurField(event)">
+                                    <apex:selectOption itemLabel="Please Select" itemValue=""></apex:selectOption>
+                                    <apex:selectOption itemLabel="Bitwise Employee" itemValue="Bitwise Employee"></apex:selectOption>
+                                    <apex:selectOption itemLabel="WFT Outreach/Conference" itemValue="WFT Outreach/Conference"></apex:selectOption>
+                                    <apex:selectOption itemLabel="Friends/Family" itemValue="Friends/Family"></apex:selectOption>
+                                    <apex:selectOption itemLabel="Social Media" itemValue="Social Media"></apex:selectOption>
+                                    <apex:selectOption itemLabel="Bus Wrap" itemValue="Bus Wrap"></apex:selectOption>
+                                    <apex:selectOption itemLabel="Advertisement" itemValue="Advertisement"></apex:selectOption>
+                                    <apex:selectOption itemLabel="Other" itemValue="Other"></apex:selectOption>
+                                </apex:selectList>
+                            </div>
+
+                            <div class="hide" id="employeeSection">
+                                <label for="employee">
+                                    <span>Employee Name</span>
+                                    <apex:inputText id="employeeName" value="{! employeeFillIn}" styleClass="form-input name_field enroll_field employee-box" onchange="updateHighlights(event)" onclick="clickField(event)"
+                                        onblur="blurField(event)"></apex:inputText>
+                                </label>
+                            </div>
+
+                            <div id="mediaSection" class="hide">
+                                <label for="media">
+                                    <span>Social Media</span>
+                                    <apex:selectList id="mediaType" value="{! socialMediaValue}" size="1" multiselect="false" styleClass=" form-input name_field enroll_field source-input social-media-box" onchange="updateHighlights(event)"
+                                        onclick="clickField(event)" onblur="blurField(event)">
+                                        <apex:selectOption itemLabel="Please Select" itemValue=""></apex:selectOption>
+                                        <apex:selectOption itemLabel="Facebook" itemValue="Facebook"></apex:selectOption>
+                                        <apex:selectOption itemLabel="Instagram" itemValue="Instagram"></apex:selectOption>
+                                        <apex:selectOption itemLabel="Twitter" itemValue="Twitter"></apex:selectOption>
+                                    </apex:selectList>
+                                </label>
+                            </div>
+
+                            
+                            <div id="otherSection" class="hide">
+                                <label for="other">
+                                    <span>Please Explain</span>
+                                    <apex:inputText id="otherBox" value="{! otherFillIn}" styleClass="form-input name_field enroll_field other-box" onchange="updateHighlights(event)" onclick="clickField(event)"
+                                        onblur="blurField(event)"></apex:inputText>
+                                </label>
+                            </div>
+
+                            <div class="opt_in">
+                            <label class="checkbox">
+                                <span class="checkbox__input">
+                                    <apex:inputCheckbox selected="true" value="{! smsOptIn}"></apex:inputCheckbox>
+                                <span class="checkbox__control">
+                                    <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true"
+                                    focusable="false"
+                                    >
+                                    <path
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="3"
+                                        d="M2.73 12.91l6.37 6.37L20.79 7.59"
+                                    />
+                                    </svg>
+                                </span>
+                                </span>
+                                <span class="radio__label">Stay connected via text</span>
+                            </label>
+
+                            <label class="checkbox">
+                                <span class="checkbox__input">
+                                <apex:inputCheckbox selected="true" value="{! emailOptIn}"></apex:inputCheckbox>
+                                <span class="checkbox__control">
+                                    <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 24 24"
+                                    aria-hidden="true"
+                                    focusable="false"
+                                    >
+                                    <path
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="3"
+                                        d="M2.73 12.91l6.37 6.37L20.79 7.59"
+                                    />
+                                    </svg>
+                                </span>
+                                </span>
+                                <span class="radio__label">Stay connected via email</span>
+                            </label>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <h3>Payment</h3>  
+                                <div>                     
+                                    <label for="Number">
+                                        <span>Card Number</span>
+                                        <div id="cardNumber" class="form-input"></div>
+                                    </label>
+
+                                    <label for="Expiry">
+                                        <span>Expires On</span>
+                                        <div id="cardExpiry" class="form-input"></div>
+                                    </label>
+                                    <label for="CVC">
+                                        <span>CVC</span>
+                                        <div id="cardCvc" class="form-input"></div>
+                                    </label>  
+                                    <div id="card-errors" role="alert"></div>   
+                                </div>
+                        </fieldset>
+                        <p>
+                            All sales are final. Refunds only offered for life events.
+                            *Financial assistance options are available. Please contact
+                            <a href="mailto:workforce@bitwiseindustries.com"
+                            >workforce@bitwiseindustries.com</a
+                            >
+                            for more information.
+                        </p>
+                    </section>
+                    <section id="class_summary">
+                        <h3>Order Summary</h3>
+                        <div>
+                            <apex:outputField value="{!currentClass.Name_Graphic__c}"></apex:outputField>
+                        </div>
+                        <div class="class_summary">
+                            <p><strong>{!className}</strong></p>
+                        </div>
+                        <div class="subtotal_total">
+                            <p><strong>Total</strong><strong>${!currentClass.Class_Cost__c}</strong></p>
+                            <label class="checkbox">
+                                <span class="checkbox__input">
+                                    <apex:inputCheckbox id="timeZoneConfirmed" selected="false" StyleClass="form-input-required" onchange="updateHighlights(event)"></apex:inputCheckbox>
+                                    <span class="checkbox__control">
+                                        <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24"
+                                        aria-hidden="true"
+                                        focusable="false"
+                                        >
+                                        <path
+                                            fill="none"
+                                            stroke="currentColor"
+                                            stroke-width="3"
+                                            d="M2.73 12.91l6.37 6.37L20.79 7.59"
+                                        />
+                                        </svg>
+                                    </span>
+                                </span>
+                                <span class="radio__label" style="color:red">I've confirmed I'm registering for the correct time zone and city.</span>
+                            </label>
+                        </div>
+
+                        <hr />
+                    
+                        <div class="action_btns">
+                            <!-- <input class="btn" type="reset" value="Cancel Order" /> -->
+                            <!-- <input class="btn" type="submit" value="Pay Now" /> -->
+                            <input id="submitButton" type="submit" disabled="true" class="btn test-submit" value="Pay Now"></input> 
+                        </div>
+                        <apex:outputPanel id="errorPanel">
+                            <apex:outputPanel rendered="{!error != ''}">
+                                <div class="alert">
+                                    <apex:outputText StyleClass="alert_text" value="{!error}" escape="false" />
+                                </div>
+                                <script type="text/javascript">
+                                    (function () {
+                                        // loadStripe();
+                                        loadStripeNew();
+                                    })();
+                                </script>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                    </section>
+                </apex:form>
+            </main>
+        </apex:outputPanel>
+       
+        <footer>
+            <div class="content-wrapper layout">
+                <p>
+                Copyright &copy; <span>{!copyrightYear}</span> Bitwise Industries. All rights
+                reserved.
+                </p>
+                <!--
+                                        ↑___↑
+                                        DYNAMIC: Server date
+                -->
+            </div>
+        </footer>
+
+        <!-- <script type="text/javascript">
+        // Simple Phone Number formatting
+        const phoneNumber = document.getElementById("phone_number");
+        phoneNumber.addEventListener("input", function () {
+            formatPhoneNumber(this.value);
+        });
+
+        function formatPhoneNumber(phoneNumberString) {
+            let cleaned = ("" + phoneNumberString).replace(/\D/g, "");
+            let match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+            match
+            ? (phoneNumber.value =
+                "(" + match[1] + ")" + match[2] + "-" + match[3])
+            : null;
+        }
+        </script> -->
+        <!--
+        QUERY: The JS above is a super simple value grab and formatting of the phone number.
+        I imagine Stripe probably does all that for us, but I added as a proof of concept.
+        -->
+        <script>
+        var studentSource = document.getElementsByClassName('source-box')[0];
+        console.log(studentSource);
+
+        // var employeeName = document.getElementById('{!$Component.renderForm.membershipForm.employeeName}');
+        var employeeName = document.getElementsByClassName('employee-box')[0];
+        var employeeSection = document.getElementById('employeeSection');
+        console.log(employeeName);
+
+        // var mediaType = document.getElementById('{!$Component.renderForm.membershipForm.mediaType}')
+        var mediaType = document.getElementsByClassName('social-media-box')[0];
+        var mediaSection = document.getElementById('mediaSection')
+
+        // var adType = document.getElementById('{!$Component.renderForm..membershipForm.adType}')
+        // var adType = document.getElementsByClassName('ad-box')[0];
+        // var adSection = document.getElementById('advertisementSection');
+
+        // var otherBox = document.getElementById('{!$Component.renderForm.membershipForm.otherBox}')
+        var otherBox = document.getElementsByClassName('other-box')[0];
+        var otherSection = document.getElementById('otherSection');
+
+        var skillLevelBox = document.getElementsByClassName('skill-level')[0];
+        var skillLevel = document.getElementById('skillLevel');
+
+        var extraFields = [{ name: 'Bitwise Employee', field: employeeName, section: employeeSection }, { name: 'Social Media', field: mediaType, section: mediaSection },
+        { name: 'Other', field: otherBox, section: otherSection }];
+        function checkPicklist() {
+        extraFields.forEach(function (c) {
+            if (studentSource.value != c.name) {
+                if (!c.section.classList.contains('hide')) {
+                    c.section.classList.add('hide');
+                    c.field.value = '';
+                    if (c.field.name == 'Social Media') {
+                        c.field.value = '-Please Select-';
+                    }
+                }
+                if (c.field.classList.contains('form-input-required')) {
+                    c.field.classList.remove('form-input-required');
+                    if (c.field.classList.contains('invalid')) {
+                        c.field.classList.remove('invalid');
+                    }
+                }
+            }
+            if (studentSource.value == c.name) {
+                if (c.section.classList.contains('hide')) {
+                    c.section.classList.remove('hide');
+                }
+                if (!c.field.classList.contains('form-input-required')) {
+                    c.field.classList.add('form-input-required');
+                    c.field.classList.add('invalid');
+                }
+
+            }
+        })
+
+        }
+        </script>
+         <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '3024182424388533');
+            fbq('track', 'PageView');
+            fbq('track', 'InitiateCheckout',
+               {
+                  currency: 'USD',
+                  num_items: 1,
+                  value: 250.00
+               }
+            );
+        </script>
+        <!-- End Facebook Pixel Code -->
+
+         <!-- Hotjar Tracking Code for https://bitwiseindustries.com ( https://bitwiseindustries.com/ ) -->
+
+        <script>
+        
+            (function(h,o,t,j,a,r){
+            
+            h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+            
+            h._hjSettings={hjid:2333324,hjsv:6};
+            
+            a=o.getElementsByTagName('head')[0];
+            
+            r=o.createElement('script');r.async=1;
+            
+            r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+            
+            a.appendChild(r);
+            
+            })(window,document,' https://static.hotjar.com/c/hotjar-','.js?sv= ');
+        
+        </script>  
+    </body>
+    </html>
+</apex:page>

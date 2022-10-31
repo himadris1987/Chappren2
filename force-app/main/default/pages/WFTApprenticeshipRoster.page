@@ -1,0 +1,534 @@
+<apex:page docType="html-5.0" controller="WFTApprenticeshipRosterController" applyBodyTag="false" applyHtmlTag="false" standardStylesheets="false"
+    showHeader="false" sidebar="false">
+    
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"/>
+    </head>
+    <style>
+        .header_color {
+            background-color:lightgray;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .row_color {
+            background-color: rgb(247, 247, 246);
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .row_color:nth-child(odd) {
+            background-color: rgb(240, 240, 240);
+        }
+
+        .btn_submit_all {
+            color: #fff;
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            clip: rect(0,0,0,0);
+        }
+
+        .btn_note {
+            margin-top: 4px;
+            margin-left: 5px;
+        }
+
+        .no_link_style {
+            text-decoration: none;
+        }
+
+        .roster_pic {
+            height: 72px;
+            width: 72px;
+        }
+
+        .my_modal {
+            z-index: 9999;
+            width: 1600px;
+            max-width: 100%;
+            padding-top: 50%; 
+            top: 50%;
+        }
+
+        .popup_background {
+            background-color: rgba(0, 0, 0, 0.6);
+            filter: alpha(opacity=20);
+            width: 100vw;
+            height: 300vh;
+            z-index: 9998;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .input_field {
+            width: 100%;
+            height: 5em;
+            background-color: rgb(250, 250, 250);
+        }
+
+        .picklist_width {
+            width: 100%;
+        }
+
+        .center_modal {
+            top: 50%;
+        }
+
+        /* Small≥576px, Medium≥768px */
+        @media (max-width: 768px) {
+            .center_modal {
+                top: 0%;
+            }
+        }
+
+        @media (max-width: 915px) and (orientation: landscape) {
+            .center_modal {
+                top: -25%;
+            }
+        }        
+
+        .evaluate {
+            height: 100vh;
+        }
+
+    </style>
+    <body>
+        <div class="container-fluid">
+            <apex:form id="WFTApprenticeshipForm">
+                <div class="row justify-content-center">
+                    <div class="col text-center row_color">
+                        <h5>Apprenticeship: {! apprenticeshipName }</h5>
+                    </div>
+                </div>
+            
+                <div class="row header_color">
+                    <div class="d-none d-md-block col-md-1 text-center"> Photo </div>
+                    <div class="d-none d-md-block col-md-3 text-center"> Apprentice </div>
+                    <div class="d-none d-md-block col-md-2 text-center"> Pronouns </div>
+                    <div class="d-none d-md-block col-md-3 text-center"> GitHub </div>
+                    <div class="d-none d-md-block col-md-3 text-center"> Career Readiness </div>
+                </div>
+                <div class="row">
+                        <apex:outputPanel id="repeatPanel">
+                            <apex:repeat value="{!apprentices}" var="apprentice" id="apprenticeNumber">
+                                <div class="row row_color">
+                                    <div class="col-3 col-md-1 text-center">
+                                        <apex:image styleClass="roster_pic" url="{! apprentice.Contact__r.slack_image__c}"></apex:image>
+                                    </div>
+                                    <div class="col-3 col-md-3 d-none d-md-block text-center">
+                                        <p>{! apprentice.Contact__r.Name}</p>
+                                    </div>
+                                    <div class="col-3 col-md-2 d-none d-md-block text-center text-break">
+                                        <p>{! apprentice.Contact__r.Pronouns__c}</p>
+                                    </div>
+                                    <div class="col-3 col-md-3 d-none d-md-block text-center text-break">
+                                        {!apprentice.Contact__r.github_account__c}
+                                    </div>
+                                    <div class="col-8 d-block d-md-none text-center">
+                                        {! apprentice.Contact__r.Name}<br></br>
+                                        {! apprentice.Contact__r.Pronouns__c}<br></br>
+                                        {!apprentice.Contact__r.github_account__c}
+                                    </div>
+                                    <div class="col-10 offset-2 col-md-3 offset-md-0 text-center">
+                                        <apex:commandLink reRender="" action="{! showNotes }" styleClass="no_link_style">
+                                            <apex:param name="apprenticeName" value="{! apprentice.Contact__r.Name }" assignTo="{! apprenticeName }" />
+                                            <apex:param name="apprenticeId" value="{! apprentice.Contact__c }" assignTo="{! apprenticeId}" />
+                                            <button class="btn btn-outline-dark btn_note">Notes</button>
+                                        </apex:commandLink>
+                                        <apex:commandLink reRender="" action="{! showCareerReadyCheck }" styleClass="no_link_style">
+                                            <apex:param name="apprenticeName" value="{! apprentice.Contact__r.name }" assignTo="{! apprenticeName }" />
+                                            <apex:param name="apprenticeId" value="{! apprentice.Contact__c }" assignTo="{! apprenticeId }" />
+                                            <button class="btn btn-outline-dark btn_note">Evaluate</button>
+                                        </apex:commandLink>
+                                    </div>
+                                </div>
+                            </apex:repeat>
+                        </apex:outputPanel>
+                </div>
+            </apex:form>
+        </div>
+
+        <!--Note Modal -->
+        <apex:outputPanel styleClass="popup_background" rendered="{! displayNotes }">
+            <apex:form id="NotesModalForm">
+                <apex:outputPanel styleClass="my_modal" rendered="{! displayNotes }">
+                    <div class="row">
+                        <div class="col-10 offset-1 col-md-8 offset-md-2 col-lg-4 offset-lg-4">
+                            <div class="modal-content center_modal">
+                                <div class="modal-header">
+                                    <h5 class="modal-title"> Apprentice: {! apprenticeName } </h5>
+                                    <apex:commandLink action="{! closeNotes }">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </apex:commandLink>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="row">
+                                        Notes Type:
+                                        <apex:selectList id="notesType" value="{! notesType }" size="1" multiselect="false">
+                                            <apex:selectOption itemValue="Volunteered" itemLabel="Volunteering" />
+                                            <apex:selectOption itemValue="One on One" itemLabel="One on One" />
+                                            <apex:selectOption itemValue="Apprenticeship Recommendation" itemLabel="Apprenticeship Recommendation"></apex:selectOption>
+                                            <apex:selectOption itemValue="Incident" itemLabel="Incident" />
+                                            <apex:selectOption itemValue="Counseling" itemLabel="Counseling" />
+                                            <apex:selectOption itemValue="Resume Submitted" itemLabel="Resume Submitted" />
+                                            <apex:selectOption itemValue="Professional Development" itemLabel="Professional Development" />
+                                            <apex:selectOption itemValue="Nomination" itemLabel="Nomination"/>
+                                            <apex:selectOption itemValue="Other" itemLabel="Other" />
+                                        </apex:selectList>
+                                    </div>
+                                    <div class="row top_buffer">
+                                        Notes:
+                                        <apex:inputTextarea id="notesInput" rows="5" value="{! notes }" onkeyup="checkAndEnableSubmitNotesButton()"/>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <apex:commandLink action="{! saveNotes }">
+                                        <button type="button" id="submitNotes" disabled="true">Submit</button>
+                                    </apex:commandLink>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </apex:outputPanel>
+            </apex:form>
+        </apex:outputPanel>
+
+        <!-- CRC Modal -->
+        <apex:outputPanel styleClass="popup_background" rendered="{! displayCareerReadyCheck }">
+            <apex:form id="careerReadyCheckForm">
+                <apex:outputPanel styleClass="my_modal" rendered="{! displayCareerReadyCheck }">
+                    <div class="row">
+                        <div class="col-10 offset-1 col-md-10 offset-md-1 col-lg-10 offset-lg-1 evaluate">
+                            <div class="modal-content modal-dialog-scrollable">
+                                <div class="modal-header">
+                                    <h5 class="modal-title"> Apprentice: {! apprenticeName } </h5>
+                                    <apex:commandLink action="{! closeCareerReadyCheck }">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </apex:commandLink>
+                                </div>
+                                <div class="modal-body">
+                                      <!-- Interview Prep -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Interview Prep<br></br>
+                                            <apex:selectList id="interviewprepPicklist" styleClass="picklist_width" value="{! interviewprepPicklistModal }" size="1" multiselect="false">
+                                                <apex:selectOption itemValue="1" itemLabel="1" />
+                                                <apex:selectOption itemValue="2" itemLabel="2" />
+                                                <apex:selectOption itemValue="3" itemLabel="3" />
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes<br></br>
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! interviewprepNoteTextModal }" />
+                                        </div>                                   
+                                    </div>
+                                    <!-- Marketing -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Marketing<br></br>
+                                            <apex:selectList id="marketingPicklist" styleClass="picklist_width" value="{! marketingPicklistModal }" size="1" multiselect="false">
+                                                <apex:selectOption itemValue="1" itemLabel="1" />
+                                                <apex:selectOption itemValue="2" itemLabel="2" />
+                                                <apex:selectOption itemValue="3" itemLabel="3" />
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes<br></br>
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! marketingNoteTextModal }" />
+                                        </div>
+                                    </div>
+                                    <!-- SkillReadiness -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                        Skill Readiness<br></br>
+                                            <apex:selectList id="skillreadinessPicklist" styleClass="picklist_width" value="{! skillreadinessPicklistModal }" size="1" multiselect="false">
+                                                <apex:selectOption itemValue="1" itemLabel="1" />
+                                                <apex:selectOption itemValue="2" itemLabel="2" />
+                                                <apex:selectOption itemValue="3" itemLabel="3"></apex:selectOption>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! skillreadinessNoteTextModal}" />
+                                        </div>
+                                    </div>
+                                    <!-- Communication -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Communication<br></br>
+                                            <apex:selectList styleClass="picklist_width" id="communicationPicklist" value="{! communicationPicklistModal}"
+                                                size="1" multiselect="false">
+                                                <apex:selectOption itemValue="1" itemLabel="1" />
+                                                <apex:selectOption itemValue="2" itemLabel="2" />
+                                                <apex:selectOption itemValue="3" itemLabel="3"></apex:selectOption>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! communicationNoteTextModal}" />
+                                        </div>
+                                    </div>
+                                    <!-- Initiative -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Initiative<br></br>
+                                            <apex:selectList styleClass="picklist_width" id="initiativePicklist" value="{! initiativePicklistModal}" size="1"
+                                                multiselect="false">
+                                                <apex:selectOption itemValue="1" itemLabel="1" />
+                                                <apex:selectOption itemValue="2" itemLabel="2" />
+                                                <apex:selectOption itemValue="3" itemLabel="3"></apex:selectOption>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! initiativeNoteTextModal}" />
+                                        </div>
+                                    </div>
+                                    <!-- Contributing to the Success of Others -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Contributing to the Success of Others<br></br>
+                                            <apex:selectList styleClass="picklist_width" id="contributingtotheSuccessofOthersPicklist" value="{! contributingtootherssuccessNoteTextModal}"
+                                                size="1" multiselect="false">
+                                                <apex:selectOption itemValue="1" itemLabel="1" />
+                                                <apex:selectOption itemValue="2" itemLabel="2" />
+                                                <apex:selectOption itemValue="3" itemLabel="3"></apex:selectOption>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! contributingtosuccessNoteTextModal}" />
+                                        </div>
+                                    </div>
+                                    <!-- Grit -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Grit<br></br>
+                                            <apex:selectList styleClass="picklist_width" id="gritPicklist" value="{! gritPicklistModal}" size="1" multiselect="false">
+                                                <apex:selectOption itemValue="1" itemLabel="1" />
+                                                <apex:selectOption itemValue="2" itemLabel="2" />
+                                                <apex:selectOption itemValue="3" itemLabel="3"></apex:selectOption>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! gritNoteTextModal}" />
+                                        </div>
+                                    </div>
+                                    <!-- CommunityEngagement -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Community Engagement<br></br>
+                                            <apex:selectList styleClass="picklist_width" id="communityengagementPicklist" value="{! communityengagementPicklistModal}"
+                                                size="1" multiselect="false">
+                                                <apex:selectOption itemValue="1" itemLabel="1" />
+                                                <apex:selectOption itemValue="2" itemLabel="2" />
+                                                <apex:selectOption itemValue="3" itemLabel="3"></apex:selectOption>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! communityengagementNoteTextModal}" />
+                                        </div>
+                                    </div>
+                                    <!-- Soft Skills  -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Soft Skills<br></br>
+                                            <apex:selectList styleClass="picklist_width" id="softskillsPicklist" value="{! softskillsPicklistModal}" size="1"
+                                                multiselect="false">
+                                                <apex:selectOption itemValue="1" itemLabel="1" />
+                                                <apex:selectOption itemValue="2" itemLabel="2" />
+                                                <apex:selectOption itemValue="3" itemLabel="3"></apex:selectOption>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! softskillsNoteTextModal}" />
+                                        </div>
+                                    </div>
+                                    <!-- Technical skills  -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Technical Skills<br></br>
+                                            <apex:selectList styleClass="picklist_width" id="technicalPicklist" value="{! technicalskillsPicklistModal}"
+                                                size="1" multiselect="false">
+                                                <apex:selectOption itemValue="1" itemLabel="1" />
+                                                <apex:selectOption itemValue="2" itemLabel="2" />
+                                                <apex:selectOption itemValue="3" itemLabel="3"></apex:selectOption>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! technicalskillsNoteTextModal}" />
+                                        </div>
+                                    </div>
+                                    <!-- Productivity  -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Productivity<br></br>
+                                            <apex:selectList styleClass="picklist_width" id="productivityPicklist" value="{! productivityPicklistModal}"
+                                                size="1" multiselect="false">
+                                                <apex:selectOption itemValue="1" itemLabel="1" />
+                                                <apex:selectOption itemValue="2" itemLabel="2" />
+                                                <apex:selectOption itemValue="3" itemLabel="3"></apex:selectOption>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! productivityNoteTextModal}" />
+                                        </div>
+                                    </div>
+                                    <!-- Team Contributor -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Team Contributor<br></br>
+                                            <apex:selectList styleClass="picklist_width" id="teamcontributorPicklist" value="{! teamcontributorPicklistModal}"
+                                                size="1" multiselect="false">
+                                                <apex:selectOption itemValue="1" itemLabel="1" />
+                                                <apex:selectOption itemValue="2" itemLabel="2" />
+                                                <apex:selectOption itemValue="3" itemLabel="3"></apex:selectOption>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! teamcontributorNoteTextModal}" />
+                                        </div>
+                                    </div>
+                                    <!-- Sales  -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Sales<br></br>
+                                            <apex:selectList styleClass="picklist_width" id="salesPicklist" value="{! salesPicklistModal}" size="1" multiselect="false">
+                                                <apex:selectOption itemValue="1" itemLabel="1" />
+                                                <apex:selectOption itemValue="2" itemLabel="2" />
+                                                <apex:selectOption itemValue="3" itemLabel="3"></apex:selectOption>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! salesNoteTextModal}" />
+                                        </div>
+                                    </div>
+                                    <!-- Teachable -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Teachable<br></br>
+                                            <apex:selectList styleClass="picklist_width" id="teachablePicklist" value="{! teachablePicklistModal}" size="1"
+                                                multiselect="false">
+                                                <apex:selectOption itemValue="1" itemLabel="1" />
+                                                <apex:selectOption itemValue="2" itemLabel="2" />
+                                                <apex:selectOption itemValue="3" itemLabel="3"></apex:selectOption>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! teachableNoteTextModal}" />
+                                        </div>
+                                    </div>
+                                    <!-- Culture -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Culture<br></br>
+                                            <apex:selectList styleClass="picklist_width" id="culturePicklist" value="{! culturePicklistModal}" size="1" multiselect="false">
+                                                <apex:selectOption itemValue="1" itemLabel="1" />
+                                                <apex:selectOption itemValue="2" itemLabel="2" />
+                                                <apex:selectOption itemValue="3" itemLabel="3"></apex:selectOption>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! cultureNoteTextModal}" />
+                                        </div>
+                                    </div>
+                                    <!-- Analytical  -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Analytical<br></br>
+                                            <apex:selectList styleClass="picklist_width" id="analyticalPicklist" value="{! analyticalPicklistModal}" size="1"
+                                                multiselect="false">
+                                                <apex:selectOption itemValue="1" itemLabel="1" />
+                                                <apex:selectOption itemValue="2" itemLabel="2" />
+                                                <apex:selectOption itemValue="3" itemLabel="3"></apex:selectOption>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! analyticalNoteTextModal}" />
+                                        </div>
+                                    </div>
+                                    <!-- Apprenticeship Lead Interview -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Apprenticeship Lead's Interview<br></br>
+                                            <apex:selectList styleClass="picklist_width" id="ApprenticeshipLeadsInterviewPicklist" value="{! ApprenticeshipLeadsInterviewPicklistModal}"
+                                                size="1" multiselect="false">
+                                                <apex:selectOption itemValue="Not a Good Fit" itemLabel="Not a Good Fit" />
+                                                <apex:selectOption itemValue="Unsure Fit" itemLabel="Unsure Fit" />
+                                                <apex:selectOption itemValue="Good Fit" itemLabel="Good Fit"></apex:selectOption>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! ApprenticeshipLeadsInterviewNoteTextModal}" />
+                                        </div>
+                                    </div>
+                                    <!-- Hiring Status -->
+                                    <div class="row">
+                                        <div class="col-10 col-md-3 col-lg-2">
+                                            Hiring Status<br></br>
+                                            <apex:selectList styleClass="picklist_width" id="hiringstatusPicklist" value="{! hiringstatusPicklistModal}"
+                                                size="1" multiselect="false">
+                                                <apex:selectOption itemValue="Needs More Time" itemLabel="Needs More Time" />
+                                                <apex:selectOption itemValue="Almost There" itemLabel="Almost There" />
+                                                <apex:selectOption itemValue="Ready to Hire" itemLabel="Ready to Hire"></apex:selectOption>
+                                            </apex:selectList>
+                                        </div>
+                                        <div class="col-10 col-md-9 col-lg-10">
+                                            Notes
+                                            <apex:inputTextarea rows="1" styleClass="input_field" value="{! hiringstatusNoteTextModal}" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <apex:commandLink action="{! saveCareerReadyCheck }">
+                                        <button type="button" id="submitNotes" Class="btn_submit_all">Submit</button>
+                                    </apex:commandLink>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </apex:outputPanel>
+            </apex:form>
+        </apex:outputPanel>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"/>
+        <script> 
+            //added to fix chrome form resubmission on page refresh for note modal
+            if (window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.href);
+            }
+
+            function checkAndEnableSubmitNotesButton() {
+                const notes = document.getElementById('{!$Component.NotesModalForm.notesInput}').value.trim();
+                const submitNotesBtn = document.getElementById('submitNotes');
+            
+                if (notes.length = 1) {
+                        submitNotesBtn.disabled = false;
+                        submitNotesBtn.classList.add('btn_submit_all');
+                }
+                if (notes.length < 1) {
+                        submitNotesBtn.disabled = true;
+                        submitNotesBtn.classList.remove('btn_submit_all');
+                }
+            }
+        </script>
+    </body>
+</apex:page>

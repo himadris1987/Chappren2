@@ -1,0 +1,33 @@
+<apex:page controller="BLDGCheckinController" action="{!createDeliveryCheckIn}" cache="false" showHeader="false" name="home" sidebar="false" docType="html-5.0" applyBodyTag="false" applyHtmlTag="false" standardStylesheets="false">
+<head>
+    <c:bldgIncludes ></c:bldgIncludes>
+    <style>
+        .center-row{
+            display: flex;
+            height: 100vh;
+            align-content: center;
+        }
+        .btn {
+            margin-top: 25px;
+            padding: 15px 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row center-row">
+            <div class="box col-sm-6 offset-sm-3 text-center">
+                <h2>The front desk staff have been notified. Someone will be with you shortly.</h2>
+                <apex:form id="form">
+                    <apex:commandButton id="homeButton" action="{!backToHome}" styleClass="btn btn-primary" value="Home"></apex:commandButton>
+                </apex:form>
+            </div>
+        </div>
+    </div>
+    <script>
+        setTimeout(function() {
+            document.getElementById('{!$Component.form.homeButton}').click();
+        }, 10000);
+    </script>
+</body>
+</apex:page>

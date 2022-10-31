@@ -1,0 +1,121 @@
+<apex:page id="Unsubscribe" controller="WFTApprenticeAcceptanceController" standardStylesheets="false" showHeader="false" sidebar="false"
+    applyBodyTag="false" applyHtmlTag="false">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script src="https://kit.fontawesome.com/667b3ffdb0.js" crossorigin="anonymous"></script>
+        <apex:stylesheet value="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous" />
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/usm/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+        <style>
+            body {
+                font-family: 'Avenir', sans-serif;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                text-align: center;
+            }
+
+            .header {
+                color: #EE3F5E;
+            }
+
+            .row_margin {
+                margin-top: 20px;
+                font-size: 20px;
+            }
+
+            input.checkbox{
+                height: 15px;
+                width: 15px;
+                margin-top: 10px;
+            }
+
+            .btn {
+                background-color: #EE3F5E;
+                color: white;
+            }
+
+            .hide {
+                visibility: hidden;
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <apex:form id="form">
+                <div class="row row_margin">
+                    <h2 class="header col-sm-6 offset-sm-3">{!appFirstName} {!appLastName}</h2>
+                </div>
+                <div class="row row_margin">
+                    <div class="col-sm-6 offset-sm-3">
+                        <h4>You have been invited to join the following Apprenticeship program with Alpha Works.</h4>
+                    </div>
+                </div>
+                <div class="row row_margin">
+                    <div class="col-sm-6 offset-sm-3">
+                        <h4>Apprenticeship: {!appName}</h4>
+                    </div>
+                </div>
+                <div class="row row_margin">
+                    <div class="col-sm-6 offset-sm-3">
+                        <h4>Lead: {!appLead}</h4>
+                    </div>
+                </div>
+                <div class="row row_margin">
+                    <div class="col-sm-6 offset-sm-3">
+                        <h4>
+                            Start Date:
+                            <apex:outputText value="{0, date, MMMM d Y}">
+                                <apex:param value="{!appStartDate}" />
+                            </apex:outputText>
+                        </h4>
+                    </div>
+                </div>
+                <div class="row row_margin">
+                    <div class="col-sm-6 offset-sm-3">
+                        <h4>Hourly Wage: {!appWage}</h4>
+                    </div>
+                </div>
+                <div class="row row_margin">
+                    <div class="col-sm-6 offset-sm-3">
+                       <h4>To accept your Apprenticeship please click the button below.</h4>
+                    </div>
+                </div>
+                <apex:outputPanel Styleclass="row row_margin" rendered="{!appAcceptance}">
+                    <div class="col-sm-6 offset-sm-3 alert alert-success" id="confirmationMsg">You have accepted your Apprenticeship.</div>
+                </apex:outputPanel>
+
+                <apex:outputPanel Styleclass="row row_margin" rendered="{!NOT(appAcceptance)}">
+                    <div class="col-sm-2 offset-sm-5">
+                        <apex:commandButton id="button" action="{!acceptApprenticeship}" oncomplete="confirmation()" value="Accept" styleClass="btn"></apex:commandButton>
+                    </div>
+                </apex:outputPanel>
+
+
+                <div class="row row_margin">
+                    <div class="col-sm-6 offset-sm-3 hide alert alert-success" id="confirmationMsg">You have accepted your Apprenticeship. You will receive two emails with further instructions for completing your Alpha Works Apprenticeship Application and Offer Letter.</div>
+                </div>
+
+            </apex:form>
+        </div>
+        <script>
+            let confirmationMsg = document.getElementById('confirmationMsg');
+
+            function confirmation() {
+                if (confirmationMsg.classList.contains("hide")) {
+                    confirmationMsg.classList.remove("hide");
+                }
+            }
+        </script>
+    </body>
+</apex:page>

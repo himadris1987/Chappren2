@@ -1,0 +1,259 @@
+<apex:page id="UATConfirmation" controller="BWUATConfirmationController" standardStylesheets="false" showHeader="false" sidebar="false"
+    applyBodyTag="false" applyHtmlTag="false">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link rel="icon" href="https://bitwiseindustries.com/wp-content/uploads/2021/03/cropped-favicon-01-32x32.png" sizes="32x32"/>
+        <link rel="icon" href="https://bitwiseindustries.com/wp-content/uploads/2021/03/cropped-favicon-01-192x192.png" sizes="192x192"/>
+        <link rel="apple-touch-icon" href="https://bitwiseindustries.com/wp-content/uploads/2021/03/cropped-favicon-01-180x180.png"/>
+        <script src="https://kit.fontawesome.com/667b3ffdb0.js" crossorigin="anonymous"></script>
+        <apex:stylesheet value="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous" />
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <style>
+            body {
+                font-family: 'Avenir', sans-serif;
+                text-rendering: optimizeLegibility;
+                -webkit-font-mdoothing: antialiased;    
+            }
+
+            .header {
+                color: #00ADEE;
+            }
+
+            .row_margin {
+                margin-top: 20px;
+                font-size: 20px;
+            }
+
+            .btn {
+                background-color: #00ADEE;
+                color: white;
+				margin: 20px;
+            }
+
+            .hide {
+                visibility: hidden;
+				display: none;
+
+            }
+            .center {
+                word-wrap: break-word;
+                text-align:left;
+                /* border: 2px solid black; */
+            }
+
+			.centerBtn{
+				padding: 10px;
+				text-align: center;
+			}
+
+			.input_text {
+				width: 100%;
+				height: 500px; 	
+			}
+
+			h3 {
+				margin: 0;
+				padding: 0;
+			}
+			h4 {
+				margin: 0;
+				padding: 0;
+			}  
+			/* Useful for centering Rich Text */
+             /* ul {
+                list-style-position: inside;
+            } */
+
+            /* li {
+                list-style-type: none;
+                text-align: center;
+            }  */
+
+        </style>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+			<apex:outputPanel rendered="{!isCaseStatusClosed}">
+				<div class="row row_margin">
+                    <h3 class="header col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1">Case: {! caseSubject}, {! caseNumber}</h3>
+                    <h3 class="header col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1">Submited By: {! caseSubmitterName}</h3>
+                </div>
+				<div class="row row_margin">
+                    <div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1">
+                        <h4>Description:</h4>
+                    </div>
+                    <div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1 center">
+                        <div>{! caseDescription}</div>
+                    </div>
+                </div>
+                <div class="row row_margin">
+                    <div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1">
+                        <h4>Your case has been closed.</h4>
+                    </div>
+                </div>
+			</apex:outputPanel>
+			<apex:outputPanel rendered="{! NOT(isCaseStatusUAT) && NOT(isCaseStatusClosed)}">
+				<div class="row row_margin">
+                    <h3 class="header col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1">Case: {! caseSubject}, {! caseNumber}</h3>
+                    <h3 class="header col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1">Submited By: {! caseSubmitterName}</h3>
+                </div>
+				<div class="row row_margin">
+                    <div class="header col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1">
+                        <h4>Description:</h4>
+                    </div>
+                    <div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1 center">
+                        <div>{! caseDescription}</div>
+                    </div>
+                </div>
+                <div class="row row_margin">
+                    <div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1">
+                        <h4>We are currently working on your case.</h4>
+                    </div>
+                </div>
+			</apex:outputPanel>
+
+			<apex:outputPanel rendered="{!isCaseStatusUAT}">
+				<div class="row row_margin">
+                    <h3 class="header col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1">Case: {! caseSubject}, {! caseNumber}</h3>
+                    <h3 class="header col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1">Submited By: {! caseSubmitterName}</h3>
+                </div>
+                <div class="row row_margin">
+                    <div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1">
+                        <h4>Your case has been put into User Acceptance Testing (UAT).</h4>
+                    </div>
+                </div>
+				
+                <div class="row row_margin">
+                    <div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1">
+                        <h4>Please review the steps taken and verify that your case has been solved.</h4>
+                    </div>
+                </div>
+                <div class="row row_margin">
+                    <div class="header col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1">
+                        <h4>Description:</h4>
+                    </div>
+                    <div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1 center">
+                        <div>{! caseDescription}</div>
+                    </div>
+                </div>
+                <div class="row row_margin">
+					<div class=" header col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1">
+						<h4>Steps Taken:</h4>
+					</div>
+					<div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1 center">
+						<apex:outputText escape="false" value="{! caseSummary}" id="Body"/>  
+					</div>
+				</div>
+				<div class="row row_margin hide" id="caseClosedConfirmation">
+					<div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1 alert alert-success" >Your case has been closed.</div>
+				</div>
+				<div id="solvedCase">
+					<div class="row row_margin">
+						<div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1">
+							<h4>Have these actions solved your case?</h4>
+						</div>
+					</div>
+					
+					<div class="row row_margin">
+						<div class="col-lg-4 offset-lg-4 col-md-10 offset-md-1 col-sm-10 offset-sm-1 centerBtn">
+							<apex:form >
+								<apex:commandButton id="yesButton" onclick="closeCase()" action="{! caseSolved}" value="Yes" reRender="false" styleClass="btn"></apex:commandButton>
+								<apex:commandButton id="noButton" onclick="rejectUAT()" reRender="false" value="No" styleClass="btn"></apex:commandButton>
+							</apex:form>
+						</div>
+					</div>
+				</div>
+
+				<div id ="rejectedUAT" class="hide">
+					<div class="row row_margin">
+						<div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1 alert alert-success">
+							OK, we'll keep working on it. Please give us as many details as you can below.
+						</div>
+                	</div>
+					<apex:form id="rejectionForm">
+						<div class="row row_margin">
+							<div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1">
+								<apex:inputTextarea styleClass="input_text" required="true" value="{! reasonForRejection }" id="reasonForRejection"/>
+							</div>
+						</div>
+					
+						<div class="row row_margin">
+							<div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1 hide alert alert-danger" id="submitCaseRejection">Please provide details before submitting.</div>
+							<div class="col-lg-4 offset-lg-4 col-md-10 offset-md-1 col-sm-10 offset-sm-1 centerBtn">
+								<apex:commandButton id="submitButton" onclick="submitConfirmation()" action="{! caseRejectedUAT}" reRender="false" value="Submit" styleClass="btn"></apex:commandButton>
+							</div>
+						</div>
+						
+					</apex:form>
+				</div>
+				<div id="submitCaseConfirmation" class="row row_margin hide">
+					<div class="col-xl-4 offset-xl-4 col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-sm-10 offset-sm-1  alert alert-success">Your case has been returned to support.</div>
+				</div>
+			</apex:outputPanel> 
+        </div>
+		
+        <script>
+            let rejectedUAT = document.getElementById('rejectedUAT');
+			let solvedCaseDiv = document.getElementById('solvedCase');
+			let submitCaseConfirmation = document.getElementById('submitCaseConfirmation');
+			let submitCaseRejection = document.getElementById('submitCaseRejection');
+			let caseClosedConfirmation = document.getElementById('caseClosedConfirmation');
+
+			let reasonForRejectionText = document.getElementById('{!$Component.rejectionForm.reasonForRejection}');
+			console.log(reasonForRejectionText);
+
+            function rejectUAT() {
+                if (rejectedUAT.classList.contains("hide")) {
+                    rejectedUAT.classList.remove("hide");
+                }
+				solvedCaseDiv.classList.add("hide");
+            }
+
+			
+			function closeCase() {
+                if (caseClosedConfirmation.classList.contains("hide")) {
+                    solvedCaseDiv.classList.add("hide");
+					caseClosedConfirmation.classList.remove("hide");
+                }
+            }
+
+			function submitConfirmation() {
+				//Should Submit
+				console.log("Submit Pressed");
+				console.log(reasonForRejectionText.value);
+				console.log(reasonForRejectionText.value == "");
+				
+				if(reasonForRejectionText.value == "") {
+					console.log("Inner Text Is Blank");
+					if (submitCaseRejection.classList.contains("hide")) {
+                    	submitCaseRejection.classList.remove("hide");
+                	}
+					return false;
+				}
+				else {
+					console.log("Inside Else");
+					console.log(rejectedUAT);
+					if (! rejectedUAT.classList.contains("hide")) {
+                    	console.log("rejectedUAT does not contains hide");
+						rejectedUAT.classList.add("hide");
+						console.log("hide added");
+                	}
+					if (submitCaseConfirmation.classList.contains("hide")) {
+						console.log("submitCaseConfirmation contains hide");
+                    	submitCaseConfirmation.classList.remove("hide");
+						console.log("hide removed");
+                	}
+
+				} //should print error
+			}	
+        </script>
+    </body>
+</apex:page>

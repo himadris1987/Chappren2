@@ -1,0 +1,1019 @@
+<apex:page standardController="Opportunity" extensions="LeaseAgreementTemplateController" applyHtmlTag="false" standardStylesheets="false" sidebar="false"
+     renderAs="pdf" showHeader="false">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <style type="text/css">
+            .hidden {
+                display: none;
+            }
+
+            .header {
+                margin: auto;
+                width: 50%;
+                border-top: 1px solid black;
+                border-bottom: 1px solid black;
+            }
+
+            .bold {
+                font-weight: bold;
+            }
+
+            .underline {
+                text-decoration: underline;
+            }
+
+            .sign_line {
+                display: inline-block;
+                width: 12em;
+                border-bottom: 1px solid black;
+            }
+
+            h1, h2 {
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 16pt;
+                text-transform: uppercase;
+            }
+
+            h2 {
+                font-size: 12pt;
+                font-variant: small-caps;
+            }
+
+            ol {
+                list-style: none;
+                counter-reset: lease_counter;
+            }
+
+            ol li {
+                counter-increment: lease_counter;
+                position: relative;
+                padding: 0 2em 0.5em 2.5em;
+            }
+
+            ol li::before {
+                content: counter(lease_counter) ".";
+                font-weight: bold;
+                position: absolute;
+            }
+
+            .container {
+                display: inline-block;
+                width: 100%;
+                padding-left: 10%;
+            }
+
+            .col-right {
+                float: right;
+                width: 45%;
+                padding-right: 10%;
+            }
+
+            .col-left {
+                float: left;
+                width: 45%;
+            }
+
+            .text_padding {
+                padding: 0 2em 0 2em;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!--- Standard Lease Agreement -->
+        <div class="{!LeaseIsHidden}"> 
+            <div class="header">
+                <h1>{!Opportunity.Building_Company__c}</h1>
+                <h2>Commerical Lease Agreement</h2>
+            </div>
+            <ol>
+                <li>
+                    <span class="bold">PARTIES.</span> This Lease is dated {!today} by and between {!Opportunity.Building_Company__c}, 
+                    or its designated successor or assign, “Landlord” and {!Opportunity.Account.Name} “Tenant.”
+                </li>
+                <li>
+                    <span class="bold">PREMISES.</span> Subject to the terms and conditions set forth in this lease, Landlord hereby
+                    leases to Tenant that interior portion of the building located at {!Opportunity.Property_Address_Text__c}
+                    the “Building”, {!Opportunity.Lease_Spaces_Text__c} the “Premises”.
+                </li>
+                <li>
+                    <span class="bold">TERM.</span> The term of the Lease shall be&nbsp; <apex:outputField value="{!Opportunity.Lease_Length_mo__c}"/>
+                    months commencing on&nbsp; <apex:outputField value="{!Opportunity.Lease_Start_Date__c}"/> “Commencement Date” and expiring&nbsp; 
+                    <apex:outputField value="{!Opportunity.Lease_Length_mo__c}"/> months thereafter “Expiration Date”. If Tenant holds
+                    over and continues in possession of the Premises after expiration of the term of this
+                    Lease, Tenant’s continued occupancy of the Premises shall be deemed a periodic tenancy
+                    from month-to-month and be terminable by either party with 30 days written notice with
+                    all terms and conditions of this lease in full force and effect except that the rental rate
+                    shall increase to 110% of the rate during the last month of the lease.
+                </li>
+                <li>
+                    <span class="bold">RENT.</span> Tenant agrees to pay Landlord as basic rent without notice or demand for the use
+                    and occupancy of the Premises, the sum of&nbsp; <apex:outputField value="{!Opportunity.Rent_mo__c}"/> per month “Rent”, in lawful money of
+                    the United States of America, in advance on or before the first day of each and every
+                    successive calendar month during the term hereof. All Rent shall be paid by Tenant at the
+                    office of Landlord at 700 Van Ness, Fresno, CA 93721 or any other place the Landlord
+                    may from time to time designate by written notice given to Tenant. Tenant acknowledges
+                    that late payment of Rent will cause the Landlord to lose the use of that money and incur
+                    costs and expenses not contemplated under this Lease. Therefore, if Tenant fails to make
+                    a payment by 5:00 pm on the 5th day from the date it is due, Tenant shall immediately
+                    pay Landlord a late charge equal to 5% of the overdue amount. If Tenant has yet failed to
+                    pay Landlord all monies due 30 days from the due date, the unpaid balance shall begin to
+                    bear interest at a rate of 18% or the maximum allowed by law, whichever is less, until the
+                    balance is paid in full. Landlord and Tenant agree that this late charge and interest
+                    represent fair compensation to Landlord for the loss suffered from such nonpayment by
+                    Tenant. Acceptance of any late charge shall not constitute a waiver of Tenant’s default
+                    with respect to such nonpayment nor prevent Landlord from exercising any other rights
+                    or remedies available to Landlord under this Lease. Payments made by Tenant to
+                    Landlord which are for sums less than total amount due at any given time shall be applied
+                    to accounts in the following order: Reimbursement of Legal Expenses, then Interest
+                    Accumulated, then Late Fees, then Cleaning and Repairs, and last to Rent.
+                </li>
+                <li>
+                    <span class="bold">SECURITY DEPOSIT.</span> Tenant agrees to deposit with Landlord the sum of
+                    &nbsp; <apex:outputField value="{!Opportunity.Deposit__c}"/> the
+                    “Deposit” as security for Tenant’s faithful performance of its obligations under this
+                    Lease. The Deposit shall be due upon signing of this Lease. If Tenant fails to perform or
+                    pay Rent under the terms of this Lease, Landlord may use and apply all or any part of the
+                    Deposit for the payment of Rent or any other amount then due or unpaid to Landlord or by Landlord by 
+                    reason of Tenant’s default. Landlord may commingle such Deposit with
+                    other funds and shall have no obligation to pay interest thereon.
+                </li>
+                <li>
+                    <span class="bold">POSSESSION.</span> Pro-rata calculations for possession, Rent, and other time-delimited
+                    calculations associated with this Lease shall be made using a 30-day month. If for any
+                    reason Landlord fails to deliver possession of the Premises to Tenant on the
+                    Commencement Date, Landlord shall not be subject to any liability for such failure, the
+                    validity of this Lease shall not be impaired, but the Rent shall be abated until the time
+                    landlord does deliver possession. If Landlord permits Tenant to enter into possession of
+                    the Premises prior to the Commencement Date, such possession shall be subject to all the
+                    provisions of this Lease.
+                </li>
+                <li>
+                    <span class="bold">CONDITION OF PREMISES.</span> Tenants taking of possession of the Premises shall be
+                    deemed conclusive evidence that as of the date of possession the Premises are in good
+                    order and satisfactory condition, except for matters as to which Tenant gave Landlord
+                    written notice on or before the Commencement Date. Tenant shall, at Tenant’s sole cost
+                    and expense, keep the Premises in good and substantial order and repair in all respects
+                    including but not limited to floors, carpet, walls, windows, doors, HVAC and other
+                    appurtenances in, on or connected with and used for the benefit of the Premises. To
+                    preserve carpet integrity, Tenant shall use roller mats at all desk and work locations.
+                    Tenant shall at its sole cost replace any and all plate or other glass damaged or broken
+                    within the premises from any cause whatsoever. Except as specifically provided in an
+                    addendum to this Lease, if any, Landlord shall have no obligation to however, can at any
+                    time, without penalty, alter, remodel, improve, repair, decorate, or paint the Premises or
+                    any part thereof, and Tenant affirms that Landlord has made no representations to Tenant
+                    respecting the condition of the Premises or the Building except as specifically herein set
+                    forth. Any brick or concrete material whether on the inside or outside of the building is
+                    considered part of the historic nature of the building and the damage, destruction,
+                    alteration, painting, glazing, drilling, or any other modification of the material shall be
+                    considered a material breach of this agreement and Tenant shall be liable to Landlord for
+                    the cost and expense of any repairs to return the material to its original form. The cost to
+                    repair any damage or destruction of any part of the Building caused in part or in whole by
+                    the act, accident, neglect, fault, or omission of the Tenant, its agents, employees, or
+                    invitees shall be paid to Landlord by Tenant. There shall be no abatement of Rent and no
+                    liability of Landlord by reason of any injury to or interference with Tenant’s business
+                    arising from the making of any repairs, alterations, or improvements in or to any portion
+                    of the Building or Premises. Tenant waives the right to make repairs at Landlord’s
+                    expense under any law, statute, or ordinance now or hereinafter in effect.
+                </li>
+                <li>
+                    <span class="bold">ALTERATIONS AND ADDITIONS.</span> Tenant shall not make any alterations, additions
+                    or improvements to or of the Premises nor any penetrations of the ceilings, walls, floors,
+                    roof, or parking lot without the prior express written consent of the Landlord. Any
+                    alterations, additions, or improvements to or of the Premises including but not limited to
+                    walls, ceilings, built-in cabinets, water heaters, fans, lighting, heaters, or other fixtures
+                    shall become a part of the Premises and become the property of the Landlord and shall be 
+                    surrendered with the Premises without any compensation to Tenant for such property.
+                    Additionally, Landlord may elect to have Tenant return premises to its original state or
+                    configuration by means of Tenant removing any or all Tenant installed fixtures or
+                    improvements and repairing, fixing, texturing, painting and otherwise remediating any
+                    damage to walls, carpets, ceilings or other areas as a result of Tenant’s installation of a
+                    fixture at Tenant’s sole cost. Such election shall be at the sole discretion of the Landlord.
+                </li>
+                <li>
+                    <span class="bold">SURRENDER OF PREMISES.</span> Tenant shall surrender the Premises to Landlord on the
+                    Expiration Date in as good condition as when Tenant took possession except for
+                    reasonable wear and tear. Before surrendering possession Tenant shall, at its own
+                    expense, remove all signs and personal property from the Premises, clean premises
+                    throughout, shampoo all carpeted areas, and repair all damage to the Premises. Any of
+                    Tenant’s personal property left on the Premises shall be deemed to be abandoned and at
+                    Landlord’s option, title shall pass to Landlord under this Lease as if by a bill of sale with
+                    no compensation due Tenant, or Landlord may immediately remove such personal
+                    property and dispose of it in any manner Landlord elects without notice or posting of
+                    notice.
+                </li>
+                <li>
+                    <span class="bold">USE.</span> The Premises shall be used for general business office use. Tenant shall not use
+                    Premises for any other purpose without the prior express written consent of Landlord.
+                    Tenant shall not use or occupy the Premises or permit anything to be done in or around
+                    the Premises which violates or conflicts with any law, statute, ordinance, or governmental
+                    rule or regulation, or will invalidate or increase the cost of any insurance policy covering
+                    the Premises, whether now in force or hereinafter enacted. Tenant shall not commit or
+                    permit any act that obstructs or interferes with the rights of Landlord or other tenants,
+                    injures or annoys them including but not limited to: excessive noise, vibration, odor,
+                    smoke, electrical or magnetic discharge or interference, loitering, vandalism, or theft.
+                    Tenant shall not store personal property not directly related to business use. Tenant may
+                    only bring pets onto the Premises pursuant to the Landlord’s pet policy as provided (if
+                    any) and as modified from time to time at Landlord’s sole discretion.
+                </li>
+                <li>
+                    <span class="bold">HAZARDOUS SUBSTANCES.</span> Tenant shall not allow, store, use or create any
+                    hazardous substances or materials, as defined by the laws of the State of California or the
+                    United States on, in, or around the Premises without the Landlord’s prior express written
+                    consent. Additional prohibited substances or items which may or may not be defined as
+                    hazardous substances or materials include but are not limited to explosives, ammunition,
+                    fireworks, gasoline, tires, oil, fertilizer, paint, turpentine, paint thinner, automobiles,
+                    motorcycles, boats, jet skis, flammables, corrosives, acids or alkalis. Tenant hereby
+                    indemnifies Landlord, holds Landlord harmless from, and agrees to defend Landlord
+                    against any and all claims for liability, loss, damage, expense, cost, injury including
+                    attorney’s fees and removal and cleanup incurred or suffered by Landlord due to Tenants
+                    breach of this restriction.
+                </li>
+                <li>
+                    <span class="bold">SIGNS.</span> Landlord shall provide for Tenant identification in the lobby building directory.
+                    Landlord shall affix a company identification label on the main entry door of its Premises. The label shall be of
+                    vinyl self-sticking lettering and affixed horizontal to the ground and bounded by the pane of glass. Landlord shall
+                    remove label at its sole cost and expense upon termination of tenancy. Tenant shall not have any rights to signage at any
+                    other location including but not limited to interior or exterior windows, common
+                    entrances, and the building exterior.
+                </li>
+                <li>
+                    <span class="bold">EXTERIOR RIGHTS RESERVED.</span> Landlord reserves the use of the exterior walls,
+                    roof, doors, and windows of the Premises. Tenant shall not affix, paint, inscribe, mark or
+                    in any way attach signs, signals, lights, neon, advertisements, awnings, or projections of
+                    any kind to any part of the Premises, Building, or grounds including but not limited to the
+                    inside or outside of the windows, doors, roof, parking lot, or landscaped areas without the
+                    prior express written approval of Landlord. Tenant shall also maintain a professional
+                    appearance absent any stored items in the front office and other areas visible from
+                    common areas and the exterior of the Building.
+                </li>
+                <li>
+                    <span class="bold">RIGHT OF ENTRY.</span> Landlord, its agents, or employees may enter the premises without
+                    notice a) in case of emergency b) if Landlord believes Tenant has abandoned or
+                    surrendered the premises, or c) to make necessary or requested repairs, alterations, or
+                    improvements. Twenty-four (24) hour notice shall be deemed reasonable notice for entry
+                    for any reason. Tenant may be present, however, entry is not conditioned upon such
+                    presence and Tenant agrees to hold Landlord harmless for such entry. For such purposes
+                    and in the event of an emergency, all locks to the Premises shall be mastered to the
+                    commercial master system on file at Sierra Lock &amp; Glass. Landlord shall retain keys to
+                    the Premises and all doors within the Premises, excluding Tenant’s private vaults and
+                    safes and be provided if any, the contact information of Tenant’s security provider as
+                    well as security system arm/disarm procedures. Tenant shall not re-key any lock in or
+                    about the Premises or make replacement copies of any keys without the prior express
+                    written consent of Landlord.
+                </li>
+                <li>
+                    <span class="bold">ASSIGNMENT AND SUBLETTING.</span> Tenant shall not encumber, assign, sublet, re-let,
+                    hypothecate, or otherwise transfer this Lease or any right or interest thereof, or allow any
+                    other persons other than Tenant’s employees and agents to occupy or use the Premises or
+                    any part of it. Any encumbrance, assignment, transfer, or subletting without the prior
+                    written consent of Landlord, whether voluntary or involuntary, by operation of law or
+                    otherwise, is void and shall, at the option of Landlord, terminate this Lease.
+                </li>
+                <li>
+                    <span class="bold">TENANTS INSURANCE.</span> For the mutual benefit of Landlord and Tenant, Tenant shall
+                    during the term of this Lease cause to be issued and maintained comprehensive public
+                    liability and property damage insurance with contractual liability coverage in the sum of
+                    at least $500,000 for injury to or death of one person, and $1,000,000 for injury to or
+                    death of more than one person in any one accident, insuring the Tenant against liability
+                    for injury and/or death occurring in, on, or about Premises or common areas. Landlord
+                    shall be named as an additionally insured on the policy and such evidence shall be
+                    presented in writing to Landlord by Tenant prior to Lease Commencement. Insurance
+                    shall be obtained from an insurance company properly licensed and qualified to do
+                    business in the State of California and rated A-XII or better in “Best’s Insurance Guide.”
+                    The Tenant shall maintain all such insurance in full force and effect during the entire
+                    term of this Lease and shall pay all premiums for the insurance. Evidence of insurance
+                    and of the payment of premiums shall be delivered to Landlord. Tenant further agrees to
+                    keep at its sole expense all of Tenant’s personal property, trade fixtures and equipment
+                    that may be on or about the Premises insured for an amount that will insure the ability of
+                    Tenant to fully replace against loss or damage by fire or peril thereof. The protection,
+                    replacement and insurance of the entire contents of Tenant’s Premises are the sole
+                    responsibility of Tenant, and the loss or destruction of any of Tenant’s property due to
+                    any cause including but not limited to fire, flood, disaster, roof leakage, building damage,
+                    theft, or other peril is in no way insured, guaranteed, or protected by Landlord.
+                </li>
+                <li>
+                    <span class="bold">UTILITIES.</span> Landlord shall provide Tenant with reasonable amounts of electricity,
+                    water, sewer, and refuse disposal for the purposes outlined in the “USE” description of
+                    this Lease. At Landlord’s option: (i) Landlord shall have the right to determine Tenant’s
+                    electricity share based on Landlord’s reasonable estimate of Tenant’s consumption; or (ii)
+                    Landlord shall have the right to cause Tenant to directly pay for any extraordinary
+                    electricity expenses resulting from Tenant’s operations from the Premises. Tenant shall at
+                    its sole cost provide its telephone services. All machines or equipment shall operate and
+                    be connected to the existing utility infrastructure and the use and operation of those
+                    demanding unusual consumption of utilities such as 240V electrical supply is prohibited
+                    without the prior express written consent of the Landlord. All lighting fixtures shall have
+                    fluorescent or other energy star compliant bulbs installed at all times. The use of
+                    incandescent or halogen bulbs is a material breach of this agreement. Tenant shall
+                    additionally refrain from installing appliances within its Premises including full size
+                    refrigerators, microwaves, hotplates and any type of space heater. Tenant shall at all
+                    times maintain a Type III fire extinguisher on the Premises.
+                </li>
+                <li>
+                    <span class="bold">IDEMNIFICATIONS.</span> Landlord shall not be liable to Tenant, and Tenant hereby
+                    waives all claims against Landlord, for any injury or damage to any person or property in
+                    or about the Premises by or from any cause whatsoever. Tenant shall hold Landlord
+                    harmless from and defend Landlord against any and all claims or liability for any injury
+                    or damage to any person or property whatsoever occurring in, on, or around the Premises,
+                    any part of it, the surrounding areas including sidewalks and streets, or occurring in, on or
+                    about any common areas of the Building when that injury or damage was caused in part
+                    or in whole by the act, neglect, fault of, or omission of any duty by Tenant, its agents,
+                    servants, employees, or invitees.
+                </li>
+                <li>
+                    <span class="bold">DAMAGE AND DESTRUCTION.</span> If the Premises or the Building is in part damaged
+                    or destroyed by any cause not the fault of the Tenant, the Lease shall remain in full force
+                    and effect, barring the Rent payable under this Lease shall be abated for the time and to
+                    the extent Tenant is prevented from occupying the Premises in its entirety.
+                    Notwithstanding the foregoing, if the Premises or the Building is damaged or destroyed
+                    and repair of the damage or destruction cannot be completed within 90 days, Landlord
+                    may in lieu of making the repairs, terminate this lease by giving Tenant 30 days written
+                    notice of termination.
+                </li>
+                <li>
+                    <span class="bold">CONDEMNATION.</span> If all or any part of the Premises is taken by any public or
+                    quasi-public agency or entity under the power of eminent domain during the term of this
+                    lease either Landlord may terminate this lease by giving Tenant 30 days written notice of
+                    termination. In the event of any taking, all of the proceeds shall be the exclusive property
+                    of the Landlord and Tenant hereby assigns to landlord all of its right, title, and interest in
+                    any award, judgment or settlement from the condemning authority.
+                </li>
+                <li>
+                    <span class="bold">TENANTS DEFAULT.</span> The occurrence of any one or more of the following events shall
+                    constitute a default and material breach of this Lease by Tenant: (1)Tenant abandons or
+                    vacates the Premises; (2) Tenant fails to pay Rent or other charges and such failure
+                    continues for 3 days after such payment is due and payable; (3)Tenant fails to perform
+                    any provision, covenant, or condition of this lease other than Rent when that failure is not
+                    cured within 3 days after written notice is given by Landlord to Tenant; (4) Tenant makes
+                    a general assignment for the benefit of creditors; (5) a receiver is appointed to take
+                    possession of all or substantially all of the Tenant’s property located at the Premises; or
+                    (6) the execution, attachment or other judicial seizure of Tenant’s assets located at the
+                    Premises.
+                </li>
+                <li>
+                    <span class="bold">LANDLORDS REMEDIES.</span> In the event of any such default or breach by Tenant,
+                    Landlord may at any time thereafter, without limiting Landlord in the exercise of any
+                    right or remedy at law or in equity which Landlord may have by reason of such default or
+                    breach:
+                    <br/>
+                    <br/>
+                    <ol>
+                        <li>
+                            Maintain this Lease in full force and effect and recover the rent and other
+                            monetary charges as they become due, without terminating Tenant’s right to
+                            possession, irrespective of whether Tenant shall have abandoned the Premises. In
+                            the event Landlord elects not to terminate this Lease, Landlord shall have the right
+                            to attempt to re-let the Premises at such rent and upon such conditions and for
+                            such a term, and to do all acts necessary to maintain or preserve the Premises, as
+                            Landlord deems reasonable and necessary, without being deemed to have elected
+                            to terminate this Lease, including removal of all persons and property from the
+                            Premises; such property may be removed and stored in a public warehouse or
+                            elsewhere at the cost of and for the account of Tenant. In the event any such
+                            re-letting occurs, this Lease shall terminate automatically upon the new tenant
+                            taking possession of the Premises.
+                        </li>
+                        <li>
+                            Terminate Tenant’s right to possession by any lawful means, in which case this
+                            Lease shall terminate and Tenant shall immediately surrender possession of the
+                            Premises to Landlord. In such event Landlord shall be entitled to recover from
+                            Tenant all damages incurred by Landlord by reason of Tenant’s default, including
+                            without limitation the following: (i) The worth at the time of award of any unpaid
+                            rent which had been earned at the time of such termination; plus (ii) the worth at
+                            the time of award of the amount by which the unpaid rent which would have been
+                            earned after termination until the time of award exceeds the amount of such rental
+                            loss that is proved could have been reasonably avoided; plus (iii) the worth at the
+                            time of award of the amount by which the unpaid rent for the balance of the term
+                            after the time of award exceeds the amount of such rental loss that is proved could
+                            be reasonably avoided; plus (iv) any other amount necessary to compensate
+                            Landlord for all the detriment proximately caused by Tenant’s failure to perform
+                            his obligations under this Lease or which in the ordinary course of events would
+                            be likely to result therefrom; plus (v) at Landlord’s election, such other amounts
+                            in addition to or in lieu of the foregoing as may be permitted from time to time by
+                            applicable State Law. Upon any such re-entry Landlord shall have the right to
+                            make any reasonable repairs, alterations or modifications to the Premises which
+                            Landlord in its sole discretion deems reasonable and necessary. As used in (i) and
+                            (ii) above, the “worth at the time of award” is computed by allowing interest at
+                            the rate of ten percent (10%) per annum from the date of default. As used in (iii)
+                            above, the “worth at the time of award” is computed by discounting such amount
+                            at the discount rate of the U.S. Federal Reserve Bank at the time of award plus
+                            one percent (1%). The term “rent”, as used in this Section 19, shall be deemed to
+                            be the rent to be paid pursuant to Section 3 and all other monetary sums required
+                            to be paid by Tenant pursuant to the terms of this Lease.
+                        </li>
+                        <li>
+                            Acceptance of partial rent payment shall not constitute a waiver of any of
+                            Landlord’s rights available under this Lease or at law or equity, including without
+                            limitation, the right to recover possession of the Premises.
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <span class="bold">WAIVER OF BREACH.</span> The waiver by Landlord of any breach by Tenant of any of the
+                    provisions of this Lease shall not constitute a continuing waiver or a waiver of any
+                    subsequent default or breach by Tenant either of the same or a different provision of this
+                    Lease.
+                </li>
+                <li>
+                    <span class="bold">SUBORDINATION AND ATTORNMENT.</span> Upon request of the Landlord, Tenant will
+                    in writing, subordinate its rights hereunder to the lien of any mortgage or deed of trust to
+                    any bank, insurance company, or other lending institution, now or hereafter in force
+                    against the Premises and to all advances made or hereafter to be made upon the security
+                    thereof. In the event any proceeding is brought for foreclosure, or in the event of the
+                    exercise of the power of sale under any mortgage or deed of trust made by Landlord
+                    covering the Premises, Tenant shall attorn to the purchaser upon any such foreclosure or
+                    sale and recognize such purchaser as the Landlord under this Lease. The provisions of
+                    this Lease to the contrary notwithstanding, and so long as Tenant is not in default
+                    hereunder, this Lease shall remain in full force and effect for the term hereof.
+                </li>
+                <li>
+                    <span class="bold">ESTOPPELS.</span> Tenant shall within 5 days after written request from Landlord, execute
+                    and deliver to Landlord a written statement certifying that this Lease is unmodified and in
+                    full force and effect, or if modified, stating the nature of such modification and that this
+                    Lease as modified is in full force and effect, the amount of Rent and that date to which it
+                    is paid, and that Landlord is not in default hereunder, or if Landlord is claimed to be in
+                    default, stating the nature of any claimed default. A prospective purchaser or lender may
+                    rely upon any such statement.
+                </li>
+                <li>
+                    <span class="bold">ATTORNEY'S FEES.</span> If any action or proceeding is brought by either party against the
+                    other pertaining to or arising out of this Lease, the finally prevailing party shall be
+                    entitled to recover all costs and expenses, including reasonable attorney’s fees, incurred
+                    on account of such action or proceeding.
+                </li>
+                <li>
+                    <span class="bold">NOTICES.</span> Except as otherwise expressly provided by law, any and all notices or other
+                    communications required or permitted by this Lease or by law shall be in writing, and
+                    shall be deemed duly served and given when personally delivered to the party to whom it
+                    is directed or in lieu of personal service, when deposited in the United States mail,
+                    first-class, postage prepaid addressed to Tenant at the Premises or Landlord at its mailing
+                    address or to such other place as Landlord or Tenant may from time to time designate in a
+                    written notice to the other. No act of Landlord, including but not limited to Landlord’s
+                    entry on the Premises or efforts to relet the Premises, or the giving by Landlord to Tenant
+                    of a notice of default, shall be construed as an election to terminate this Lease unless a
+                    written notice of the Landlord’s election to terminate this Lease is given to Tenant.
+                </li>
+                <li>
+                    <span class="bold">BINDING PERSONALLY AND ON HEIRS AND SUCCESSORS.</span> This Lease shall
+                    be binding on and shall inure to the benefit of the heirs, executors, administrators,
+                    successors, and assigns of the parties, but nothing in this paragraph shall be construed as
+                    a consent by Landlord to any assignment of this Lease or any interest therein. The
+                    Tenant’s signatory shall personally guarantee the faithful performance of the Lease
+                    irrespective of the business names or dba’s used for business purposes by executing the
+                    personal guaranty attached as Exhibit A hereto.
+                </li>
+                <li>
+                    <span class="bold">TIME OF ESSENCE.</span> Time is expressly declared to be of the essence of this Lease.
+                </li>
+                <li>
+                    <span class="bold">BROKERS.</span> Landlord and Tenant represent that they have not engaged the services of
+                    any real estate brokers or agents in connection with this Lease and no commissions or
+                    fees are due any third parties.
+                </li>
+                <li>
+                    <span class="bold">SEVERABILITY.</span> If any item, provision, or agreement contained in this Lease is
+                    determined to be void or unenforceable by a court of law, it shall be excluded from the
+                    agreement, but the remaining portions of the agreement shall continue to be in full force
+                    and effect.
+                </li>
+                <li>
+                    <span class="bold">HISTORICAL BUILDING.</span> Tenant acknowledges the Building is listed on the
+                    Historical Register. Tenant acknowledges that this historic designation may provide
+                    unanticipated and unforeseen use, design, or other restrictions not known or aware to
+                    Landlord. Tenant further indemnifies Landlord for issues arising out of the historical
+                    building status which may limit, prohibit, or alter the Landlords ability or capacity to
+                    perform as contemplated under this agreement.
+                </li>
+                <li>
+                    <span class="bold">SOLE AND ONLY AGREEMENT.</span> This Lease constitutes the sole and only full, final,
+                    and complete agreement between Landlord and Tenant respecting the Premises and
+                    correctly sets forth the obligations of Landlord and Tenant as to each other as of its date.
+                    Any agreements or representations respecting the Premises by Landlord to Tenant not expressly set forth 
+                    in this Lease are null and void. This Lease may not be extended,
+                    amended, modified, altered, or changed, except in a written document signed by Landlord
+                    and Tenant. This Lease shall not become effective until signed by both parties and a copy
+                    held by or delivered to each.
+                </li>
+                <li>
+                    <span class="bold">CONSTRUCTION.</span> This agreement is the product of significant negotiation between the
+                    parties and is the collaborative effort of both Tenant and Landlord. All parties
+                    participated in its drafting and the interpretation of its construction shall not be construed
+                    for or against either party.
+                </li>
+                <li>
+                    <span class="bold">HEADINGS.</span> The numbering system and paragraph headings of this document are for
+                    reference purposes only, have no consequence to this document, and shall not be
+                    interpreted as a part of this agreement.
+                </li>
+                <li>
+                    <span class="bold">GOVERNING LAW.</span> This Lease shall be governed, construed, and enforced in
+                    accordance with the laws of California and the venue for any dispute arising from the
+                    terms of this Lease shall be a court of competent jurisdiction shall be in Fresno,
+                    California.
+                </li>
+            </ol>
+                
+            <!-- Lease Signatures -->
+            <div style="page-break-after:always">
+                <div class="container">
+                    <p>The parties hereto have executed this document of the date set forth above.</p>
+                    <div class="col-left">
+                        <p class="underline">LANDLORD:</p>
+                        <p>{!Opportunity.Building_Company__c}</p>
+                        <p>By <span class="sign_line"></span></p>
+                        <p>Landlord</p>
+                        <p>Date <span class="sign_line"></span></p>
+                    </div>
+                    <div class="col-right">
+                        <p class="underline">TENANT:</p>
+                        <br/>
+                        <p>By <span class="sign_line"></span></p>
+                        <p>Printed Name <span class="sign_line"></span></p>
+                        <p>Date <span class="sign_line"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Guaranty -->
+            <div style="page-break-after:always">
+                <h2 class="underline">Personal Guaranty</h2>
+                <p class="text_padding">
+                    {!Opportunity.Primary_Contact__r.Name} (“collectively the Guarantor”), as a material inducement to and in
+                    consideration of {!Opportunity.Building_Company__c}, a California limited liability company (“Landlord”),
+                    entering into that certain lease (the “Lease”) with {!Opportunity.Account.Name}
+                    (“Tenant”), which Lease is dated the same
+                    date as this guaranty, pursuant to which Landlord has leased to Tenant, and Tenant has rented from
+                    Landlord, those certain Premises situated at {!Opportunity.Property_Address_Text__c} in the City of
+                    Fresno, County of Fresno, State of California, unconditionally guarantees and promises to and for the
+                    benefit of Landlord that Tenant shall perform the provisions of the Lease that Tenant is to perform,
+                    including, but not limited to, the payment of all rents and other sums that may become due thereunder.
+                </p>
+                <p class="text_padding">
+                    If Guarantor is more than one person, Guarantor’s obligations are joint and several and are independent of
+                    Tenant’s obligations. A separate action may be brought or prosecuted against any Guarantor, whether the
+                    action is brought or prosecuted against any other Guarantor or Tenant, or all, or whether any other
+                    Guarantor or Tenant, or all, is joined in the action.
+                </p>
+                <p class="text_padding">
+                    Guarantor waives the benefit or any statute of limitations affecting Guarantor’s liability under this guaranty.
+                    The provisions of the Lease may be changed by agreement between Landlord and Tenant at any time, or
+                    because of conduct, without the consent of or without notice to Guarantor. This guaranty shall guarantee
+                    the performance of the Lease as changed. Assignment of the Lease (as may be permitted by the Lease) shall
+                    not affect this guaranty.
+                </p>
+                <p class="text_padding">
+                    This guaranty shall not be affected by Landlord’s failure or delay to enforce any of its rights.
+                </p>
+                <p class="text_padding">
+                    If Tenant defaults under the Lease, Landlord can proceed immediately against Guarantor or Tenant, or both,
+                    or Landlord can enforce against Guarantor or Tenant, or both, any rights that it has under the Lease, or
+                    pursuant to applicable laws. This Lease shall continue in full force and effect, and Guarantor shall continue
+                    to guarantee all of Tenant’s obligations as originally established under the Lease, notwithstanding any
+                    discharge of Tenant or rejection of this Lease by Tenant in any bankruptcy or similar action.
+                </p>
+                <p class="text_padding">
+                    Guarantor waives the right to require Landlord to (1) proceed against Tenant; (2) proceed against or exhaust
+                    any security that Landlord holds from Tenant; or (3) pursue any other remedy in Landlord’s power.
+                    Guarantor waives any defense by reason of any disability of Tenant, including but not limited to any defense
+                    based on the bankruptcy or insolvency of Tenant, and waives any other defense based on the termination
+                    of Tenant’s liability from any cause. Until all of Tenant’s obligations to Landlord have been discharged in
+                    full, Guarantor has no right of subrogation against Tenant. Guarantor waives its right to enforce any
+                    remedies that Landlord now has, or later may have, against Tenant. Guarantor waives any right to
+                    participate in any security now or later held by Landlord. Guarantor waives all presentments, demands for
+                    performance, notices of nonperformance, protests, notices of protest, notices of dishonor, and notices of
+                    acceptance of this guaranty, and waives all notices of the existence, creation, or incurring of new or
+                    additional obligations.
+                </p>
+                <p class="text_padding">
+                    If Landlord disposes of its interest in the Lease, “Landlord,” as used in this guaranty, shall mean Landlord’s
+                    successors.
+                </p>
+                <p class="text_padding">
+                    If Landlord enforces Guarantor’s obligations by legal proceedings, Guarantor shall pay to Landlord all
+                    costs incurred, including, without limitation, reasonable attorney’s fees.
+                </p>
+                <p class="text_padding">
+                    Guarantor’s obligations under this guaranty shall be binding on Guarantor’s successors.
+                    This guaranty shall expire thirty (30) days after the termination of the Lease, except that this guaranty shall
+                    continue for the term or any extended term if Tenant is in default of the Lease on the date which is thirty
+                    (30) days after the Landlord has previously made a claim to Guarantor as a result of an uncured default by
+                    Tenant under the Lease.
+                </p>
+
+                <!-- Guarantor Signature -->
+                <div class="container">
+                    <p>Guarantor:</p>
+                    <div class="col-left">
+                        <p><span class="sign_line"></span>, individually</p>
+                        <p><span class="sign_line"></span></p>
+                    </div>
+                    <div class="col-right">
+                        <p>Date <span class="sign_line"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desk Hotel Shared Work Space Agreement ONLY -->
+        <div style="page-break-after:always" class="{!DeskHotelIsHidden}"> 
+            <div class="header">
+                <h1>SHARED WORK SPACE AGREEMENT</h1>
+                <h2>{!Opportunity.Building_Company__c}</h2>
+            </div>
+            <p class="text_padding">
+                This Shared Work Space Agreement (the “Agreement”) executed on {!today},
+                but made effective as of&nbsp; <apex:outputField value="{!Opportunity.Lease_Start_Date__c}"/> (the “Effective Date”),
+                is by and between {!Opportunity.Primary_Contact__r.Name} (the “Licensee”), and {!Opportunity.Building_Company__c}, a California
+                limited liability company (the “Licensor”).
+            </p>
+            <h2 class="bold">RECITALS</h2>
+            <p class="text_padding">
+                A. Licensor is the owner of certain real property located at {!Opportunity.Property_Address_Text__c} 
+                in the City and County of Fresno, California.
+            </p>
+            <p class="text_padding">
+                B. Licensor desires to accommodate Licensee by providing access to the use of certain
+                portions of the Property, including the Workstation and common areas located in the Property and
+                the common amenities in the Property pursuant to the terms of this Agreement.
+            </p>
+            <p class="text_padding">
+                <span class="bold">NOW THEREFORE,</span> Licensor and Licensee agree as follows:
+            </p>
+            <h2 class="bold">AGREEMENT</h2>
+            <ol>
+                <li>
+                    <span class="bold">Incorporation of Recitals and Exhibit.</span> The Recitals set forth above and the Exhibit
+                    attached are hereby incorporated herein by reference as if set forth in full in the body of this
+                    Agreement.
+                </li>
+                <li>
+                    <span class="bold">Workstation.</span> Licensor shall provide one desk and desk chair located at 
+                    {!Opportunity.Lease_Spaces_Text__c} (the “Workstation”) each month during the Term as defined herein below.
+                    Licensor will provide HVAC, which is included in the indemnification/ release of liability should it go out.
+                </li>
+                <li>
+                    <span class="bold">Shared Premises.</span> Licensor grants Licensee access to use the lobby, break room, and
+                    conference room (the “Shared Workspace”) while Licensee is on the Property.
+                </li>
+                <li>        
+                    <span class="bold">Term.</span> This Agreement shall be for a term of Month to Month, commencing on the
+                    Effective Date of this Agreement. Either party may terminate this Agreement at any time for any
+                    reason or no reason by giving the other party not less than fourteen (14) days prior written notice.
+                    Upon the expiration of the Term or termination of the Agreement, Licensee will immediately
+                    remove its personnel and personal property without damaging the Workstation. Subject to the
+                    terms and conditions herein, Licensee will indemnify, defend, and hold Licensor harmless from
+                    and against any and all actual and reasonable costs, expenses, claims, fees, including attorneys’
+                    fees, resulting from any damage caused by the removal of Licensee’s personnel and personal
+                    property or any breach by Licensee of this Agreement.
+                </li>
+                <li>
+                    <span class="bold">Termination of License.</span> After receipt of a notice of termination from Licensor, the
+                    Licensee, on or before the effective date of termination specified in that notice, or on or before 
+                    the termination date of the Term of this Agreement, shall remove all of Licensee’s personnel and
+                    personal property from the Workstation. Licensee shall also surrender possession of the
+                    Workstation to Licensor in the same condition that Licensor gave Workstation to Licensee on the
+                    Effective Date of this Agreement. Access will be suspended after breach of contract/ Termination
+                    of License/ in the event Tenant elects not to respond to all forms of communication. Any future
+                    access to the space will have to be coordinated and approved by Landlord, representative of
+                    Landlord and/or Licensor.
+                </li>
+                <li>
+                    <span class="bold">Workstation Fee.</span> For the use of the Workstation as permitted herein, Licensee shall pay
+                    Licensor a monthly fee of &nbsp; <apex:outputField value="{!Opportunity.Rent_mo__c}"/> for the Workstation (the “Monthly Fee”).
+                    In consideration of the Monthly Fee, Licensor grants Licensee a license (the “License”) to perform the following
+                    acts on the Property and Workstation: {!Opportunity.Lease_Spaces_Text__c}. Licensee may not use the Property and
+                    Workstation for any other purpose or business without obtaining Licensor’s prior written consent.
+                    The Monthly Fee shall be payable on a monthly basis to Licensor on the first (1st) day of every
+                    month, except that if the Term begins or ends on a day which is not the first or last day of a month,
+                    the Monthly Fee for such month shall be prorated. The Monthly Fee shall be paid to Licensor at
+                    the address set forth below in this Section 6, or as may otherwise be directed by Licensor in writing.
+                    <p>
+                    {!Opportunity.Building_Company__c} <br/>
+                    Attention: Liz Fernando<br/>
+                    2600 Ventura<br/>
+                    Fresno, CA 93721
+                    </p>
+                </li>
+                <li>
+                    <span class="bold">Use.</span> Licensee will use the Workstation solely for commercial office purposes and for no
+                    other purposes. Licensee shall be provided access to and through the Shared Premises of the
+                    Property as required for the access and use of the Workstation, and Licensee shall be able to use
+                    common facilities of the Property and Shared Premises same as made available to employees and
+                    contractors of Licensor, subject to any reasonable restrictions and requirements as may set forth
+                    by Licensor. Licensee shall not use the Workstation, the Shared Premises or the Property in any
+                    unlawful manner or in any manner which may materially and adversely diminish the professional
+                    character and quiet enjoyment of the Property by Licensor and others on the Property. This space
+                    cannot be used as storage outside of regular office equipments including but not limited to: sound,
+                    speaker equipment, dj equipment, 'set up' or 'pop ups' of any kind.
+                </li>
+                <li>
+                    <span class="bold">No Alteration.</span> Licensee shall make no alterations, installations, additions, or
+                    improvements to the Workstation without Licensor’s prior written consent; examples include but
+                    are not limited to: installing shelves, or anything over 5 lbs. on the walls, equipment exceeding
+                    10lbs. on top of the desks, installing internets and TVs. Licensee shall make no alterations,
+                    installations, additions, or improvements of any kind to the Property, including the Shared
+                    Premises. Tenants may not bring in additional tables, chairs or workstations of any kind without
+                    written consent of the Licensor.
+                </li>
+                <li>
+                    <span class="bold">No Sublicensing or Assignment.</span> Assignment. Licensee shall not assign or sublicense or permit the use
+                    of any rights, obligations or interests under this Agreement without the prior written consent of
+                    Licensor.
+                </li>
+                <li>
+                    <span class="bold">Utilities.</span> Licensor shall provide all utilities needed by Licensee for the access and use of
+                    the Workstation. Licensor shall in no event be liable for any interruption or failure of utility
+                    services on or to the Property, including the Shared Premises and the Workstation, unless such
+                    interruption is due to the gross negligence of Licensor or Licensor’s contractors, employees or
+                    agents, and occurs through no fault of Licensee or its employees, contractors or agents and is not
+                    due to weather events, natural disasters, acts of war or terrorism, and such interruption or failure
+                    continues for two (2) consecutive business days, in which case Licensee shall be entitled to an
+                    abatement of Monthly Fee, prorated commencing on the third consecutive day, and continue for
+                    the number of days Licensee is prohibited from using the Workstation.
+                </li>
+                <li>
+                    <span class="bold">Signs.</span> Except for the Workstation, Licensee agrees that it will not post any sign,
+                    advertisement or notice of any kind on any part of the Shared Premises or Property. Tenant will
+                    adhere to the Bitwise Brand Tenant Guidelines.
+                </li>
+                <li>
+                    <span class="bold">Idemnification.</span> Licensee, as a material part of the consideration to be rendered to
+                    Licensor under this Agreement, waives all claims against Licensor for damages to all personal
+                    property in, on, or about the Property, including the Workstation, and for injuries to persons in or
+                    about the Property, including the Workstation, from any cause arising at any time. Further,
+                    Licensee agrees to hold Licensor exempt and harmless for and on account of any damage or injury
+                    to any person or personal property of any person, arising from (i) Licensee’s use of the Property,
+                    including the Workstation; or (ii) Licensee’s failure to keep the Property, including the
+                    Workstation and surrounding areas clean and in good condition. Licensor shall not be liable to
+                    Licensee for any damage by or from any act or negligence of any other occupant of the Property
+                    or any occupant of adjoining or contiguous property. Licensee agrees to pay for all damages,
+                    caused by Licensee’s misuse or neglect of the Property, to (i) the Property; (ii), the occupants of
+                    the Property; and (iii) to the property of Property’s occupants.
+                </li>
+                <li>
+                    <span class="bold">Personal Property Damage.</span> All personal property of Licensee in the Property shall be at
+                    the sole risk of Licensee. Licensor shall not in any event be liable to any such person or party,
+                    including Licensee, for any damage to or loss thereof including any damage caused by the bursting,
+                    leaking or overflowing of water, sewer or sprinkler pipes or plumbing fixtures, and in no event
+                    shall Licensor or its respective employees, agents or contractors be liable for the interruption of or
+                    loss to Licensee’s business or for any indirect damages or consequential losses arising as a result
+                    of such damage or loss; provided, however, that the foregoing waiver of liability for the benefit of
+                    Licensor shall not apply to the extent such liability is caused by the gross negligence or willful
+                    misconduct of Licensor.
+                </li>
+                <li>
+                    <span class="bold">Personal Injury.</span> Licensor shall not be liable for any personal injury to Licensee or its
+                    employees or agents, arising from the use of the Workstation, the Shared Premises or the Property.
+                    Further in no event shall Licensor, or its respective contractors, agents or employees be liable for
+                    any interruption of or loss to Licensee’s business or for any indirect damages or consequential
+                    losses arising as a result of such injury; provided, however, that the foregoing waiver of liability for the benefit
+                    of Licensor shall not apply to the extent such liability is caused by the gross negligence or willful misconduct of Licensor.
+                </li>
+                <li>
+                    <span class="bold">Disputes.</span> Except as otherwise provided in this Agreement, Licensor and Licensee shall
+                    submit all disputes, claims or demands of any kind relating to or arising out of this Agreement
+                    (“Controversy”) to a three-step dispute resolution process. The three-step process shall: (i) begin
+                    with informal negotiation conducted in good faith with Licensor and Tenant; (ii) be followed, if
+                    necessary, by mediation, initiated by written demand of one party served on the other, and if the
+                    mediator determines that the Controversy cannot be resolved by mediation or if either party shall
+                    make written demand thereof, then; (iii) the Controversy shall be submitted to binding arbitration,
+                    conducted by a neutral arbitrator, in accordance with the rules and regulations of the American
+                    Arbitration Association, except that the provisions of the California Code of Civil Procedure,
+                    Section 1283.05 shall be adopted and used with respect to the conduct of discovery prior to any
+                    such arbitration. The arbitration award, which may, in the arbitrator’s discretion, include any
+                    damages or remedies otherwise available under law or at equity, shall be supported by written
+                    conclusions of law and fact. <span class="bold">Any award or decision obtained from that arbitration proceeding
+                    shall be final and binding on the parties, and judgment on any award thus obtained may be
+                    entered in any court having jurisdiction.</span> Notwithstanding the foregoing, either party may
+                    maintain, for the purpose of obtaining a provisional remedy or provisional relief, any underlying
+                    action or claim on which such affirmative relief may be based, but only upon the ground that the
+                    award to which the applicant may be entitled may be rendered ineffectual without provisional
+                    relief. The court, pending mediation or arbitration of claims, shall stay the prosecution of such
+                    party’s underlying claims on which any provisional remedies or relief are based. <span class="bold">No action at law
+                    or in equity based on any claim arising out of or related to this Agreement shall be instituted
+                    in any court by a party except (a) an action to compel arbitration under this provision, or (b)
+                    an action to enforce an award obtained in an arbitration proceeding in accordance with this
+                    provision.</span>
+                    <p>Initials <span class="sign_line"></span></p>
+                </li>
+                <li>
+                    <span class="bold">Severability.</span> If a court or an arbitrator of competent jurisdiction holds any provision of
+                    this Agreement to be illegal, unenforceable, or invalid for any reason, the validity and
+                    enforceability of the remaining provisions of this Agreement shall not be affected.
+                </li>
+                <li>
+                    <span class="bold">Relationship.</span> It is agreed that nothing contained in this Agreement shall be deemed or
+                    construed as creating a partnership, joint venture, landlord-tenant, or any other business
+                    relationship between Licensor and Licensee.
+                </li>
+                <li>
+                    <span class="bold">Default.</span> If Licensee does any of the following: (i) fails to pay any undisputed Fee within
+                    five (5) business days after written notice of non-payment on the date any such fee is due; or (ii)
+                    violates any of the provisions of this Agreement, Licensee shall be in default and upon written
+                    request of Licensor shall immediately cease any use of the Workstation.
+                </li>
+                <li>
+                    <span class="bold">Attorney's Fee.</span> If any legal action or proceeding arising out of or relating to this
+                    Agreement is brought by either party to this Agreement, the prevailing party shall be entitled to
+                    receive from the other party, in addition to any other relief that may be granted, the reasonable
+                    attorneys’ fees, costs, and expenses incurred in the action or proceeding by the prevailing party.
+                </li>
+                <li>
+                    <span class="bold">Word Usage.</span> Unless the context clearly requires otherwise, (i) usage of plural and singular
+                    forms of words are each deemed to include the other; (ii) the masculine, feminine, and neuter
+                    genders are each deemed to include the others; (iii) the words “shall,” “will,” or “agree” are
+                    mandatory, and “may” is permissive; (iv) “or” is not exclusive; and (v) “includes” and “including”
+                    are not limiting.
+                </li>
+                <li>
+                    <span class="bold">Counterparts.</span> This Agreement may be executed in two or more counterparts, each of
+                    which shall be deemed an original, but all of which together shall constitute one and the same
+                    instrument.
+                </li>
+                <li>
+                    <span class="bold">Governing Law; Venue.</span> This Agreement, and any dispute arising from the relationship
+                    between the parties to this Agreement, will be governed by California law; Venue for any dispute
+                    arising from the relationship between the parties to this Agreement shall be in Fresno County,
+                    California.
+                </li>
+                <li>
+                    <span class="bold">Notices.</span> All notices, requests, demands, and other communications under this Agreement
+                    shall be in writing, and shall conclusively be deemed effective: (1) on the date of delivery, if
+                    personally delivered to the person to whom notice is to be given; (2) on confirmed delivery by
+                    courier service; (3) on the date of receipt if sent by confirmed electronic mail transmission; and
+                    (4) on the third (3rd) business day after mailing if mailed to the person to whom notice is to be
+                    given by registered or certified mail, postage and charges prepaid and properly addressed as
+                    follows:
+                    <div class="container">
+                        <div class="col-left">
+                            <p>To Licensor:</p>
+                            <p>
+                                {!Opportunity.Building_Company__c} <br/>
+                                Attention: Liz Fernando <br/>
+                                2600 Ventura <br/>
+                                Fresno, CA 93721 <br/>
+                            </p>
+                        </div>
+                        <div class="col-right">
+                            <p>To Licensee:</p>
+                            <p>
+                                NAME: <br/>
+                                ADDRESS: <br/>
+                                CITY, STATE: <br/>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span class="bold">Entire Agreement.</span> This Agreement constitutes the entire agreement between Licensor
+                    and Licensee relating to the License. Any prior agreements, promises, negotiations, or
+                    representations not expressly set forth in this Agreement are of no force and effect. Any
+                    amendment to this Agreement shall be of no force and effect unless it is in writing and signed by
+                    Licensor and Licensee.
+                </li>
+            </ol>
+            <div class="container">
+                <p>IN WITNESS WHEREOF, the parties have executed this Agreement as of the Effective Date.</p>
+                <div class="col-left">
+                    <p class="underline">LICENSOR:</p>
+                    <p>{!Opportunity.Building_Company__c}</p>
+                    <p>By <span class="sign_line"></span></p>
+                    <p>Name <span class="sign_line"></span></p>
+                    <p>Its <span class="sign_line"></span></p>
+                </div>
+                <div class="col-right">
+                    <p class="underline">LICENSEE:</p>
+                    <br/>
+                    <p>By <span class="sign_line"></span></p>
+                    <p>Name <span class="sign_line"></span></p>
+                    <p>Its <span class="sign_line"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Parking Addendum -->
+        <div style="page-break-after:always" class="{!ParkingIsHidden}">
+            <h2>Parking Addendum</h2>
+            <p class="text_padding">
+                This addendum is dated {!today}, and is added to and amends that certain Lease
+                agreement between {!Opportunity.Building_Company__c}, as “Landlord” and
+                {!Opportunity.Account.Name}, as “Tenant.”
+            </p>
+            <p class="text_padding">
+                Said Lease is amended as follows:
+            </p>
+            <p class="text_padding">
+                <span class="bold">PARKING:</span> Tenant shall have the non-exclusive use of&nbsp; <apex:outputField value="{!Opportunity.of_Spaces__c}"/>
+                general parking stalls located in
+                the adjacent parking lot in close proximity to Premises as designated by Landlord. Tenant agrees
+                to pay Landlord the sum of&nbsp; <apex:outputField value="{!Opportunity.Parking_mo__c}"/> per month ($35 per stall) for parking stalls. Payment for
+                parking stalls shall be remitted along with Rent and subject to the same terms and conditions of
+                Rent as outlined in Section 4 of the Lease.
+            </p>
+            <p class="text_padding">
+                Parking is limited to marked stalls only and is prohibited in driveways, landscaped areas, alleys,
+                or any other blocking or preventing the ingress, egress, or access to any location of the Building.
+                Overnight parking is prohibited except by prior written permission of Landlord. Landlord
+                reserves the right to tow vehicles found to be in inoperable condition, parked overnight, or in any
+                violation of the parking regulations without notice.
+            </p>
+            <div class="container">
+                <p>The parties hereto have executed this document of the date set forth above.</p>
+                <div class="col-left">
+                    <p class="underline">LANDLORD:</p>
+                    <p>{!Opportunity.Building_Company__c}</p>
+                    <p>By <span class="sign_line"></span></p>
+                    <p>Landlord</p>
+                    <p>Date <span class="sign_line"></span></p>
+                </div>
+                <div class="col-right">
+                    <p class="underline">TENANT:</p>
+                    <br/>
+                    <p>By <span class="sign_line"></span></p>
+                    <p>Printed Name <span class="sign_line"></span></p>
+                    <p>Date <span class="sign_line"></span></p>
+                </div>
+            </div>
+        </div>
+        <!-- Signage Addendum -->
+        <div style="page-break-after:always" class="{!SignageIsHidden}">
+            <h2>Signage Addendum</h2>
+            <p class="text_padding">
+                This addendum is dated {!today}, and is added to and amends that certain Lease
+                agreement between {!Opportunity.Building_Company__c}, as “Landlord” and
+                {!Opportunity.Account.Name}, as “Tenant.”
+            </p>
+            <p class="text_padding">
+                Said Lease is amended as follows:
+            </p>
+            <p class="text_padding">
+                <span class="bold">12. SIGNS</span>
+            </p>
+            <p class="text_padding">
+                Landlord shall fabricate and install&nbsp; <apex:outputField value="{!Opportunity.of_Signs__c}"/> signs in the name specified
+                by Tenant in standard font (without any logo) to be installed on the exterior of the Building in the location indicated. Tenant
+                agrees to pay Landlord upon invoicing, a one-time sum not to exceed&nbsp; <apex:outputField value="{!Opportunity.Signage_Installation__c}"/> 
+                for the fabrication and installation of the signs. Tenant further agrees to pay Landlord the sum 
+                of&nbsp; <apex:outputField value="{!Opportunity.Signage_mo__c}"/> per month for the advertising space for the sign. 
+                The monthly payment shall be remitted along with Rent and subject to the same terms and conditions of Rent as outlined in Section 4 of the lease.
+            </p>
+            <div class="container">
+                <p>The parties hereto have executed this document of the date set forth above.</p>
+                <div class="col-left">
+                    <p class="underline">LANDLORD:</p>
+                    <p>{!Opportunity.Building_Company__c}</p>
+                    <p>By <span class="sign_line"></span></p>
+                    <p>Landlord</p>
+                    <p>Date <span class="sign_line"></span></p>
+                </div>
+                <div class="col-right">
+                    <p class="underline">TENANT:</p>
+                    <br/>
+                    <p>By <span class="sign_line"></span></p>
+                    <p>Printed Name <span class="sign_line"></span></p>
+                    <p>Date <span class="sign_line"></span></p>
+                </div>
+            </div>
+        </div>
+        <!-- Misc Addendum -->
+        <div class="{!MiscIsHidden}">
+            <h2>Miscellaneous Addendum</h2>
+            <p class="text_padding">
+                This addendum is dated {!today}, and is added to and amends that certain Lease
+                agreement between {!Opportunity.Building_Company__c}, as “Landlord” and
+                {!Opportunity.Account.Name}, as “Tenant.”
+            </p>
+            <p class="text_padding">
+                Said Lease is amended as follows:
+            </p>
+            <apex:outputText value="{!Opportunity.Misc_Addendum_Text__c}" escape="false"/>
+            <div class="container">
+                <p>The parties hereto have executed this document of the date set forth above.</p>
+                <div class="col-left">
+                    <p class="underline">LANDLORD:</p>
+                    <p>{!Opportunity.Building_Company__c}</p>
+                    <p>By <span class="sign_line"></span></p>
+                    <p>Landlord</p>
+                    <p>Date <span class="sign_line"></span></p>
+                </div>
+                <div class="col-right">
+                    <p class="underline">TENANT:</p>
+                    <br/>
+                    <p>By <span class="sign_line"></span></p>
+                    <p>Printed Name <span class="sign_line"></span></p>
+                    <p>Date <span class="sign_line"></span></p>
+                </div>
+            </div>
+        </div> 
+
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+    </body>
+</apex:page>

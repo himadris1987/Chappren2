@@ -1,0 +1,115 @@
+<apex:page controller="HashtagLeadController" standardStylesheets="false" docType="html-5.0" applyBodyTag="false" sidebar="false" showHeader="false">
+    <head>
+        <!-- Meta -->
+        <meta charset="UTF-8"/>
+        <link href="{!URLFOR($Resource.hashtagfaviconico)}" rel="shortcut icon" />
+        <link href="{!URLFOR($Resource.hastagtabicon)}" rel="apple-touch-icon-precomposed" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+
+        <!-- CSS -->
+        <apex:stylesheet value="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <apex:stylesheet value="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" />
+        <apex:stylesheet value="https://fonts.googleapis.com/css?family=Raleway&display=swap" />
+        <apex:stylesheet value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <apex:stylesheet value="{!URLFOR($Resource.HashtagStyles)}"/>
+
+        <!-- Javascript -->
+        <apex:includeScript value="https://code.jquery.com/jquery-3.4.1.min.js" />
+        <apex:includeScript value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
+    </head>
+    <body class="body_gradient_blue_green">
+        <!-- Navbar -->
+        <c:HashtagHeader />
+        <!-- Main -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-4">
+                    <apex:form id="apexForm" styleClass="weblead_form center-vert" >
+                        <apex:actionFunction name="createNewLead" action="{! createNewLead}"></apex:actionFunction>
+                        <apex:pageMessages id="pageMessage"></apex:pageMessages>
+                        <h4 class="white_text weblead_form_header">Yes! I want to book a tour.</h4>
+                        <apex:inputText id="firstName" html-placeholder="First Name" styleClass="weblead_form_input form-input-required" required="true" value="{! leadFirstName}"  onchange="updateHighlights(event)" onclick="clickField(event)" onblur="blurField(event)"    ></apex:inputText>
+                        <apex:inputText id="lastName" html-placeholder="Last Name" styleClass="weblead_form_input form-input-required" required="true" value="{! leadLastName}"  onchange="updateHighlights(event)" onclick="clickField(event)" onblur="blurField(event)"  ></apex:inputText>
+                        <apex:inputText id="emailBox" html-placeholder="Email" styleClass="weblead_form_input form-input-required" required="true" value="{! leadEmail}"  onchange="updateHighlights(event)" onclick="clickField(event)" onblur="blurField(event)"  ></apex:inputText>
+                        <apex:inputText id="phoneNumber" html-placeholder="Phone Number" styleClass="weblead_form_input form-input-required" required="true" value="{! leadPhone}"  onchange="updateHighlights(event)" onclick="clickField(event)" onblur="blurField(event)"  ></apex:inputText>
+                        <apex:inputText id="companyBox" html-placeholder="Company (optional)" styleClass="weblead_form_input" value="{! leadCompany}"></apex:inputText>
+                        <button id="submitButton" class="submit-button weblead_form_button" disabled="true">SUBMIT</button>
+                    </apex:form>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <c:HashtagFooter />
+        <script>
+            let formbutton = document.getElementById('submitButton');
+            let pageMessage = document.getElementById('j_id0:apexForm:pageMessage');
+            let myForm = document.getElementById('j_id0:apexForm:apexForm');
+            let firstName = document.getElementById('j_id0:apexForm:firstName');
+            let lastName = document.getElementById('j_id0:apexForm:lastName');
+            let email = document.getElementById('j_id0:apexForm:emailBox');
+            let phoneNumber = document.getElementById('j_id0:apexForm:phoneNumber');
+            let company = document.getElementById('j_id0:apexForm:companyBox');
+
+            formbutton.addEventListener('click', delayFunction());
+
+            function delayFunction() {
+                setTimeout(clearForm(), 100);
+            }
+
+            function clearForm() {
+                if(firstName.value && lastName.value && email.value.includes('@') && phoneNumber.value) {  
+                    firstName.value = '';
+                    lastName.value = '';
+                    email.value = '';
+                    phoneNumber.value = '';
+                    company.value = '';
+                    // console.log('hi')
+                    // myForm.reset();
+                    let successMessage = document.createElement('div');
+                    successMessage.className = 'alert alert-success weblead_my_alert';
+                    successMessage.setAttribute('role', 'alert');
+                    successMessage.innerText = "Thank you";
+                    pageMessage.appendChild(successMessage);
+                    setTimeout(function () {pageMessage.removeChild(successMessage)}, 2000);
+                    // window.location.href = 'https://hashtagfresno.com/';
+                } 
+            }
+
+            formbutton.addEventListener('click', (e) => {
+                createNewLead();
+            })
+
+            function updateHighlights(event) {
+
+            $(".form-input-required").removeClass("invalid");
+
+            var validForm = true;
+
+            for (var i of $(".form-input-required")) {
+                if (i.value == ''){
+                    validForm = false;
+
+                    if(i.hasAttribute('visited')) {
+                        i.classList.add('invalid');
+                    }
+                    
+                }
+            }
+
+            if (validForm) {
+                document.getElementById('submitButton').removeAttribute('disabled');
+            } else {
+                document.getElementById('submitButton').setAttribute('disabled',true);
+            }
+            }
+            function clickField(event) {
+                event.target.setAttribute("visited", true);
+            }
+
+            function blurField(event) {
+                updateHighlights(undefined);
+            }
+        </script>
+    </body>
+</apex:page>

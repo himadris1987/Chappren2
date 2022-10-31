@@ -1,0 +1,991 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+   margin-bottom: 0;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    font-family: "Nunito Sans", serif;
+}
+
+/********************************************** Header **********************************************************/
+.navbar, .navbar-default {
+  border: none;
+  background-color:#002131 !important;
+  font-family: "Nunito Sans", serif;
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+  
+.navbar-brand {
+  height: fit-content;
+}
+  
+.navbar-default .navbar-nav > li > a {
+  padding: 8px;
+  width: max-content;
+  cursor: pointer;
+  color: #38aae0;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.navbar-default .navbar-nav > li > a:active,
+.navbar-default .navbar-nav > li > a:hover {
+  color: #fff;
+}
+
+.navbar-default .navbar-nav > li.book_tour_bg > a:hover {
+  color: #d3d3d3 !important;
+}
+
+.membership_dropdown {
+  border: none;
+  background:#002131;
+  color: #38aae0;
+  font-family: "Nunito Sans", serif !important;
+  padding-left: 0px;
+  font-size: 16px; 
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.membership_dropdown:active,
+.membership_dropdown:focus,
+.membership_dropdown:hover {
+  border: none;
+  background-color:#002131;
+  color: #fff !important;
+}
+  
+.membership_dropdown.active.focus, .membership_dropdown.active:focus, 
+.membership_dropdown.active:hover, .membership_dropdown:active.focus, 
+.membership_dropdown:active:focus, .membership_dropdown:active:hover, 
+.open>.dropdown-toggle.membership_dropdown.focus, 
+.open>.dropdown-toggle.membership_dropdown:focus, 
+.open>.dropdown-toggle.membership_dropdown:hover {
+  border: none;
+  background-color:#002131;
+  color: #38aae0;
+}
+
+.membership_dropdown_menu {
+  border: none;
+  background-color:#002131;
+  margin-top: 0;
+  border-radius: 0;
+}
+
+.membership_dropdown_menu:hover {
+  color: #fff;
+}
+
+.membership_dropdown_menu li a {
+  color: #38aae0 !important;
+  font-size: 16px; 
+}
+
+.membership_dropdown_menu>li>a:focus, 
+.membership_dropdown_menu>li>a:hover {
+    background-color: #002131;
+    color: #fff !important;
+}
+
+.open>.membership_dropdown.btn-default {
+  background-color: #002131;
+  color: #fff;
+  border: 0px;
+}
+
+  
+  /************** MOBILE **************************/
+  @media (max-width: 1267px) {
+    .navbar, .navbar-default {
+      font-size: 17px;
+    }
+  
+    .navbar-header {
+      float: none;
+    }
+  
+    .navbar-left,.navbar-right {
+      float: none !important;
+    }
+  
+    .navbar-toggle {
+      display: block;
+    }
+  
+    .navbar-collapse {
+      border-top: 1px solid transparent;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+  
+    .navbar-fixed-top {
+      top: 0;
+      border-width: 0 0 1px;
+    }
+  
+    .navbar-collapse.collapse {
+      display: none!important;
+    }
+    .navbar-nav {
+      float: none!important;
+      margin-top: 7.5px;
+    }
+  
+    .navbar-nav>li {
+      float: none;
+    }
+   
+    .navbar-default .navbar-nav > li > a {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding: 10px 13px 10px 0px;
+    }
+  
+    .collapse.in{
+      display:block !important;
+    }
+  
+    .container-fluid {
+      padding-left: .75em;
+    }
+  
+    .navbar {
+      border-radius: 0 !important;
+    }
+  
+    .desktop_view {
+      display: none;
+    }
+  
+    .navbar-default .navbar-toggle {
+      padding: 6px 10px 6px 10px;
+      border: 1px solid rgba(169, 169, 169, .4);
+    }
+  
+    .navbar-toggle .icon-bar+.icon-bar {
+      margin-top: 7px;
+    }
+  
+    .navbar-default .navbar-toggle .icon-bar {
+      width: 2.1em;
+      height: 3px;
+      background-color: #6FBF4A;
+    }
+  
+    .mobile_nav {
+      margin-top: 2.14em;
+    }
+  
+    .navbar-brand {
+      height: fit-content;
+      padding: none;
+      margin-left: calc(50% - 6.5em) !important;
+      padding: 0;
+    }
+  
+    .mobile_hashtag_logo {
+      width: 5em;
+    }
+  
+    .navbar-default .navbar-collapse {
+      border: none;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      width: 100%;
+     }
+  
+     .nav_align {
+      float: left !important;
+      margin-right: 50em;
+  
+    }
+  
+    .mobile_align {
+      float: left !important;
+      padding-left: 0px;
+    }
+  
+    .nav li a{
+      padding-left: 0px;
+    }
+  
+    .desktop_nav_item {
+      display: none !important;
+    }
+  
+    .navbar-nav .open .dropdown-menu {
+      position: static;
+      float: none;
+      width: auto;
+      margin-top: 0;
+      padding-left: 1em;
+      background-color: transparent;
+      border: 0;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+    
+
+    /* MOZ & EDGE */
+    @-moz-document url-prefix() {
+      .navbar {
+        height: 90px;
+      }
+  
+      .navbar, .navbar-default, .container-fluid {
+        border: none;
+        background-color:#002131 !important;
+      }
+  
+      .mobile_align {
+        float: left !important;
+      }
+  
+      .nav_align {
+        margin-right: 100em;
+      }
+    }
+    @supports (-ms-ime-align:auto) {
+      .navbar {
+        height: 140px;
+      }
+  
+      .navbar, .navbar-default, .container-fluid {
+        border: none;
+        background-color:#002131 !important;
+      }
+  
+      .mobile_align {
+        float: left !important;
+        padding-left: 0px;
+      }
+  
+      .nav_align {
+        margin-right: 100em;
+      }
+    }
+  }
+  
+  /************** DESKTOP **************************/
+  @media (min-width: 1268px) {
+    
+    .desktop_nav_item {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .navbar {
+      border-radius: 0;
+    }
+  
+    .mobile_view {
+      display: none;
+    }
+  
+    .navbar-brand {
+      padding-left: 3em;
+    }
+  
+    .desktop_hashtag_logo {
+      width: 60%;
+      height: 60%;
+    }
+  
+    .navbar-nav {
+      height: 81px;
+      display: flex;
+      align-items: center;
+    }
+  
+    .nav li {
+      height: 49%;
+      display: flex;
+      align-items: center;
+    }
+  
+    .book_tour_bg {
+      /* background: rgb(0,154,222);
+      background: linear-gradient(90deg, rgba(111,191,74,1) 0%, rgba(0,154,222,1) 100%); */
+      background-color: #6fbf4a;
+      margin: 0px 1em 0px 8px;
+    }
+  
+    .book_tour_bg a {
+      color: #fff !important;
+    }
+  
+    .mobile_nav_item {
+      display: none !important;
+    }
+
+    .mobile_nav_item > a {
+      font-weight: 600;
+    }
+
+    .membership_dropdown{
+      padding: 8px;
+    }
+  
+    /* MOZ & EDGE */
+    @-moz-document url-prefix() {
+      .desktop_hashtag_logo {
+        width: 166px;
+        height: 43px;
+      }
+    }
+  
+    @supports (-ms-ime-align:auto) {
+      .desktop_hashtag_logo {
+        width: 166px;
+        height: 43px;
+      }
+    }
+    
+  }
+
+/***************************************** Email Verification ***************************************************/
+.email_confirm_input_email {
+    width: 100%; 
+    border-radius: 50px;
+    padding: 20px;
+    border: .5px solid transparent;
+    color: white;
+    font-weight: bold;
+    background-color:rgba(220, 220, 220, .3);
+    margin-bottom: 25px;
+    box-shadow: black 1px 3px 30px -24px;
+}
+.email_confirm_input_email::placeholder {
+    color: white;
+}
+.email_confirm_form {
+    text-align: center;
+    position: relative;
+    margin-bottom: 25px;
+    top:40%;
+}
+.email_confirm_view100 {
+    height: 100vh;
+}
+.email_form_button {
+    width: 33%;
+    border-radius: 50px;
+    background-color: rgb(1, 1, 85);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 25px;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.email_confirm_error_message {
+    width: 100%;
+    background-color: red;
+    color: white;
+    padding: 10px;
+    font-size:16px;
+    text-decoration: none;
+    border-radius: 50px;
+}
+
+    /***************************************** Conference Scheduler ***************************************************/
+
+.body_gradient_violet_coral {
+  background: linear-gradient(225deg, #BA1B8D 0%, #F05454 100%);
+}   
+
+.conference_pricing_row {
+    margin-top: 2em;
+}
+
+
+
+.white_text {
+    color: white;
+    font-size: 20px;
+}
+
+.conference_hours_used_text {
+    margin: 20px 0px;
+}
+                
+.pricing_background {
+    background-color:rgba(220, 220, 220, .3);
+    border: .5px solid transparent;
+    box-shadow: black 1px 3px 30px -24px;
+}
+                
+.center_text {
+    text-align:center;
+}
+
+.conference_form_header {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+}
+
+.conference_schedule_form {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.conference_schedule_input {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    border-radius: 50px;
+    padding: 20px;
+    border: .5px solid transparent;
+    color: white;
+    font-weight: bold;
+    background-color:rgba(220, 220, 220, .3);
+    margin-bottom: 25px;
+    box-shadow: black 1px 3px 30px -24px;
+}
+
+.conference_schedule_input:focus {
+    outline: none;
+}
+
+.conference_schedule_input::placeholder {
+    color: white;
+}
+
+.conference_schedule_select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url('https://bitwiseindustries--partial--c.visualforce.com/resource/1569337544000/DropdownArrow?');
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto 100%;
+}
+
+.conference_schedule_select > option {
+    color: black;
+}
+
+.pricing_container {
+  margin-bottom: 20px;
+  border-radius: 25px;
+  box-shadow: black 1px 3px 30px -24px;
+}
+
+.conference_price_container {
+   margin-left: 24%
+}
+
+.podcast_price_container {
+  margin-left: 2%;
+}
+
+@media (max-width: 992px) {
+  .conference_price_container, .podcast_price_container {
+    margin-left: 8.33333333%;
+  }
+  
+}
+
+.conference_subheader {
+    font-size: 25px;
+    font-weight: 600;      
+}
+            
+.conference_price_header {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+.form_button {
+    width: 250px;
+    height: 60px;
+    border-radius: 50px;
+    background-color: #6abf61;
+    margin-top: 1em;
+    margin-bottom: .5em;
+    text-align: center;
+    padding: 1em;
+    font-size: 1.25em;
+    color: white;
+    border: 1px solid transparent;                
+}
+
+.conference_price_subtext {
+    font-size: 15px;
+    margin: 0px;
+}
+
+@media(max-width: 1389px) {
+  .conference_price_container, .podcast_price_container {
+    width: 83.33333333%;
+  }
+
+  .conference_price_container, .podcast_price_container {
+    margin-left: 8.333333333%;
+  }
+}
+
+@media (max-width: 762px) {
+  .form_button {
+    width: 190px;
+  }
+}
+
+/************************ Conference Time Durations  ***************************/
+
+.conference_room_time_col {
+    margin-bottom: 1em;
+}
+
+.conference_room_times_container {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    overflow-y: scroll;
+    margin: 1em;
+    justify-content: left;
+}
+
+.conference_room_times_container::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+.conference_room_times_container::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+.conference_room_times_container::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #555;
+}
+
+.conference_room_times_header {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.conference_room_times_text {
+font-size: 18px;
+}
+
+.conference_room_time {
+  margin-bottom: .5em;
+}
+
+/* Conference Room Time Col Breakpoint Between Mobile and Desktop */
+@media (min-width: 992px) and (max-width: 1348px) {
+  .conference_room_time_col {
+    width: 100%;
+  }
+
+  .conference_room_times_header {
+    font-size: 22px;
+  }
+
+  .conference_room_times_text {
+    font-size: 20px;
+  }
+}
+
+/************* Radio Button Styles **********/
+.conference_room_times_container > label > input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 13.33333px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 40px;
+    width: 40px;
+    transition: all 0.15s ease-out 0s;
+    background:rgba(220, 220, 220, .3);
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 0.5rem;
+    outline: none;
+    position: relative;
+    z-index: 1000;
+}
+.conference_room_times_container > label > input:hover {
+    background: rgb(174, 94, 157);
+}
+
+.conference_room_times_container > label > input:focus {
+    outline: none;
+}
+
+.conference_room_times_container > label > input:checked {
+    background: rgb(1, 1, 85);
+}
+.conference_room_times_container > label > input:checked::before {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    content: '✔';
+    display: inline-block;
+    font-size: 26.66667px;
+    text-align: center;
+    line-height: 40px;
+}
+.conference_room_times_container > label > input:checked::after {
+    background: rgba(220, 220, 220, .3);
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
+}
+.conference_room_times_container > label > input.radio {
+    border-radius: 50%;
+}
+.conference_room_times_container > label > input.radio::after {
+    border-radius: 50%;
+}
+
+.podcast_booth_p {
+  margin-bottom: 30px
+}
+
+/***************************************** Member Signup ***************************************************/
+.body_gradient_pink_blue {
+    background: rgb(242,55,239);
+    background: linear-gradient(225deg, rgba(242,55,239,1) 10%, rgba(1,0,236,1) 100%);
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.member_signup_form {
+    text-align: center;
+    position: relative;
+    margin-bottom: 25px;
+    top:50%;
+    transform: translateY(-50%);
+}
+.member_signup_form_button {
+    width: 33%;
+    border-radius: 50px;
+    background-color: rgb(1, 1, 85);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 25px;
+    color: white;
+    border: 1px solid transparent;
+    }
+.member_sign_up_input_type {
+    width: 100%;
+    border-radius: 50px;
+    padding: 20px;
+    border: .5px solid transparent;
+    color: white;
+    font-weight: bold;
+    background-color:rgba(220, 220, 220, .3);
+    margin-bottom: 25px;
+    box-shadow: black 1px 3px 30px -24px;
+}
+.member_sign_up_input_type::placeholder {
+    color: white;
+}
+.bigger-font {
+    font-size: 20px;
+}
+
+
+/********************************************* Cofirmation Page *******************************************/
+.confirmation_body {
+    /* height: 100vh; */
+    background: linear-gradient(225deg, rgba(242,55,239,1) 28%, rgba(252,82,82,1) 100%), no-repeat;
+}
+
+.confirmation_container {
+    margin-top: 37vh;
+    margin-bottom: 37vh;
+    padding-top: 1em;
+    border-radius: 25px;
+    box-shadow: black 1px 3px 30px -24px;
+    background-color:rgba(220, 220, 220, .3);
+    text-align: center;
+}
+
+.confirmation_header {
+    color: white;
+    font-weight: 700;
+    margin-top: 1em;
+}
+
+.confirmation_text {
+    margin-top: .5em;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 2em;
+}
+
+
+/***************************************** Web to Lead ***************************************************/
+.body_gradient_blue_green{
+    background: rgb(30,173,240);
+    background: linear-gradient(225deg, rgba(30,173,240,1) 13%, rgba(10,251,96,1) 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+
+.weblead_form{
+    text-align: center;
+    margin-top: 18vh;
+    margin-bottom: 18vh;
+
+}
+
+.weblead_form_input {
+    width: 100%;
+    border-radius: 50px;
+    padding: 20px;
+    border: .5px solid transparent;
+    color: white;
+    font-weight: bold;
+    background-color:rgba(220, 220, 220, .3);
+    margin-bottom: 25px;
+    box-shadow: black 1px 3px 30px -24px;
+}
+
+.weblead_form_input::placeholder{
+    color: white;
+}
+
+.weblead_form_button {
+    width: 250px;
+    height: 60px;
+    border-radius: 50px;
+    background-color: #6abf61;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 15px;
+    color: white;
+    border: 1px solid transparent;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.weblead_form_button:disabled {
+  color: #000;
+  background: rgba(220, 220, 220, .6);
+}
+
+.white_text{
+    color: white;
+}
+
+.weblead_form_header{
+    margin-bottom: 15px;
+}
+
+.weblead_my_alert{
+    border: 1px solid transparent;
+    border-radius: 50px;
+}
+
+@media (max-width: 762px) {
+  .weblead_form_button {
+    width: 190px;
+  }
+
+  .weblead_form_button:disabled {
+      width: 190px;
+  }
+}
+
+/***************************************** Footer ***************************************************/
+.footer {
+    position: sticky;
+    left: 0;
+    bottom: 0;
+    color: #fff;
+    background-color:#002131;
+    height: 368px;
+  }
+.footer a {
+    color: #fff;
+}
+.footer .info-wrapper {
+    display: inline-block;
+}
+.footer .small-view {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 0px;
+}
+.footer .small-links {
+    display: flex;
+    flex-direction: column;
+}
+.footer .large-view {
+    display: none;
+}
+.footer .large-links {
+    display: none;
+}
+.footer .social {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px 32px;
+}
+.footer .icon-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.footer .icon-styles {
+    height: 23px;
+}
+.footer .links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    font-size: 19px;
+    font-family: "Nunito Sans", serif;
+    line-height: 38px;
+}
+.footer .company {
+    font-weight: 100;
+    font-size: 13px;
+    font-family: "Nunito Sans", serif;
+    padding-left: 32px;
+    margin-top: 27px;
+}
+.footer .fat-hashtag {
+    font-weight: 900;
+}
+.footer .bitwiseco {
+    font-weight: 100 !important;
+}
+.footer .copyright {
+    font-size: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    height: 48px;
+}
+@media only screen and (min-width: 361px) {
+    .footer {
+        height: 384px;
+    }
+    .footer .media-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+    .footer .social {
+        padding: 0px 56px;
+    }
+    .footer .negative-margin {
+        margin-left: -24px;
+    }
+    .footer .copyright {
+        height: 64px;
+    }
+}
+@media only screen and (min-width: 576px) {
+    .footer .media-wrapper {
+        display: flex;
+        flex-direction: row;
+    }
+    .footer .small-view {
+        display: none;
+    }
+    .footer .small-links {
+        display: none;
+    }
+    .footer .negative-margin {
+        margin-left: unset;
+    }
+    .footer .large-view {
+        display: flex;
+        width: 100vw;
+        justify-content: space-evenly;
+        font-size: 21px;
+        font-family: "Nunito Sans", serif;
+        padding: 48px;
+    }
+    .footer .links {
+        display: none;
+    }
+    .footer .large-links {
+        display: flex;
+    }
+    .footer .icon-styles {
+        height: 32px;
+    }
+    .footer .social {
+        flex-direction: row;
+        padding: unset;
+    }
+    .footer .icon-wrapper {
+        width: unset;
+    }
+    .footer .links {
+        flex-direction: row;
+        background: darkslategray;
+    }
+    .footer .company {
+        width: 100vw;
+        text-align: center;
+        padding-left: unset;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .footer {
+        height: unset;
+    }
+    .footer .large-view {
+        width: 375px;
+        justify-content: space-between;
+        padding: 48px 0px 48px 40px;
+    }
+    .footer .company {
+        text-align: right;
+        padding-right: 40px;
+        margin-top: 16px;
+    }
+    .footer .copyright {
+        align-items: flex-end;
+        padding-right: 40px;
+        height: 16px;
+    }
+    .footer .info-wrapper {
+        display: flex;
+    }
+    .footer p {
+        margin-bottom: 0;
+        padding-bottom: 24px;
+    }
+}
+
+.invalid {
+  border: 3px red solid;
+}
+

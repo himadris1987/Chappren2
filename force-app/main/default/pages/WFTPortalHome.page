@@ -1,0 +1,122 @@
+<apex:page Controller="WFTPortalHomeController"  standardStylesheets="false" sidebar="false" showHeader="false">
+    
+    <style type="text/css">
+        html body {
+                    font-family: 'Raleway', sans-serif;
+                    text-rendering: optimizeLegibility;
+                    -webkit-font-smoothing: antialiased;
+                    font-size: 14px;
+                    text-align: center;
+                    color: white;
+                    
+                    background-image: url('{!URLFOR($Resource.WFT, '/WFTPortalBGImgDarkBlue.jpeg')}');
+                    background-repeat: no-repeat;
+                    background-size: cover;
+        }
+
+        .logo-img {
+            margin-top: 20px;
+            height: 140px;
+            
+        }
+
+        .my-btn {
+                    background: none;
+                    background-color: #7D2F4D;
+                    color: white;
+                    font-size: 20px;
+                    padding: 10px 20px 10px 20px;
+                    margin-top: 1%;
+                    border: none;
+        }
+        .my-btn:hover {
+                    background-color:#8D3A5A;
+        }
+        .classContainer {
+            border: 2px solid #7D2F4D;
+            margin: 10px;
+            padding: 5px;
+            background-color: rgba(238, 63, 94, .3);
+            height: 350px;
+        }
+        .class_box {
+            font-size: 20pt;
+        }
+
+        .colorText {
+            color: white;
+        }
+    </style>
+
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    </head>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="{! URLFOR($Resource.WFT, '/BW_WFT_Logo_WHITE.png')}" alt="Logo" class="logo-img" /> 
+            </div>
+        </div>
+        <div class="row colorText">
+            <h2 class="title">Workforce Training Portal</h2>
+        </div>
+        <div class="row">
+            <apex:outputPanel rendered="{!showClasses}"> 
+            <h1>Classes</h1>
+                <apex:repeat value="{! classes}" var="myClass">
+                    <div class="col-md-6">
+                    <div class="classContainer class_box">
+                        <h2>{! myClass.Display_Name__c}</h2>
+                        <apex:outputText value="{0, date, MMMM d','  yyyy}">
+                            <apex:param value="{! myClass.start_date__c}" />
+                        </apex:outputText> -
+                        <apex:outputText value="{0, date, MMMM d','  yyyy}">
+                            <apex:param value="{! myClass.end_date__c}" />
+                        </apex:outputText>
+                        <p>{! myClass.class_nights__c}</p>
+                        <p>{! myClass.Scheduled_Time__c} {! myClass.Time_Zone__c}</p>
+                        <p>Instructor: {! myClass.Instructor__r.Name}</p>
+                        <apex:form >
+                            <apex:commandLink action="{! toClassRoster}">
+                                    <apex:param name="recordId" value="{! myClass.Id}" assignTo="{! recordId}"/>
+                                        <button class="my-btn">View Class</button>
+                            </apex:commandLink>
+                        </apex:form>
+                    </div>
+                    </div>
+                </apex:repeat>
+            </apex:outputPanel> 
+        </div>
+
+        <div class="row">
+            <apex:outputPanel rendered="{!showApprenticeships}"> 
+                <h1>Apprenticeships</h1>
+                <apex:repeat value="{! apprenticeships}" var="myApprenticeship">
+                    <div class="col-md-6">
+                    <div class="classContainer class_box">
+                        <h2>{! myApprenticeship.name}</h2>
+                        <apex:outputText value="{0, date, MMMM d','  yyyy}">
+                            <apex:param value="{! myApprenticeship.start_date__c}" />
+                        </apex:outputText> - 
+                        <apex:outputText value="{0, date, MMMM d','  yyyy}">
+                            <apex:param value="{! myApprenticeship.end_date__c}" />
+                        </apex:outputText>
+                         <p>Pathway: {! myApprenticeship.Apprentice_Pathway__c}</p>
+                        <apex:outputText rendered="{! NOT(ISBLANK(myApprenticeship.Tech_Stack__c))}">Tech Stack: {! myApprenticeship.Tech_Stack__c} </apex:outputText>
+                        <p>Instructor: {! myApprenticeship.Apprenticeship_Lead__r.Name}</p>
+                        <apex:form >
+                            <apex:commandLink action="{! toApprenticeshipRoster}">
+                                    <apex:param name="recordId" value="{! myApprenticeship.Id}" assignTo="{! recordId}"/>
+                                        <button class="my-btn">View Roster</button>
+                            </apex:commandLink>
+                        </apex:form>
+                    </div>
+                    </div>
+                </apex:repeat>
+            </apex:outputPanel>
+        </div>
+    </div>
+
+</apex:page>

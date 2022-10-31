@@ -1,0 +1,168 @@
+<apex:page id="BWCommPreferences" controller="BWCommPreferencesController" standardStylesheets="false" showHeader="false"
+    sidebar="false" applyBodyTag="false" applyHtmlTag="false">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script src="https://kit.fontawesome.com/667b3ffdb0.js" crossorigin="anonymous"></script>
+        <apex:stylesheet value="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+            crossorigin="anonymous" />
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/usm/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://makxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+        <style>
+            @font-face {
+                font-family: "Heavy";
+                font-weight: normal;
+                font-style: normal;
+                src: url("{!URLFOR($Resource.WFT, '/WFTRegistration/avenir/Avenir-Heavy.eot?orgId=00D3i000000ryRR#iefix')}") format("embedded-opentype"),
+                url("{!URLFOR($Resource.WFT, '/WFTRegistration/avenir/Avenir-Heavy.woff2?orgId=00D3i000000ryRR')}") format("woff2"),
+                url("{!URLFOR($Resource.WFT, '/WFTRegistration/avenir/Avenir-Heavy.woff?orgId=00D3i000000ryRR')}") format("woff"),
+                url("{!URLFOR($Resource.WFT, '/WFTRegistration/avenir/Avenir-Heavy.ttf?orgId=00D3i000000ryRR')}") format("truetype"),
+                url("{!URLFOR($Resource.WFT, '/WFTRegistration/avenir/Avenir-Heavy.svg?orgId=00D3i000000ryRR#Heavy')}") format("svg");
+            }
+
+            @font-face {
+                font-family: "Light";
+                font-weight: normal;
+                font-style: normal;
+                src: url("{!URLFOR($Resource.WFT, '/WFTRegistration/avenir/Avenir-Light.eot?orgId=00D3i000000ryRR#iefix')}") format("embedded-opentype"),
+                url("{!URLFOR($Resource.WFT, '/WFTRegistration/avenir/Avenir-Light.woff2?orgId=00D3i000000ryRR')}") format("woff2"),
+                url("{!URLFOR($Resource.WFT, '/WFTRegistration/avenir/Avenir-Light.woff?orgId=00D3i000000ryRR')}") format("woff"),
+                url("{!URLFOR($Resource.WFT, '/WFTRegistration/avenir/Avenir-Light.ttf ?orgId=00D3i000000ryRR')}") format("truetype"),
+                url("{!URLFOR($Resource.WFT, '/WFTRegistration/avenir/Avenir-Light.svg?orgId=00D3i000000ryRR#Heavy')}") format("svg");
+            }
+
+            body {
+                font-family: 'Light';
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                text-align: center;
+            }
+
+            .row_margin {
+                margin-top: 20px;
+                font-size: 20px;
+            }
+
+            input.checkbox {
+                height: 15px;
+                width: 15px;
+                margin-top: 10px;
+            }
+
+            .btn {
+
+                background-color: hsla(196, 100%, 47%, 1);
+                color: white;
+            }
+
+            .hide {
+                visibility: hidden;
+            }
+
+            .header {
+                font-family: 'Heavy';
+            }
+
+            .subheader {
+                font-family: 'Heavy';
+                text-align: left;
+            }
+
+            .instruction_text {
+                font-family: 'Heavy';
+            }
+
+            .divstyle {
+                padding: 10px;
+                background-color: hsla(198, 88%, 76%, .1);
+                margin-bottom: 25px;
+                text-align: left;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <apex:form id="form">
+                <div class="row row_margin">
+                    <h2 class="header col-md-6 offset-md-3">Bitwise Communication Preferences:</h2>
+                    <h2 class="header col-md-6 offset-md-3">{!contactFirstName} {!contactLastName}</h2>
+                </div>
+                <div class="row row_margin">
+
+                    <h4 class="col-md-6 offset-md-3 subheader">Workforce Training</h4>
+                    <div class="col-sm-6 offset-sm-3 divstyle">
+                        <apex:inputCheckbox value="{! wftEmailOptIn}" styleClass="checkbox" id="cbWftEmail" />
+                        <span>Marketing and Survey Emails</span>
+                        <br />
+                        <apex:inputCheckbox value="{! wftSMSOptIn}" styleClass="checkbox" id="cbWftSMS" />
+                        <span>Marketing and Survey SMS</span>
+                    </div>
+
+                    <h4 class="col-md-6 offset-md-3 subheader">Cowork</h4>
+                    <div class="col-sm-6 offset-sm-3 divstyle">
+                        <apex:inputCheckbox value="{! coworkEmailOptIn}" styleClass="checkbox" id="cbCoworkEmail" />
+                        <span>Marketing and Survey Emails</span>
+                        <br/>
+                        <apex:inputCheckbox value="{! coworkSMSOptIn}" styleClass="checkbox" id="cbCoworkSMS" />
+                        <span>Marketing and Survey SMS</span>
+                    </div>
+
+                    <h4 class="col-md-6 offset-md-3 subheader" style="text-align: left">Rather not hear from us anymore?</h4>
+                    <div class="col-sm-6 offset-sm-3 divstyle">
+                        <apex:inputCheckbox styleClass="checkbox" onclick="syncAllCheckboxes()" id="unsubscribeAllCB" />
+                        <span>Unsubscribe from all </span>
+                    </div>
+                </div>
+
+                <div class="row row_margin">
+                    <div class="col-sm-6 offset-sm-3 instruction_text">Please note that you will still receive email receipts and confirmations.</div>
+                </div>
+                <div class="row row_margin">
+                    <div class="col-sm-6 offset-sm-3">
+                        <apex:commandButton id="button" action="{!updatePreferences}" oncomplete="confirmation()" value="Update" styleClass="btn"></apex:commandButton>
+                    </div>
+                </div>
+
+                <div class="row row_margin">
+                    <div class="col-sm-6 offset-sm-3 hide alert alert-success" id="confirmationMsg">Your communication preferences have been updated.</div>
+                </div>
+
+            </apex:form>
+        </div>
+        <script>
+            let confirmationMsg = document.getElementById('confirmationMsg');
+
+            function removeHide() {
+                confirmationMsg.classList.remove("hide");
+            }
+
+            function confirmation() {
+                if (confirmationMsg.classList.contains("hide")) {
+                    confirmationMsg.classList.remove("hide");
+                }
+                else {
+                    confirmationMsg.classList.add("hide");
+                    setTimeout(removeHide, 500);
+                }
+            }
+
+            function syncAllCheckboxes() {
+                let unsubscribeAllCBValue = document.getElementById('{!$Component.BWCommPreferences:form:unsubscribeAllCB}').checked;
+                document.getElementById('{!$Component.BWCommPreferences:form:cbWftEmail}').checked = !unsubscribeAllCBValue;
+                document.getElementById('{!$Component.BWCommPreferences:form:cbWftSMS}').checked = !unsubscribeAllCBValue;
+                document.getElementById('{!$Component.BWCommPreferences:form:cbCoworkEmail}').checked = !unsubscribeAllCBValue;
+                document.getElementById('{!$Component.BWCommPreferences:form:cbCoworkSMS}').checked = !unsubscribeAllCBValue;
+            }
+        </script>
+    </body>
+</apex:page>

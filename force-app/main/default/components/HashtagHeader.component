@@ -1,0 +1,117 @@
+<apex:component >
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-default">
+                <button type="button" class="navbar-toggle collapsed pull-left mobile_nav" data-toggle="collapse" data-target="#navbar-collapse"
+                    aria-expanded="false">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="mobile_view">
+                    <a class=" navbar-brand" href="https://hashtagcoworkplace.com">
+                        <img class="mobile_hashtag_logo" src="{!$Resource.hashtagvertcoworkgreen}" alt="hashtag mobile logo" />
+                    </a>
+                </div>
+
+                <div class="desktop_view">
+                    <a class="navbar-brand" href="https://hashtagcoworkplace.com">
+                        <img class="desktop_hashtag_logo" src="{!$Resource.hashtaghorizontalwhite}" alt="hashtag desktop logo" />
+                    </a>
+                </div>
+                <div class="collapse navbar-collapse nav_align" id="navbar-collapse">
+                    <div class="col-xs-6 pull-right mobile_align">
+                        <ul class="nav navbar-nav pull-right">
+                            <li class="desktop_nav_item">
+                                <a href="https://hashtagcoworkplace.com/conference-rooms/">Conference Rooms
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                            <li class="desktop_nav_item">
+                                <a href="https://hashtagcoworkplace.com/podcast-booth/">Podcast Booth</a>
+                            </li>
+                            <li class="desktop_nav_item">
+                                <a href="https://hashtagcoworkplace.com/amenities/">Amenities</a>
+                            </li>
+                            <!-- Membership Dropdown -->
+                            <div class="dropdown desktop_nav_item">
+                                <button class="btn btn-default dropdown-toggle membership_dropdown" type="button" id="membershipMobileDropdown" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="true">
+                                    Membership
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu membership_dropdown_menu" aria-labelledby="membershipMobileDropdown">
+                                    <li>
+                                        <a href="https://hashtagcoworkplace.com/membership/">Memberships</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://hashtagcoworkplace.com/member-spotlight">Member-Spotlight</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <li class="desktop_nav_item">
+                                <a href="https://hashtagcoworkplace.com/blog/">Blog</a>
+                            </li>
+                            <li class="desktop_nav_item">
+                                <a href="https://hashtagcoworkplace.com/faq/">FAQs</a>
+                            </li>
+                            <!-- <li class="desktop_nav_item">
+                                <a href="https://bitwiseindustries.secure.force.com/GiveGiftMembership">Give the gift of Hashtag</a>
+                            </li> -->
+                            <!-- <li class="desktop_nav_item">
+                                <a href="https://bitwiseindustries.secure.force.com/giftSignUp">Redeem Gift Code</a>
+                            </li> -->
+                            <li class="book_tour_bg desktop_nav_item">
+                                <a href="http://bitwiseindustries.force.com/HashtagLead">Book a Tour</a>
+                            </li>
+                            <li class="mobile_nav_item">
+                                <a href="https://hashtagcoworkplace.com">Home</a>
+                            </li>
+                            <li class="mobile_nav_item">
+                                <a href="https://hashtagcoworkplace.com/conference-rooms/">Conference Rooms</a>
+                            </li>
+                            <li class="mobile_nav_item">
+                                <a href="https://hashtagcoworkplace.com/podcast-booth/">Podcast Booth</a>
+                            </li>
+                            <li class="mobile_nav_item">
+                                <a href="https://hashtagcoworkplace.com/amenities/">Amenities</a>
+                            </li>
+                            <!-- Membership Dropdown -->
+                            <div class="dropdown mobile_nav_item">
+                                <button class="btn btn-default dropdown-toggle membership_dropdown" type="button" id="membershipMobileDropdown" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="true">
+                                    Membership
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu membership_dropdown_menu" aria-labelledby="membershipMobileDropdown">
+                                    <li>
+                                        <a href="https://hashtagcoworkplace.com/membership/">Memberships</a>
+                                    </li>
+                                    <li>
+                                        <a href="https://hashtagcoworkplace.com/member-spotlight">Member-Spotlight</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <li class="mobile_nav_item">
+                                <a href="https://hashtagcoworkplace.com/blog">Blog</a>
+                            </li>
+                            <li class="mobile_nav_item">
+                                <a href="https://hashtagcoworkplace.com/faq/">FAQs</a>
+                            </li>
+                            <li class="mobile_nav_item">
+                                <a href="http://bitwiseindustries.force.com/HashtagLead">Book a Tour</a>
+                            </li>
+                            <!-- <li class="mobile_nav_item">
+                                <a href="https://bitwiseindustries.secure.force.com/GiveGiftMembership">Give the gift of Hashtag</a>
+                            </li>
+                            <li class="mobile_nav_item">
+                                <a href="https://bitwiseindustries.secure.force.com/giftSignUp">Redeem Gift Code</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+</apex:component>

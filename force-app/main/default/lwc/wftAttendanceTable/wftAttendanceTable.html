@@ -1,0 +1,84 @@
+<template>
+  <article class="slds-card slds-card_boundary">
+    <div class="slds-page-header slds-p-left_none slds-p-bottom_none">
+      <header
+        class="slds-media slds-media_center slds-has-flexi-truncate slds-p-left_small slds-p-bottom_small"
+      >
+        <lightning-icon
+          icon-name="custom:custom26"
+          size="small"
+        ></lightning-icon>
+        <div class="slds-media__body">
+          <h2 class="slds-card__header-title slds-p-left_small">
+            <span class="slds-card__header-title">Class Attendance</span>
+          </h2>
+        </div>
+      </header>
+    </div>
+
+    <div class="slds-card__body slds-m-top_none slds-border_top">
+      <div class="lwc-settings">
+        <template if:true={noData}>
+          <div
+            class="slds-text-heading_medium slds-notify slds-notify_alert"
+            role="alert"
+          >
+            {noData}
+          </div>
+        </template>
+        <template if:true={attendances}>
+          <div class="att-table" style="height: 100%">
+            <table>
+              <thead>
+                <tr>
+                  <template iterator:it={attendances}>
+                    <template if:true={it.first}>
+                      <th key={it.value}>
+                        <div>{it.value.key}</div>
+                      </th>
+                    </template>
+                    <template for:each={it.value.value} for:item="item">
+                      <template if:true={it.first}>
+                        <th key={it.value}>
+                          <div>{item}</div>
+                        </th>
+                      </template>
+                    </template>
+                  </template>
+                </tr>
+              </thead>
+
+              <tbody>
+                <template iterator:it={attendances}>
+                  <template if:false={it.first}>
+                    <tr key={it.value}>
+                      <td>
+                        <div>{it.value.key}</div>
+                      </td>
+                      <template for:each={it.value.value} for:item="item">
+                        <template if:false={it.first}>
+                          <td key={it.value}>
+                            <div class={item}>{item}</div>
+                          </td>
+                        </template>
+                      </template>
+                    </tr>
+                  </template>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </template>
+        <template if:true={error}>
+          <div
+            class="slds-text-heading_medium slds-notify slds-notify_alert slds-alert_error"
+            role="alert"
+          >
+            An error has occured.
+            <p>{error}</p>
+          </div>
+        </template>
+      </div>
+    </div>
+  </article>
+</template>

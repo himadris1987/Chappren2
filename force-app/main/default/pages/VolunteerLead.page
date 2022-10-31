@@ -1,0 +1,75 @@
+<apex:page >
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8"></META>
+
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
+
+<form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+    
+<!-- Beginning of Hidden Fields -->
+    
+<input type="hidden" name="oid" value="00D3i000000ryRR"/>
+<input type="hidden" name="retURL" value=""/>
+
+<!-- Set Company -->
+<input type="hidden" name="company" id="company" value="Individual"/>
+
+<!-- Set Grocery Volunteer Checkbox: -->
+<input id="Grocery_Volunteer__c" name="Grocery_Volunteer__c" type="hidden" value="true" />
+    
+<!-- Set Lead Source -->
+<input id="lead_source" name="lead_source" type="hidden" value="BW Grocery Volunteer" />
+
+<!-- Set Record Type -->
+<input id="recordType" name="recordType" type="hidden" value="0123i000000QiIf" />
+    
+<!-- End of Hidden Fields -->
+
+<label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text"/><br/>
+
+<label for="last_name">Last Name</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text"/><br/>
+    
+<label for="Preferred_Pronouns__c">Pronouns:</label><select  id="Preferred_Pronouns__c" name="Preferred_Pronouns__c" title="Preferred Pronouns">
+<option value="He/Him">He/Him</option>
+<option value="She/Her">She/Her</option>
+<option value="They/Them">They/Them</option>
+</select><br/>
+
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text"/><br/>
+
+<label for="mobile">Mobile</label><input  id="mobile" maxlength="40" name="mobile" size="20" type="text"/><br/>
+
+<label for="Home_ZIP_Code__c">Home ZIP Code:</label><input id="Home_ZIP_Code__c" maxlength="5" name="Home_ZIP_Code__c" size="20" type="text"/><br/>
+
+<label for="Areas_for_Delivery__c">Areas for Delivery:</label><select  id="Areas_for_Delivery__c" multiple="multiple" name="Areas_for_Delivery__c" title="Areas for Delivery"><option value="Fresno">Fresno</option>
+<option value="Clovis">Clovis</option>
+<option value="Sanger">Sanger</option>
+<option value="Madera">Madera</option>
+<option value="Visalia">Visalia</option>
+<option value="Tulare">Tulare</option>
+<option value="Fresno County">Fresno County</option>
+<option value="Madera County">Madera County</option>
+<option value="Tulare County">Tulare County</option>
+<option value="Out of Area">Out of Area</option>
+</select><br/>
+
+<label for="Shopping__c">Shopping:</label><input  id="Shopping__c" name="Shopping__c" type="checkbox" value="1"/><br/>
+
+<label for="Delivery__c">Delivery:</label><input  id="Delivery__c" name="Delivery__c" type="checkbox" value="1"/><br/>
+
+<label for="Vehicle_Donation__c">Vehicle Donation:</label><input  id="Vehicle_Donation__c" name="Vehicle_Donation__c" type="checkbox" value="1"/><br/>
+
+<label for="Other_Volunteer_Service__c">Other Volunteer Service:</label><input  id="Other_Volunteer_Service__c" maxlength="255" name="Other_Volunteer_Service__c" size="20" type="text" /><br/>
+
+<input type="submit" name="submit"/>
+
+</form>
+
+</apex:page>

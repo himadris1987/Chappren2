@@ -1,0 +1,99 @@
+<apex:component >
+    <nav class="navbar navbar-expand-lg  navbar-light bg-light">
+        <!-- <div class="container-fluid "> -->
+            <div class="navbar-header  logo-container text-center">
+              <a class="navbar-brand" href="https://bitwiseindustries.com/">
+                  <img class="nav-logo" src="{!URLFOR($Resource.BW, '/bitwiseLogoHorizontal.png')}" />
+              </a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+        
+          <!-- Brand and toggle get grouped for better mobile display -->
+         
+
+          <div id="navbarCollapse" class="full-nav collapse navbar-collapse">
+            <ul  class="mr-auto navbar-nav inline-list">
+              <div class="subnav">
+                <li class="subnavbtn nav-arrow"><a href="#">SERVICES</a></li>
+                <div class="subnav-content">
+                  <a href="https://bitwiseindustries.com/services/workforce-training/">
+                    <span class="subnav-item">
+                      Workforce Training
+                    </span>
+                  </a>
+                  <a href="https://bitwiseindustries.com/services/technology-consulting/">
+                    <span class="subnav-item">
+                      Technology Consulting
+                    </span>
+                  </a>
+                  <a href="https://bitwiseindustries.com/services/cowork/">
+                    <span class="subnav-item">
+                      CoWork
+                    </span>
+                  </a>
+                  <a href="https://bitwiseindustries.com/portfolio-companies/">
+                    <span class="subnav-item">
+                      Portfolio Companies
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="subnav">
+                <li class="subnavbtn nav-arrow"><a href="#">INSIGHTS</a></li>
+                <div class="subnav-content">
+                  <a href="https://bitwiseindustries.com/insights/blogs/">
+                    <span class="subnav-item">
+                      Blogs
+                    </span>
+                  </a>
+                  <a href="https://bitwiseindustries.com/insights/podcasts/">
+                    <span class="subnav-item">
+                      Bitwise Podcasts
+                    </span>
+                  </a>
+                </div>
+              </div>
+              <div class="subnav">
+                <li class="subnavbtn"><a href="https://bitwiseindustries.com/locations/#">LOCATIONS</a></li>
+              </div>
+              <div class="subnav">
+                <li class="subnavbtn nav-arrow"><a href="#">ABOUT</a></li>
+                <div class="subnav-content">
+                  <a href="https://bitwiseindustries.com/about/mission/">
+                    <span class="subnav-item">
+                      Mission
+                    </span>
+                  </a>
+                  <a href="https://bitwiseindustries.com/about/key-leadership/">
+                    <span class="subnav-item">
+                      Team
+                    </span>
+                  </a>
+                  <a href="https://bitwiseindustries.com/about/media/">
+                    <span class="subnav-item">
+                      Media
+                    </span>
+                  </a>
+                  <a href="https://bitwiseindustries.com/about/stories/">
+                    <span class="subnav-item">
+                      Stories
+                    </span>
+                  </a>
+                  <a href="https://bitwiseindustries.com/about/partners/">
+                    <span class="subnav-item">
+                      Partners
+                    </span>
+                  </a>
+                  <a href="https://bitwiseindustries.com/about/events/">
+                    <span class="subnav-item">
+                      Events
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </ul>
+          </div>
+      </nav>
+</apex:component>

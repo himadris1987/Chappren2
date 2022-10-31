@@ -1,0 +1,522 @@
+:root {
+  --blue: hsla(196, 100%, 47%, 1);
+  --blue10: hsla(198, 88%, 76%, .1);
+  --black: hsla(198, 98%, 5%, 1);
+  --grey: hsla(200, 5%, 89%, 1);
+  --white: hsla(204, 45%, 98%, 1);
+  --disabled: #959495;
+}
+
+// FONT-FAMILY DECLARATION
+@font-face {
+  font: {
+    family: 'Heavy';
+    weight: normal;
+    style: normal;
+  }
+  src: url('avenir/Avenir-Heavy.eot');
+  src: url('avenir/Avenir-Heavy.eot?#iefix') format('embedded-opentype'),
+       url('avenir/Avenir-Heavy.woff2') format('woff2'),
+       url('avenir/Avenir-Heavy.woff') format('woff'),
+       url('avenir/Avenir-Heavy.ttf') format('truetype'),
+       url('avenir/Avenir-Heavy.svg#Heavy') format('svg');
+}
+@font-face {
+  font: {
+    family: 'Light';
+    weight: normal;
+    style: normal;
+  }
+  src: url('avenir/Avenir-Light.eot');
+  src: url('avenir/Avenir-Light.eot?#iefix') format('embedded-opentype'),
+       url('avenir/Avenir-Light.woff2') format('woff2'),
+       url('avenir/Avenir-Light.woff') format('woff'),
+       url('avenir/Avenir-Light.ttf') format('truetype'),
+       url('avenir/Avenir-Light.svg#Light') format('svg');
+}
+
+// FONT-FAMILY ASSIGNMENTS
+html, body {
+  font-family: 'Light', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1,
+#class_details p.class_details strong,
+#class_register h3,
+#class_summary div.class_summary,
+#class_summary div.subtotal_total {
+  font-family: 'Heavy', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+// FONT-SIZE ASSIGNMENTS
+html, body {
+  font-size: 18px;
+  line-height: 28px;
+}
+h1 {
+  font-size: 56px;
+  line-height: 78px;
+  @media (max-width: 768px){ line-height: 68px; }
+}
+h2 {
+  font-size: 36px;
+  line-height: 70px;
+  @media (max-width: 768px){ line-height: 60px; }
+}
+header {
+  a.btn {
+    font-size: 13px;
+    line-height: 18px;
+  }
+}
+form {
+  label, input, select {
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+#class_introduction {
+  p {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+#class_register {
+  h3, p strong {
+    font-size: 20px;
+    line-height: 27px;
+  }
+  p:last-of-type {
+    font-size: 13px;
+    line-height: 17px;
+  }
+}
+#class_summary {
+  h3 {
+    font-size: 24px;
+    line-height: 33px;
+  }
+  .opt_in label {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .subtotal_total {
+    p:first-child {
+      font-size: 18px;
+      line-height: 25px;
+    }
+    p:last-child {
+      font-size: 20px;
+      line-height: 27px;
+    }
+  }
+}
+footer {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+// GLOBAL DEFAULT STYLES
+body {
+  margin: 0;
+}
+fieldset, input, select, button {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+hr {
+  border: {
+    width: 1px 0 0 0;
+    style: solid;
+  }
+}
+
+// CONTENT WRAPPER
+.content-wrapper {
+  max-width: 1316px;
+  margin: 0 auto;
+}
+
+// LAYOUT (FLEX/GRID)
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  div.layout {
+    display: flex;
+    justify-content: space-between;
+  }
+  a {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+main.layout {
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  grid-template-rows: auto auto;
+  column-gap: 25px;
+}
+form {
+  grid-column: 1 / 3;
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  align-items: start;
+  column-gap: 25px;
+}
+.discount_code {
+  display: flex;
+  flex-wrap: wrap;
+  input { flex: 1; }
+  button { flex: none; }
+}
+.subtotal_total p {
+  display: flex;
+  justify-content: space-between;
+}
+@supports (appearance: none){
+  form label.checkbox {
+    display: grid;
+    align-items: center;
+    grid-template-columns: min-content auto;
+    grid-gap: 10px;
+
+    .checkbox__input {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      grid-template-areas: "checkbox";
+      
+      > * {
+        grid-area: checkbox;
+      }
+    }
+    .checkbox__control {
+      display: inline-grid;
+    }
+  }
+}
+.action_btns {
+  display: flex;
+  justify-content: flex-end;
+}
+footer {
+  div.layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  main section {
+    grid-column: 1 / 3;
+  }
+}
+
+// COLORS
+body {
+  color: var(--black);
+}
+hr {
+  border-color: var(--grey);
+}
+a {
+  color: var(--blue);
+}
+.btn {
+  color: var(--black);
+  border-color: var(--grey);
+}
+header {
+  border-color: var(--grey);
+}
+section#class_details {
+  span.experience span {
+    background: var(--blue);
+  }
+}
+form {
+  section {
+    background: var(--blue10);
+  }
+  label {
+    color: var(--blue);
+  }
+  select {
+    background-image:
+      linear-gradient(45deg, transparent 50%, var(--black) 50%),
+      linear-gradient(135deg, var(--black) 50%, transparent 50%);
+  }
+}
+.discount_code {
+  .btn {
+    background: transparent;
+    color: var(--blue);
+    border-color: var(--blue);
+  }
+}
+.subtotal_total {
+  p:first-child {
+    color: var(--blue);
+  }
+}
+.action_btns {
+  input[type="reset"]{
+    background: transparent;
+  }
+
+  input[type="submit"]{
+    background: var(--blue);
+    color: var(--white);
+  }
+}
+footer {
+  background: var(--black);
+  color: var(--white);
+}
+
+// SPECIFIC ELEMENT STYLING
+.layout {
+  padding-left: 10px;
+  padding-right: 10px; 
+}
+.btn {
+  cursor: pointer;
+}
+
+header {
+  border: {
+    width: 0 0 1px 0;
+    style: solid;
+  }
+  padding: 45px 0;
+  @media (max-width: 768px){ padding: 25px 0; }
+  svg {
+    height: 28px;
+    width: 275px;
+    @media (max-width: 768px){ width: 205px; }
+  }
+  a.btn {
+    width: 130px;
+    height: 40px;
+    text: {
+      transform: uppercase;
+      decoration: none;
+    }
+    border: {
+      width: 1px;
+      style: solid;
+    }
+  }
+}
+main {
+  section:not(#class_introduction) {
+    padding: 45px;
+  }
+  @media (max-width: 768px){
+    section:not(#class_introduction) {
+      padding: 25px;
+    }
+  }
+
+  section#class_introduction {
+    padding-top: 45px;
+    hr {
+      width: 120px;
+      margin: 50px 0;
+    }
+  }
+  section#class_details {
+    padding-left: (45px - 25px);
+    small {
+      display: inline-block;
+      margin: 10px 0 45px;
+    }
+    span.experience {
+      margin-right: 10px;
+      span {
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+        border-radius: 20px;
+        margin: 0 5px 0 0;
+      }
+      span:last-of-type {
+        margin-right: 0;
+      }
+    }
+  }
+  section#class_register {
+    p:last-of-type {
+      width: 80%;
+      max-width: 564px;
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+      p:last-of-type {
+        width: 100%;
+      }
+    }
+  }
+  section#class_summary {
+    img {
+      max-width: 100%;
+    }
+    p {
+      margin: 0;
+    }
+    hr {
+      margin: 40px 0;
+    }
+  }
+}
+
+form {
+  margin-bottom: 125px;
+  fieldset {
+    width: 80%;
+    margin: 0 auto;
+  }
+  @media (max-width: 768px) {
+    fieldset {
+      width: 100%;
+    }
+  }
+  div {
+    margin-bottom: 20px;
+  }
+  label {
+    display: block;
+    margin-bottom: 14px;
+  }
+  input, select {
+    padding: 20px;
+    width: 100%;
+    max-width: 564px;
+    box-sizing: border-box;
+    border-radius: 0;
+  }
+  @supports (appearance: none){
+    input {
+      appearance: none;
+    }
+
+    label.checkbox {
+      color: var(--blue);
+      cursor: pointer;
+
+      .checkbox__input {
+        input {
+          opacity: 0;
+          width: 1em;
+          height: 1em;
+          padding: 0;
+        }
+        input:checked + .checkbox__control {
+          background-color: var(--blue);
+          svg {
+            transform: scale(1);
+          }
+        }
+        input:checkbox:disabled + .checkbox__control {
+          color: var(--disabled);
+        }
+      }
+      .checkbox__control {
+        width: 1em;
+        height: 1em;
+        border-radius: 100px;
+        border: 2px solid currentColor;
+        background-color: var(--white);
+        transform: background-color 25ms ease-in;
+
+        svg {
+          transition: transform 0.1s ease-in 25ms;
+          transform: scale(0);
+          transform-origin: bottom left;
+          
+        }
+        path {
+          stroke: white;
+        }
+      }
+      .radio__label {
+        color: var(--black);
+      }
+    }
+
+
+    select {
+      appearance: none;
+      background: {
+        size: 6px 6px, 6px 6px;
+        position: calc(100% - 26px) 50%, calc(100% - 20px) 50%;
+        repeat: no-repeat;
+      }
+    }
+  }
+}
+
+.two_column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.discount_code {
+  margin-bottom: 35px;
+  label {
+    width: 100%;
+  }
+  input {
+    margin-right: 25px;
+  }
+  .btn {
+    width: 125px;
+    height: 60px;
+    border: {
+      width: 2px;
+      style: solid;
+    }
+  }
+}
+
+.subtotal_total {
+  margin-bottom: 35px;
+  p {
+    margin-bottom: 13px !important;
+  }
+}
+
+.action_btns {
+  input[type="reset"],
+  input[type="submit"] {
+    padding: 0;
+    height: 60px;
+    margin-left: 20px;
+  }
+  input[type="reset"]{
+    width: auto;
+  }
+
+  input[type="submit"]{
+    width: 101px;
+  }
+}
+
+footer {
+  padding: 45px;
+}
+
+@media (max-width: 768px) {
+  .two_column span {
+    display: none;
+  }
+  #class_register {
+    margin-bottom: 25px;
+  }
+}

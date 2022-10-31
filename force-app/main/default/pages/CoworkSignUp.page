@@ -1,0 +1,369 @@
+<apex:page controller="PaymentController" showheader="false" standardStylesheets="false" sidebar="false" applyBodyTag="false"
+    docType="html-5.0">
+
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-109037308-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'UA-109037308-1');
+        </script>
+
+        <!-- Meta -->
+        <meta charset="UTF-8" />
+        <link href="//www.google-analytics.com" rel="dns-prefetch" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+	    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+	    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;600;700&display=swap" rel="stylesheet"/>
+	    <link rel="stylesheet" href="https://use.typekit.net/ksy4bvl.css"/>
+	    
+        <!-- CSS -->
+        <apex:stylesheet value="{!URLFOR($Resource.Cowork, '/SignUp/styles.css')}"/>
+        
+        <!-- Javascript -->
+        <apex:includeScript value="{!URLFOR($Resource.Payment, '/js/Payment.js')}" />
+        <apex:includeScript value="https://code.jquery.com/jquery-3.4.1.min.js" />
+        <apex:includeScript value="https://js.stripe.com/v3/" />
+        <apex:includeScript value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
+
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function (f, b, e, v, n, t, s) {
+                if (f.fbq) return; n = f.fbq = function () {
+                    n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+                n.queue = []; t = b.createElement(e); t.async = !0;
+                t.src = v; s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window, document, 'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '372675993424993');
+            fbq('track', 'PageView');
+        </script>
+        <noscript>
+            <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=372675993424993&ev=PageView&noscript=1"/>
+        </noscript>
+        <!-- End Facebook Pixel Code -->
+    </head>
+    <body>
+        <script type="text/javascript">
+            var apiKey = "{!apiKey}"; //Allowing the api key to be passed in from the controller.
+            var formId = '{!$Component.membershipForm}'; //Form is dynamically generated.
+        </script>
+        <div id="spinner" class="spinner" style="display:none;">
+            <div class="lds-dual-ring"></div>
+        </div>
+        <header id="header" class="grid">
+            <div class="grid__content"> <a href="https://bitwiseindustries.com"> <svg viewBox="0 0 275 28"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M115.1 27h-2.2V5h2.2v22zm21-3.4.1-18.7h2.2v22h-2.8L122.5 8.1h-.1V27h-2.2V5h2.8l13.1 18.6zm7-18.7h7.3c1.4 0 2.7.2 4.1.7 1.4.5 2.6 1.1 3.7 2.1 1.1.9 2 2.1 2.7 3.5.7 1.4 1 3 1 4.8 0 1.8-.3 3.5-1 4.8-.7 1.4-1.6 2.5-2.7 3.4-1.1.9-2.4 1.6-3.7 2.1-1.4.5-2.8.7-4.1.7h-7.3V4.9zm2.3 20h4.4c1.7 0 3.1-.3 4.4-.8 1.2-.5 2.3-1.2 3.1-2 .8-.8 1.4-1.8 1.8-2.9.4-1.1.6-2.2.6-3.3s-.2-2.2-.6-3.3c-.4-1.1-1-2-1.8-2.9-.8-.8-1.8-1.5-3.1-2-1.2-.5-2.7-.8-4.4-.8h-4.4v18zm35.9-6.2c0 .9-.1 1.9-.3 2.9-.2 1-.6 2-1.2 2.8-.6.9-1.4 1.6-2.5 2.2-1.1.6-2.4.9-4 .9-1.7 0-3-.3-4-.9-1-.6-1.9-1.3-2.5-2.2-.6-.9-1-1.8-1.2-2.8-.2-1-.3-2-.3-2.9V4.9h2.2v13.6c0 1.1.1 2 .3 2.7.2.8.5 1.4.8 1.9.3.5.7.9 1.2 1.2.4.3.9.5 1.3.7.4.2.8.3 1.2.3.4.1.7.1 1 .1.3 0 .6 0 1-.1.4 0 .8-.2 1.2-.3.4-.2.9-.4 1.3-.7.4-.3.8-.7 1.2-1.2.3-.5.6-1.2.8-1.9.2-.8.3-1.7.3-2.7V4.9h2.2v13.8zm15.1-10.1c-1-1.4-2.4-2.1-4.3-2.1-.6 0-1.2.1-1.7.2-.6.2-1.1.4-1.5.7-.4.3-.8.7-1.1 1.2-.3.5-.4 1.1-.4 1.8 0 1 .3 1.8.8 2.3.6.5 1.3 1 2.1 1.4.8.4 1.7.7 2.7.9 1 .3 1.9.7 2.7 1.1.8.5 1.5 1.1 2.1 1.9.6.8.8 1.8.8 3.1 0 1-.2 1.9-.6 2.7-.4.8-1 1.5-1.7 2s-1.5 1-2.3 1.2c-.9.3-1.7.4-2.6.4-1.3 0-2.6-.3-3.8-.8-1.2-.5-2.2-1.3-3.1-2.5l2.1-1.5c.5.8 1.1 1.5 2 1.9.8.5 1.8.7 3 .7.6 0 1.1-.1 1.7-.3.6-.2 1.1-.4 1.5-.8.4-.3.8-.8 1.1-1.3.3-.5.4-1.1.4-1.7 0-.8-.2-1.4-.5-1.9s-.7-.9-1.3-1.3c-.5-.3-1.1-.6-1.8-.9-.7-.2-1.4-.5-2.1-.7-.7-.2-1.4-.5-2.1-.8-.7-.3-1.3-.7-1.8-1.1-.5-.4-1-1-1.3-1.7-.3-.7-.5-1.5-.5-2.5 0-1.1.2-2 .6-2.8.4-.8.9-1.4 1.6-2 .7-.5 1.4-.9 2.3-1.2.9-.2 1.7-.4 2.6-.4 1.2 0 2.4.2 3.4.6 1 .4 2 1.1 2.8 2.1l-1.8 2.1zm13 18.4h-2.2V7h-7.4V4.9h17V7h-7.4v20zm12.1 0h-2.2V5h6.8c2.2 0 4 .5 5.3 1.5 1.3 1 1.9 2.4 1.9 4.4 0 1.5-.5 2.8-1.4 3.9-1 1.1-2.4 1.7-4.2 1.8L234 27h-2.7l-6-10.2h-3.7V27zm0-12.3h4c1 0 1.8-.1 2.5-.3.7-.2 1.3-.5 1.7-.8.4-.3.7-.7.9-1.2.2-.5.3-1 .3-1.5s-.1-1-.3-1.5c-.2-.5-.5-.9-.9-1.2-.4-.4-1-.6-1.7-.8-.7-.2-1.5-.3-2.5-.3h-4v7.6zM239.1 27h-2.2V5h2.2v22zm7.2-2.1h11.8V27h-14V5h13.7v2h-11.4v7.5H257v2.1h-10.7v8.3zM272 8.6c-1-1.4-2.4-2.1-4.3-2.1-.6 0-1.2.1-1.7.2-.6.2-1.1.4-1.5.7-.4.3-.8.7-1.1 1.2-.3.5-.4 1.1-.4 1.8 0 1 .3 1.8.8 2.3.6.5 1.3 1 2.1 1.4.8.4 1.7.7 2.7.9 1 .3 1.9.7 2.7 1.1.8.5 1.5 1.1 2.1 1.9.6.8.8 1.8.8 3.1 0 1-.2 1.9-.6 2.7-.4.8-1 1.5-1.7 2s-1.5 1-2.3 1.2c-.9.3-1.7.4-2.6.4-1.3 0-2.6-.3-3.8-.8-1.2-.5-2.2-1.3-3.1-2.5l2.1-1.5c.5.8 1.1 1.5 2 1.9.8.5 1.8.7 3 .7.6 0 1.1-.1 1.7-.3.6-.2 1.1-.4 1.5-.8.4-.3.8-.8 1.1-1.3.3-.5.4-1.1.4-1.7 0-.8-.2-1.4-.5-1.9s-.7-.9-1.3-1.3c-.5-.3-1.1-.6-1.8-.9-.7-.2-1.4-.5-2.1-.7-.7-.2-1.4-.5-2.1-.8-.7-.3-1.3-.7-1.8-1.1-.5-.4-1-1-1.3-1.7-.3-.7-.5-1.5-.5-2.5 0-1.1.2-2 .6-2.8.4-.8.9-1.4 1.6-2 .7-.5 1.4-.9 2.3-1.2.9-.2 1.7-.4 2.6-.4 1.2 0 2.4.2 3.4.6 1 .4 2 1.1 2.8 2.1L272 8.6zM0 4.9h8.2c1 0 1.9.1 2.9.2s1.8.4 2.6.8 1.4 1 1.9 1.7.7 1.7.7 2.9-.4 2.3-1 3.1-1.6 1.4-2.8 1.8v.1c.7.1 1.4.3 2 .6.6.3 1.1.7 1.5 1.2.4.5.8 1 1 1.6.2.6.3 1.3.3 2 0 1.2-.2 2.1-.7 2.9-.5.8-1.1 1.4-1.9 1.9-.8.5-1.7.8-2.7 1-1 .2-2 .3-3 .3H0V4.9zm4.9 8.9h3.5c.4 0 .7 0 1.1-.1.4-.1.7-.2 1-.4.3-.2.5-.4.7-.7.2-.3.3-.7.3-1.1 0-.5-.1-.8-.3-1.1-.2-.3-.5-.5-.8-.7-.3-.2-.7-.3-1.1-.4-.4-.2-.8-.2-1.1-.2H4.9v4.7zm0 9.1h4.4c.4 0 .8 0 1.1-.1.4-.1.7-.2 1-.4.3-.2.6-.5.8-.8.2-.3.3-.7.3-1.2s-.1-.9-.4-1.3c-.3-.3-.6-.6-1-.7-.4-.2-.8-.3-1.3-.3-.5-.1-.9-.1-1.3-.1H4.9v4.9zM38.2 9.2h-4.6v17.7h9.9L38.2 9.2zm12.1-4h-8l3.5 13.9h.1l4.4-13.9zm-21.6 4h-6.2v17.7h6.2V9.2zm23.9 2.5-4.9 15.2h9.8l-4.9-15.2zm10.6-6.5H55l4.5 14.3h.1l3.6-14.3zm4.6 1-6.1 20.7h6.1V6.2zm17.1 4.1c-.4-.5-.9-.9-1.6-1.1-.7-.2-1.3-.3-1.9-.3-.4 0-.7 0-1.1.1-.4.1-.7.2-1.1.4-.3.2-.6.4-.8.7-.2.3-.3.6-.3 1.1 0 .7.2 1.2.7 1.5.5.4 1.1.7 1.9.9.8.3 1.6.5 2.4.7.9.2 1.7.6 2.4 1.1.8.5 1.4 1.1 1.9 1.8.5.8.7 1.8.7 3.1 0 1.2-.2 2.3-.7 3.2-.5.9-1.1 1.7-1.9 2.3-.8.6-1.7 1.1-2.7 1.3-1 .3-2.1.4-3.3.4-1.4 0-2.8-.2-4-.7-1.2-.4-2.4-1.1-3.4-2.1l3.5-3.8c.5.7 1.1 1.2 1.9 1.5.8.4 1.5.5 2.4.5.4 0 .8 0 1.2-.1.4-.1.8-.2 1.1-.4.3-.2.6-.4.8-.7.2-.3.3-.6.3-1 0-.7-.3-1.2-.8-1.6-.5-.4-1.1-.7-1.9-1-.8-.3-1.6-.5-2.5-.8-.9-.3-1.7-.6-2.5-1.1-.8-.5-1.4-1.1-1.9-1.8s-.8-1.7-.8-3c0-1.2.2-2.2.7-3.1.5-.9 1.1-1.6 1.9-2.2.8-.6 1.7-1.1 2.7-1.4 1-.3 2.1-.5 3.1-.5 1.2 0 2.5.2 3.6.5 1.2.4 2.2.9 3.1 1.8l-3.1 3.8z" />
+                        <path
+                            d="M87.7 4.9h15v4.5H92.6v4.1h9.6V18h-9.6v4.5h10.7V27H87.7V4.9zM22.5 0h-4.9v4.9h4.9V0zm50.2 0h-4.9v4.9h4.9V0z" />
+                    </svg> </a> <a class="btn" href="https://bitwiseindustries.com/services/cowork/about/">Back</a>
+            </div>
+	    </header>
+        <main>
+            <section id="hero" class="grid">
+                <div class="grid__content">
+                    <h1>Join Cowork</h1>
+                </div>
+                <div class="grid__full">
+                    <picture> <img sizes="(max-width: 100vw, 1400px 1400px)" srcset="
+                    {!URLFOR($Resource.Cowork, '/SignUp/images/cowork-header-registration-200.png')} 200w,
+                    {!URLFOR($Resource.Cowork, '/SignUp/images/cowork-header-registration-677.png')} 677w,
+                    {!URLFOR($Resource.Cowork, '/SignUp/images/cowork-header-registration-959.png')} 959w,
+                    {!URLFOR($Resource.Cowork, '/SignUp/images/cowork-header-registration-1204.png')} 1204w,
+                    {!URLFOR($Resource.Cowork, '/SignUp/images/cowork-header-registration-1400.png')} 1400w," src="{!URLFOR($Resource.Cowork, '/SignUp/images/cowork-header-registration.png')}"
+                    alt="Join Cowork"/> </picture> 
+                </div>
+            </section>
+            <section id="membership-options" class="grid">
+                <div class="grid__content">
+                    <h1>Membership Options</h1>
+                    <ul>
+                        <li>
+                            <div>
+                                <h3>Individual<br/> Membership</h3>
+                                <p>$49</p> <small>per month</small>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>Student<br/> Membership</h3>
+                                <p>$29</p> <small>per month</small>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h3>1-Day<br/> Pass</h3>
+                                <p>$15</p> <small>flat rate</small>
+                            </div>
+                        </li>
+                        <li class="best-value">
+                            <div>
+                                <h3>Business<br/> Membership</h3>
+                                <p>$175</p> <small>per month<br/> 4 individuals*</small>
+                            </div>
+                        </li>
+                    </ul>
+                    <p>* $25 per additional team add-on</p>
+                </div>
+            </section>
+
+            <apex:form styleClass="form center-vert" id="membershipForm">
+                <apex:actionFunction name="handleStripeToken" action="{!processToken}" reRender="errorPanel" oncomplete="paymentFinished()">
+                    <apex:param id="card_token" name="card_token" value="" />
+                </apex:actionFunction>
+                
+                <apex:actionFunction name="handlePriceChange" action="{!processPriceChange}" oncomplete="priceChangeComplete()" reRender="memberCountInput,priceDisplay,errorPanel"/>
+                <apex:pageMessages ></apex:pageMessages>
+                <section id="sign-up" class="grid">
+                    <div class="grid__content sign_up_div">
+                        <h2>Sign Up Now</h2>
+                        <label for="membership-options">
+                            <div>Membership Type</div>
+                            <div class="select-arrow">
+                                <apex:selectList value="{!membershipType}" size="1" multiselect="false" styleClass="form-input form_select" onchange="handleTypeChange()">
+                                    <apex:selectOptions value="{!typeOptions}" />
+                                </apex:selectList>
+                            </div>
+                        </label>
+
+                         <label for="membership-options">
+                            <apex:outputPanel id="memberCountInput">
+                                <apex:outputPanel rendered="{!membershipType = 'Group' || membershipType = 'Business'}">
+                                    <div># of Members</div>
+                                    <apex:input type="number" value="{!memberCount}" styleClass="form-input" html-placeholder="# of Members" onchange="handleTypeChange()"
+                                    />
+                                </apex:outputPanel>
+                            </apex:outputPanel>
+                         </label>
+                        
+                        <label for="membership-options">
+                            <div>Primary Market</div>
+                            <div class="select-arrow"> 
+                                <apex:selectList value="{!market}" size="1" multiselect="false" styleClass="form-input form_select">
+                                    <apex:selectOptions value="{!markets}" />
+                                </apex:selectList>
+                            </div>
+                        </label> 
+                        <label for="firstName">
+                            <div>First Name</div> 
+                            <apex:inputText id="firstName" html-placeholder="First Name" styleClass="form-input form-input-required" onchange="updateHighlights(event)"
+                                        onclick="clickField(event)" value="{! paymentFirstName}" onblur="blurField(event)" />
+                        </label> 
+                        <label for="lastName">
+                            <div>Last Name</div>
+                             <apex:inputText id="lastName" html-placeholder="Last Name" styleClass="form-input form-input-required" onchange="updateHighlights(event)"
+                                        onclick="clickField(event)" value="{! paymentLastName}" onblur="blurField(event)" />
+                        </label> 
+                        <label for="email">
+                            <div>Email</div>
+                             <apex:inputText id="emailBox" html-placeholder="Email" styleClass="form-input form-input-required" onchange="updateHighlights(event)"
+                                        onclick="clickField(event)" value="{! paymentEmail}" onblur="blurField(event)" />
+                        </label> 
+                        <label for="phone">
+                            <div>Phone</div> 
+                             <apex:inputText id="phoneNumber" html-placeholder="Phone Number" styleClass="form-input form-input-required" onchange="updateHighlights(event)"
+                                        onclick="clickField(event)" value="{! paymentPhone}" onblur="blurField(event)" maxlength="30"/>
+                        </label> 
+                    
+                        <h3>Company Information (Optional)</h3>
+                        <br/>
+                        <label for="company">
+                            <div>Company Name</div> 
+                             <apex:inputText id="companyBox" html-placeholder="Company" styleClass="form-input" onchange="updateHighlights(event)" onclick="clickField(event)"
+                                        value="{! memberCompany}" onblur="blurField(event)" />
+                        </label> 
+                        <label for="city">
+                            <div>City</div>
+                             <apex:inputText id="cityBox" html-placeholder="City" styleClass="form-input" onchange="updateHighlights(event)" onclick="clickField(event)"
+                                        value="{! memberCity}" onblur="blurField(event)" />
+                        </label> 
+                        <label for="state">
+                            <div>State</div>
+                             <div class="select-arrow">
+                                 <apex:selectList value="{!memberState}" size="1" multiselect="false" styleClass="form-input form_select" onchange="updateHighlights(event)">
+                                    <apex:selectOptions value="{!states}" />
+                                </apex:selectList>
+                             </div>
+                            
+                        </label>
+                        <div class="connect">
+                            <hr/>
+                            <div> 
+                                <label for="connect-text">  
+                                    <apex:inputCheckbox selected="true" value="{!smsOptIn}"></apex:inputCheckbox> <span>Stay connected via text</span>
+                                </label> 
+                                    
+                                <label for="connect-email">
+                                    <apex:inputCheckbox selected="true" value="{!emailOptIn}"></apex:inputCheckbox>
+                                    <span>Stay connected via email</span> 
+                                </label> </div>
+                            <hr/>
+                        </div>
+                    </div>
+                    <picture> 
+                        <img sizes="(max-width: 100vw, 651px 651px)" srcset="
+                        {!URLFOR($Resource.Cowork, '/SignUp/images/cowork-sign-up-now-200.png')} 200w,
+                        {!URLFOR($Resource.Cowork, '/SignUp/images/cowork-sign-up-now-371.png')} 371w,
+                        {!URLFOR($Resource.Cowork, '/SignUp/images/cowork-sign-up-now-493.png')} 493w,
+                        {!URLFOR($Resource.Cowork, '/SignUp/images/cowork-sign-up-now-587.png')} 587w,
+                        {!URLFOR($Resource.Cowork, '/SignUp/images/cowork-sign-up-now-651.png')} 651w," src="./images/cowork-sign-up-now.png" alt="Sign Up Now"/> 
+                    </picture>
+                </section>
+                <section id="order-summary" class="grid">
+                    <div class="grid__content">
+                        <h2>Order Summary</h2>
+                        <div class="terms">
+                            <div> 
+                                <label for="terms-coc"> 
+                                    <apex:inputCheckbox styleClass="payment_code_coduct" value="{!codeOfConductValue}" onchange="{!codeOfConductValue}= !{!codeOfConductValue}"></apex:inputCheckbox>
+                                    <span>I agree to Bitwise Cowork's
+                                        <a href="https://docs.google.com/document/d/1AnTUvm0O2h3_21a_ieBvfWWrwacld35acnGjAwmLPEE/edit?usp=sharing" target="_blank">Code of Conduct.</a>
+                                    </span>
+                                </label> 
+                                <label for="terms-covid"> 
+                                    <apex:inputCheckbox styleClass="payment_code_coduct" value="{!covidPolicyValue}" onchange="{!covidPolicyValue}= !{!covidPolicyValue}"></apex:inputCheckbox>
+                                    <span>I acknowledge that I am required to provide proof of COVID Vaccination and will follow Bitwise Cowork's COVID Protocols.</span>
+                                </label>
+                                <hr/>
+                            </div>
+                        </div>
+                        <div class="summary">
+                            <div>
+                                <h3>Cowork Membership</h3>
+                                <ul class="os-benefits">
+                                    <li class="os-benefit">High Speed Internet</li>
+                                    <li class="os-benefit">24/7 Access</li>
+                                    <li class="os-benefit">Reservable Conference Rooms</li>
+                                </ul>
+                            </div>
+                            <apex:outputPanel id="priceDisplay">
+                                <div class="price_text">
+                                    <h3>{!price}</h3>
+                                </div>
+                            </apex:outputPanel>
+                        </div>
+                        <div class="payment">
+                            <hr/>
+                            <h2>Payment</h2>
+                            <div class="form-row">
+                                    <!-- <label for="card-element">
+                                                            Credit or debit card
+                                                        </label> -->
+                                    <div id="card-element" class="form-input card-form-input">
+                                        <!-- A Stripe Element will be inserted here. -->
+                                    </div>
+
+                                    <!-- Used to display form errors. -->
+                                    <div id="card-errors" role="alert"></div>
+                            </div>
+                            <apex:outputPanel id="errorPanel">
+                                <apex:outputPanel rendered="{!error != ''}">
+                                    <div class="alert alert-danger">
+                                        <apex:outputText escape="false" value="{!error}" />
+                                    </div>
+                                </apex:outputPanel>
+
+                                <script type="text/javascript">
+                                    createStripe();
+                                </script>
+                            </apex:outputPanel>
+
+                            <button id="submitButton" type="submit" class="submit-button" disabled="true">SUBMIT PAYMENT</button>
+                            
+                        </div>
+                    </div>
+            
+                    <picture> <img sizes="(max-width: 100vw, 1399px 1399px)" srcset="
+                    {!URLFOR($Resource.Cowork, '/SignUp/images/cowork-order-summary-200.png')} 200w,
+                    {!URLFOR($Resource.Cowork, '/SignUp/images/cowork-order-summary-599.png')} 599w,
+                    {!URLFOR($Resource.Cowork, '/SignUp/images/cowork-order-summary-880.png')} 880w,
+                    {!URLFOR($Resource.Cowork, '/SignUp/images/cowork-order-summary-1054.png')} 1054w,
+                    {!URLFOR($Resource.Cowork, '/SignUp/images/cowork-order-summary-1399.png')} 1399w,
+                    ./images/cowork-order-summary-1399.png 1399w" src="{!URLFOR($Resource.Cowork, '/SignUp/images/cowork-order-summary-200.png')}" alt="Order Summary"/>
+                    </picture>
+                </section>
+            </apex:form>
+
+            <section id="more-info" class="grid">
+                <div class="grid__content">
+                    <p>For more information, email <a href="mailto:cowork@bitwiseindustries.com">cowork@bitwiseindustries.com</a>
+                    </p>
+                </div>
+            </section>
+            <!-- <section id="newsletter-cta" class="grid">
+                <div class="grid__content">
+                    <h4>Want more Bitwise? Sign up for our newsletter</h4>
+                    <form> <input type="text" placeholder="Email"/> <input type="submit" value="Subscribe"/> </form>
+                </div>
+            </section> -->
+            <footer id="footer" class="grid">
+                <div class="grid__content"> <a href="https://bitwiseindustries.com"> <svg class="bw-logo" viewBox="0 0 275 28"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M115.1 27h-2.2V5h2.2v22zm21-3.4.1-18.7h2.2v22h-2.8L122.5 8.1h-.1V27h-2.2V5h2.8l13.1 18.6zm7-18.7h7.3c1.4 0 2.7.2 4.1.7 1.4.5 2.6 1.1 3.7 2.1 1.1.9 2 2.1 2.7 3.5.7 1.4 1 3 1 4.8 0 1.8-.3 3.5-1 4.8-.7 1.4-1.6 2.5-2.7 3.4-1.1.9-2.4 1.6-3.7 2.1-1.4.5-2.8.7-4.1.7h-7.3V4.9zm2.3 20h4.4c1.7 0 3.1-.3 4.4-.8 1.2-.5 2.3-1.2 3.1-2 .8-.8 1.4-1.8 1.8-2.9.4-1.1.6-2.2.6-3.3s-.2-2.2-.6-3.3c-.4-1.1-1-2-1.8-2.9-.8-.8-1.8-1.5-3.1-2-1.2-.5-2.7-.8-4.4-.8h-4.4v18zm35.9-6.2c0 .9-.1 1.9-.3 2.9-.2 1-.6 2-1.2 2.8-.6.9-1.4 1.6-2.5 2.2-1.1.6-2.4.9-4 .9-1.7 0-3-.3-4-.9-1-.6-1.9-1.3-2.5-2.2-.6-.9-1-1.8-1.2-2.8-.2-1-.3-2-.3-2.9V4.9h2.2v13.6c0 1.1.1 2 .3 2.7.2.8.5 1.4.8 1.9.3.5.7.9 1.2 1.2.4.3.9.5 1.3.7.4.2.8.3 1.2.3.4.1.7.1 1 .1.3 0 .6 0 1-.1.4 0 .8-.2 1.2-.3.4-.2.9-.4 1.3-.7.4-.3.8-.7 1.2-1.2.3-.5.6-1.2.8-1.9.2-.8.3-1.7.3-2.7V4.9h2.2v13.8zm15.1-10.1c-1-1.4-2.4-2.1-4.3-2.1-.6 0-1.2.1-1.7.2-.6.2-1.1.4-1.5.7-.4.3-.8.7-1.1 1.2-.3.5-.4 1.1-.4 1.8 0 1 .3 1.8.8 2.3.6.5 1.3 1 2.1 1.4.8.4 1.7.7 2.7.9 1 .3 1.9.7 2.7 1.1.8.5 1.5 1.1 2.1 1.9.6.8.8 1.8.8 3.1 0 1-.2 1.9-.6 2.7-.4.8-1 1.5-1.7 2s-1.5 1-2.3 1.2c-.9.3-1.7.4-2.6.4-1.3 0-2.6-.3-3.8-.8-1.2-.5-2.2-1.3-3.1-2.5l2.1-1.5c.5.8 1.1 1.5 2 1.9.8.5 1.8.7 3 .7.6 0 1.1-.1 1.7-.3.6-.2 1.1-.4 1.5-.8.4-.3.8-.8 1.1-1.3.3-.5.4-1.1.4-1.7 0-.8-.2-1.4-.5-1.9s-.7-.9-1.3-1.3c-.5-.3-1.1-.6-1.8-.9-.7-.2-1.4-.5-2.1-.7-.7-.2-1.4-.5-2.1-.8-.7-.3-1.3-.7-1.8-1.1-.5-.4-1-1-1.3-1.7-.3-.7-.5-1.5-.5-2.5 0-1.1.2-2 .6-2.8.4-.8.9-1.4 1.6-2 .7-.5 1.4-.9 2.3-1.2.9-.2 1.7-.4 2.6-.4 1.2 0 2.4.2 3.4.6 1 .4 2 1.1 2.8 2.1l-1.8 2.1zm13 18.4h-2.2V7h-7.4V4.9h17V7h-7.4v20zm12.1 0h-2.2V5h6.8c2.2 0 4 .5 5.3 1.5 1.3 1 1.9 2.4 1.9 4.4 0 1.5-.5 2.8-1.4 3.9-1 1.1-2.4 1.7-4.2 1.8L234 27h-2.7l-6-10.2h-3.7V27zm0-12.3h4c1 0 1.8-.1 2.5-.3.7-.2 1.3-.5 1.7-.8.4-.3.7-.7.9-1.2.2-.5.3-1 .3-1.5s-.1-1-.3-1.5c-.2-.5-.5-.9-.9-1.2-.4-.4-1-.6-1.7-.8-.7-.2-1.5-.3-2.5-.3h-4v7.6zM239.1 27h-2.2V5h2.2v22zm7.2-2.1h11.8V27h-14V5h13.7v2h-11.4v7.5H257v2.1h-10.7v8.3zM272 8.6c-1-1.4-2.4-2.1-4.3-2.1-.6 0-1.2.1-1.7.2-.6.2-1.1.4-1.5.7-.4.3-.8.7-1.1 1.2-.3.5-.4 1.1-.4 1.8 0 1 .3 1.8.8 2.3.6.5 1.3 1 2.1 1.4.8.4 1.7.7 2.7.9 1 .3 1.9.7 2.7 1.1.8.5 1.5 1.1 2.1 1.9.6.8.8 1.8.8 3.1 0 1-.2 1.9-.6 2.7-.4.8-1 1.5-1.7 2s-1.5 1-2.3 1.2c-.9.3-1.7.4-2.6.4-1.3 0-2.6-.3-3.8-.8-1.2-.5-2.2-1.3-3.1-2.5l2.1-1.5c.5.8 1.1 1.5 2 1.9.8.5 1.8.7 3 .7.6 0 1.1-.1 1.7-.3.6-.2 1.1-.4 1.5-.8.4-.3.8-.8 1.1-1.3.3-.5.4-1.1.4-1.7 0-.8-.2-1.4-.5-1.9s-.7-.9-1.3-1.3c-.5-.3-1.1-.6-1.8-.9-.7-.2-1.4-.5-2.1-.7-.7-.2-1.4-.5-2.1-.8-.7-.3-1.3-.7-1.8-1.1-.5-.4-1-1-1.3-1.7-.3-.7-.5-1.5-.5-2.5 0-1.1.2-2 .6-2.8.4-.8.9-1.4 1.6-2 .7-.5 1.4-.9 2.3-1.2.9-.2 1.7-.4 2.6-.4 1.2 0 2.4.2 3.4.6 1 .4 2 1.1 2.8 2.1L272 8.6zM0 4.9h8.2c1 0 1.9.1 2.9.2s1.8.4 2.6.8 1.4 1 1.9 1.7.7 1.7.7 2.9-.4 2.3-1 3.1-1.6 1.4-2.8 1.8v.1c.7.1 1.4.3 2 .6.6.3 1.1.7 1.5 1.2.4.5.8 1 1 1.6.2.6.3 1.3.3 2 0 1.2-.2 2.1-.7 2.9-.5.8-1.1 1.4-1.9 1.9-.8.5-1.7.8-2.7 1-1 .2-2 .3-3 .3H0V4.9zm4.9 8.9h3.5c.4 0 .7 0 1.1-.1.4-.1.7-.2 1-.4.3-.2.5-.4.7-.7.2-.3.3-.7.3-1.1 0-.5-.1-.8-.3-1.1-.2-.3-.5-.5-.8-.7-.3-.2-.7-.3-1.1-.4-.4-.2-.8-.2-1.1-.2H4.9v4.7zm0 9.1h4.4c.4 0 .8 0 1.1-.1.4-.1.7-.2 1-.4.3-.2.6-.5.8-.8.2-.3.3-.7.3-1.2s-.1-.9-.4-1.3c-.3-.3-.6-.6-1-.7-.4-.2-.8-.3-1.3-.3-.5-.1-.9-.1-1.3-.1H4.9v4.9zM38.2 9.2h-4.6v17.7h9.9L38.2 9.2zm12.1-4h-8l3.5 13.9h.1l4.4-13.9zm-21.6 4h-6.2v17.7h6.2V9.2zm23.9 2.5-4.9 15.2h9.8l-4.9-15.2zm10.6-6.5H55l4.5 14.3h.1l3.6-14.3zm4.6 1-6.1 20.7h6.1V6.2zm17.1 4.1c-.4-.5-.9-.9-1.6-1.1-.7-.2-1.3-.3-1.9-.3-.4 0-.7 0-1.1.1-.4.1-.7.2-1.1.4-.3.2-.6.4-.8.7-.2.3-.3.6-.3 1.1 0 .7.2 1.2.7 1.5.5.4 1.1.7 1.9.9.8.3 1.6.5 2.4.7.9.2 1.7.6 2.4 1.1.8.5 1.4 1.1 1.9 1.8.5.8.7 1.8.7 3.1 0 1.2-.2 2.3-.7 3.2-.5.9-1.1 1.7-1.9 2.3-.8.6-1.7 1.1-2.7 1.3-1 .3-2.1.4-3.3.4-1.4 0-2.8-.2-4-.7-1.2-.4-2.4-1.1-3.4-2.1l3.5-3.8c.5.7 1.1 1.2 1.9 1.5.8.4 1.5.5 2.4.5.4 0 .8 0 1.2-.1.4-.1.8-.2 1.1-.4.3-.2.6-.4.8-.7.2-.3.3-.6.3-1 0-.7-.3-1.2-.8-1.6-.5-.4-1.1-.7-1.9-1-.8-.3-1.6-.5-2.5-.8-.9-.3-1.7-.6-2.5-1.1-.8-.5-1.4-1.1-1.9-1.8s-.8-1.7-.8-3c0-1.2.2-2.2.7-3.1.5-.9 1.1-1.6 1.9-2.2.8-.6 1.7-1.1 2.7-1.4 1-.3 2.1-.5 3.1-.5 1.2 0 2.5.2 3.6.5 1.2.4 2.2.9 3.1 1.8l-3.1 3.8z" />
+                            <path
+                                d="M87.7 4.9h15v4.5H92.6v4.1h9.6V18h-9.6v4.5h10.7V27H87.7V4.9zM22.5 0h-4.9v4.9h4.9V0zm50.2 0h-4.9v4.9h4.9V0z" />
+                        </svg> </a>
+                    <p> <a target="_blank" class="footer-address" href="https://g.page/BitwiseIndustries?share">700 Van Ness Ave,
+                            Fresno, CA 93721</a> - <a target="_blank" class="footer-email"
+                            href="mailto:info@bitwiseindustries.com">info@bitwiseindustries.com</a> - <a target="_blank"
+                            class="footer-phone" href="tel:8664420472">866.442.0472</a> </p>
+                    <ul>
+                        <li> <a href="https://instagram.com/bitwiseindustries" target="_blank"> <svg class="instagram"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                                    <g>
+                                        <path
+                                            d="M37 1H11C5.477 1 1 5.477 1 11v26c0 5.523 4.477 10 10 10h26c5.523 0 10-4.477 10-10V11c0-5.523-4.477-10-10-10Z" />
+                                        <path d="M24 32a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" />
+                                        <path d="M32 8H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h16a8 8 0 0 0 8-8V16a8 8 0 0 0-8-8Z" />
+                                        <g>
+                                            <path d="M34 16a1 1 0 0 1 0-2M34 16a1 1 0 0 0 0-2" />
+                                        </g>
+                                    </g>
+                                </svg> </a> </li>
+                        <li> <a href="https://linkedin.com/company/bitwise-industries" target="_blank"> <svg class="linkedin"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                                    <g transform="scale(2)">
+                                        <path
+                                            d="M6.5 22.5h-5v-13h5Zm9-9a2 2 0 0 0-2 2v7h-5v-13h5v1.485a6.307 6.307 0 0 1 3.99-1.495c2.962 0 5.01 2.2 5.01 6.355V22.5h-5v-7a2 2 0 0 0-2-2ZM6.5 5A2.5 2.5 0 1 1 4 2.5 2.5 2.5 0 0 1 6.5 5Z" />
+                                    </g>
+                                </svg> </a> </li>
+                        <li> <a href="https://facebook.com/BitwiseInd" target="_blank"> <svg class="facebook"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                                    <g transform="scale(2)">
+                                        <path
+                                            d="M12.5 23.5h-11a1 1 0 0 1-1-1v-21a1 1 0 0 1 1-1h21a1 1 0 0 1 1 1v21a1 1 0 0 1-1 1h-6v-9h2.559a.5.5 0 0 0 .5-.438l.375-3a.5.5 0 0 0-.5-.562H16.5V9.185A1.687 1.687 0 0 1 18.186 7.5H20a.5.5 0 0 0 .5-.5V4a.5.5 0 0 0-.5-.5h-1.814A5.692 5.692 0 0 0 12.5 9.185V10.5H10a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h2.5v9Z" />
+                                    </g>
+                                </svg> </a> </li>
+                        <li> <a href="https://twitter.com/BitwiseInd" target="_blank"> <svg class="twitter"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                                    <g transform="scale(2)">
+                                        <path
+                                            d="m23 6.628-2-.5 1-2-2.464.7A4.48 4.48 0 0 0 12 8.128v1c-3.539.73-6.634-1.2-9.5-4.5q-.75 4 1.5 6l-3-.5c.405 2.069 1.362 3.7 4 4l-2.5 1c1 2 2.566 2.31 5 2.5a10.748 10.748 0 0 1-6.5 2c12.755 5.669 20-2.664 20-10V8.3Z" />
+                                    </g>
+                                </svg> </a> </li>
+                        <li> <a href="https://youtube.com/BitwiseIndustries" target="_blank"> <svg class="youtube"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                                    <g transform="scale(2)">
+                                        <path
+                                            d="M23.5 6.939A3.438 3.438 0 0 0 20.062 3.5H3.937A3.438 3.438 0 0 0 .5 6.939v9.121a3.438 3.438 0 0 0 3.437 3.44h16.125a3.438 3.438 0 0 0 3.438-3.44Zm-14 8.5v-8.66l6.769 4.331Z" />
+                                    </g>
+                                </svg> </a> </li>
+                    </ul>
+                </div>
+            </footer>
+        </main>
+
+    </body>
+</apex:page>

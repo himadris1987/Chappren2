@@ -1,0 +1,30 @@
+{
+    "ok": true,
+    "profile": {
+        "title": "",
+        "phone": "",
+        "skype": "",
+        "real_name": "Jake Aguilar",
+        "real_name_normalized": "Jake Aguilar",
+        "display_name": "BigChungusJake",
+        "display_name_normalized": "BigChungusJake",
+        "fields": [],
+        "status_text": "",
+        "status_emoji": "",
+        "status_expiration": 0,
+        "avatar_hash": "5feb502a4ac8",
+        "image_original": "https:\/\/avatars.slack-edge.com\/2019-10-15\/785396070835_5feb502a4ac85a9f5e3d_original.png",
+        "is_custom_image": true,
+        "email": "coelho.christian@gmail.com",
+        "first_name": "Jake",
+        "last_name": "Aguilar",
+        "image_24": "https:\/\/avatars.slack-edge.com\/2019-10-15\/785396070835_5feb502a4ac85a9f5e3d_24.png",
+        "image_32": "https:\/\/avatars.slack-edge.com\/2019-10-15\/785396070835_5feb502a4ac85a9f5e3d_32.png",
+        "image_48": "https:\/\/avatars.slack-edge.com\/2019-10-15\/785396070835_5feb502a4ac85a9f5e3d_48.png",
+        "image_72": "https:\/\/avatars.slack-edge.com\/2019-10-15\/785396070835_5feb502a4ac85a9f5e3d_72.png",
+        "image_192": "https:\/\/avatars.slack-edge.com\/2019-10-15\/785396070835_5feb502a4ac85a9f5e3d_192.png",
+        "image_512": "https:\/\/avatars.slack-edge.com\/2019-10-15\/785396070835_5feb502a4ac85a9f5e3d_512.png",
+        "image_1024": "https:\/\/avatars.slack-edge.com\/2019-10-15\/785396070835_5feb502a4ac85a9f5e3d_1024.png",
+        "status_text_canonical": ""
+    }
+}

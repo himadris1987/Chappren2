@@ -1,0 +1,64 @@
+.lwc-settings {
+  height: 400px;
+}
+
+.att-table {
+  overflow: scroll;
+}
+
+.att-table table {
+  border-spacing: 0px;
+  border-collapse: separate;
+  overflow-y: auto;
+}
+
+.att-table th {
+  border: 1px solid #dddbda;
+  padding: 5px;
+  width: 60px;
+  min-width: 60px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  background: #f3f3f3;
+}
+
+.att-table td {
+  border: 1px solid #dddbda;
+  padding: 5px;
+  width: 60px;
+  min-width: 60px;
+  text-align: center;
+}
+
+.att-table th:nth-child(1),
+.att-table td:nth-child(1) {
+  min-width: 120px;
+  text-align: left;
+  position: sticky;
+  left: 0;
+}
+
+.att-table th:nth-child(1) {
+  z-index: 2;
+}
+
+.att-table tbody tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+
+.att-table tbody tr:nth-child(even) td:nth-child(1) {
+  background-color: #f3f3f3;
+}
+
+.att-table tbody tr:nth-child(odd) td:nth-child(1) {
+  background-color: #ffffff;
+}
+
+.P {
+  color: green;
+}
+
+.A {
+  color: red;
+}

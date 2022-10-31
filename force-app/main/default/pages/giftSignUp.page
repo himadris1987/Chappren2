@@ -1,0 +1,164 @@
+<apex:page controller="RedeemGiftController" showheader="false" standardStylesheets="false" sidebar="false" applyBodyTag="false"
+    docType="html-5.0">
+
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-109037308-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'UA-109037308-1');
+        </script>
+
+        <!-- Meta -->
+        <meta charset="UTF-8" />
+        <link href="//www.google-analytics.com" rel="dns-prefetch" />
+        <link href="{!URLFOR($Resource.hashtagfaviconico)}" rel="shortcut icon" />
+        <link href="{!URLFOR($Resource.hastagtabicon)}" rel="apple-touch-icon-precomposed" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- CSS -->
+        <apex:stylesheet value="{!URLFOR($Resource.Payment, '/css/Payment.css')}" />
+        <apex:stylesheet value="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <apex:stylesheet value="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" />
+        <apex:stylesheet value="https://fonts.googleapis.com/css?family=Raleway&display=swap" />
+        <apex:stylesheet value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <apex:stylesheet value="{!URLFOR($Resource.HashtagStyles)}" />
+
+        <!-- Javascript -->
+        <apex:includeScript value="{!URLFOR($Resource.RedeemGift, '/js/RedeemGift.js')}" />
+        <apex:includeScript value="https://code.jquery.com/jquery-3.4.1.min.js" />
+        <apex:includeScript value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function (f, b, e, v, n, t, s) {
+                if (f.fbq) return; n = f.fbq = function () {
+                    n.callMethod ?
+                        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+                n.queue = []; t = b.createElement(e); t.async = !0;
+                t.src = v; s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window, document, 'script',
+                'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '372675993424993');
+            fbq('track', 'PageView');
+        </script>
+        <noscript>
+            <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=372675993424993&ev=PageView&noscript=1"
+            />
+        </noscript>
+        <!-- End Facebook Pixel Code -->
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            var formId = '{!$Component.membershipForm}'; //Form is dynamically generated.
+        </script>
+
+        <!-- Navbar -->
+        <c:HashtagHeader />
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    <apex:form styleClass="form center-vert" id="membershipForm">
+                        <apex:actionFunction name="submit" action="{!processForm}" reRender="errorPanel" oncomplete="finished">
+
+                        </apex:actionFunction>
+                        <apex:pageMessages ></apex:pageMessages>
+
+                        <h4 class="white-text form-header">Please fill out the information below to redeem your gift.</h4>
+
+                        <apex:outputPanel id="rerender"></apex:outputPanel>
+
+                        <h3 class="white_text">Personal Information</h3>
+
+
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <apex:inputText id="firstName" html-placeholder="First Name" styleClass="form-input form-input-required" onchange="updateHighlights(event)"
+                                    onclick="clickField(event)" value="{! memberFirstName}" onblur="blurField(event)" />
+                            </div>
+                            <div class="col-sm-6">
+                                <apex:inputText id="lastName" html-placeholder="Last Name" styleClass="form-input form-input-required" onchange="updateHighlights(event)"
+                                    onclick="clickField(event)" value="{! memberLastName}" onblur="blurField(event)" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <apex:inputText id="emailBox" html-placeholder="Email" styleClass="form-input email-box form-input-required" onchange="updateHighlights(event)"
+                                    onclick="clickField(event)" value="{! memberEmail}" onblur="blurField(event)" />
+                            </div>
+                            <div class="col-sm-6">
+                                <apex:inputText id="phoneNumber" html-placeholder="Phone Number" styleClass="form-input form-input-required" onchange="updateHighlights(event)"
+                                    onclick="clickField(event)" onblur="blurField(event)" value="{! memberPhone}" maxlength="30"
+                                />
+                            </div>
+                        </div>
+                        <h3 class="white_text padding_top_15">Company Information (Optional)</h3>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <apex:inputText id="companyBox" html-placeholder="Company" styleClass="form-input" onchange="updateHighlights(event)" onclick="clickField(event)"
+                                    value="{! memberCompany}" onblur="blurField(event)" />
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="col-sm-6">
+                                <apex:inputText id="cityBox" html-placeholder="City" styleClass="form-input" onchange="updateHighlights(event)" onclick="clickField(event)"
+                                    value="{! memberCity}" onblur="blurField(event)" />
+                            </div>
+                            <div class="col-sm-6">
+                                <apex:selectList id="stateBox" value="{!memberState}" size="1" multiselect="false" styleClass="form-input form_select" onchange="updateHighlights(event)">
+                                    <apex:selectOptions value="{!populateStates}" />
+                                </apex:selectList>
+                            </div>
+                        </div>
+                        <h3 class="white_text padding_top_15">Gift Code</h3>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <apex:inputText id="discountBox" html-placeholder="Gift Code" styleClass="form-input form-input-required" onchange="updateHighlights(event);"
+                                    onclick="clickField(event)" value="{! discountCode}" onblur="blurField(event)" />
+                            </div>
+                        </div>
+                        <br/>
+
+                        <apex:outputPanel >
+                            <apex:inputCheckbox styleClass="payment_code_coduct" value="{!checkboxValue}" onchange="{!checkboxValue} != {!checkboxValue}"></apex:inputCheckbox>
+                            <span class="white-text">I agree to the Hashtag's Code of Conduct
+                                <a href="https://hashtagcoworkplace.com/wp-content/uploads/2019/12/Code-of-Conduct.pdf" target="_blank" class="white-text">here</a>
+                            </span>
+                        </apex:outputPanel>
+                        <br/>
+                        <apex:outputPanel id="errorPanel">
+                            <apex:outputPanel rendered="{!error != ''}">
+                                <div class="alert alert-danger">
+                                    {!error}
+                                </div>
+                            </apex:outputPanel>
+                        </apex:outputPanel>
+                        <button id="submitButton" onclick="processForm()" class="submit-button" disabled="true">SUBMIT</button>
+                        <apex:actionFunction action="{! processForm}" name="processForm"></apex:actionFunction>
+                    </apex:form>
+                </div>
+            </div>
+        </div>
+
+
+        <c:HashtagFooter />
+        <script>
+            (function (f, i, r, e, s, h, l) {
+                i['GoogleAnalyticsObject'] = s; f[s] = f[s] || function () {
+                    (f[s].q = f[s].q || []).push(arguments)
+                }, f[s].l = 1 * new Date(); h = i.createElement(r),
+                    l = i.getElementsByTagName(r)[0]; h.async = 1; h.src = e; l.parentNode.insertBefore(h, l)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</apex:page>

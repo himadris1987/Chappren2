@@ -1,0 +1,40 @@
+<apex:page controller="BLDGCheckinController" showHeader="false" name="home" sidebar="false" docType="html-5.0" applyBodyTag="false"
+    applyHtmlTag="false" standardStylesheets="false">
+
+    <head>
+        <c:bldgIncludes ></c:bldgIncludes>
+        <style>
+            .center-row {
+                display: flex;
+                height: 100vh;
+                align-content: center;
+            }
+
+            .btn {
+                margin-top: 25px;
+                padding: 15px 30px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row center-row text-center">
+                <div class="col-sm-6 offset-sm-3">
+                    <h3>{!meetingContact.firstName} {!meetingContact.lastName} has been notified, and will be with you shortly.</h3>
+                    <h3>
+                        <apex:outputPanel rendered="{!meetingContact.Pronouns__c != null}"> {!meetingContact.firstName}'s pronouns are {!meetingContact.Pronouns__c}.</apex:outputPanel>
+                    </h3>
+                    <apex:form id="form">
+                        <apex:commandButton id="homeButton" action="{!backToHome}" styleClass="btn btn-primary" value="Home"></apex:commandButton>
+                    </apex:form>
+                </div>
+            </div>
+        </div>
+        <script>
+            setTimeout(function () {
+                document.getElementById("{!$Component.form.homeButton}").click();
+            }, 10000)
+        </script>
+    </body>
+</apex:page>

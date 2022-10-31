@@ -1,0 +1,459 @@
+<apex:page controller="WFTClassRosterController"
+  docType="html-5.0"
+  showHeader="false"
+  sidebar="false"
+  applyBodyTag="false"
+  applyHtmlTag="false"
+  standardStylesheets="false"
+>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <style>
+    .header_color {
+      background-color: lightgray;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .row_color {
+      background-color: rgb(247, 247, 246);
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .row_color:nth-child(odd) {
+      background-color: rgb(240, 240, 240);
+    }
+
+    .date_box {
+      background-color: rgb(247, 247, 246);
+      border: 1px solid black;
+    }
+
+    .date_row {
+      background-color: lightgray;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      font-weight: bold;
+    }
+
+    /* button group style overrides */
+    table.btn-group input[type="radio"] {
+      position: absolute;
+      clip: rect(0, 0, 0, 0);
+      pointer-events: none;
+    }
+    table.btn-group input[type="radio"]:checked + .btn-outline-primary {
+      color: #fff;
+      background-color: #0d6efd;
+      border-color: #0d6efd;
+    }
+
+    /* collapse buttong group borders */
+    table.btn-group td {
+      padding: 0.25em;
+    }
+
+    .roster_pic {
+      height: 72px;
+      width: 72px;
+    }
+
+    .status {
+      min-height: 25px;
+    }
+
+    .btn_submit_all {
+      color: #fff;
+      background-color: #0d6efd;
+      border-color: #0d6efd;
+      clip: rect(0, 0, 0, 0);
+    }
+
+    .btn_note {
+      margin-top: 4px;
+      margin-left: 5px;
+    }
+
+    .my_modal {
+      z-index: 9999;
+      width: 1600px;
+      max-width: 100%;
+      padding-top: 50%;
+      top: 50%;
+    }
+
+    .popup_background {
+      background-color: rgba(0, 0, 0, 0.6);
+      filter: alpha(opacity=20);
+      width: 100vw;
+      height: 300vh;
+      z-index: 9998;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+
+    .top_buffer {
+      margin-top: 20px;
+    }
+
+    .center_modal {
+      top: 50%;
+    }
+
+    /* Small≥576px, Medium≥768px */
+    @media (max-width: 768px) {
+      .center_modal {
+        top: 0%;
+      }
+    }
+
+    @media (max-width: 915px) and (orientation: landscape) {
+      .center_modal {
+        top: 0%;
+      }
+    }
+  </style>
+
+  <body>
+    <div class="container-fluid">
+      <apex:form id="WFTClassRosterForm">
+        <div class="row justify-content-center">
+          <div class="col text-center row_color">
+            <h5>Class: {! className }</h5>
+          </div>
+        </div>
+
+        <div class="row date_row border-bottom border-dark">
+          <div class="col-xs-12 text-center">
+            <span>Date of Class: </span>
+            <span>
+              <apex:input styleClass="date_box"
+                id="dateBox"
+                label="Date"
+                value="{! selectedDate }"
+                type="date"
+              >
+                <apex:actionSupport event="onchange"
+                  action="{! getRegistrations }"
+                  reRender="rostersPanel"
+                  immediate="false"
+                >
+                </apex:actionSupport>
+              </apex:input>
+            </span>
+            <span>
+              <apex:commandLink reRender="rostersPanel"
+                action="{! saveAttendances }"
+                onclick="disableSubmitAllButton()"
+                status="updateStatus"
+              >
+                <button
+                  type="button"
+                  id="submitAllAttendances"
+                  class="btn_submit_all"
+                >
+                  Submit All Attendances
+                </button>
+              </apex:commandLink>
+            </span>
+          </div>
+          <div class="col-xs-12 text-center status">
+            <apex:actionStatus id="updateStatus"
+              startText="Saving..."
+              onstart="showStatus()"
+              stopText="All Attendances have been updated."
+            >
+            </apex:actionStatus>
+          </div>
+        </div>
+
+        <div class="row header_color">
+          <div class="d-none d-md-block col-md-1 text-center">Photo</div>
+          <div class="d-none d-md-block col-md-3 text-center">Student</div>
+          <div class="d-none d-md-block col-md-1 text-center">Pronouns</div>
+          <div class="d-none d-md-block col-md-2 text-center">GitHub</div>
+          <div class="d-none d-md-block col-md-3 text-center">Attendance</div>
+          <div class="d-none d-md-block col-md-2 text-center">Note</div>
+        </div>
+
+        <apex:outputPanel id="rostersPanel">
+          <apex:repeat var="rosterRow" value="{! rosterRows }">
+            <div class="row row_color">
+              <div class="col-2 col-md-1 text-center">
+                <apex:image styleClass="roster_pic"
+                  url="{! rosterRow.slackImage}"
+                >
+                </apex:image>
+              </div>
+              <div class="col-3 col-md-3 d-none d-md-block text-center">
+                {! rosterRow.studentName }
+              </div>
+              <div
+                class="col-3 col-md-1 d-none d-md-block text-center text-break"
+              >
+                {! rosterRow.Pronouns }
+              </div>
+              <div class="col-8 d-block d-md-none text-center">
+                {! rosterRow.studentName } <br /> {! rosterRow.Pronouns } <br />
+                {! rosterRow.GitHub }
+              </div>
+              <div
+                class="col-3 col-md-2 d-none d-md-block text-center text-break"
+              >
+                {! rosterRow.GitHub }
+              </div>
+              <div
+                class="col-md-0 text-center regIds text-center"
+                style="display: none"
+              >
+                {! rosterRow.registrationId }
+              </div>
+              <div
+                class="col-md-0 text-center isAttendanceMarked"
+                id="marked{!rosterRow.registrationId}"
+                style="display: none"
+              >
+                {! rosterRow.isAttendanceMarked }
+              </div>
+              <div class="col-12 col-md-3 text-center">
+                <apex:selectRadio styleClass="btn-group radioAttendance"
+                  enabledClass="btn btn-outline-primary"
+                  disabledClass="btn btn-outline-primary"
+                  value="{! rosterRow.present }"
+                  onclick="markAsSelected('{!rosterRow.registrationId}')"
+                >
+                  <apex:selectOption itemLabel="Present" itemValue="true" />
+                  <apex:selectOption itemLabel="Absent" itemValue="false" />
+                  <apex:selectOption itemLabel="Blank"
+                    itemValue=""
+                    rendered="false"
+                  />
+                </apex:selectRadio>
+              </div>
+              <div class="col-12 col-md-2 text-center">
+                <apex:commandLink action="{! showNotes }">
+                  <apex:param name="studentName"
+                    value="{! rosterRow.studentName }"
+                    assignTo="{! studentName }"
+                  />
+                  <apex:param name="studentId"
+                    value="{! rosterRow.studentId }"
+                    assignTo="{! studentId }"
+                  />
+                  <button class="btn btn-outline-dark btn_note">Note</button>
+                </apex:commandLink>
+              </div>
+            </div>
+          </apex:repeat>
+        </apex:outputPanel>
+      </apex:form>
+    </div>
+
+    <apex:outputPanel styleClass="popup_background"
+      rendered="{! displayNotes }"
+    >
+      <apex:form id="NotesModalForm">
+        <apex:outputPanel styleClass="my_modal" rendered="{! displayNotes }">
+          <div class="row">
+            <div
+              class="col-10 offset-1 col-md-8 offset-md-2 col-lg-4 offset-lg-4"
+            >
+              <div class="modal-content center_modal">
+                <div class="modal-header">
+                  <h5 class="modal-title">Student: {! studentName }</h5>
+                  <apex:commandLink action="{! closeNotes }">
+                    <button
+                      type="button"
+                      class="close"
+                      data-dismiss="modal"
+                      aria-label="Close"
+                    >
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </apex:commandLink>
+                </div>
+                <div class="modal-body">
+                  <div class="row">
+                    Notes Type:
+                    <apex:selectList id="notesType"
+                      value="{! notesType}"
+                      size="1"
+                      multiselect="false"
+                    >
+                      <apex:selectOption itemValue="Volunteered"
+                        itemLabel="Volunteering"
+                      />
+                      <apex:selectOption itemValue="One on One"
+                        itemLabel="One on One"
+                      />
+                      <apex:selectOption itemValue="Apprenticeship Recommendation"
+                        itemLabel="Apprenticeship Recommendation"
+                      ></apex:selectOption>
+                      <apex:selectOption itemValue="Incident"
+                        itemLabel="Incident"
+                      />
+                      <apex:selectOption itemValue="Counseling"
+                        itemLabel="Counseling"
+                      />
+                      <apex:selectOption itemValue="Resume Submitted"
+                        itemLabel="Resume Submitted"
+                      />
+                      <apex:selectOption itemValue="Professional Development"
+                        itemLabel="Professional Development"
+                      />
+                      <apex:selectOption itemValue="Nomination"
+                      itemLabel="Nomination"
+                    />
+                      <apex:selectOption itemValue="Other" itemLabel="Other" />
+                    </apex:selectList>
+                  </div>
+                  <div class="row top_buffer">
+                    Notes:
+                    <apex:inputTextarea id="notesInput"
+                      rows="5"
+                      value="{! notes }"
+                      onkeyup="checkAndEnableSubmitNotesButton()"
+                    />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <apex:commandLink action="{! saveNotes }">
+                    <button type="button" id="submitNotes" disabled="true">
+                      Submit
+                    </button>
+                  </apex:commandLink>
+                </div>
+              </div>
+            </div>
+          </div>
+        </apex:outputPanel>
+      </apex:form>
+    </apex:outputPanel>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    />
+
+    <script>
+      //added to fix chrome form resubmission on page refresh for note modal
+      if (window.history.replaceState) {
+        window.history.replaceState(null, null, window.location.href);
+      }
+
+      const btnSubmitAll = document.getElementById("submitAllAttendances");
+      const updateStatus = document.getElementById(
+        "{!$Component.WFTClassRosterForm.updateStatus}"
+      );
+
+      hideStatus();
+      disableSubmitAllButton();
+      disableSubmitAllOnDateChange();
+
+      document.addEventListener("DOMContentLoaded", function () {
+        checkSubmitAllOnLoad();
+        console.log(
+          `function: DOMContentLoaded, btnSubmitAll disabled is ${btnSubmitAll.disabled}`
+        );
+      });
+
+      function checkSubmitAllOnLoad() {
+        let markedAttendances = 0,
+          radioAttendances = document.querySelectorAll("input[type=radio]");
+
+        for (let i = 0; i < radioAttendances.length; i++) {
+          radioAttendances[i].hasAttribute("checked") ? markedAttendances++ : 0;
+        }
+
+        let studentCount = Array.from(
+          document.querySelectorAll(".regIds")
+        ).length;
+
+        console.log(
+          `markedAttendances: ${markedAttendances}, studentCount:${studentCount}`
+        );
+        if (markedAttendances >= studentCount) enableSubmitAllButton();
+        else disableSubmitAllButton();
+        // console.log(`studentCount: ${studentCount}`);
+        // console.log(`markedAttendances: ${markedAttendances}`);
+        // return false;
+      }
+
+      function checkAndEnableSubmitNotesButton() {
+        const notes = document
+          .getElementById("{!$Component.NotesModalForm.notesInput}")
+          .value.trim();
+        const submitNotesBtn = document.getElementById("submitNotes");
+
+        if ((notes.length = 1)) {
+          submitNotesBtn.disabled = false;
+          submitNotesBtn.classList.add("btn_submit_all");
+        }
+        if (notes.length < 1) {
+          submitNotesBtn.disabled = true;
+          submitNotesBtn.classList.remove("btn_submit_all");
+        }
+      }
+
+      function disableSubmitAllOnDateChange() {
+        document
+          .getElementById("{!$Component.WFTClassRosterForm.dateBox}")
+          .addEventListener("click", () => disableSubmitAllButton());
+      }
+
+      function markAsSelected(regId) {
+        document.getElementById("marked" + regId).innerText = true;
+        checkAndEnableSubmitAllButton();
+        hideStatus();
+      }
+
+      function checkAndEnableSubmitAllButton() {
+        let allMarked = Array.from(
+          document.querySelectorAll(".isAttendanceMarked")
+        ).every((el) => {
+          return el.innerText.trim() === "true";
+        });
+
+        if (allMarked === true) enableSubmitAllButton();
+      }
+
+      // function submitAllAttendances() {
+      //     checkAndEnableSubmitAllButton();
+      // }
+
+      function disableSubmitAllButton() {
+        btnSubmitAll.classList.remove("btn_submit_all");
+        btnSubmitAll.disabled = true;
+      }
+
+      function enableSubmitAllButton() {
+        btnSubmitAll.classList.add("btn_submit_all");
+        btnSubmitAll.disabled = false;
+      }
+
+      function hideStatus() {
+        updateStatus.hidden = true;
+      }
+
+      function showStatus() {
+        updateStatus.hidden = false;
+      }
+    </script>
+  </body>
+</apex:page>

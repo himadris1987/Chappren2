@@ -1,0 +1,4 @@
+<apex:page contentType="application/json; charset=utf-8"
+ controller="slt.Timeline" showHeader="false"
+ showChat="false" standardStylesheets="false"
+ sidebar="false">{!JSONEventsString}</apex:page>

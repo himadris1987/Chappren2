@@ -1,0 +1,17 @@
+<template>
+	<div class="slds-card">
+		<lightning-accordion>
+			<template for:each={campaignPushes.data} for:item="campaignPush">
+				<lightning-accordion-section key={campaignPush.Id} name={campaignPush.Id} label={campaignPush.Message_Content__c} class="truncate">
+					<p>Message: {campaignPush.Message_Content__c}</p>
+					<p>Started: <lightning-formatted-date-time value={campaignPush.Created_At__c} year="numeric" month="numeric" day="numeric" hour="2-digit"
+						minute="2-digit" time-zone-name="short" hour12="true">></lightning-formatted-date-time></p>
+					<p if:true={campaignPush.Marketing_Sent_SMS__r}>Total messages sent: {campaignPush.Marketing_Sent_SMS__r.length}</p>
+				</lightning-accordion-section>
+			</template>
+		</lightning-accordion>
+		<template if:true={campaignPushes.error}>
+			{campaignPushes.error.message}
+		</template>
+	</div>
+</template>

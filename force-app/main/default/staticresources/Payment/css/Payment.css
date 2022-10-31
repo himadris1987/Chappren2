@@ -1,0 +1,234 @@
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+     margin-bottom: 0;
+  }
+
+.StripeElement {
+    box-sizing: border-box;
+    
+    height: 40px;
+    
+    padding: 10px 12px;
+    
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+    
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
+
+.payment-form-container {
+    margin-top:100px;
+    margin-left:25vw;
+    margin-right:25vw;
+}
+
+#card-errors {
+    color: #fa755a;
+}
+
+.desktop_nav_item {
+    margin-left: 0px;
+}
+
+body {
+    background: linear-gradient(225deg, rgba(1, 0, 236, 1) 13%, rgba(242, 55, 239, 1) 100%);
+}
+
+.form {
+    text-align: center;
+    position: relative;
+    padding-top: 2em;
+    margin-bottom: 25px;
+    top:25%;
+}
+
+.form-input {
+    width: 100%;
+    border-radius: 50px;
+    padding: 20px;
+    border: .5px solid transparent;
+    color: white;
+    font-weight: bold;
+    background-color:rgba(220, 220, 220, .3);
+    margin-top: 25px;
+    box-shadow: black 1px 3px 30px -24px;
+}
+
+.form-input::placeholder {
+    color: white;
+}
+
+.form-input:focus {
+    outline: none;
+}
+
+.form-input[type=number]::-webkit-inner-spin-button,
+.form-input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+
+
+.form_select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-image: url('https://bitwiseindustries--partial--c.visualforce.com/resource/1569337544000/DropdownArrow?');
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto 100%;
+}
+
+.form_select > option {
+    color: #000;
+}
+
+.margin-top40 {
+    margin-top: 20%;
+}
+
+.form-button {
+    width: 33%;
+    border-radius: 50px;
+    background-color: rgb(1, 1, 85);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: center;
+    padding: 25px;
+    color: white;
+    border: 1px solid transparent;
+}
+
+.white-text {
+    color: #fff;
+}
+a.white-text {
+    text-decoration: underline;
+}
+
+a.white-text:hover {
+    color:#fa755a;
+}
+
+.price_text {
+    margin-top: 1.25em;
+}
+
+.no-decoration {
+    text-decoration: none;
+}
+
+.no-decoration:hover {
+    color: rgb(189, 189, 189);
+}
+
+.form-header{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.spinner {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lds-dual-ring {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+}
+
+.lds-dual-ring:after {
+    content: " ";
+    display: block;
+    width: 46px;
+    height: 46px;
+    margin: 1px;
+    border-radius: 50%;
+    border: 5px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+}
+
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.card-form-input {
+    height:60px !important;
+}
+
+.submit-button {
+    width: 250px;
+    height: 60px;
+    border: 0px;
+    border-radius: 25px;
+    background: #6abf61;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    margin-top:25px;
+}
+
+.submit-button:disabled {
+    width: 250px;
+    height: 60px;
+    border-radius: 25px;
+    color: #000;
+    background: rgba(220, 220, 220, .6);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+@media (max-width: 762px) {
+    .submit_button {
+      width: 190px;
+    }
+
+    .submit-button:disabled {
+        width: 190px;
+    }
+  }
+
+.invalid {
+    border:3px solid red;
+}
+
+.padding_top_15{
+    padding-top: 15px;
+}
+.sorry-message {
+    margin: 25vh 0 30vh 0;
+}
+

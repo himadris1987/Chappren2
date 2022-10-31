@@ -1,0 +1,170 @@
+<apex:page controller="GiveGiftMembershipController" showheader="false" standardStylesheets="false" sidebar="false" applyBodyTag="false" docType="html-5.0">
+
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-109037308-1"></script>
+        <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'UA-109037308-1');
+        </script>
+
+        <!-- Meta -->
+        <meta charset="UTF-8" />
+        <link href="//www.google-analytics.com" rel="dns-prefetch"/>
+        <link href="{!URLFOR($Resource.hashtagfaviconico)}" rel="shortcut icon" />
+        <link href="{!URLFOR($Resource.hastagtabicon)}" rel="apple-touch-icon-precomposed" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <!-- CSS -->
+        <apex:stylesheet value="{!URLFOR($Resource.GiveGiftMembership, '/css/GiveGiftMembership.css')}" />
+        <apex:stylesheet value="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+        <apex:stylesheet value="https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap" />
+        <apex:stylesheet value="https://fonts.googleapis.com/css?family=Raleway&display=swap" />
+        <apex:stylesheet value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+        <apex:stylesheet value="{!URLFOR($Resource.HashtagStyles)}" />
+
+        <!-- Javascript -->
+        <apex:includeScript value="{!URLFOR($Resource.GiveGiftMembership, '/js/GiveGiftMembership.js')}" />
+        <apex:includeScript value="https://code.jquery.com/jquery-3.4.1.min.js" />
+        <apex:includeScript value="https://js.stripe.com/v3/" />
+        <apex:includeScript value="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
+
+        <!-- Facebook Pixel Code -->
+        <script>
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '372675993424993');
+            fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=372675993424993&ev=PageView&noscript=1"
+        /></noscript>
+        <!-- End Facebook Pixel Code -->
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            var apiKey = "{!apiKey}"; //Allowing the api key to be passed in from the controller.
+            var formId = '{!$Component.membershipForm}'; //Form is dynamically generated.
+        </script>
+        <div id="spinner" class="spinner" style="display:none;">
+            <div class="lds-dual-ring"></div>
+        </div>
+        <!-- Navbar -->
+        <c:HashtagHeader />
+        <!-- Main -->
+        <div class="container-fluid">
+            <div class="row">
+                <!-- <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-4 col-md-offset-4"> -->
+                <div class="col-md-6 col-md-offset-3">
+                    <apex:form styleClass="form center-vert" id="membershipForm">
+                        <apex:actionFunction name="handleStripeToken" action="{!processToken}" reRender="errorPanel" oncomplete="paymentFinished()">
+                            <apex:param id="card_token" name="card_token" value="" />
+                        </apex:actionFunction>
+                        <apex:actionFunction name="updateDiscountCode" action="{!updateDiscountCode}" reRender="errorPanel,priceDisplay"/>
+                        <apex:pageMessages ></apex:pageMessages>
+                        <h4 class="white-text form-header">Please fill out the information below to complete your payment.</h4>
+                        
+                        <apex:outputPanel id="rerender"></apex:outputPanel>
+                        <h3 class="white_text">Gift Giver Information</h3>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <apex:inputText id="firstName" html-placeholder="First Name" styleClass="form-input form-input-required" onchange="updateHighlights(event)"
+                                    onclick="clickField(event)" value="{! paymentFirstName}" onblur="blurField(event)" />
+                            </div>
+                            <div class="col-sm-6">
+                                <apex:inputText id="lastName" html-placeholder="Last Name" styleClass="form-input form-input-required" onchange="updateHighlights(event)"
+                                    onclick="clickField(event)" value="{! paymentLastName}" onblur="blurField(event)" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <apex:inputText id="emailBox" html-placeholder="Email" styleClass="form-input form-input-required" onchange="updateHighlights(event)"
+                                    onclick="clickField(event)" value="{! paymentEmail}" onblur="blurField(event)" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <apex:inputText id="phoneBox" html-placeholder="Phone Number" styleClass="form-input form-input-required" onchange="updateHighlights(event)"
+                                    onclick="clickField(event)" value="{! paymentPhone}" onblur="blurField(event)" />
+                            </div>
+                        </div>
+                        <h3 class="white_text">Recipient Information</h3>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <apex:inputText id="recipientFirstName" html-placeholder="First Name" styleClass="form-input form-input-required" onchange="updateHighlights(event)"
+                                    onclick="clickField(event)" value="{! memberFirstName}" onblur="blurField(event)" />
+                            </div>
+                            <div class="col-sm-6">
+                                <apex:inputText id="recipientLastName" html-placeholder="Last Name" styleClass="form-input form-input-required" onchange="updateHighlights(event)"
+                                    onclick="clickField(event)" value="{! memberLastName}" onblur="blurField(event)" />
+                            </div>
+                        </div>
+
+                        <h3 class="white_text padding_top_15">Payment</h3>
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <apex:inputText id="discountCode" html-placeholder="Discount Code (Optional)" styleClass="form-input" value="{! discountCode}" onchange="updateDiscountCode()"/>
+                            </div>
+                        </div>
+
+                        <apex:outputPanel id="priceDisplay">
+                            <div class="price_text">
+                                <h3 class="white-text">{!price}</h3>
+                            </div>
+                        </apex:outputPanel>
+                        <div class="form-row">
+                                <!-- <label for="card-element">
+                                                    Credit or debit card
+                                                </label> -->
+                                <div id="card-element" class="form-input card-form-input">
+                                    <!-- A Stripe Element will be inserted here. -->
+                                </div>
+    
+                                <!-- Used to display form errors. -->
+                                <div id="card-errors" role="alert"></div>
+                            </div>
+                            <br/>
+                        
+                        <br/>
+                        <apex:outputPanel id="errorPanel">
+                            <apex:outputPanel rendered="{!error != ''}">
+                                <div class="alert alert-danger">
+                                    <apex:outputText value="{!error}" escape="false"/>
+                                </div>
+                            </apex:outputPanel>
+
+                            <script type="text/javascript">
+                                createStripe();
+                            </script>
+                        </apex:outputPanel>
+                        <button id="submitButton" class="submit-button" disabled="true">SUBMIT PAYMENT</button>
+                    </apex:form>
+                </div>
+            </div>
+        </div>
+        <!-- Footer -->
+        <c:HashtagFooter />
+        <!-- Google Analytics -->
+        <script>
+            (function (f, i, r, e, s, h, l) {
+                i['GoogleAnalyticsObject'] = s; f[s] = f[s] || function () {
+                    (f[s].q = f[s].q || []).push(arguments)
+                }, f[s].l = 1 * new Date(); h = i.createElement(r),
+                    l = i.getElementsByTagName(r)[0]; h.async = 1; h.src = e; l.parentNode.insertBefore(h, l)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</apex:page>
