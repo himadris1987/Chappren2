@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject></baseObject>
+    <category>campaigns</category>
+    <deployed>true</deployed>
+    <description>Campaigns with Pardot Landing Pages</description>
+    <label>Campaigns with Landing Pages</label>
+    <sections>
+        <masterLabel>Landing Pages</masterLabel>
+    </sections>
+    <sections>
+        <masterLabel>Landing Page Feed</masterLabel>
+    </sections>
+</ReportType>

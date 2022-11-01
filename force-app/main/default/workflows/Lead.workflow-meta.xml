@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Chatbot_Lead_Source_Notification</fullName>
+        <ccEmails>acano@bitwiseindustries.com</ccEmails>
+        <description>Leads: Chatbot Source Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>bsalais@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jprendergast@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mkomin@shift3tech.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Leads_Chatbot_Source</template>
+    </alerts>
+    <alerts>
+        <fullName>Cowork_Email_New_Tour_Request_Room_End_User_Confirmation</fullName>
+        <description>Cowork-Email -New Tour Request Room End User Confirmation!</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Cowork_Templates/Cowork_Tour_Confirmation_End_User</template>
+    </alerts>
+    <alerts>
+        <fullName>Cowork_Internal_Email_New_Tour_Request</fullName>
+        <description>Cowork-Internal-Email -New Tour Request!</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>scobb@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Cowork_Templates/Cowork_New_tour_request</template>
+    </alerts>
+    <alerts>
+        <fullName>Leads_Chatbot_Source_Leasing_Notification</fullName>
+        <ccEmails>acano@bitwiseindustries.com</ccEmails>
+        <description>Leads: Chatbot Source Leasing Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>bsalais@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mkomin@shift3tech.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/Leads_Chatbot_Source_Leasing</template>
+    </alerts>
+    <alerts>
+        <fullName>Leasing_Create_New_Lead_Alert</fullName>
+        <description>Leasing-Create New Lead Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Leasing_Team</recipient>
+            <type>group</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Leasing_Templates/Leasing_Lead_Creation</template>
+    </alerts>
+    <alerts>
+        <fullName>Leasing_Lead_Converted_Alert</fullName>
+        <description>Leasing-Lead Converted Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Leasing_Team</recipient>
+            <type>group</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Leasing_Templates/Leasing_Lead_Conversion</template>
+    </alerts>
+</Workflow>

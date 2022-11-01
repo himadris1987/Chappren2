@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Leads_w_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Leads w/ Marketing</label>
+        <sharedTo>
+            <role>Marketing_Team</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>BWRD,General,Philanthropy,BWTC,Tenant,Government</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Listing_Alert_All_Record_Types</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Created by ALC/GRS - created per Kaila Webb&apos;s request to ensure LA users have access to all record types within the Ventures leads.</description>
+        <label>Listing Alert: All Record Types</label>
+        <sharedTo>
+            <role>Listing_Alert_Team</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>BWRD,General,Tatstat,6 Degrees,Tenant,Listing Alert</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Listing_Alert_Product_Officer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Allows Listing Alert Product Officer to see all Listing Alert leads</description>
+        <label>Listing Alert Product Officer</label>
+        <sharedTo>
+            <role>Listing_Alert_Product_Officer</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Listing Alert</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Rev_Role_Read_All_RTs</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>CMP 
+Gives Revenue Role read access to all Lead RTs in order to check for dupes</description>
+        <label>Rev Role - Read - All RTs</label>
+        <sharedTo>
+            <role>Revenue</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Tatstat,Tenant,Centripoint,Insitely,Cowork Lead,BWRD,6 Degrees,PodUp,Listing Alert</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Rev_Role_Read_Write_General_RT</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>CMP
+Gives the Revenue Role read/write access to General Lead RT</description>
+        <label>Rev Role - Read/Write - General RT</label>
+        <sharedTo>
+            <role>Revenue</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>General,Philanthropy,BWTC,Government</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>BWTC_Leads_Opp_Visibility</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Created by : CF 
+Department : BWTC
+Origin : Case 24216, January 2022
+Purpose: Allows JP, Brandon, and BWTC Leads visibility to one another&apos;s opps</description>
+        <label>BWTC Leads Opp Visibility</label>
+        <sharedTo>
+            <role>Tech_Consulting_Leads</role>
+        </sharedTo>
+        <sharedFrom>
+            <roleAndSubordinatesInternal>Tech_Consulting_Leads</roleAndSubordinatesInternal>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Core_Ventures_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Leads owned by the Core Ventures Team with the Core Ventures Team</description>
+        <label>Core Ventures Team</label>
+        <sharedTo>
+            <role>Core_Ventures_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Core_Ventures_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Executive_Leads_w_Executives</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Created by JW</description>
+        <label>Executive Leads w/ Executives</label>
+        <sharedTo>
+            <role>Executive</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Executive</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Government_Lead_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Created by CF. For enabling Government team to share leads</description>
+        <label>Government Lead Sharing</label>
+        <sharedTo>
+            <role>Government_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Government_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Leasing_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Leads owned by the Leasing Team with the Leasing Team</description>
+        <label>Leasing Team</label>
+        <sharedTo>
+            <role>Leasing_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Leasing_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Listing_Alert</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Listing_Alert</label>
+        <sharedTo>
+            <role>Listing_Alert_Product_Officer</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Core_Ventures_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Listing_Alert_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Leads owned by the Listing Alert Team with the Listing Alert Team</description>
+        <label>Listing Alert Team</label>
+        <sharedTo>
+            <role>Listing_Alert_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Listing_Alert_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Onward_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Leads owned by the Onward Team with the Onward Team</description>
+        <label>Onward Team</label>
+        <sharedTo>
+            <role>Onward_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Onward_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Onward_Teams</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Created by ALC/CL
+Department: Cowork/Onward
+Purpose: To ensure that Megan from Cowork and future users who need access to gov leads and opportunities are able to see all fields pertinent to government.
+Origin: Case #24306</description>
+        <label>Onward Teams</label>
+        <sharedTo>
+            <group>Onward_Team</group>
+        </sharedTo>
+        <sharedFrom>
+            <role>Government_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Philanthropy_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Philanthropy Team</label>
+        <sharedTo>
+            <role>Philanthropy_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Philanthropy_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Podup_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>Podup Team</label>
+        <sharedTo>
+            <role>Podup_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Podup_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Tatstat_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Leads owned by the Tatstat Team with the Tatstat Team</description>
+        <label>Tatstat Team</label>
+        <sharedTo>
+            <role>Tatstat_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Tatstat_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Tech_Consulting_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Leads owned by the Tech Consulting Team with the Tech Consulting Team</description>
+        <label>Tech Consulting Team</label>
+        <sharedTo>
+            <role>Tech_Consulting_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Tech_Consulting_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>WFT_Lead_Sharing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Created by CF
+Dept: WFT
+To allow WFT communal access to leads</description>
+        <label>WFT Lead Sharing</label>
+        <sharedTo>
+            <role>Workforce_Training_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Workforce_Training_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>X6_Degrees_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Leads owned by the 6 Degrees Team with the 6 Degrees Team</description>
+        <label>6 Degrees Team</label>
+        <sharedTo>
+            <role>X6_Degrees_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>X6_Degrees_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

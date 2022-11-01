@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>WFT_Class_Approaching_Full_20</fullName>
+        <description>WFT Class Approaching Full 20</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>smoreno@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Class_Approaching_Full_20</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Class_Approaching_Full_30</fullName>
+        <description>WFT Class Approaching Full 30</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>smoreno@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Class_Approaching_Full_30</template>
+    </alerts>
+</Workflow>

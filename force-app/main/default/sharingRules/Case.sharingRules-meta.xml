@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>DevOps</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>GS</description>
+        <label>DevOps</label>
+        <sharedTo>
+            <group>DevOps_Team</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>DevOps</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>WFT_Cases_Visibility</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Created by JW/CF
+Grants visibility of WFT Cases to the whole WFT Team.</description>
+        <label>WFT Cases Visibility</label>
+        <sharedTo>
+            <role>Workforce_Training_Team</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>Department__c</field>
+            <operation>equals</operation>
+            <value>Workforce Training</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>HR_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>HR Team</label>
+        <sharedTo>
+            <role>HR_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>HR_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>IT</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>IT</label>
+        <sharedTo>
+            <role>IT_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>IT_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>SFDC</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>SFDC</label>
+        <sharedTo>
+            <role>System_Administrator</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>System_Administrator</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

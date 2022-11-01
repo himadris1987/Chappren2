@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>WFT_Absence_Alert</fullName>
+        <description>WFT - Absence Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Student_Success_Specialist_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Consecutive_Absence_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Automated_Survey</fullName>
+        <description>WFT Automated Survey</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Registrant__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Student_Survey</template>
+    </alerts>
+</Workflow>

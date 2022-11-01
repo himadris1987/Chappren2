@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Letterhead xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <backgroundColor>#FFFFFF</backgroundColor>
+    <bodyColor>#FFFFFF</bodyColor>
+    <bottomLine>
+        <color>#001A3D</color>
+        <height>0</height>
+    </bottomLine>
+    <description>Created By: VC
+Business Unit: Hashtag Users
+Purpose: To provide information to new members about the hashtag.
+Populated: Manually</description>
+    <footer>
+        <backgroundColor>#002131</backgroundColor>
+        <height>0</height>
+        <horizontalAlignment>Center</horizontalAlignment>
+        <verticalAlignment>Top</verticalAlignment>
+    </footer>
+    <header>
+        <backgroundColor>#002131</backgroundColor>
+        <height>0</height>
+        <horizontalAlignment>Center</horizontalAlignment>
+        <verticalAlignment>Middle</verticalAlignment>
+    </header>
+    <middleLine>
+        <color>#6FBF4A</color>
+        <height>0</height>
+    </middleLine>
+    <name>Cowork-New Member Campaigns Letterhead</name>
+    <topLine>
+        <color>#6FBF4A</color>
+        <height>0</height>
+    </topLine>
+</Letterhead>

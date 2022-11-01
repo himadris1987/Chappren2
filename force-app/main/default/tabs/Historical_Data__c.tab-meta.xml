@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomTab xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customObject>true</customObject>
+    <description>This object will be used for historical data for WFT from 2013 to March 2021.
+Created by: YB, MH</description>
+    <motif>Custom55: Books</motif>
+</CustomTab>

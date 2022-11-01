@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Booster_Eligibility_Reminde_for_Employee</fullName>
+        <description>Booster Eligibility Reminde for Employee</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>HR_Folder/HR_Employee_Booster_Eligibility_Template_Employee</template>
+    </alerts>
+    <alerts>
+        <fullName>Booster_Eligibility_Reminde_for_HR</fullName>
+        <description>Booster Eligibility Reminde for HR</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>pberhe@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>HR_Folder/HR_Employee_Booster_Eligibility_Template_HR</template>
+    </alerts>
+    <alerts>
+        <fullName>HR_Employees_Booster_Opt_Out_Status_Follow_up</fullName>
+        <description>HR- Employees Booster Opt-Out Status Follow up</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>eceballos@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>HR_Folder/HR_Covid_Booster_No_Response_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>HR_Employees_Booster_Status_Follow_up</fullName>
+        <description>HR- Employees  Booster Status Follow up</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/HR_Covid_Vaccine_No_Response_Template_for_Employees</template>
+    </alerts>
+    <alerts>
+        <fullName>HR_Employees_Booster_Status_notification</fullName>
+        <description>HR- Employees Booster Status notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ccadriel@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>pberhe@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>vrodriguez@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>HR_Folder/HR_Booster_Status_Notfication</template>
+    </alerts>
+    <alerts>
+        <fullName>HR_Employees_Booster_Submission_Confirmation</fullName>
+        <description>HR- Employees Booster Submission Confirmation</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>HR_Folder/HR_Employee_Booster_Verified_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>HR_Employees_Fully_Vaccinated_Status_Notification</fullName>
+        <description>HR- Employees  Fully Vaccinated Status Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ccadriel@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>pberhe@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>vrodriguez@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/HR_Vaccinated_Status_Notfication</template>
+    </alerts>
+    <alerts>
+        <fullName>HR_Employees_Partially_Vaccine_Status_Follow_up</fullName>
+        <description>HR- Employees  Partially Vaccine Status Follow up</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ccadriel@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>pberhe@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>vrodriguez@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/HR_Vaccinated_Status_Notfication</template>
+    </alerts>
+    <alerts>
+        <fullName>HR_Employees_Planned_Booster_Status_Follow_up</fullName>
+        <description>HR- Employees Planned Booster Status Follow up</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ccadriel@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>pberhe@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>vrodriguez@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>HR_Folder/HR_Planned_to_get_Booster_status_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>HR_Employees_Planned_Vaccine_Status_Follow_up</fullName>
+        <description>HR- Employees Planned Vaccine Status Follow up</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ccadriel@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>pberhe@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>vrodriguez@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/HR_Vaccinated_Status_Notfication</template>
+    </alerts>
+    <alerts>
+        <fullName>HR_Employees_Vaccine_Status_Follow_up_to_Contact</fullName>
+        <description>HR- Employees Vaccine Status Follow up to Contact</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <field>Personal_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>unfiled$public/HR_Covid_Vaccine_No_Response_Template_for_Employees</template>
+    </alerts>
+    <alerts>
+        <fullName>HR_Employees_Vaccine_Submission_Confirmation</fullName>
+        <description>HR- Employees  Vaccine Submission Confirmation</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>HR_Folder/HR_Vaccine_Submission_verification</template>
+    </alerts>
+    <alerts>
+        <fullName>HR_Partially_Vaccinated_Time_based_email_alert</fullName>
+        <description>HR_Partially Vaccinated Time-based email alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ccadriel@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>pberhe@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>vrodriguez@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/HR_Partially_Planned_Vaccinated_Time_based_email</template>
+    </alerts>
+    <alerts>
+        <fullName>HR_Vaccine_Status_Follow_up</fullName>
+        <description>HR- Employees  Vaccine Status Follow up</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>ccadriel@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>pberhe@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>vrodriguez@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/HR_Covid_Vaccine_No_Response_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>HS_Portfolio_Alert</fullName>
+        <description>Created By: HNS, Business Unit: Cowork, Purpose: Will send Himadri a notification whenever a contact record is created through his flow</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>hsinha@alphaworks.tech</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/HS_Contact_Notification</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Apprenticeship_Consideration_Alert</fullName>
+        <description>WFT-Apprenticeship Consideration Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Apprenticeship_Consideration</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Consecutive_Absence_Alert</fullName>
+        <description>WFT Consecutive Absence Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>agordon@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>cfarmer@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>rmartinez@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>smoreno@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workforce_Training_Templates/WFT_Consecutive_Absence_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Student_Survey_Reminder</fullName>
+        <description>WFT Student Survey Reminder</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Student_Survey_Reminder</template>
+    </alerts>
+    <rules>
+        <fullName>HR - Booster  Status  Notification and Follow-up</fullName>
+        <actions>
+            <name>HR_Employees_Booster_Status_notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Contact.Got_Booster__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Created by:YB,MH
+Business Unit: HR
+Purposes :- To follow up employees vaccine status.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>HR - Booster Eligibility</fullName>
+        <actions>
+            <name>Booster_Eligibility_Reminde_for_Employee</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>Booster_Eligibility_Reminde_for_HR</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Created by: YB,MH
+Bussines unit:- HR
+Purpose :-  To Remind employees and HR to upload their Booster card.</description>
+        <formula>Booster_Eligibility_Date__c =  TODAY()</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>HR - Booster Verification</fullName>
+        <actions>
+            <name>HR_Employees_Booster_Submission_Confirmation</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Booster_verified__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Created by: MH
+Business Unit: HR
+Purpose: To confirm employees&apos;s COVID booster verification</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>HR - Fully  Vaccine Status  Notification and Follow-up</fullName>
+        <actions>
+            <name>HR_Employees_Fully_Vaccinated_Status_Notification</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Vaccinated__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Created by:YB,MH
+Business Unit: HR
+Purposes :- To follow up employees vaccine status.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>HR - Partiality Vaccine Status  Notification and Follow-up</fullName>
+        <actions>
+            <name>HR_Employees_Partially_Vaccine_Status_Follow_up</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Partially_Vaccinated__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Created by:YB,MH
+Business Unit: HR
+Purposes :- To follow up employees vaccine status.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>HR_Partially_Vaccinated_Time_based_email_alert</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contact.Estimated_Second_Dose_Date__c</offsetFromField>
+            <timeLength>9</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>HR - Vaccine Verification</fullName>
+        <actions>
+            <name>HR_Employees_Vaccine_Submission_Confirmation</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Vaccine_Verified__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Created by: YB
+Business Unit:HR
+Purpose :- To confirm employee&apos;s COVID vaccine verification .</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>HR- Planned Booster Status Notification and Follow up</fullName>
+        <actions>
+            <name>HR_Employees_Planned_Booster_Status_Follow_up</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <description>Created by:YB,MH
+Business Unit: HR
+Purposes :- To follow up employees planned vaccine status.</description>
+        <formula>NOT(ISNULL(Estimated_Booster_Date__c ))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>HR- Planned Vaccine Status Notification and Follow up</fullName>
+        <actions>
+            <name>HR_Employees_Planned_Vaccine_Status_Follow_up</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <description>Created by:YB,MH
+Business Unit: HR
+Purposes :- To follow up employees planned vaccine status.</description>
+        <formula>NOT(ISNULL(Estimated_Vaccine_Date__c))</formula>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+        <workflowTimeTriggers>
+            <actions>
+                <name>HR_Partially_Vaccinated_Time_based_email_alert</name>
+                <type>Alert</type>
+            </actions>
+            <offsetFromField>Contact.Estimated_Vaccine_Date__c</offsetFromField>
+            <timeLength>9</timeLength>
+            <workflowTimeTriggerUnit>Hours</workflowTimeTriggerUnit>
+        </workflowTimeTriggers>
+    </rules>
+    <rules>
+        <fullName>HR_Opt-out Booster Status Follow-up</fullName>
+        <actions>
+            <name>HR_Employees_Booster_Opt_Out_Status_Follow_up</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>HR_Employees_Booster_Status_Follow_up</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Booster_Opt_Out__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Created by:YB,MH
+Business Unit: HR
+Purposes :- To follow up employees vaccine status.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>HR_Opt-out Vaccine Status Follow-up</fullName>
+        <actions>
+            <name>HR_Employees_Vaccine_Status_Follow_up_to_Contact</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>HR_Vaccine_Status_Follow_up</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Vaccination_Opt_Out_del__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Created by:YB,MH
+Business Unit: HR
+Purposes :- To follow up employees vaccine status.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>HR_Vaccine Status Follow-up</fullName>
+        <actions>
+            <name>HR_Employees_Vaccine_Status_Follow_up_to_Contact</name>
+            <type>Alert</type>
+        </actions>
+        <actions>
+            <name>HR_Vaccine_Status_Follow_up</name>
+            <type>Alert</type>
+        </actions>
+        <active>true</active>
+        <criteriaItems>
+            <field>Contact.Vaccination_Opt_Out_del__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Created by:YB,MH
+Business Unit: HR
+Purposes :- To follow up employees vaccine status.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

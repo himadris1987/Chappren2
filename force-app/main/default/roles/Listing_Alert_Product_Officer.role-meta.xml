@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Read</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Product Officer-Listing Alert</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Listing Alert Product Officer</name>
+    <opportunityAccessLevel>Read</opportunityAccessLevel>
+    <parentRole>Core_Ventures_Team</parentRole>
+</Role>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>BWRD_Idea_Assessment_Notification</fullName>
+        <description>BWRD - Idea Assessment Notification</description>
+        <protected>false</protected>
+        <recipients>
+            <field>BWRD_User__c</field>
+            <type>userLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>BWRD_Email_Templates/BWRD_Assessment_Notification</template>
+    </alerts>
+</Workflow>

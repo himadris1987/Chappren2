@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>BWTC_Big_Deals_Alert</fullName>
+        <ccEmails>solutions@bitwiseindustries.com</ccEmails>
+        <description>BWTC Big Deals Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>iolguin@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>jdubois@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>mrodriguez@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>BWTC_Email_Templates/BWTC_Big_Deals_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>BWTC_Client_WAG_Approval_Stage_Alert</fullName>
+        <ccEmails>jprendergast@bitwiseindustries.com</ccEmails>
+        <description>BWTC Client WAG Approval Stage Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>BWTC_Email_Templates/BWTC_Client_WAG_Approval_Stage_Email</template>
+    </alerts>
+    <alerts>
+        <fullName>BWTC_Closed_Lost_Pricing_Alert</fullName>
+        <ccEmails>pricing@bitwiseindustries.com</ccEmails>
+        <description>BWTC Closed Lost Pricing Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>jprendergast@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>BWTC_Email_Templates/BWTC_Closed_Lost_Pricing_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>BWTC_Discovery_Stage_Alert</fullName>
+        <ccEmails>solutions@bitwiseindustries.com</ccEmails>
+        <description>BWTC Discovery Stage Alert</description>
+        <protected>false</protected>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>BWTC_Email_Templates/BWTC_Discovery_Stage_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>BWTC_Proposal_Stage_Alert</fullName>
+        <description>BWTC Proposal Stage Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>BWTC_Email_Templates/BWTC_Proposal_Stage_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>BWTC_Scope_Stage_Alert</fullName>
+        <ccEmails>solutions@bitwiseindustries.com</ccEmails>
+        <description>BWTC Scope Stage Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>BWTC_Email_Templates/BWTC_Scope_Stage_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>BWTC_WAG_Stage_Alert</fullName>
+        <ccEmails>solutions@bitwiseindustries.com</ccEmails>
+        <description>BWTC WAG Stage Alert</description>
+        <protected>false</protected>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>BWTC_Email_Templates/BWTC_WAG_Stage_Alert</template>
+    </alerts>
+    <alerts>
+        <fullName>Leasing_Create_New_Opportunity_Alert</fullName>
+        <description>Leasing-Create New Opportunity Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Leasing_Team</recipient>
+            <type>group</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Leasing_Templates/Leasing_Opp_Created</template>
+    </alerts>
+    <alerts>
+        <fullName>Leasing_Opp_to_lease_conversion_Notification</fullName>
+        <description>Leasing-Opp to lease conversion notification</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Leasing_Team</recipient>
+            <type>group</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Leasing_Templates/Leasing_Opp_to_Lease_Conversion</template>
+    </alerts>
+    <alerts>
+        <fullName>One_Day_Opportunity_Closed_Date_Alert</fullName>
+        <description>One Day Opportunity Closed Date Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Channel Leader</recipient>
+            <type>opportunityTeam</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>rmccallum@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Shift3_Email_Template/One_Day_Opportunity_Close_Date_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>Scope_stage_email</fullName>
+        <ccEmails>solutions@bitwiseindustries.com</ccEmails>
+        <description>Scope stage email</description>
+        <protected>false</protected>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Shift3_Email_Template/Shift3_Scope_Stage_Alert</template>
+    </alerts>
+</Workflow>

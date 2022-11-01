@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>WFT_2021_Former_Student_Reminder_Alert</fullName>
+        <description>WFT - 2021 Former Student Reminder Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_2021_Former_Student_Reminder</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_2021_Former_Student_Survey</fullName>
+        <description>WFT - 2021 Former Student Survey</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_2021_Former_Student_Survey</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_After_Apprentice_Survey</fullName>
+        <description>WFT - After Apprentice Survey</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_After_Apprentice_Survey</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_After_Survey</fullName>
+        <description>WFT - After Survey</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_After_Survey</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Apprentice_Survey</fullName>
+        <description>WFT - Apprentice Survey</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Apprentice_Survey</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Apprentice_Survey_Reminder</fullName>
+        <description>WFT - Apprentice Survey Reminder</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Apprentice_Survey_Reminder</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Student_Email_Journey_1</fullName>
+        <description>WFT - Student Email Journey 1</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Student_Email_Journey_Email_1</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Student_Email_Journey_2</fullName>
+        <description>WFT - Student Email Journey 2</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Student_Email_Journey_Email_2</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Student_Email_Journey_3</fullName>
+        <description>WFT - Student Email Journey 3</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Student_Email_Journey_Email_3</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Student_Email_Journey_4</fullName>
+        <description>WFT - Student Email Journey 4</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Student_Email_Journey_Email_4</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Student_Email_Journey_5</fullName>
+        <description>WFT - Student Email Journey 5</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Student_Email_Journey_Email_5</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Student_Email_Journey_6</fullName>
+        <description>WFT - Student Email Journey 6</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Student_Email_Journey_Email_6</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Student_Email_Journey_Late_Registration_Alert</fullName>
+        <description>WFT - Student Email Journey - Late Registration Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Student_Email_Journey_Late_Registration</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Student_Survey</fullName>
+        <description>WFT - Student Survey</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Student_Survey</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Survey_Reminder_Email</fullName>
+        <description>WFT - Survey Reminder Email</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Student_Survey_Reminder</template>
+    </alerts>
+</Workflow>

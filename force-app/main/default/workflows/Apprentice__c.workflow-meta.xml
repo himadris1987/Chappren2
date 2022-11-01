@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>WFT_Accepted_to_Apprenticeship_Active</fullName>
+        <description>WFT-Accepted to Apprenticeship(Active)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Accepted_to_Apprenticeship_Active</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Apprentice_Invite_Alert</fullName>
+        <description>WFT Apprentice Invite Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Apprentice_Invitation</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_New_Apprentice_Alert</fullName>
+        <description>WFT New Apprentice Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Apprenticeship_Lead__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_New_Apprentice</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_New_Apprentice_Joining_Alpha_Works_Alert</fullName>
+        <description>WFT-New Apprentice Joining Alpha Works Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>mhaynes@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sanoop@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>Workforce_Training_Templates/WFT_Apprentice_Joining_Alpha_Works</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Not_Accepted_to_Apprenticeship_Pass</fullName>
+        <description>WFT-Not Accepted to Apprenticeship(Pass)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Not_Accepted_to_Apprenticeship_Pass</template>
+    </alerts>
+    <alerts>
+        <fullName>WFT_Welcome_Email_Alert</fullName>
+        <description>WFT - Welcome Email Alert</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Workforce_Training_Templates/WFT_Welcome_Email</template>
+    </alerts>
+    <outboundMessages>
+        <fullName>Conga_Trigger_Offer_Letter</fullName>
+        <apiVersion>51.0</apiVersion>
+        <endpointUrl>https://workflow.congamerge.com/OBMListener.ashx</endpointUrl>
+        <fields>Conga_Offer_Letter_and_PIIA__c</fields>
+        <fields>Id</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>queenbee@bitwiseindustries.com</integrationUser>
+        <name>Conga Trigger - Offer Letter</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <outboundMessages>
+        <fullName>Conga_Trigger_Onboarding_Application</fullName>
+        <apiVersion>51.0</apiVersion>
+        <endpointUrl>https://workflow.congamerge.com/OBMListener.ashx</endpointUrl>
+        <fields>Conga_Onboarding_Application__c</fields>
+        <fields>Id</fields>
+        <includeSessionId>true</includeSessionId>
+        <integrationUser>jaguilar@bitwiseindustries.com</integrationUser>
+        <name>Conga Trigger - Onboarding Application</name>
+        <protected>false</protected>
+        <useDeadLetterQueue>false</useDeadLetterQueue>
+    </outboundMessages>
+    <rules>
+        <fullName>Conga Trigger Offer Letter Conga Sign</fullName>
+        <actions>
+            <name>Conga_Trigger_Offer_Letter</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Apprentice__c.Apprentice_Acceptance__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Created by: JA
+Purpose: Sends Apprentice Offer Letter document via Conga Sign when the Application Completed checkbox is checked.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>Conga Trigger Onboarding Application Conga Sign</fullName>
+        <actions>
+            <name>Conga_Trigger_Onboarding_Application</name>
+            <type>OutboundMessage</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Apprentice__c.Apprentice_Acceptance__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Created by: JA
+Purpose: Sends Apprentice Application document via Conga Sign when the Apprentice Acceptance checkbox is checked.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+    <rules>
+        <fullName>WFT - Onboarding Welcome Email</fullName>
+        <actions>
+            <name>WFT_Welcome_Email_Alert</name>
+            <type>Alert</type>
+        </actions>
+        <active>false</active>
+        <criteriaItems>
+            <field>Apprentice__c.Application_Completed__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <criteriaItems>
+            <field>Apprentice__c.Offer_Accepted__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </criteriaItems>
+        <description>Created By: MH, YB
+Business Unit: WFT
+Purpose: Sends onboarding welcome email after both the application and offer letter have been signed with Conga Sign.</description>
+        <triggerType>onCreateOrTriggeringUpdate</triggerType>
+    </rules>
+</Workflow>

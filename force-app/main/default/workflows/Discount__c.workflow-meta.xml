@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Cowork_Give_Gift_Membership</fullName>
+        <description>Cowork-Give-Gift-Membership</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Purchaser_Email__c</field>
+            <type>email</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Cowork_Templates/Cowork_Give_Gift_Membership</template>
+    </alerts>
+</Workflow>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>BWTC_Project_Kick_off_Alert_Flow</fullName>
+        <description>BWTC- Project Kick off Alert (Flow)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <recipient>cpayawal@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>hschrage@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>msalami@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>sardemagni@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Shift3_Email_Template/BWTC_Kick_Off_Stage_Template</template>
+    </alerts>
+    <alerts>
+        <fullName>BWTC_Ready_for_Development_Flow</fullName>
+        <description>BWTC- Ready for Development Alert (Flow)</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <recipients>
+            <recipient>cpayawal@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <recipients>
+            <recipient>msalami@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Shift3_Email_Template/BWTC_Ready_for_Development_Template_Flow</template>
+    </alerts>
+</Workflow>

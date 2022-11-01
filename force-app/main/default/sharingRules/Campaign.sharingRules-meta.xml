@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Finance_Campaigns_Read</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>CMP
+Revenue User Story 4.48</description>
+        <label>Finance Campaigns - Read</label>
+        <sharedTo>
+            <group>BW_Finance</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>BWRD,Venture Events,General,Event,Sales Event,Strategic</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Rev_Role_Campaign_CRE_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Created by: MS, Business Unit:Revenue, Purpose: give CRE access to campaign</description>
+        <label>Rev Role Campaign CRE Access</label>
+        <sharedTo>
+            <role>Revenue</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>General,Event,Sales Event,Strategic</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+</SharingRules>

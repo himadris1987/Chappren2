@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Cowork_Email_New_Conference_Room_Confirmation_End_User</fullName>
+        <description>Cowork-Email-New Conference-Room Confirmation!-End User</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Cowork_Templates/Cowork_New_Conference_Reservation_End_User</template>
+    </alerts>
+    <alerts>
+        <fullName>Cowork_Internal_Email_New_Conference_Podcast_Room_Confirmation</fullName>
+        <description>Cowork-Internal-Email-New Conference/Podcast Room Confirmation!</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>scobb@bitwiseindustries.com</recipient>
+            <type>user</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Cowork_Templates/Cowork_New_Conference_Reservation</template>
+    </alerts>
+    <alerts>
+        <fullName>Cowork_New_Podcast_Reservation_Email_to_End_User</fullName>
+        <description>Cowork-New Podcast Reservation Email to End User</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Contact__c</field>
+            <type>contactLookup</type>
+        </recipients>
+        <senderAddress>no-reply@bitwiseindustries.com</senderAddress>
+        <senderType>OrgWideEmailAddress</senderType>
+        <template>Cowork_Templates/Cowork_New_Podcast_Room_Reservation</template>
+    </alerts>
+</Workflow>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingOwnerRules>
+        <fullName>Student_Engagement_CRC_Team_Group</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Student Engagements owned by the Student Engagement/CRC Team (Group) with the Student Engagement/CRC Team (Group)</description>
+        <label>Student Engagement/CRC Team (Group)</label>
+        <sharedTo>
+            <group>Student_Engagement_CRC_Team</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>Student_Engagement_CRC_Team</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Student_Engagement_Sharing_for_Curriculum_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Created by CF
+Origin Case #25679
+Allows sharing of Student Engagements *only* between members of WFT - Curriculum Team</description>
+        <label>Student Engagement Sharing for Curriculum Team</label>
+        <sharedTo>
+            <group>WFT_Instructor_Success</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>WFT_Instructor_Success</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Student_Success</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Student Success</label>
+        <sharedTo>
+            <group>WFT_Student_Success</group>
+        </sharedTo>
+        <sharedFrom>
+            <group>WFT_Student_Success</group>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Workforce_Training_Team_to_Public_Group</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Student Engagements owned by the Workforce Training Team with the Student Engagement/CRC Team</description>
+        <label>Workforce Training Team to Public Group</label>
+        <sharedTo>
+            <group>Student_Engagement_CRC_Team</group>
+        </sharedTo>
+        <sharedFrom>
+            <role>Workforce_Training_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

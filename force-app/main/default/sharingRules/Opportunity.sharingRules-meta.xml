@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>BWTC_Opportunity_w_Marketing</fullName>
+        <accessLevel>Edit</accessLevel>
+        <label>BWTC Opportunity w/ Marketing</label>
+        <sharedTo>
+            <role>Marketing_Team</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>BWTC</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Finance_Opportunity_Access_Read</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>CMP
+Revenue Story 4.48</description>
+        <label>Finance Opportunity Access - Read</label>
+        <sharedTo>
+            <group>BW_Finance</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>BWRD,Leasing - Addendum,Philanthropy,BWTC,Leasing - Standard,Government</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Listing_Alert_Product_Officer</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Allows Listing Alert Product Officer to see all Listing Alerts opportunities.</description>
+        <label>Listing Alert Product Officer</label>
+        <sharedTo>
+            <role>Listing_Alert_Product_Officer</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Listing Alert</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Rev_Role_Read_BWRD_Leasing_Addendum_Leasing_Standard</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>CMP
+Give Revenue Role Access to BWRD, Leasing - Addendum, Leasing - Standard</description>
+        <label>Rev Role - Read - BWRD/Leasing-Addendum/Leasing-Standard</label>
+        <sharedTo>
+            <role>Revenue</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>BWRD,Leasing - Addendum,Leasing - Standard</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Revenue_Government_Opportunities</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>GS
+Purpose: Shares All Opportunities to Government/Revenue that match the Gov, Philanthropy, and BWTC Record Type.</description>
+        <label>Revenue/Government Opportunities</label>
+        <sharedTo>
+            <group>All_Revenue_Channels</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Government,Philanthropy,BWTC</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>false</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingOwnerRules>
+        <fullName>BWTC_Opp_Visibility</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Created by: CF
+Department: BWTC Sales
+Description: Allows team leads of BWTC sales to see one another&apos;s opps
+Origin: Case 24216</description>
+        <label>BWTC Opp Visibility for team leads</label>
+        <sharedTo>
+            <role>Tech_Consulting_Leads</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Tech_Consulting_Leads</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Core_Ventures_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Opportunities owned by the Core Ventures Team with the Core Ventures Team</description>
+        <label>Core Ventures Team</label>
+        <sharedTo>
+            <role>Core_Ventures_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Core_Ventures_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Executive_Opps_w_Executives</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Created by JW</description>
+        <label>Executive Opps w/ Executives</label>
+        <sharedTo>
+            <role>Executive</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Executive</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Leasing_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Opportunities owned by the Leasing Team with the Leasing Team</description>
+        <label>Leasing Team</label>
+        <sharedTo>
+            <role>Leasing_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Leasing_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Listing_Alert_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Opportunities owned by the Listing Alert Team with the Listing Alert Team</description>
+        <label>Listing Alert Team</label>
+        <sharedTo>
+            <role>Listing_Alert_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Listing_Alert_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Onwar_Cowork_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Created by ALC/CL
+Department: Cowork/Onward
+Purpose: To ensure that Megan from Cowork and future users who need access to gov leads and opportunities are able to see all fields pertinent to government.
+Origin: Case #24306</description>
+        <label>Onwar/Cowork Team</label>
+        <sharedTo>
+            <role>Onward_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Government_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Onward_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Opportunities owned by the Onward Team with the Onward Team</description>
+        <label>Onward Team</label>
+        <sharedTo>
+            <role>Onward_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Onward_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Opp_Visibility_for_Exec_Revenue_Team</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Opp Visibility for Exec/Revenue Team</label>
+        <sharedTo>
+            <role>Executive</role>
+        </sharedTo>
+        <sharedFrom>
+            <allInternalUsers></allInternalUsers>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Philanthropy_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Opportunities owned by the Philanthropy Team with the Philanthropy Team</description>
+        <label>Philanthropy Team</label>
+        <sharedTo>
+            <role>Philanthropy_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Philanthropy_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Podup_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Opportunities owned by the Podup Team with the Podup Team</description>
+        <label>Podup Team</label>
+        <sharedTo>
+            <role>Podup_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Podup_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Tatstat_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Opportunities owned by the Tatstat Team with the Tatstat Team</description>
+        <label>Tatstat Team</label>
+        <sharedTo>
+            <role>Tatstat_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Tatstat_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Tech_Consulting_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Opportunities owned by the Tech Consulting Team with the Tech Consulting Team</description>
+        <label>Tech Consulting Team</label>
+        <sharedTo>
+            <role>Tech_Consulting_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Tech_Consulting_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Ventures_Opps_Shared_w_Listing_Alert_Officer</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Ventures Opps Shared w. Listing Alert Officer</label>
+        <sharedTo>
+            <role>Listing_Alert_Product_Officer</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Core_Ventures_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>Ventures_Team</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Ventures Team</label>
+        <sharedTo>
+            <role>X6_Degrees_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>Core_Ventures_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+    <sharingOwnerRules>
+        <fullName>X6_Degrees_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <description>Share Opportunities owned by the 6 Degrees Team with the 6 Degrees Team</description>
+        <label>6 Degrees Team</label>
+        <sharedTo>
+            <role>X6_Degrees_Team</role>
+        </sharedTo>
+        <sharedFrom>
+            <role>X6_Degrees_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>

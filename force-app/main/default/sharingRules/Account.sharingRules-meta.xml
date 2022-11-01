@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Finance_Account_Access</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>CMP
+Revenue User story 4.48</description>
+        <label>Finance Account Access</label>
+        <sharedTo>
+            <group>BW_Finance</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>General</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Finance_Account_Access_Read</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>CMP
+Revenue User Story 4.48</description>
+        <label>Finance Account Access - Read</label>
+        <sharedTo>
+            <group>BW_Finance</group>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Tatstat,Tenant,WFT Connections,Six Degrees,BWRD,Individuals,Vendor,Listing Alert,Geekwise Connections</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Rev_Role_Account_R_Only_Access</fullName>
+        <accessLevel>Read</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Read</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Rev Role Account R/Only Access</label>
+        <sharedTo>
+            <role>Revenue</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Tatstat,Tenant,WFT Connections,BWRD,Six Degrees,Individuals,Listing Alert,Geekwise Connections</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingCriteriaRules>
+        <fullName>Rev_Role_Account_R_W</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>None</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>None</opportunityAccessLevel>
+        </accountSettings>
+        <label>Rev Role Account R/W Access</label>
+        <sharedTo>
+            <role>Revenue</role>
+        </sharedTo>
+        <criteriaItems>
+            <field>RecordTypeId</field>
+            <operation>equals</operation>
+            <value>General</value>
+        </criteriaItems>
+        <includeRecordsOwnedByAll>true</includeRecordsOwnedByAll>
+    </sharingCriteriaRules>
+    <sharingGuestRules>
+        <fullName>Guest_User_Access_for_Account_Records_for_Contact</fullName>
+        <accessLevel>Read</accessLevel>
+        <description>Created By: HNS
+Description.  Shares account records owned by me with public guest user</description>
+        <label>Guest User Access for Account Records for Contact</label>
+        <sharedTo>
+            <guestUser>Himadri_Sinha_s_Portfolio</guestUser>
+        </sharedTo>
+        <criteriaItems>
+            <field>CreatedById</field>
+            <operation>equals</operation>
+            <value>005R000000B93Nl</value>
+        </criteriaItems>
+        <includeHVUOwnedRecords>false</includeHVUOwnedRecords>
+    </sharingGuestRules>
+    <sharingOwnerRules>
+        <fullName>Onward_Team</fullName>
+        <accessLevel>Edit</accessLevel>
+        <accountSettings>
+            <caseAccessLevel>Edit</caseAccessLevel>
+            <contactAccessLevel>Edit</contactAccessLevel>
+            <opportunityAccessLevel>Edit</opportunityAccessLevel>
+        </accountSettings>
+        <description>Created by ALC/CL
+Department: Cowork/Onward
+Purpose: To ensure that Megan from Cowork and future users who need access to gov leads and opportunities are able to see all fields pertinent to government.
+Origin: Case #24306</description>
+        <label>Onward Team</label>
+        <sharedTo>
+            <group>Onward_Team</group>
+        </sharedTo>
+        <sharedFrom>
+            <role>Government_Team</role>
+        </sharedFrom>
+    </sharingOwnerRules>
+</SharingRules>
