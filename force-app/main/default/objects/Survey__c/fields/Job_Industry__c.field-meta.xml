@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Job_Industry__c</fullName>
+    <description>GS
+Business Unit: WFT
+Purpose: In which job industry do they work in.</description>
+    <externalId>false</externalId>
+    <label>Job Industry</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Occupation_Industry</valueSetName>
+    </valueSet>
+</CustomField>

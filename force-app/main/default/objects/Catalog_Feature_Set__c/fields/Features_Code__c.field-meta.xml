@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Features_Code__c</fullName>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>This code will be used to generate Feature Codes on the Scope</inlineHelpText>
+    <label>Features Code</label>
+    <length>5</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

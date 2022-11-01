@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Active_Ideas</fullName>
+    <columns>NAME</columns>
+    <columns>Completed_Assessment_Count__c</columns>
+    <columns>Milestone__c</columns>
+    <columns>Status__c</columns>
+    <columns>Priority__c</columns>
+    <columns>Submitter__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>New,In-Progress</value>
+    </filters>
+    <label>All Active Ideas</label>
+    <sharedTo>
+        <group>BWRD_Team</group>
+        <group>SF_Admin_Team</group>
+        <group>Tech_Support_Team</group>
+    </sharedTo>
+</ListView>

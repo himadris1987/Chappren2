@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Important_Tips_To_Remember__c</fullName>
+    <description>Created By:HNS
+Business Unit: Salesforce Oakland Apprenticeship 2021
+Purpose:  Will allow a user to put any tips they&apos;ve learned from the work or on how to complete said work.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <label>Important Tips to Remember</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

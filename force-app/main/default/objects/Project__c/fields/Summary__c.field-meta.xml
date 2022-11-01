@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Summary__c</fullName>
+    <description>Created by: JA
+Business Unit: BWRD
+Purpose: A high level summary of the proposed product and its purpose</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Provide a high level summary of the product and it&apos;s purpose.</inlineHelpText>
+    <label>Summary</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

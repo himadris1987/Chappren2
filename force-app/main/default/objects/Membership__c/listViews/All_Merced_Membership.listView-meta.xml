@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Merced_Membership</fullName>
+    <columns>NAME</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Market__c</field>
+        <operation>equals</operation>
+        <value>Merced</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <label>Cowork Active Merced Memberships</label>
+    <sharedTo>
+        <group>Cowork_Team</group>
+        <group>SF_Admin_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Pain_Point__c</fullName>
+    <description>CC BWRD Customer Pain Point Manual</description>
+    <externalId>false</externalId>
+    <label>Customer Pain Point</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>(1) Not Painful</fullName>
+                <default>false</default>
+                <label>(1) Not Painful</label>
+            </value>
+            <value>
+                <fullName>(2) Somewhat Painful</fullName>
+                <default>false</default>
+                <label>(2) Somewhat Painful</label>
+            </value>
+            <value>
+                <fullName>(3) Painful</fullName>
+                <default>false</default>
+                <label>(3) Painful</label>
+            </value>
+            <value>
+                <fullName>(4) Really Painful</fullName>
+                <default>false</default>
+                <label>(4) Really Painful</label>
+            </value>
+            <value>
+                <fullName>(1) Less Attractive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>(1) Less Attractive</label>
+            </value>
+            <value>
+                <fullName>(2) Somewhat Less Attractive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>(2) Somewhat Less Attractive</label>
+            </value>
+            <value>
+                <fullName>(3) Attractive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>(3) Attractive</label>
+            </value>
+            <value>
+                <fullName>(4) Somewhat More Attractive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>(4) Somewhat More Attractive</label>
+            </value>
+            <value>
+                <fullName>(5) More Attractive</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>(5) More Attractive</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

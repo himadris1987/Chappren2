@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Average_Assessment_Score__c</fullName>
+    <description>BN
+BWRD users
+Formula to calculate the average assessment score</description>
+    <externalId>false</externalId>
+    <formula>SUM_of_Assessment_Scores__c / Assessment_Count__c</formula>
+    <label>Average Assessment Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Marketing_SMS_Push__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Marketing sms push that the message belonged to.</description>
+    <externalId>false</externalId>
+    <label>Marketing SMS Push</label>
+    <referenceTo>Marketing_SMS_Push__c</referenceTo>
+    <relationshipLabel>Marketing Sent SMS</relationshipLabel>
+    <relationshipName>Marketing_Sent_SMS</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

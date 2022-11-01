@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Types_of_Project__c</fullName>
+    <description>Created by: EK</description>
+    <externalId>false</externalId>
+    <label>Types of Project</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Simple Wall Shelf</fullName>
+                <default>false</default>
+                <label>Simple Wall Shelf</label>
+            </value>
+            <value>
+                <fullName>Porch or Garden Table</fullName>
+                <default>false</default>
+                <label>Porch or Garden Table</label>
+            </value>
+            <value>
+                <fullName>Candle Holder</fullName>
+                <default>false</default>
+                <label>Candle Holder</label>
+            </value>
+            <value>
+                <fullName>Sofa Sleeve and Cup Holder</fullName>
+                <default>false</default>
+                <label>Sofa Sleeve and Cup Holder</label>
+            </value>
+            <value>
+                <fullName>Address Number Wall Planter</fullName>
+                <default>false</default>
+                <label>Address Number Wall Planter</label>
+            </value>
+            <value>
+                <fullName>Magazine Rack</fullName>
+                <default>false</default>
+                <label>Magazine Rack</label>
+            </value>
+            <value>
+                <fullName>Backyard Lounder</fullName>
+                <default>false</default>
+                <label>Backyard Lounder</label>
+            </value>
+            <value>
+                <fullName>Workbench</fullName>
+                <default>false</default>
+                <label>Workbench</label>
+            </value>
+            <value>
+                <fullName>Wine Rack</fullName>
+                <default>false</default>
+                <label>Wine Rack</label>
+            </value>
+            <value>
+                <fullName>Kitchen Table</fullName>
+                <default>false</default>
+                <label>Kitchen Table</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

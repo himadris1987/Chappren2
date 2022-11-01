@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Biggest_Class_Completion_Barrier__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>What is the biggest barrier you face, if any, in completing your Bitwise class?</inlineHelpText>
+    <label>Biggest Class Completion Barrier</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Lack of childcare</fullName>
+                <default>false</default>
+                <label>Lack of childcare</label>
+            </value>
+            <value>
+                <fullName>Lack of funds to pay for training courses</fullName>
+                <default>false</default>
+                <label>Lack of funds to pay for training courses</label>
+            </value>
+            <value>
+                <fullName>Lack of transportation</fullName>
+                <default>false</default>
+                <label>Lack of transportation</label>
+            </value>
+            <value>
+                <fullName>Lack of access to a high-speed internet connection</fullName>
+                <default>false</default>
+                <label>Lack of access to a high-speed internet connection</label>
+            </value>
+            <value>
+                <fullName>Lack of funds for a computer</fullName>
+                <default>false</default>
+                <label>Lack of funds for a computer</label>
+            </value>
+            <value>
+                <fullName>I do not face any of these barriers</fullName>
+                <default>false</default>
+                <label>I do not face any of these barriers</label>
+            </value>
+            <value>
+                <fullName>Lack of time due to work obligations</fullName>
+                <default>false</default>
+                <label>Lack of time due to work obligations</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

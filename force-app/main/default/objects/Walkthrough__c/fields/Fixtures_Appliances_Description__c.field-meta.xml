@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fixtures_Appliances_Description__c</fullName>
+    <description>Created by: JA
+Business Unit: Leasing
+Purpose: If fixtures and appliances are in poor condition, tracks the description why</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>If fixtures &amp; appliances are in poor condition, explain why.</inlineHelpText>
+    <label>Fixtures &amp; Appliances Description</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

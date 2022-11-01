@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parking_Lot__c</fullName>
+    <description>The parking lot access of the tenant.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Which parking lot is the tenant allowed to park in?</inlineHelpText>
+    <label>Parking Lot</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>None</fullName>
+                <default>false</default>
+                <label>None</label>
+            </value>
+            <value>
+                <fullName>Red Lot</fullName>
+                <default>false</default>
+                <label>Red Lot</label>
+            </value>
+            <value>
+                <fullName>Yellow Lot</fullName>
+                <default>false</default>
+                <label>Yellow Lot</label>
+            </value>
+            <value>
+                <fullName>Green Lot</fullName>
+                <default>false</default>
+                <label>Green Lot</label>
+            </value>
+            <value>
+                <fullName>Blue Lot</fullName>
+                <default>false</default>
+                <label>Blue Lot</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

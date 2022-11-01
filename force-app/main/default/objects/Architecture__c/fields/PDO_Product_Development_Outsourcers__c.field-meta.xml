@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PDO_Product_Development_Outsourcers__c</fullName>
+    <description>Created by: YB, Business Unit:BWTC,Purpose: for architecture app</description>
+    <externalId>false</externalId>
+    <label>PDO: Product Development Outsourcers</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AppExchange Listing, Trials and Demo</fullName>
+                <default>false</default>
+                <label>AppExchange Listing, Trials and Demo</label>
+            </value>
+            <value>
+                <fullName>Architecture &amp; UX Design</fullName>
+                <default>false</default>
+                <label>Architecture &amp; UX Design</label>
+            </value>
+            <value>
+                <fullName>Development/A/Release Management/Security Review</fullName>
+                <default>false</default>
+                <label>Development/A/Release Management/Security Review</label>
+            </value>
+            <value>
+                <fullName>Ideation/Business Model/Value Prop</fullName>
+                <default>false</default>
+                <label>Ideation/Business Model/Value Prop</label>
+            </value>
+            <value>
+                <fullName>Marketing Support</fullName>
+                <default>false</default>
+                <label>Marketing Support</label>
+            </value>
+            <value>
+                <fullName>Package Review &amp; Optimization</fullName>
+                <default>false</default>
+                <label>Package Review &amp; Optimization</label>
+            </value>
+            <value>
+                <fullName>Product Support</fullName>
+                <default>false</default>
+                <label>Product Support</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

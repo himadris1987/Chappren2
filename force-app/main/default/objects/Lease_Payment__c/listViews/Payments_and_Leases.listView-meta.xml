@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Payments_and_Leases</fullName>
+    <columns>NAME</columns>
+    <columns>Lease_Charge__c</columns>
+    <columns>Tenant__c</columns>
+    <columns>Payment_Amount__c</columns>
+    <columns>Posted__c</columns>
+    <columns>Posted_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Lease Payments</label>
+    <sharedTo>
+        <group>Leasing_Team</group>
+        <group>SF_Admin_Team</group>
+    </sharedTo>
+</ListView>

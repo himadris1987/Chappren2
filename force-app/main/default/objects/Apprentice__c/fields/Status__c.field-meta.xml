@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <defaultValue>&apos;Scheduled&apos;</defaultValue>
+    <description>Created by JW
+Business Unit: WFT
+Tracks the status of an apprentice. Some notifications are dependent on this field.</description>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Scheduled</fullName>
+                <default>false</default>
+                <label>Scheduled</label>
+            </value>
+            <value>
+                <fullName>Pass</fullName>
+                <default>false</default>
+                <label>Pass</label>
+            </value>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Transferred</fullName>
+                <default>false</default>
+                <label>Transferred</label>
+            </value>
+            <value>
+                <fullName>Hired Internally</fullName>
+                <default>false</default>
+                <label>Hired Internally</label>
+            </value>
+            <value>
+                <fullName>Hired Externally</fullName>
+                <default>false</default>
+                <label>Hired Externally</label>
+            </value>
+            <value>
+                <fullName>Terminated</fullName>
+                <default>false</default>
+                <label>Terminated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Books_from_Fremont_Branch_Library</fullName>
+    <columns>NAME</columns>
+    <columns>Category__c</columns>
+    <columns>Available_Books__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account__c</field>
+        <operation>equals</operation>
+        <value>Fremont Branch Library</value>
+    </filters>
+    <label>Books from Fremont Branch Library</label>
+</ListView>

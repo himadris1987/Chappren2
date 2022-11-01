@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Select_Dropped_OR_Dropped_with_Credit</fullName>
+    <active>true</active>
+    <description>Created By: AF
+Business Unit: Geekwise Users
+Purpose: Prevent both &quot;Dropped&quot; boxes from being checked simultaneously.</description>
+    <errorConditionFormula>Dropped__c = true &amp;&amp; Dropped_w_Credit__c = true</errorConditionFormula>
+    <errorMessage>Please select ONE option: Dropped, OR Dropped w/Credit</errorMessage>
+</ValidationRule>

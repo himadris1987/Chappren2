@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Company_Name__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Created by: YB, Business Unit:BWTC,Purpose: for architecture app</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This field will be auto populated when an Architecture record is created. This field pulls its value from the related Project record, Account field.</inlineHelpText>
+    <label>Company Name</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Architectures</relationshipLabel>
+    <relationshipName>Partner_Registrations</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

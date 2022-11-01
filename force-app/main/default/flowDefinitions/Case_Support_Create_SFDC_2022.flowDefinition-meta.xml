@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>1</activeVersionNumber>
+    <description>Created by DKM Collab: CF, CC
+Business Unit: QB
+Purpose: Process for SFDC Cases any priority(non-emergency or emergency) created via Email(salesforcesupport@bitwiseindustries.com), Global &amp; Manual during Business Hours, After Hours, and Out of Office Days.</description>
+    <masterLabel>Case - Support Create SFDC (2022)</masterLabel>
+</FlowDefinition>

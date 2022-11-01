@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cowork_Membership</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Cowork_Membership</compactLayoutAssignment>
+    <label>Cowork Membership</label>
+    <picklistValues>
+        <picklist>Market__c</picklist>
+        <values>
+            <fullName>Bakersfield</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Buffalo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>El Paso</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fresno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Greeley</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Las Cruces</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Day Pass</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Group</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hashtag %2B Lift</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Individual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Individual Yearly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Student</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Student Yearly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Tenant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Tenant %2B Group</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

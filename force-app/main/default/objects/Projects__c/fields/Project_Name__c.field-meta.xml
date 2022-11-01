@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Project_Name__c</fullName>
+    <description>Created by: Ag
+Business Unit: Salesforce
+Purpose: This will create project number.</description>
+    <displayFormat>Proj-{00000}</displayFormat>
+    <externalId>false</externalId>
+    <label>Project Name</label>
+    <trackTrending>false</trackTrending>
+    <type>AutoNumber</type>
+</CustomField>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Percent_of_TAM_for_1M__c</fullName>
+    <description>CC BWRD Percent of TAM Needed to reach $1M Manual</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Serviceable Available Market is the segment of the TAM targeted by your products and services which is within your geographical reach.</inlineHelpText>
+    <label>% of SAM to $1MM</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>(1) 5%+</fullName>
+                <default>false</default>
+                <label>(1) 5%+</label>
+            </value>
+            <value>
+                <fullName>(2) 2%-5%</fullName>
+                <default>false</default>
+                <label>(2) 2%-5%</label>
+            </value>
+            <value>
+                <fullName>(3) 1%-2%</fullName>
+                <default>false</default>
+                <label>(3) 1%-2%</label>
+            </value>
+            <value>
+                <fullName>(4) &lt; .25%</fullName>
+                <default>false</default>
+                <label>(4) &lt; .25%</label>
+            </value>
+            <value>
+                <fullName>(1) 15+</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>(1) 15+</label>
+            </value>
+            <value>
+                <fullName>(2) 10-15</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>(2) 10-15</label>
+            </value>
+            <value>
+                <fullName>(3) 5-10</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>(3) 5-10</label>
+            </value>
+            <value>
+                <fullName>(4) 0-5</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>(4) 0-5</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

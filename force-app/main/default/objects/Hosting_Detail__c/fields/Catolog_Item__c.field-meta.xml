@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Catolog_Item__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Created by: RE</description>
+    <externalId>false</externalId>
+    <label>Catalog Item</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Catalog Item must be of Type: Hosting Details</errorMessage>
+        <filterItems>
+            <field>Catalog_Item__c.Type__c</field>
+            <operation>equals</operation>
+            <value>Hosting Detail</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Catalog_Item__c</referenceTo>
+    <relationshipLabel>Hosting Details</relationshipLabel>
+    <relationshipName>Hosting_Details</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

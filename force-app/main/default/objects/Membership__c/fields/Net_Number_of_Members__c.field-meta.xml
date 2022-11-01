@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Net_Number_of_Members__c</fullName>
+    <description>CC Hashtag Used for Net Membership This Month Calculation Automatic</description>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Type__c , &quot;Day Pass&quot;),0,
+   CASE( Status__c , 
+         &quot;Active&quot;,Number_of_Members__c, 
+         &quot;Inactive&quot;,(Number_of_Members__c * -1),
+         0
+   )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Net Number of Members</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

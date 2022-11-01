@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Daily_Free_Hours__c</fullName>
+    <description>Created By: CC
+Department: Cowork
+Purpose: Roll up of the daily free hours.</description>
+    <externalId>false</externalId>
+    <label>Daily Free Hours</label>
+    <summarizedField>Member__c.Daily_Free_Hours__c</summarizedField>
+    <summaryFilterItems>
+        <field>Member__c.Status__c</field>
+        <operation>notEqual</operation>
+        <value>Inactive</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Member__c.Membership__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

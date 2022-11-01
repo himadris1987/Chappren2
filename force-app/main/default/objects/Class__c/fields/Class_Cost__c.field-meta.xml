@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class_Cost__c</fullName>
+    <defaultValue>250.00</defaultValue>
+    <description>Created By: AF
+Business Unit: Geekwise Users
+Purpose: Displays the cost of the class
+Populated: Default value, manual adjustment</description>
+    <externalId>false</externalId>
+    <label>Class Cost</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

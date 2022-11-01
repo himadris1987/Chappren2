@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFDC_Administrator_Rate_Hourly__c</fullName>
+    <defaultValue>165</defaultValue>
+    <description>Created by YB
+S3 Users
+To track hourly charges for dev work</description>
+    <externalId>false</externalId>
+    <label>SFDC Administrator Rate (Hourly)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

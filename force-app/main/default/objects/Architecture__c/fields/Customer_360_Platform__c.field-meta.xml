@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_360_Platform__c</fullName>
+    <description>Created by: YB, Business Unit:BWTC,Purpose: for architecture app</description>
+    <externalId>false</externalId>
+    <label>Customer 360 Platform</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Flow</fullName>
+                <default>false</default>
+                <label>Flow</label>
+            </value>
+            <value>
+                <fullName>Heroku</fullName>
+                <default>false</default>
+                <label>Heroku</label>
+            </value>
+            <value>
+                <fullName>Integration Services</fullName>
+                <default>false</default>
+                <label>Integration Services</label>
+            </value>
+            <value>
+                <fullName>ISV AppExchange</fullName>
+                <default>false</default>
+                <label>ISV AppExchange</label>
+            </value>
+            <value>
+                <fullName>Mobile</fullName>
+                <default>false</default>
+                <label>Mobile</label>
+            </value>
+            <value>
+                <fullName>Next Best Action</fullName>
+                <default>false</default>
+                <label>Next Best Action</label>
+            </value>
+            <value>
+                <fullName>Platform</fullName>
+                <default>false</default>
+                <label>Platform</label>
+            </value>
+            <value>
+                <fullName>Shield</fullName>
+                <default>false</default>
+                <label>Shield</label>
+            </value>
+            <value>
+                <fullName>Sustainability Cloud</fullName>
+                <default>false</default>
+                <label>Sustainability Cloud</label>
+            </value>
+            <value>
+                <fullName>Vision &amp; Language</fullName>
+                <default>false</default>
+                <label>Vision &amp; Language</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

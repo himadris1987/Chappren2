@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Coding_Experience__c</fullName>
+    <description>Created by: JA
+Purpose: Capture if an individual has previous coding experience, which learning resources they used, and the outcome</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Do they have previous coding experience, the learning resources they used, and the outcome?</inlineHelpText>
+    <label>Coding Experience</label>
+    <length>131072</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Applicable_Groups__c</fullName>
+    <description>Created by: JA
+Purpose: Capture if an individual belongs to any of the groups to better design classes and support services</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Do they belong to any of these groups?</inlineHelpText>
+    <label>Applicable Groups</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Groups</valueSetName>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

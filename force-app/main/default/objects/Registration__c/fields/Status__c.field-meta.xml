@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>Created By: AF
+Business Unit: Geekwise Users
+Purpose: Displays the status of a student&apos;s Registration
+Populated: Auto with Formula</description>
+    <externalId>false</externalId>
+    <formula>IF( AND( Dropped__c = false, Dropped_w_Credit__c = false),
+    IF( AND( Class__r.Start_Date__c &lt;= TODAY(), Class__r.End_Date__c &gt; TODAY() ), &apos;In Progress&apos;,
+        IF( Class__r.End_Date__c &lt;= TODAY(), &apos;Completed&apos;, &apos;Registered&apos; )
+      ),
+    IF( Dropped__c = true, &apos;Dropped&apos;, &apos;Dropped w/Credit&apos;)
+  )</formula>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

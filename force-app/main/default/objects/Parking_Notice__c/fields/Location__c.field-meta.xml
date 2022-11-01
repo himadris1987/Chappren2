@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Location__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>BN
+BLDG
+To track vehicle exemptions/violations
+Manually created.</description>
+    <externalId>false</externalId>
+    <label>Location</label>
+    <referenceTo>Space__c</referenceTo>
+    <relationshipLabel>Parking Notices</relationshipLabel>
+    <relationshipName>Parking_Notices</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

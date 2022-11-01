@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Contact that the message was sent to.</description>
+    <externalId>false</externalId>
+    <label>Contact</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Marketing Sent SMS</relationshipLabel>
+    <relationshipName>Marketing_Sent_SMS</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

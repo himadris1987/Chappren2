@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Design_Project</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>BLDG_Design_Project</compactLayoutAssignment>
+    <label>Design Project</label>
+    <picklistValues>
+        <picklist>Priority__c</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tech_Stack__c</picklist>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SFDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wordpress</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Custom Dev</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Onward</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SFDC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Take Care</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wordpress Cohort</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

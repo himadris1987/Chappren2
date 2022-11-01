@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Register_for_Upcoming_Classes_Only</fullName>
+    <active>false</active>
+    <description>Created By: AF
+Business Unit: Geekwise Users
+Purpose: Block the user from registering for Past or Active Classes beyond the first week.</description>
+    <errorConditionFormula>ISNEW() &amp;&amp; TODAY() &gt; (Class__r.Start_Date__c + 7)</errorConditionFormula>
+    <errorDisplayField>Class__c</errorDisplayField>
+    <errorMessage>This class is no longer accepting registrations. Please select a future class.</errorMessage>
+</ValidationRule>

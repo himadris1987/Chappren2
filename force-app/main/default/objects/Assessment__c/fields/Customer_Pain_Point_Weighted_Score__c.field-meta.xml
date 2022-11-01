@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Pain_Point_Weighted_Score__c</fullName>
+    <description>CC BWRD Customer Pain Point Weighted Score Auto</description>
+    <externalId>false</externalId>
+    <formula>CASE( Customer_Pain_Point__c,
+&apos;(1) Not Painful&apos;, 1 * Customer_Pain_Point_Weight__c,
+&apos;(2) Somewhat Painful&apos;, 2 * Customer_Pain_Point_Weight__c,
+&apos;(3) Painful&apos;, 3 * Customer_Pain_Point_Weight__c,
+&apos;(4) Really Painful&apos;, 4 * Customer_Pain_Point_Weight__c,
+0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Customer Pain Point Weighted Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

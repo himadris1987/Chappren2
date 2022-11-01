@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blocker_trail_module_and_unit_name_MCC__c</fullName>
+    <description>Created By: MCC
+Business Unit: Salesforce Admin Apprenticeship 2021 (Alphaforce Team)
+Purpose: This states the name of trails, modules, &amp; units that the apprentice encountered during their blocker.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>What are the trails, modules, &amp; unit names of the blocker you encountered today?</inlineHelpText>
+    <label>Blocker trail, module, and unit name?</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

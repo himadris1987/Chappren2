@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Apprentice_Contact_Has_Email</fullName>
+    <active>true</active>
+    <description>Ensure every apprentice contact has an email.</description>
+    <errorConditionFormula>ISBLANK(Contact__r.Email)</errorConditionFormula>
+    <errorDisplayField>Contact__c</errorDisplayField>
+    <errorMessage>The Apprentice Contact does not have an email address.</errorMessage>
+</ValidationRule>

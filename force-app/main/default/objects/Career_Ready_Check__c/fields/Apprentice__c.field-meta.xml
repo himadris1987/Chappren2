@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Apprentice__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Created by: JA
+Purpose: Track Cohortian career readiness</description>
+    <externalId>false</externalId>
+    <label>Apprentice</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Career Ready Checks</relationshipLabel>
+    <relationshipName>Career_Ready_Checks1</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

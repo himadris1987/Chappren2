@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Buyer_Weighted_Score__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE( Target_Buyer__c ,
+&apos;(1) C-Suite&apos;, 1 * Target_Buyer_Weight__c,
+&apos;(2) VP&apos;, 2 * Target_Buyer_Weight__c,
+&apos;(3) Director&apos;, 3 * Target_Buyer_Weight__c,
+&apos;(4) Manager&apos;, 4 * Target_Buyer_Weight__c,
+&apos;(5) User&apos;, 5 * Target_Buyer_Weight__c,
+0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Target Buyer Weighted Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

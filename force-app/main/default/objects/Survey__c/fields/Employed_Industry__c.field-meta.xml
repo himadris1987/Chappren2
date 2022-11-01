@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employed_Industry__c</fullName>
+    <description>GS
+Purpose: Baseline Survey</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If you are employed, what industry are you currently employed in?</inlineHelpText>
+    <label>Employed Industry</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Self‐employed in own business or professional non‐group practice</fullName>
+                <default>false</default>
+                <label>Self‐employed in own business or professional non‐group practice</label>
+            </value>
+            <value>
+                <fullName>For‐profit corporation/company/group‐practice</fullName>
+                <default>false</default>
+                <label>For‐profit corporation/company/group‐practice</label>
+            </value>
+            <value>
+                <fullName>Government or other public institution or agency, including military</fullName>
+                <default>false</default>
+                <label>Government or other public institution or agency, including military</label>
+            </value>
+            <value>
+                <fullName>Non‐profit organization, institution or NGO (e.g., arts/human services/international organizations)</fullName>
+                <default>false</default>
+                <label>Non‐profit organization, institution or NGO (e.g., arts/human services/international organizations)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

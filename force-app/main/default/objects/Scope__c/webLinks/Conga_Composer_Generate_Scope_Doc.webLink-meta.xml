@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Conga_Composer_Generate_Scope_Doc</fullName>
+    <availability>online</availability>
+    <description>Originally created by Conga Solution Manager. Date of last use of Update Button from Conga Solution record: https://bitwiseindustries--apxtconga4.visualforce.com/a2S3i0000012zHOEAY
+09-Mar-2021 03:11:16 PM</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>false</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>660</height>
+    <isResizable>false</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Generate Scope Doc</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/apex/APXTConga4__Conga_Composer?SolMgr=1
+&amp;serverUrl={!API.Partner_Server_URL_370}
+&amp;Id={!Scope__c.Id}
+
+&amp;QueryId=[UserRollSoql]0Q_000EAY903218,
+[FSSOQL]0Q_001EAY207240,
+[FSOQL]0Q_002EAY886750,
+[FPISOQL]0Q_003EAY404360,
+[HDSOQL]0Q_004EAY790236,
+[MSOQL]0Q_005EAY974457
+
+&amp;TemplateId=0T_000EAY561468
+
+&amp;GoogleVisible=1
+&amp;OFN=Scope+of+Work+for+{!Scope__c.Name}
+&amp;SC0=1
+&amp;SC1=attachments</url>
+    <width>900</width>
+</WebLink>

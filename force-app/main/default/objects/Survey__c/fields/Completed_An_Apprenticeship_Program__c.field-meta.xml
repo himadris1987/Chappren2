@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Completed_An_Apprenticeship_Program__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Created By: RS
+Purpose: Field for Baseline Student Survey</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If the student has successfully completed an apprenticeship program.</inlineHelpText>
+    <label>Completed An Apprenticeship Program?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

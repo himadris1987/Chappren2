@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name_of_Reporting_Officer__c</fullName>
+    <description>Created by JW
+Business Unit: BLDG
+Description: Tracks the name of the police officer who responded to the incident.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>What is the name of the officer who responded to the incident?</inlineHelpText>
+    <label>Name of Reporting Officer</label>
+    <length>50</length>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

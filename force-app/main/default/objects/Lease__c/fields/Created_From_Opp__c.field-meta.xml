@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Created_From_Opp__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Created by JW
+Denotes which Opportunity record this Lease was created from.
+Populated by Flow (Opp to Lease).</description>
+    <externalId>false</externalId>
+    <label>Created From Opp (do not display)</label>
+    <referenceTo>Opportunity</referenceTo>
+    <relationshipLabel>Leases</relationshipLabel>
+    <relationshipName>Leases</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

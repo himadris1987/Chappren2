@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Instructor__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Created By: AF
+Business Unit: Geekwise Users
+Purpose: Relates a Contact record as an Instructor for this class
+Populated: Manual</description>
+    <externalId>false</externalId>
+    <label>Instructor</label>
+    <lookupFilter>
+        <active>true</active>
+        <filterItems>
+            <field>Contact.Qualified_Instructor__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Classes (Instructor)</relationshipLabel>
+    <relationshipName>Classes_Instructed</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

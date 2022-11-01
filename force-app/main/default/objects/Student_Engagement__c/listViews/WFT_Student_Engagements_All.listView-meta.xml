@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WFT_Student_Engagements_All</fullName>
+    <columns>NAME</columns>
+    <columns>Engagement_Type__c</columns>
+    <columns>WFT_Staff_Member__c</columns>
+    <columns>Student__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Everything</filterScope>
+    <label>WFT Student Engagements - All</label>
+    <sharedTo>
+        <group>BW_Executive_Team</group>
+        <group>SF_Admin_Team</group>
+        <group>Tech_Support_Team</group>
+        <group>VP_Team</group>
+        <group>WFT_Instructor_Team</group>
+        <group>WFT_TA_Team</group>
+        <group>Workforce_Training_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Blocker_s</fullName>
+    <columns>NAME</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>BLKR_Describe_your_blocker_MCC__c</columns>
+    <columns>BLKR_Describe_the_blocker_solution_MCC__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>BLKR_Did_you_have_any_blocker_today_MCC__c</field>
+        <operation>equals</operation>
+        <value>Yes</value>
+    </filters>
+    <label>Blocker(s)</label>
+</ListView>

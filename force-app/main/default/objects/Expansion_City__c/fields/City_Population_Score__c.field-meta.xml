@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>City_Population_Score__c</fullName>
+    <description>GS
+Purpose: Tracks the score of the city population based on the picklist value.</description>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL( City_Population__c , &quot;&lt;100k&quot; ), 0 , 
+    IF( ISPICKVAL( City_Population__c , &quot;&gt;100k&quot; ), 0.25 ,
+        IF( ISPICKVAL( City_Population__c , &quot;&gt;500k&quot; ), 0.5 ,
+            IF( ISPICKVAL( City_Population__c , &quot;&gt;1M&quot; ), 0.75 ,
+                IF( ISPICKVAL( City_Population__c , &quot;&gt;1.5M&quot; ), 0.5 ,
+                    IF( ISPICKVAL( City_Population__c , &quot;&gt;2M&quot; ), 0.25 ,
+                        IF( ISPICKVAL( City_Population__c , &quot;&gt;2.5M&quot; ), 0 , null
+                           )
+                       )
+                   )
+               )
+           )
+       )
+  )</formula>
+    <label>City Population Score (Do Not Display)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

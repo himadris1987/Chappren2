@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLKR_Next_steps_resolving_CMPHAM__c</fullName>
+    <description>Created By: CMPHAM
+Business Unit: Alphaforce
+Purpose: This will show the next steps to resolving the blocker that the apprentice is running into.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>What is the next steps to resolving the blocker that you are running into?</inlineHelpText>
+    <label>Next steps to resolving your blocker?</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

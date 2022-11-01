@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class_Completed__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Created By: TL
+Business Unit: WFT
+Purpose: For Form Assembly</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Did you complete the class?</inlineHelpText>
+    <label>Class Completed</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

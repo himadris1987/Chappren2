@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Move_In_Walkthroughs_All</fullName>
+    <columns>NAME</columns>
+    <columns>Lease__c</columns>
+    <columns>Tenant__c</columns>
+    <columns>Primary_Contact__c</columns>
+    <columns>Space__c</columns>
+    <columns>BW_Rep_Signature_Date__c</columns>
+    <columns>Tenant_Signature_Date__c</columns>
+    <columns>Excessive_Cleaning_Required__c</columns>
+    <columns>Work_Order__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Walkthrough__c.Move_In</value>
+    </filters>
+    <label>Move In Walkthroughs - All</label>
+    <sharedTo>
+        <group>Leasing_Team</group>
+        <group>SF_Admin_Team</group>
+        <group>Tech_Support_Team</group>
+    </sharedTo>
+</ListView>

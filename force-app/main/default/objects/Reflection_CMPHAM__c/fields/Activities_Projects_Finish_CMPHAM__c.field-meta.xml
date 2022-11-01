@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Activities_Projects_Finish_CMPHAM__c</fullName>
+    <description>Created by: CMPHAM
+Business Unit: Alphaforce
+Purpose: Shows what the activities or projects the apprentice completed.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>What activities or projects did you complete?</inlineHelpText>
+    <label>What activities/projects did you finish?</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

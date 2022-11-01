@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Reservation_Creation_NO_Book</fullName>
+    <active>true</active>
+    <description>Created By: MCC
+Business Uni: Salesforce Admin Apprenticeship 2021 (Alphaforce Team)
+Purpose: To prevent users from creating a reservation record when there are no books available</description>
+    <errorConditionFormula>ISPICKVAL( Book_MCC__r.Available__c , &quot;No&quot;)&amp;&amp; NOT(ISBLANK(  Reserve_Date_Time__c  ))&amp;&amp;  ISBLANK( Return_Date_Time__c )</errorConditionFormula>
+    <errorMessage>Unfortunately, the book you selected is NOT available at this time.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cowork_Active_Memberships</fullName>
+    <columns>NAME</columns>
+    <columns>Contact__c</columns>
+    <columns>Status__c</columns>
+    <columns>Type__c</columns>
+    <columns>Market__c</columns>
+    <columns>Membership_Start_Date__c</columns>
+    <columns>Membership_End_Date__c</columns>
+    <columns>Revenue_mo__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Membership__c.Cowork_Membership</value>
+    </filters>
+    <label>Cowork Active Memberships</label>
+    <sharedTo>
+        <group>Cowork_Team</group>
+    </sharedTo>
+</ListView>

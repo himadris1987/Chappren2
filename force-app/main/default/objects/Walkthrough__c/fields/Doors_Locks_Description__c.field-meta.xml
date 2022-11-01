@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Doors_Locks_Description__c</fullName>
+    <description>Created by: JA
+Business Unit: Leasing
+Purpose: If doors and locks are in poor condition, track the explanation why</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>If doors &amp; locks are in poor condition, explain why.</inlineHelpText>
+    <label>Doors &amp; Locks Description</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

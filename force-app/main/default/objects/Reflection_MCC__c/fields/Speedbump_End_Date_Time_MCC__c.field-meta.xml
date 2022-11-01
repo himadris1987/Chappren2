@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Speedbump_End_Date_Time_MCC__c</fullName>
+    <description>Created By: MCC
+Business Unit: Salesforce Admin Apprenticeship 2021 (Alphaforce Team)
+Purpose: This shows the end time the apprentice worked on the speedbump they encountered.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>What is the end time that you worked on your speedbump?</inlineHelpText>
+    <label>Speedbump End Date/Time</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

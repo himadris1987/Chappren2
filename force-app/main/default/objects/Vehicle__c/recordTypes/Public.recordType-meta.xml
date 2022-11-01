@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Public</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Vehicle_Compact_Layout</compactLayoutAssignment>
+    <label>Public</label>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Repair</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Vehicle_Type__c</picklist>
+        <values>
+            <fullName>CEO Vehicle</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Golf Cart</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pickup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scooter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Van</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

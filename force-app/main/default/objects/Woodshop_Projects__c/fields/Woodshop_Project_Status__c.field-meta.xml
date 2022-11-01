@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Woodshop_Project_Status__c</fullName>
+    <description>Created By: HNS
+Buisness Unit: Salesforce Oakland Apprenticeship
+Purpose:  Will give project status stages during a woodshop project</description>
+    <externalId>false</externalId>
+    <label>Woodshop Project Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Client Meeting</fullName>
+                <default>false</default>
+                <label>Client Meeting</label>
+            </value>
+            <value>
+                <fullName>Project Plan Created</fullName>
+                <default>false</default>
+                <label>Project Plan Created</label>
+            </value>
+            <value>
+                <fullName>Project Plan Approved</fullName>
+                <default>false</default>
+                <label>Project Plan Approved</label>
+            </value>
+            <value>
+                <fullName>Build Started</fullName>
+                <default>false</default>
+                <label>Build Started</label>
+            </value>
+            <value>
+                <fullName>Initial Build Completed</fullName>
+                <default>false</default>
+                <label>Initial Build Completed</label>
+            </value>
+            <value>
+                <fullName>Initial Demo</fullName>
+                <default>false</default>
+                <label>Initial Demo</label>
+            </value>
+            <value>
+                <fullName>Revisions</fullName>
+                <default>false</default>
+                <label>Revisions</label>
+            </value>
+            <value>
+                <fullName>Demo with Revisions</fullName>
+                <default>false</default>
+                <label>Demo with Revisions</label>
+            </value>
+            <value>
+                <fullName>Project Completed</fullName>
+                <default>false</default>
+                <label>Project Completed</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Co_Teacher__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Created By: AF
+Business Unit: Geekwise Users
+Purpose: Relates a Contact record as a Co=Teacher for the Class
+Populated: Manual</description>
+    <externalId>false</externalId>
+    <label>Co-Teacher</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Classes (Co-Teacher)</relationshipLabel>
+    <relationshipName>Classes_CoTaught</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

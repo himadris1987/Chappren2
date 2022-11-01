@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Shift_End_Time__c</fullName>
+    <description>Created by JW
+Business Unit: BLDG
+Description: Tracks when the user&apos;s shift ends.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When does this shift end?</inlineHelpText>
+    <label>Shift End Time</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Time</type>
+</CustomField>

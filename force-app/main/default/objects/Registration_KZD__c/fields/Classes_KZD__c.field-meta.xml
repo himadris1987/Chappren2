@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Classes_KZD__c</fullName>
+    <externalId>false</externalId>
+    <label>Classes KZD</label>
+    <referenceTo>Classes_KZD__c</referenceTo>
+    <relationshipLabel>Registrations KZD</relationshipLabel>
+    <relationshipName>Registrations_KZD</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

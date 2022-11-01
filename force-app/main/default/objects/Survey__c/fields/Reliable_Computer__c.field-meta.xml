@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reliable_Computer__c</fullName>
+    <description>Created by: JA
+Purpose: Capture if an individual has reliable access to a laptop computer to use for class to better design classes and support services.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Do they have consistent and reliable access to a laptop computer to use for class?</inlineHelpText>
+    <label>Reliable Computer?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes, I use a Mac laptop that I own</fullName>
+                <default>false</default>
+                <label>Yes, I use a Mac laptop that I own</label>
+            </value>
+            <value>
+                <fullName>Yes, I use a PC laptop that I own</fullName>
+                <default>false</default>
+                <label>Yes, I use a PC laptop that I own</label>
+            </value>
+            <value>
+                <fullName>Yes, I use a Mac laptop that I borrowed</fullName>
+                <default>false</default>
+                <label>Yes, I use a Mac laptop that I borrowed</label>
+            </value>
+            <value>
+                <fullName>Yes, I use a PC laptop that I borrowed</fullName>
+                <default>false</default>
+                <label>Yes, I use a PC laptop that I borrowed</label>
+            </value>
+            <value>
+                <fullName>No, I do not have consistent and reliable access to a laptop computer I can use for class</fullName>
+                <default>false</default>
+                <label>No, I do not have consistent and reliable access to a laptop computer I can use for class</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Yes, I/my family own a computer</fullName>
+                <default>false</default>
+                <label>Yes, I/my family own a computer</label>
+            </value>
+            <value>
+                <fullName>Yes, I/my family can borrow a computer</fullName>
+                <default>false</default>
+                <label>Yes, I/my family can borrow a computer</label>
+            </value>
+            <value>
+                <fullName>No, I do not have consistent and reliable access to a computer</fullName>
+                <default>false</default>
+                <label>No, I do not have consistent and reliable access to a computer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

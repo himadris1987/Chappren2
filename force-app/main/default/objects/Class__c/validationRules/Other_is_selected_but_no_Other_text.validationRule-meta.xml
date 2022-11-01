@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_is_selected_but_no_Other_text</fullName>
+    <active>true</active>
+    <description>Created By: AF
+Business Unit: Geekwise Users
+Purpose: If &quot;Other&quot; is selected in the Class field, and the Other field has no text, this should trigger.</description>
+    <errorConditionFormula>ISPICKVAL(Class__c, &quot;Other&quot;) = TRUE 
+&amp;&amp; 
+ISBLANK(Other__c) = TRUE</errorConditionFormula>
+    <errorDisplayField>Other__c</errorDisplayField>
+    <errorMessage>You must fill out this field with a class name if you select &quot;Other&quot; from the Class pick list.</errorMessage>
+</ValidationRule>

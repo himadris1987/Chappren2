@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Speedbump_Time_Spent_MCC__c</fullName>
+    <description>Created By: MCC
+Business Unit: Salesforce Admin Apprenticeship 2021 (Alphaforce Team)
+Purpose: A formula that will automatically calculate how long an apprentice spend working on a speedbump</description>
+    <externalId>false</externalId>
+    <formula>IF(
+(  Speedbump_End_Date_Time_MCC__c  -  Speedbump_Start_Date_Time_MCC__c  ) &gt; 0 ,
+TEXT(FLOOR( Speedbump_End_Date_Time_MCC__c  -  Speedbump_Start_Date_Time_MCC__c )) &amp; &quot; days &quot;
+&amp; TEXT(FLOOR(MOD(( Speedbump_End_Date_Time_MCC__c  -  Speedbump_Start_Date_Time_MCC__c  ) * 24, 24))) &amp; &quot; hours &quot;
+&amp; TEXT(ROUND(MOD(( Speedbump_End_Date_Time_MCC__c  -  Speedbump_Start_Date_Time_MCC__c  ) * 24 * 60, 60), 0)) &amp;&quot; minutes&quot;,
+&quot;&quot;
+)</formula>
+    <label>Speedbump Time Spent</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

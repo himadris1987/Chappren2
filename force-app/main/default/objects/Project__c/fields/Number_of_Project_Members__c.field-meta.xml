@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Project_Members__c</fullName>
+    <description>Created By: CP
+Business Unit: BTC-PM
+Purpose: Rollup sum of the number of Project Member records. 
+                Used in Validation checking number of project members before moving to Status, &quot;Internal Kickoff&quot; +</description>
+    <externalId>false</externalId>
+    <label>Number of Project Members</label>
+    <summaryForeignKey>Project_Member__c.Project__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Engagement_Type__c</fullName>
+    <description>Created by: YB, Business Unit:BWTC,Purpose: for architecture app</description>
+    <externalId>false</externalId>
+    <label>Engagement Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Product Implementation</fullName>
+                <default>false</default>
+                <label>Product Implementation</label>
+            </value>
+            <value>
+                <fullName>Lightning Migration</fullName>
+                <default>false</default>
+                <label>Lightning Migration</label>
+            </value>
+            <value>
+                <fullName>Managed Services</fullName>
+                <default>false</default>
+                <label>Managed Services</label>
+            </value>
+            <value>
+                <fullName>PDO / AppExchange App Development</fullName>
+                <default>false</default>
+                <label>PDO / AppExchange App Development</label>
+            </value>
+            <value>
+                <fullName>User Training</fullName>
+                <default>false</default>
+                <label>User Training</label>
+            </value>
+            <value>
+                <fullName>Advisory Services</fullName>
+                <default>false</default>
+                <label>Advisory Services</label>
+            </value>
+            <value>
+                <fullName>Red Account Resolution</fullName>
+                <default>false</default>
+                <label>Red Account Resolution</label>
+            </value>
+            <value>
+                <fullName>Ongoing Support</fullName>
+                <default>false</default>
+                <label>Ongoing Support</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

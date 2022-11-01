@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class_Description__c</fullName>
+    <description>Created By: AF
+Business Unit: Geekwise Users
+Purpose: Details what will be taught in the class
+Populated: Auto via Process, manual if Class is &quot;Other&quot;</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>If this class is of type &quot;Other&quot;, please fill out this field with a description of the course.</inlineHelpText>
+    <label>Class Description</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>8</visibleLines>
+</CustomField>

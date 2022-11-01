@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Checked_Out_By__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>For use on Lockers - the Contact who this locker is checked out by.</description>
+    <externalId>false</externalId>
+    <label>Checked Out By</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Lockers</relationshipLabel>
+    <relationshipName>Lockers</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

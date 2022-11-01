@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Apprenticeship_Lead__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Created by JW
+WFT
+Is set by automation, used in email alerts.</description>
+    <externalId>false</externalId>
+    <label>Apprenticeship Lead</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Apprentices (Apprenticeship Lead)</relationshipLabel>
+    <relationshipName>Apprentices_Lead</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

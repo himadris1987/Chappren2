@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lease_Length__c</fullName>
+    <description>The length of the lease in months</description>
+    <externalId>false</externalId>
+    <formula>ROUND((Lease_Expiration_Date__c - Lease_Start_Date__c) * 0.032854, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The total number of months in the lease agreement.</inlineHelpText>
+    <label>Lease Length (mo)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

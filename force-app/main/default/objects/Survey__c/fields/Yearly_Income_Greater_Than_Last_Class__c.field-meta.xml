@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Yearly_Income_Greater_Than_Last_Class__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Created By: TL
+Business Unit: WFT
+Purpose: For Form Assembly</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Is your current level of yearly individual income before taxes greater than when you were last enrolled in a Bitwise class?</inlineHelpText>
+    <label>Yearly Income Greater Than Last Class</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

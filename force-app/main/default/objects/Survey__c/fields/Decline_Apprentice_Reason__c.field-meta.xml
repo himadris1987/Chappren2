@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Decline_Apprentice_Reason__c</fullName>
+    <description>Created By: TL
+Business Unit: WFT
+Purpose: For Form Assembly</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Please share your top reason for not participating in the Bitwise apprenticeship program.</inlineHelpText>
+    <label>Decline Apprentice Reason</label>
+    <length>32768</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

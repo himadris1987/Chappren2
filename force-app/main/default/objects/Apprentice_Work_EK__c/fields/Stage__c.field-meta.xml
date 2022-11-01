@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stage__c</fullName>
+    <description>Created by: EK</description>
+    <externalId>false</externalId>
+    <label>Stage</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Topic Picked</fullName>
+                <default>false</default>
+                <label>Topic Picked</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Document Learning</fullName>
+                <default>false</default>
+                <label>Document Learning</label>
+            </value>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>Next Steps</fullName>
+                <default>false</default>
+                <label>Next Steps</label>
+            </value>
+            <value>
+                <fullName>Brainstorming</fullName>
+                <default>false</default>
+                <label>Brainstorming</label>
+            </value>
+            <value>
+                <fullName>Wireframe Submitted</fullName>
+                <default>false</default>
+                <label>Wireframe Submitted</label>
+            </value>
+            <value>
+                <fullName>Specs Submitted</fullName>
+                <default>false</default>
+                <label>Specs Submitted</label>
+            </value>
+            <value>
+                <fullName>Build In Progress</fullName>
+                <default>false</default>
+                <label>Build In Progress</label>
+            </value>
+            <value>
+                <fullName>Testing</fullName>
+                <default>false</default>
+                <label>Testing</label>
+            </value>
+            <value>
+                <fullName>Build Complete</fullName>
+                <default>false</default>
+                <label>Build Complete</label>
+            </value>
+            <value>
+                <fullName>Final Testing</fullName>
+                <default>false</default>
+                <label>Final Testing</label>
+            </value>
+            <value>
+                <fullName>Shipped</fullName>
+                <default>false</default>
+                <label>Shipped</label>
+            </value>
+            <value>
+                <fullName>Assignment Received</fullName>
+                <default>false</default>
+                <label>Assignment Received</label>
+            </value>
+            <value>
+                <fullName>Clarification Needed</fullName>
+                <default>false</default>
+                <label>Clarification Needed</label>
+            </value>
+            <value>
+                <fullName>Research</fullName>
+                <default>false</default>
+                <label>Research</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

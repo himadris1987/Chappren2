@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Technical_Skills__c</fullName>
+    <description>Created by BN
+For Geekwise Users
+To track Cohortian career readiness</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Has shown the ability to produce cohort curriculum
+Understands framework concepts and syntax as well as the context in which to use each concept
+Shows an ability to utilize technical tools that are relevant to industry standards</inlineHelpText>
+    <label>Technical Skills</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Career_Ready_Scoring</valueSetName>
+    </valueSet>
+</CustomField>

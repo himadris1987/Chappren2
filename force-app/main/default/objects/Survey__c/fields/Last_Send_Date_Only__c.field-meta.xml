@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Send_Date_Only__c</fullName>
+    <description>GS
+Business Unit: WFT Survey
+Purpose: To retrieve just the date of the Last Sent Date field for Email Template Purposes.</description>
+    <externalId>false</externalId>
+    <formula>DATEVALUE( Last_Sent_Date__c )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Last Send Date Only</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

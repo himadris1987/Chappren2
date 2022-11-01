@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Locker__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>The locker associated with the membership record.</description>
+    <externalId>false</externalId>
+    <label>Locker</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Value must be a Locker.</errorMessage>
+        <filterItems>
+            <field>Space__c.RecordTypeId</field>
+            <operation>equals</operation>
+            <value>Locker</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Space__c</referenceTo>
+    <relationshipLabel>Locker Reservations</relationshipLabel>
+    <relationshipName>Member_Lockers</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

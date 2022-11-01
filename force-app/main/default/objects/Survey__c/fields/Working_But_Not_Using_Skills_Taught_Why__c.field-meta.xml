@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Working_But_Not_Using_Skills_Taught_Why__c</fullName>
+    <description>Created By: RS
+Purpose: Field for Baseline Student Survey</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If the students are working but not using skills they learned at a Bitwise/Geekwise course, what has stopped them.</inlineHelpText>
+    <label>Working But Not Using Skills Taught,Why?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Haven&apos;t sought/don&apos;t want an IT job</fullName>
+                <default>false</default>
+                <label>Haven&apos;t sought/don&apos;t want an IT job</label>
+            </value>
+            <value>
+                <fullName>Need more qualifications or degree</fullName>
+                <default>false</default>
+                <label>Need more qualifications or degree</label>
+            </value>
+            <value>
+                <fullName>Personal obligations</fullName>
+                <default>false</default>
+                <label>Personal obligations</label>
+            </value>
+            <value>
+                <fullName>Logistical conflicts</fullName>
+                <default>false</default>
+                <label>Logistical conflicts</label>
+            </value>
+            <value>
+                <fullName>No jobs available</fullName>
+                <default>false</default>
+                <label>No jobs available</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>I am using skills I learned at Bitwise/Geekwise</fullName>
+                <default>false</default>
+                <label>I am using skills I learned at Bitwise/Geekwise</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

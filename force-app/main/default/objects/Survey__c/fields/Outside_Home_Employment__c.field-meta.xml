@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Outside_Home_Employment__c</fullName>
+    <description>Created by: JA
+Business Unit: WFT
+Purpose: Capture an individual&apos;s outside home employment status to better understand our students and what support services they may need.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Are they currently employed outside the home?</inlineHelpText>
+    <label>Outside Home Employment</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No, currently not employed outside the home</fullName>
+                <default>false</default>
+                <label>No, currently not employed outside the home</label>
+            </value>
+            <value>
+                <fullName>Employed part-time (under 20 hrs)</fullName>
+                <default>false</default>
+                <label>Employed part-time (under 20 hrs)</label>
+            </value>
+            <value>
+                <fullName>Employed almost full-time (up to 35 hrs)</fullName>
+                <default>false</default>
+                <label>Employed almost full-time (up to 35 hrs)</label>
+            </value>
+            <value>
+                <fullName>Employed full-time (35 hrs+)</fullName>
+                <default>false</default>
+                <label>Employed full-time (35 hrs+)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

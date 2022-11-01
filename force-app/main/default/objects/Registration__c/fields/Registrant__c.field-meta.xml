@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registrant__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Created By: AF
+Business Unit: Geekwise Users
+Purpose: Links the Registration record to a Contact
+Populated: Manual/Auto with Web form</description>
+    <externalId>false</externalId>
+    <label>Registrant</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Class Registrations</relationshipLabel>
+    <relationshipName>Registrations</relationshipName>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

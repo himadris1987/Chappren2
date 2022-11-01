@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>Created By: MH
+Business Unit: BTC
+Purpose: The type of Project i.e. SFDC or Custom Dev</description>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Custom Dev</fullName>
+                <default>false</default>
+                <label>Custom Dev</label>
+            </value>
+            <value>
+                <fullName>SFDC</fullName>
+                <default>false</default>
+                <label>SFDC</label>
+            </value>
+            <value>
+                <fullName>Wordpress Cohort</fullName>
+                <default>false</default>
+                <label>Wordpress Cohort</label>
+            </value>
+            <value>
+                <fullName>Onward</fullName>
+                <default>false</default>
+                <label>Onward</label>
+            </value>
+            <value>
+                <fullName>Take Care</fullName>
+                <default>false</default>
+                <label>Take Care</label>
+            </value>
+            <value>
+                <fullName>Federal</fullName>
+                <default>false</default>
+                <label>Federal</label>
+            </value>
+            <value>
+                <fullName>State</fullName>
+                <default>false</default>
+                <label>State</label>
+            </value>
+            <value>
+                <fullName>Municipal</fullName>
+                <default>false</default>
+                <label>Municipal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

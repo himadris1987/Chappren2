@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Zoom_Meeting_Alternate_Hosts__c</fullName>
+    <description>Created By: CC
+Purpose: Comma Separated list of emails of default Alternate Hosts for WFT Class Meetings.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Comma Separated list of emails of default Alternate Hosts for WFT Class Meetings.</inlineHelpText>
+    <label>Zoom Meeting Alternate Hosts</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

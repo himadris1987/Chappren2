@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TR_Project_Template__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Created by: JA
+Business Unit: BWRD
+Purpose: Hidden field except exposed in the Idea to Taskray project flow</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Which template would you like to use?</inlineHelpText>
+    <label>TR Project Template</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>Value does not exist or does not match filter criteria.</errorMessage>
+        <filterItems>
+            <field>TASKRAY__Project__c.TASKRAY__trTemplate__c</field>
+            <operation>equals</operation>
+            <value>True</value>
+        </filterItems>
+        <filterItems>
+            <field>TASKRAY__Project__c.TASKRAY__Status__c</field>
+            <operation>equals</operation>
+            <value>False</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>TASKRAY__Project__c</referenceTo>
+    <relationshipLabel>Ideas</relationshipLabel>
+    <relationshipName>Ideas</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SUM_of_Assessment_Scores__c</fullName>
+    <description>BN
+BWRD Users
+Track avg scores of Completed Assessments
+Auto pop from RUS</description>
+    <externalId>false</externalId>
+    <label>SUM of Assessment Scores</label>
+    <summarizedField>Assessment__c.Total_Weighted_Score__c</summarizedField>
+    <summaryFilterItems>
+        <field>Assessment__c.Status__c</field>
+        <operation>equals</operation>
+        <value>Complete</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Assessment__c.Idea__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

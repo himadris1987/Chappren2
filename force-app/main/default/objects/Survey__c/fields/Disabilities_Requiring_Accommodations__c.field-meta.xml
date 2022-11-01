@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disabilities_Requiring_Accommodations__c</fullName>
+    <description>Created by: JA
+Purpose: Capture if an individual has any disabilities requiring reasonable accommodation to better design classes and support services</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Do they have a disability requiring reasonable accommodation?</inlineHelpText>
+    <label>Disabilities Requiring Accommodations</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ambulatory Difficulty</fullName>
+                <default>false</default>
+                <label>Ambulatory Difficulty</label>
+            </value>
+            <value>
+                <fullName>Cognitive Difficulty</fullName>
+                <default>false</default>
+                <label>Cognitive Difficulty</label>
+            </value>
+            <value>
+                <fullName>Hearing Difficulty</fullName>
+                <default>false</default>
+                <label>Hearing Difficulty</label>
+            </value>
+            <value>
+                <fullName>Independent Living Difficulty</fullName>
+                <default>false</default>
+                <label>Independent Living Difficulty</label>
+            </value>
+            <value>
+                <fullName>Learning Difficulty</fullName>
+                <default>false</default>
+                <label>Learning Difficulty</label>
+            </value>
+            <value>
+                <fullName>Self-Care Difficulty</fullName>
+                <default>false</default>
+                <label>Self-Care Difficulty</label>
+            </value>
+            <value>
+                <fullName>Vision Difficulty</fullName>
+                <default>false</default>
+                <label>Vision Difficulty</label>
+            </value>
+            <value>
+                <fullName>No, I do not have any disability requiring reasonable accommodations in class</fullName>
+                <default>false</default>
+                <label>No, I do not have any disability requiring reasonable accommodations in class</label>
+            </value>
+            <value>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Not Applicable</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>3</visibleLines>
+</CustomField>

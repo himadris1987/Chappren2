@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Feature_type_must_have_a_CatalogFeature</fullName>
+    <active>true</active>
+    <description>When a Catalog Item type is selected &quot;Feature,&quot; it MUST have a Catalog Feature Set.</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(Type__c,&quot;Feature&quot;), 
+ISBLANK( Catalog_Feature_Set__c ) )</errorConditionFormula>
+    <errorMessage>Type &quot;Feature,&quot; it Must have a Catalog Feature Set.</errorMessage>
+</ValidationRule>

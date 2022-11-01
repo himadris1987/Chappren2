@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLKR_any_blocker_today_CMPHAM__c</fullName>
+    <description>Created By: CMP
+Business Unit: Alphaforce
+Purpose: This will indicate if the apprentice has a blocker today or not.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Did you encounter a blocker today?</inlineHelpText>
+    <label>Did you have any blocker today?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes</fullName>
+                <default>false</default>
+                <label>Yes</label>
+            </value>
+            <value>
+                <fullName>No</fullName>
+                <default>false</default>
+                <label>No</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

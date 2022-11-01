@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product_Weighted_Subtotal__c</fullName>
+    <description>CC BWRD Product Weighted Subtotal Auto</description>
+    <externalId>false</externalId>
+    <formula>Frequency_of_Use_Weighted_Score__c + Use_Weighted_Score__c + Existing_Code_Base_Weighted_Score__c + Cost_to_Develop_Weighted_Score__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Product Weighted Subtotal</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

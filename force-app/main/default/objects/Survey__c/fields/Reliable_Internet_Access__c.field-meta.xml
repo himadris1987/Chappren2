@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reliable_Internet_Access__c</fullName>
+    <description>Created by: JA
+Purpose: Capture if an individual has consistent reliable high-speed internet access at home to better design classes and support services.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Do they have consistent and reliable access to high-speed internet at home?</inlineHelpText>
+    <label>Reliable Internet Access?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes, I have consistent and reliable access to a high-speed internet connection at home</fullName>
+                <default>false</default>
+                <label>Yes, I have consistent and reliable access to a high-speed internet connection at home</label>
+            </value>
+            <value>
+                <fullName>No, I do not have consistent and reliable access to a high-speed internet connection at home</fullName>
+                <default>false</default>
+                <label>No, I do not have consistent and reliable access to a high-speed internet connection at home</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

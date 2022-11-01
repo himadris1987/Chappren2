@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HR_Folders_All</fullName>
+    <columns>NAME</columns>
+    <columns>Employee__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>HR Folders - All</label>
+    <sharedTo>
+        <group>C_Suite_Team</group>
+        <group>HR_Team</group>
+        <group>SF_Admin_Team</group>
+    </sharedTo>
+</ListView>

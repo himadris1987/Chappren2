@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internet_Access_Explanation__c</fullName>
+    <description>Created by: JA
+Purpose: Capture how an individual accesses the internet if they replied Other to, &quot;Do you have consistent and reliable access to a high-speed internet connection at home? (If you choose &apos;Other,&apos; please share in the next section.)&quot;</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>If they replied Other to having consistent and reliable high-speed internet access, how do they access the internet?</inlineHelpText>
+    <label>Internet Access Explanation</label>
+    <length>131072</length>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

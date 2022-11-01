@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SB_Describe_your_speedbump_MCC__c</fullName>
+    <description>Created By: MCC
+Business Unit: Salesforce Admin Apprenticeship 2021 (Alphaforce Team)
+Purpose: This is the description of the speedbump the apprentice ran into.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>What are the details of the speedbump you ran into today?</inlineHelpText>
+    <label>Describe your speedbump.</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

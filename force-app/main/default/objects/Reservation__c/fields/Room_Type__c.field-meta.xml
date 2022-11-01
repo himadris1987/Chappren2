@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Room_Type__c</fullName>
+    <description>Created By: DA
+Business Unit: Hashtag
+Purpose: Room Type pulled from the Space on record creation.
+Populated by: Process Builder - Reservation - Create</description>
+    <externalId>false</externalId>
+    <label>Room Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Conference Room</fullName>
+                <default>false</default>
+                <label>Conference Room</label>
+            </value>
+            <value>
+                <fullName>Podcast Booth</fullName>
+                <default>false</default>
+                <label>Podcast Booth</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

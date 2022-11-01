@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLDG_Design_Project_Task</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>BLDG_Project_Task_Compact_Layout</compactLayoutAssignment>
+    <label>BLDG - Design Project Task</label>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Blocked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In-Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>On Hold</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

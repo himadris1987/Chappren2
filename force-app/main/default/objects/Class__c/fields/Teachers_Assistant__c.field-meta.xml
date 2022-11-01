@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Teachers_Assistant__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Created By: AF
+Business Unit: Geekwise Users
+Purpose: Links a Contact as a TA for this Class
+Populated: Manual</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The TA for this course (This is a PAID position)</inlineHelpText>
+    <label>Teacher&apos;s Assistant</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Classes (Teacher&apos;s Assistant)</relationshipLabel>
+    <relationshipName>Class_TA</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

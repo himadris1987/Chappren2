@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Competitive_Advantage_Weighted_Score__c</fullName>
+    <description>CC BWRD Competitive Advantage Weighted Score Auto</description>
+    <externalId>false</externalId>
+    <formula>CASE( Competitive_Advantage__c,
+&apos;(1) Low Advantage&apos;, 1 * Competitive_Advantage_Weight__c,
+&apos;(2) Somewhat Low Advantage&apos;, 2 * Competitive_Advantage_Weight__c,
+&apos;(3) Medium Advantage&apos;, 3 * Competitive_Advantage_Weight__c,
+&apos;(4) Somewhat High Advantage&apos;, 4 * Competitive_Advantage_Weight__c,
+&apos;(5) High Advantage&apos;, 5 * Competitive_Advantage_Weight__c,
+0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Competitive Adv for Buyer Weighted Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

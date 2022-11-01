@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Created by JW
+Tracks the main point of correspondence for this lease (contact).
+Carries over from Opp from Global Action</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Who is the primary point of contact for this lease?</inlineHelpText>
+    <label>Primary Contact</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Leases</relationshipLabel>
+    <relationshipName>Leases</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

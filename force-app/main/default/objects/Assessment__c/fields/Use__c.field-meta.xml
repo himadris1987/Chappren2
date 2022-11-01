@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Use__c</fullName>
+    <description>CC BWRD Use Manual</description>
+    <externalId>false</externalId>
+    <label>Use</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>(1) Personal</fullName>
+                <default>false</default>
+                <label>(1) Personal</label>
+            </value>
+            <value>
+                <fullName>(2) Work</fullName>
+                <default>false</default>
+                <label>(2) Work</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

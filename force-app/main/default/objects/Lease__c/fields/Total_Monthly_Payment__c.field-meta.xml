@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Monthly_Payment__c</fullName>
+    <description>The total monthly payment, includes rent, parking, and signage.</description>
+    <externalId>false</externalId>
+    <formula>Rent_mo__c + Parking_mo__c +  Signage_mo__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Shows the total monthly payment, including both rent, parking, and signage.</inlineHelpText>
+    <label>Total Monthly Payment</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

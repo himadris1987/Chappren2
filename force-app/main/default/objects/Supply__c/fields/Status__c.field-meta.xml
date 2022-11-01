@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>Created By: BN
+Business Unit: Geekwise Users
+Purpose: To Track if Geekwise Supplies are checked out.
+Populated: Manually/Triggered by Process when assigned to a contact/contact removed.</description>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Ordered</fullName>
+                <default>true</default>
+                <label>Ordered</label>
+            </value>
+            <value>
+                <fullName>Available</fullName>
+                <default>false</default>
+                <label>Available</label>
+            </value>
+            <value>
+                <fullName>Checked Out</fullName>
+                <default>false</default>
+                <label>Checked Out</label>
+            </value>
+            <value>
+                <fullName>Needs Repair</fullName>
+                <default>false</default>
+                <label>Needs Repair</label>
+            </value>
+            <value>
+                <fullName>In Repair</fullName>
+                <default>false</default>
+                <label>In Repair</label>
+            </value>
+            <value>
+                <fullName>Out of Commission</fullName>
+                <default>false</default>
+                <label>Out of Commission</label>
+            </value>
+            <value>
+                <fullName>Sold</fullName>
+                <default>false</default>
+                <label>Sold</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

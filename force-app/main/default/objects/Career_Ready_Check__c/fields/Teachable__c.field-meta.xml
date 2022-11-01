@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Teachable__c</fullName>
+    <description>Created by BN
+For Geekwise Users
+To track Cohortian career readiness</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Takes guidance and correction
+Asks questions on improvement 
+Takes constructive criticism to make improvements
+Apt and willing to learn</inlineHelpText>
+    <label>Teachable</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Career_Ready_Scoring</valueSetName>
+    </valueSet>
+</CustomField>

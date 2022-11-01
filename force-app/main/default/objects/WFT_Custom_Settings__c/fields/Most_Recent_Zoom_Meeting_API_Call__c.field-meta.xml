@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Most_Recent_Zoom_Meeting_API_Call__c</fullName>
+    <description>Created By: CC
+Purpose: Keeps date of most recent Meeting API call in a day. Date is based off UTC.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>Keeps date of most recent Meeting API call in a day is based on UTC.</inlineHelpText>
+    <label>Most Recent Zoom Meeting API Call</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

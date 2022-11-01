@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Received__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>BLDG CC Mark that a delivery has been received by reception. Manual</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Acknowledges that a delivery has been received by reception. If not marked after 5 minutes an email is sent to BLDG, so they can respond.</inlineHelpText>
+    <label>Delivery Received?</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

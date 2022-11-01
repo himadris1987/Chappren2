@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scope_Billable_Subtotal__c</fullName>
+    <externalId>false</externalId>
+    <formula>Design_Billable__c +  Developer_Billable__c +  Migration_Billable__c +  Project_Manager_Billable__c +  QA_Application_Testing_Billable__c +  QA_Code_Review_Billable__c +  Technical_Lead_Billable__c +  Training_Billable__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Scope Billable Subtotal</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

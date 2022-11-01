@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exemptions__c</fullName>
+    <description>BN
+BLDG
+To track vehicle exemptions
+Manually created.</description>
+    <externalId>false</externalId>
+    <label>Exemptions</label>
+    <summaryFilterItems>
+        <field>Parking_Notice__c.Type__c</field>
+        <operation>equals</operation>
+        <value>Exemption</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Parking_Notice__c.Vehicle__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

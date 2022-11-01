@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cowork_Rooms</fullName>
+    <columns>NAME</columns>
+    <columns>Public_URL__c</columns>
+    <columns>Calendar__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Space__c.Suite</value>
+    </filters>
+    <filters>
+        <field>Reservation_Room_Type__c</field>
+        <operation>equals</operation>
+        <value>Conference Room,Podcast Booth</value>
+    </filters>
+    <label>Cowork Rooms</label>
+    <sharedTo>
+        <group>Cowork_Team</group>
+    </sharedTo>
+</ListView>

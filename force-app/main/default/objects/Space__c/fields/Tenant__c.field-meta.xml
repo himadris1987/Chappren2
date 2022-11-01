@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tenant__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>JA
+Business Unit: BW Leasing
+Field Purpose: Track which account currently leases the suite/space
+Population: Process Builder</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Who occupies the space?</inlineHelpText>
+    <label>Tenant</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Spaces</relationshipLabel>
+    <relationshipName>Spaces</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

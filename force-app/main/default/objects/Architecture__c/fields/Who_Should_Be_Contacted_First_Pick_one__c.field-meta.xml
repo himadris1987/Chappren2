@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Who_Should_Be_Contacted_First_Pick_one__c</fullName>
+    <description>Created by: YB, Business Unit:BWTC,Purpose: for architecture app</description>
+    <externalId>false</externalId>
+    <label>Who Should Be Contacted First (Pick one)</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Potential Customer</fullName>
+                <default>false</default>
+                <label>Potential Customer</label>
+            </value>
+            <value>
+                <fullName>Shift3</fullName>
+                <default>false</default>
+                <label>Shift3</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

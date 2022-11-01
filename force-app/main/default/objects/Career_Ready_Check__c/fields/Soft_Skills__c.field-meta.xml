@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Soft_Skills__c</fullName>
+    <description>Created by BN
+For Geekwise Users
+To track Cohortian career readiness</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Able to interact effectively and harmoniously with the GKW community
+Communicates clearly in writing
+Willing to collaborate with team
+Cultural awareness of others</inlineHelpText>
+    <label>Soft Skills</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Career_Ready_Scoring</valueSetName>
+    </valueSet>
+</CustomField>

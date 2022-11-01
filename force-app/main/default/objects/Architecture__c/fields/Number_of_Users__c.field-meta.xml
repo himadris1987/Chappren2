@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Users__c</fullName>
+    <externalId>false</externalId>
+    <label>Number of Users</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1-5 users</fullName>
+                <default>false</default>
+                <label>1-5 users</label>
+            </value>
+            <value>
+                <fullName>6-20 users</fullName>
+                <default>false</default>
+                <label>6-20 users</label>
+            </value>
+            <value>
+                <fullName>21-100 users</fullName>
+                <default>false</default>
+                <label>21-100 users</label>
+            </value>
+            <value>
+                <fullName>101-500 users</fullName>
+                <default>false</default>
+                <label>101-500 users</label>
+            </value>
+            <value>
+                <fullName>501-3,500 users</fullName>
+                <default>false</default>
+                <label>501-3,500 users</label>
+            </value>
+            <value>
+                <fullName>3500+ users</fullName>
+                <default>false</default>
+                <label>3500+ users</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_to_Value__c</fullName>
+    <description>CC BWRD Time To Value</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What is the ROI for the customer? (this is the time it takes for a customer to extract value, financial or non-financial, from a product)</inlineHelpText>
+    <label>Time to Value for Buyer</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>(1) More than 2 years</fullName>
+                <default>false</default>
+                <label>(1) More than 2 years</label>
+            </value>
+            <value>
+                <fullName>(2) 2 years or less</fullName>
+                <default>false</default>
+                <label>(2) 2 years or less</label>
+            </value>
+            <value>
+                <fullName>(3) 18 months or less</fullName>
+                <default>false</default>
+                <label>(3) 18 months or less</label>
+            </value>
+            <value>
+                <fullName>(4) 1 year or less</fullName>
+                <default>false</default>
+                <label>(4) 1 year or less</label>
+            </value>
+            <value>
+                <fullName>(5) 6 months or less</fullName>
+                <default>false</default>
+                <label>(5) 6 months or less</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

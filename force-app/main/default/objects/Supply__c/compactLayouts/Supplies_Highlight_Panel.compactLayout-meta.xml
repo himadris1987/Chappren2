@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supplies_Highlight_Panel</fullName>
+    <fields>Supply_Purchase__c</fields>
+    <fields>Type__c</fields>
+    <fields>Status__c</fields>
+    <fields>Space__c</fields>
+    <fields>TaskRay_Project__c</fields>
+    <label>Supplies Highlight Panel</label>
+</CompactLayout>

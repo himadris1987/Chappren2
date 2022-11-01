@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Top_50_University_Score__c</fullName>
+    <description>GS
+Purpose: Tracks the score based on the checkbox.</description>
+    <externalId>false</externalId>
+    <formula>IF( Top_50_University__c = True, 0 , 1 )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Top 50 University Score (Do Not Display)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

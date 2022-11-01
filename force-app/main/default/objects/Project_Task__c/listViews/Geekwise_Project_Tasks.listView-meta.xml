@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Geekwise_Project_Tasks</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Milestone__c</columns>
+    <columns>Project__c</columns>
+    <columns>Assignee__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>0123i000000QHMU</value>
+    </filters>
+    <label>Geekwise Project Tasks</label>
+    <sharedTo>
+        <group>SF_Admin_Team</group>
+        <group>Tech_Support_Team</group>
+    </sharedTo>
+</ListView>

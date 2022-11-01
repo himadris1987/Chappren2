@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Top_Course_Reason__c</fullName>
+    <description>GS
+Purpose: WFT Survey</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Top reason for enrolling in a Bitwise Industries class?</inlineHelpText>
+    <label>Top Course Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Career advancement</fullName>
+                <default>false</default>
+                <label>Career advancement</label>
+            </value>
+            <value>
+                <fullName>Career change</fullName>
+                <default>false</default>
+                <label>Career change</label>
+            </value>
+            <value>
+                <fullName>Workforce re-entry</fullName>
+                <default>false</default>
+                <label>Workforce re-entry</label>
+            </value>
+            <value>
+                <fullName>Entrepreneurship</fullName>
+                <default>false</default>
+                <label>Entrepreneurship</label>
+            </value>
+            <value>
+                <fullName>Increase earning potential</fullName>
+                <default>false</default>
+                <label>Increase earning potential</label>
+            </value>
+            <value>
+                <fullName>Have an idea for a tech product or service</fullName>
+                <default>false</default>
+                <label>Have an idea for a tech product or service</label>
+            </value>
+            <value>
+                <fullName>Need a community of support</fullName>
+                <default>false</default>
+                <label>Need a community of support</label>
+            </value>
+            <value>
+                <fullName>Tried getting technical education elsewhere but haven&apos;t found a program that works.</fullName>
+                <default>false</default>
+                <label>Tried getting technical education elsewhere but haven&apos;t found a program that works.</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

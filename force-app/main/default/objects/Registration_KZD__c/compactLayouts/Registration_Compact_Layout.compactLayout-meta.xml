@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registration_Compact_Layout</fullName>
+    <fields>Contact__c</fields>
+    <fields>Classes_KZD__c</fields>
+    <fields>Name</fields>
+    <fields>Student_First_Name__c</fields>
+    <fields>Student_Last_Name__c</fields>
+    <fields>Date_Of_Birth__c</fields>
+    <fields>Date_Registered__c</fields>
+    <fields>LastModifiedById</fields>
+    <fields>CreatedById</fields>
+    <label>Registration Compact Layout</label>
+</CompactLayout>

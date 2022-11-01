@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Nonprofit_Cloud__c</fullName>
+    <description>Created by: YB, Business Unit:BWTC,Purpose: for architecture app</description>
+    <externalId>false</externalId>
+    <label>Nonprofit Cloud</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Engagement</fullName>
+                <default>false</default>
+                <label>Engagement</label>
+            </value>
+            <value>
+                <fullName>Fundraising</fullName>
+                <default>false</default>
+                <label>Fundraising</label>
+            </value>
+            <value>
+                <fullName>Grantmaking</fullName>
+                <default>false</default>
+                <label>Grantmaking</label>
+            </value>
+            <value>
+                <fullName>Program Management</fullName>
+                <default>false</default>
+                <label>Program Management</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

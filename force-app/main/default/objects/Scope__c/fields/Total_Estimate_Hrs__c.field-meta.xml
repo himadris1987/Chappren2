@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Estimate_Hrs__c</fullName>
+    <externalId>false</externalId>
+    <formula>Developer_Estimate_Hrs__c + Migration_Estimate_Hrs__c +  Project_Manager_Estimate_Hrs__c +  QA_Application_Testing_Estimate_Hrs2__c +  QA_Code_Review_Estimate_Hrs2__c +  Technical_Lead_Estimate_Hrs__c +  Training_Estimate_Hrs__c +  Design_Estimate__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Total Estimate (Hrs)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

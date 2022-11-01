@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Annual_Household_Income__c</fullName>
+    <description>Created By: AF
+Business Unit: Executive Reporting
+Purpose: Displays survey data
+Populated: Auto via survey / manual</description>
+    <externalId>false</externalId>
+    <label>Annual Household Income</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Income_Brackets</valueSetName>
+    </valueSet>
+</CustomField>

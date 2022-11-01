@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLKR_trail_module_and_unit_name_CMPHAM__c</fullName>
+    <description>Created By: CMPHAM
+Business Unit: Alphaforce
+Purpose: This states the trails, modules, &amp; unit that the apprentice encountered during their blocker.</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>What is the trails, modules, &amp; unit name of the blocker you encountered today?</inlineHelpText>
+    <label>Blocker trail, module, and unit name?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>TextArea</type>
+</CustomField>

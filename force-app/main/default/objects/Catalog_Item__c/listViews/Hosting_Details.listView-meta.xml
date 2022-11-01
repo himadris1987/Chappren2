@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hosting_Details</fullName>
+    <columns>NAME</columns>
+    <columns>Hosting_Service__c</columns>
+    <columns>Estimate__c</columns>
+    <columns>Type__c</columns>
+    <columns>Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Hosting Detail</value>
+    </filters>
+    <label>Hosting Details</label>
+    <sharedTo>
+        <group>SF_Admin_Team</group>
+    </sharedTo>
+</ListView>

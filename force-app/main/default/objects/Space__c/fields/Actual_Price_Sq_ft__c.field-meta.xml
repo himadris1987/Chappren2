@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_Price_Sq_ft__c</fullName>
+    <description>The actual price per square foot charged per the lease agreement</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Shows the actual price per square foot charged calculated from the lease agreement.</inlineHelpText>
+    <label>Actual Price (Sq ft)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

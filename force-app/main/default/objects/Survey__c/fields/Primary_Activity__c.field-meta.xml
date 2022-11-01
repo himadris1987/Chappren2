@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Activity__c</fullName>
+    <description>Created by: VC
+Purpose: If not employed right now, what is your primary activity?</description>
+    <externalId>false</externalId>
+    <inlineHelpText>If you are not employed right now, what is your primary activity?</inlineHelpText>
+    <label>Primary Activity</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Furthering my education</fullName>
+                <default>false</default>
+                <label>Furthering my education</label>
+            </value>
+            <value>
+                <fullName>Caring for children</fullName>
+                <default>false</default>
+                <label>Caring for children</label>
+            </value>
+            <value>
+                <fullName>Caring for other family members</fullName>
+                <default>false</default>
+                <label>Caring for other family members</label>
+            </value>
+            <value>
+                <fullName>Taking time for my own health</fullName>
+                <default>false</default>
+                <label>Taking time for my own health</label>
+            </value>
+            <value>
+                <fullName>Planning/starting a business</fullName>
+                <default>false</default>
+                <label>Planning/starting a business</label>
+            </value>
+            <value>
+                <fullName>Working on a personal project (e.g., book, artistic endeavor)</fullName>
+                <default>false</default>
+                <label>Working on a personal project (e.g., book, artistic endeavor)</label>
+            </value>
+            <value>
+                <fullName>Volunteering, engaging in service or unpaid work</fullName>
+                <default>false</default>
+                <label>Volunteering, engaging in service or unpaid work</label>
+            </value>
+            <value>
+                <fullName>Traveling or taking time off</fullName>
+                <default>false</default>
+                <label>Traveling or taking time off</label>
+            </value>
+            <value>
+                <fullName>Other reasons</fullName>
+                <default>false</default>
+                <label>Other reasons</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

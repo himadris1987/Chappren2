@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Per_Capita_Income_Score__c</fullName>
+    <description>GS
+Purpose: Gathers the score for Per Capita Income depending on the picklist value.</description>
+    <externalId>false</externalId>
+    <formula>IF( ISPICKVAL(Per_Capita_Income__c, &quot;&gt;$30k&quot; ) , 0 ,  
+   IF(ISPICKVAL(Per_Capita_Income__c, &quot;$28-30k&quot; ), 1 ,
+      IF( ISPICKVAL(Per_Capita_Income__c, &quot;$22-28k&quot; ), 2 ,
+         IF( ISPICKVAL(Per_Capita_Income__c, &quot;&lt;$22k&quot; ), 3 , null
+			)
+		)
+	)
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Per Capita Income Score (Do Not Display)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>9</activeVersionNumber>
+    <description>JW- Generates a new Lease record based on a completed Opportunity.</description>
+    <masterLabel>BW Leasing - Opp to Lease</masterLabel>
+</FlowDefinition>

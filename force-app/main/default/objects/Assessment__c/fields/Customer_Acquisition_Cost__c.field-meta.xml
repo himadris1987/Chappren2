@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Acquisition_Cost__c</fullName>
+    <description>CC BWRD Customer Acquisition Cost Auto</description>
+    <externalId>false</externalId>
+    <inlineHelpText>What is the fully loaded cost to acquire a new customer? Inclusive of sales, marketing, travel, overhead, etc.</inlineHelpText>
+    <label>Customer Acquisition Cost</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>(1) High Cost</fullName>
+                <default>false</default>
+                <label>(1) High Cost</label>
+            </value>
+            <value>
+                <fullName>(2) Somewhat High Cost</fullName>
+                <default>false</default>
+                <label>(2) Somewhat High Cost</label>
+            </value>
+            <value>
+                <fullName>(3) Medium Cost</fullName>
+                <default>false</default>
+                <label>(3) Medium Cost</label>
+            </value>
+            <value>
+                <fullName>(4) Somewhat Low Cost</fullName>
+                <default>false</default>
+                <label>(4) Somewhat Low Cost</label>
+            </value>
+            <value>
+                <fullName>(5) Low Cost</fullName>
+                <default>false</default>
+                <label>(5) Low Cost</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

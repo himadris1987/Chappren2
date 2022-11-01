@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_must_be_selected_to_fill_out_Other</fullName>
+    <active>true</active>
+    <description>Created By: AF
+Business Unit: Geekwise Users
+Purpose: The value &quot;Other&quot; must be selected from the Class pick list to add text to the Other field.</description>
+    <errorConditionFormula>ISPICKVAL( Class__c , &quot;Other&quot;) = FALSE 
+&amp;&amp; 
+ISBLANK( Other__c ) = FALSE</errorConditionFormula>
+    <errorDisplayField>Other__c</errorDisplayField>
+    <errorMessage>&quot;Other&quot; must be selected from the Class pick list above if you would like to edit this field.</errorMessage>
+</ValidationRule>

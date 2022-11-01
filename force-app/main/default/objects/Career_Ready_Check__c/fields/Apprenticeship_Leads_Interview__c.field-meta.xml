@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Apprenticeship_Leads_Interview__c</fullName>
+    <description>Created by: JA
+Purpose: Track how the Apprenticeship Lead feels about their candidate</description>
+    <externalId>false</externalId>
+    <label>Apprenticeship Lead&apos;s Interview</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not a Good Fit</fullName>
+                <default>false</default>
+                <label>Not a Good Fit</label>
+            </value>
+            <value>
+                <fullName>Unsure Fit</fullName>
+                <default>false</default>
+                <label>Unsure Fit</label>
+            </value>
+            <value>
+                <fullName>Good Fit</fullName>
+                <default>false</default>
+                <label>Good Fit</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Woodshop_Projects__c</fullName>
+    <description>Created By: HNS
+Business Unit: Salesforce Oakland Apprenticeship 2021
+Purpose:  Will allow a user to tie project resources to a particular project</description>
+    <externalId>false</externalId>
+    <label>Woodshop Projects</label>
+    <referenceTo>Woodshop_Projects__c</referenceTo>
+    <relationshipLabel>Woodshop Project Resources</relationshipLabel>
+    <relationshipName>Woodshop_Project_Resources</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

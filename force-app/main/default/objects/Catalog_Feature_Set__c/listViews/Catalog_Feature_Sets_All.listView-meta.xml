@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Catalog_Feature_Sets_All</fullName>
+    <columns>NAME</columns>
+    <columns>Features_Code__c</columns>
+    <columns>Description__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Catalog Feature Sets-All</label>
+    <sharedTo>
+        <group>SF_Admin_Team</group>
+    </sharedTo>
+</ListView>

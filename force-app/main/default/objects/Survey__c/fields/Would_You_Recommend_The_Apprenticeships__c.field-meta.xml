@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Would_You_Recommend_The_Apprenticeships__c</fullName>
+    <description>Created By: RS
+Purpose: Field for Baseline Student Survey</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Would the student recommend Bitwise/Geekwise apprenticeships to other people wanting to enhance their technical abiliities.</inlineHelpText>
+    <label>Would You Recommend The Apprenticeships?</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Definitely Would</fullName>
+                <default>false</default>
+                <label>Definitely Would</label>
+            </value>
+            <value>
+                <fullName>Probably Would</fullName>
+                <default>false</default>
+                <label>Probably Would</label>
+            </value>
+            <value>
+                <fullName>Maybe</fullName>
+                <default>false</default>
+                <label>Maybe</label>
+            </value>
+            <value>
+                <fullName>Probably Would Not</fullName>
+                <default>false</default>
+                <label>Probably Would Not</label>
+            </value>
+            <value>
+                <fullName>Definitely Would Not</fullName>
+                <default>false</default>
+                <label>Definitely Would Not</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

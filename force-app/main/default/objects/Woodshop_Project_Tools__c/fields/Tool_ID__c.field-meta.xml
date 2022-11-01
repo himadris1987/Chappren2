@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tool_ID__c</fullName>
+    <description>Created By: HNS
+Business Unit: Salesforce Oakland Apprenticeship
+Purpose:  Will create an ID number for each tool record</description>
+    <displayFormat>T-{0000}</displayFormat>
+    <externalId>false</externalId>
+    <label>Tool ID</label>
+    <trackTrending>false</trackTrending>
+    <type>AutoNumber</type>
+</CustomField>

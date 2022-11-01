@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cowork_Inactive_Memberships</fullName>
+    <columns>NAME</columns>
+    <columns>Contact__c</columns>
+    <columns>Status__c</columns>
+    <columns>Type__c</columns>
+    <columns>Membership_Start_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Inactive</value>
+    </filters>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Day Pass,Student,Individual,Group,Virtual Tenant</value>
+    </filters>
+    <label>Cowork Inactive Memberships</label>
+    <sharedTo>
+        <group>Cowork_Team</group>
+    </sharedTo>
+</ListView>

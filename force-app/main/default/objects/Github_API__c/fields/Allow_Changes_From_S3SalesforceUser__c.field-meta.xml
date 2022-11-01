@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allow_Changes_From_S3SalesforceUser__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Turn off or turn on S3SalesforceUser ability to use Webhook.</description>
+    <externalId>false</externalId>
+    <label>Allow Changes From S3SalesforceUser</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

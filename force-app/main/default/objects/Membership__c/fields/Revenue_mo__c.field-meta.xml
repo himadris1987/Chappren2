@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Revenue_mo__c</fullName>
+    <description>JA
+Business Unit: Hashtag
+Purpose: Calculate the monthly charge rate for the Average Revenue per Member report</description>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Type__c , &quot;Group&quot;) || ISPICKVAL(Type__c , &quot;Business&quot;), 
+   IF(Number_of_Members__c &gt; 4, 
+     (Number_of_Members__c - 4) * 25 + 175, 
+     175
+   ),
+   IF(ISPICKVAL(Type__c ,&quot;Day Pass&quot;), IF(MONTH(Membership_Start_Date__c) ==  MONTH(TODAY()),15,0),  
+      CASE(Type__c, 
+           &quot;Student&quot;, 29, 
+           &quot;Individual&quot;, 49,
+           &quot;Virtual Tenant&quot;, 100,
+           &quot;Hashtag + Lift&quot;, 30,
+           &quot;Individual Yearly&quot;, 399/12,
+           &quot;Student Yearly&quot;, 348/12,
+           0
+      )
+   )      
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Revenue (mo)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

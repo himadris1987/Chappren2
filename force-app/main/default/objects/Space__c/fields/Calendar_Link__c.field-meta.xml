@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Calendar_Link__c</fullName>
+    <externalId>false</externalId>
+    <formula>&quot;https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FLos_Angeles&amp;src=&quot; &amp; Calendar_Source_Id__c  
+    &amp; &quot;&amp;color=%2322AA99&amp;mode=day&amp;showCalendars=0&amp;showTabs=0&amp;showTitle=1&amp;showNav=1&amp;showPrint=0&amp;dates=&quot; &amp; Calendar_Date__c &amp; &quot;/&quot; &amp; Calendar_Date__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Calendar Link</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

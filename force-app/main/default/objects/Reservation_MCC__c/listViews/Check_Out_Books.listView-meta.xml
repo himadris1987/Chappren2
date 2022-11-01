@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Out_Books</fullName>
+    <columns>NAME</columns>
+    <columns>Book_MCC__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Reserve_Date_Time__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Reserve_Date_Time__c</field>
+        <operation>lessOrEqual</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Checked Out Books</label>
+</ListView>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Skill_Readiness__c</fullName>
+    <description>Created by BN
+For Geekwise Users
+To track Cohortian career readiness</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Exams, certifications earned, or taken
+Making progress towards a new skill set Consistently completes assignments</inlineHelpText>
+    <label>Skill Readiness</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Career_Ready_Scoring</valueSetName>
+    </valueSet>
+</CustomField>

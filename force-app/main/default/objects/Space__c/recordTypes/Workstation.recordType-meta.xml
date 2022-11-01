@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Workstation</fullName>
+    <active>true</active>
+    <description>A desk/workstation in Bitwise&apos;s Desk Hotel.</description>
+    <label>Workstation</label>
+    <picklistValues>
+        <picklist>Locker_Size__c</picklist>
+        <values>
+            <fullName>Large</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reservation_Room_Type__c</picklist>
+        <values>
+            <fullName>Conference Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Podcast Booth</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Occupied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under Construction</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

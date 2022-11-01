@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QA_Application_Testing_Billable__c</fullName>
+    <externalId>false</externalId>
+    <formula>QA_Application_Testing_Estimate_Hrs2__c *  BWTC_Quality_Assurance_Rate_Hourly__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>QA - Application Testing Billable</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

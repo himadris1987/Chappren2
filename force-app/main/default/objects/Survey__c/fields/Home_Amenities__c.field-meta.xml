@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Home_Amenities__c</fullName>
+    <description>Created by: CC
+Department: CW
+Purpose: Capture data on home amenities.</description>
+    <externalId>false</externalId>
+    <label>Home Amenities</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Personal Hotspot</fullName>
+                <default>false</default>
+                <label>Personal Hotspot</label>
+            </value>
+            <value>
+                <fullName>Access to Zoom Account for Large Meetings</fullName>
+                <default>false</default>
+                <label>Access to Zoom Account for Large Meetings</label>
+            </value>
+            <value>
+                <fullName>Virtual Accountability Cafe (Allows for a virtual space to work and take breaks together)</fullName>
+                <default>false</default>
+                <label>Virtual Accountability Cafe (Allows for a virtual space to work and take breaks together)</label>
+            </value>
+            <value>
+                <fullName>Monthly Snack Box</fullName>
+                <default>false</default>
+                <label>Monthly Snack Box</label>
+            </value>
+            <value>
+                <fullName>Outdoor Coworking Spaces</fullName>
+                <default>false</default>
+                <label>Outdoor Coworking Spaces</label>
+            </value>
+            <value>
+                <fullName>Virtual Weekly Yoga Session</fullName>
+                <default>false</default>
+                <label>Virtual Weekly Yoga Session</label>
+            </value>
+            <value>
+                <fullName>Virtual &quot;Grab A Drink&quot; Event</fullName>
+                <default>false</default>
+                <label>Virtual &quot;Grab A Drink&quot; Event</label>
+            </value>
+            <value>
+                <fullName>Virtual Networking Events</fullName>
+                <default>false</default>
+                <label>Virtual Networking Events</label>
+            </value>
+            <value>
+                <fullName>Virtual Workshops (Resume, Skills, Craft)</fullName>
+                <default>false</default>
+                <label>Virtual Workshops (Resume, Skills, Craft)</label>
+            </value>
+            <value>
+                <fullName>Virtual Events (Scavenger, Trivia, Raffles)</fullName>
+                <default>false</default>
+                <label>Virtual Events (Scavenger, Trivia, Raffles)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

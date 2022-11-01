@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tuition_Payment_Comp_Layout</fullName>
+    <fields>Payment_Plan__c</fields>
+    <fields>Tuition__c</fields>
+    <fields>Fees__c</fields>
+    <fields>Payments__c</fields>
+    <fields>Payment_Due_Date__c</fields>
+    <label>Tuition Payment Comp. Layout</label>
+</CompactLayout>

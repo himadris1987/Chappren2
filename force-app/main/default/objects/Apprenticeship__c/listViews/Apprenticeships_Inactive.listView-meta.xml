@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Apprenticeships_Inactive</fullName>
+    <columns>NAME</columns>
+    <columns>Apprenticeship_Lead__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Market__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Inactive</value>
+    </filters>
+    <label>Apprenticeships - Inactive</label>
+    <sharedTo>
+        <group>Tech_Support_Team</group>
+        <group>VP_Team</group>
+        <group>WFT_Instructor_Team</group>
+        <group>WFT_TA_Team</group>
+        <group>Workforce_Training_Team</group>
+    </sharedTo>
+</ListView>

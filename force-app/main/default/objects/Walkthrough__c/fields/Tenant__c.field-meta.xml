@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tenant__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Created by: JA
+Business Unit: Leasing
+Purpose: Track the tenant on a given walk through</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Who is the tenant?</inlineHelpText>
+    <label>Tenant</label>
+    <referenceTo>Account</referenceTo>
+    <relationshipLabel>Walkthroughs</relationshipLabel>
+    <relationshipName>Walk_Throughs</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Major_Airport_Score__c</fullName>
+    <description>GS
+Purpose: Tracks the score for the Major Airport checkbox.</description>
+    <externalId>false</externalId>
+    <formula>IF( Major_Airport__c = True, 0.5 , 0 )</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Major Airport Score (Do Not Display)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Architecture_from_Project</fullName>
+    <availability>online</availability>
+    <description>Created By:CMP Business Unit:BWTC Purpose:For Architecture Team to create Architecture records with pre filled fields on action layout</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <hasMenubar>false</hasMenubar>
+    <hasScrollbars>true</hasScrollbars>
+    <hasToolbar>false</hasToolbar>
+    <height>600</height>
+    <isResizable>true</isResizable>
+    <linkType>url</linkType>
+    <masterLabel>Create Architecture from Project</masterLabel>
+    <openType>newWindow</openType>
+    <position>none</position>
+    <protected>false</protected>
+    <showsLocation>false</showsLocation>
+    <showsStatus>false</showsStatus>
+    <url>/lightning/o/Architecture__c/new?useRecordTypeCheck=1&amp;defaultFieldValues=
+Project_Name__c={!Project__c.Id},
+Company_Name__c={!Project__c.AccountId__c}</url>
+</WebLink>

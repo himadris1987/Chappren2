@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cowork_Reservation</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Cowork_Reservation</compactLayoutAssignment>
+    <label>Cowork Reservation</label>
+    <picklistValues>
+        <picklist>Room_Type__c</picklist>
+        <values>
+            <fullName>Conference Room</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Podcast Booth</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Canceled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Charged</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

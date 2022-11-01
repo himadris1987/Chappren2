@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Files_Attachments__c</fullName>
+    <description>Created By: HNS
+Business Unit: Salesforce Oakland Apprenticeships 2021
+Purpose: Will allow an apprentice to upload any attachments associated with their work</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <label>Files/Attachments</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lease_Remaining_mo__c</fullName>
+    <description>Calculates the months remaining in the lease</description>
+    <externalId>false</externalId>
+    <formula>CASE(Status__c, &quot;Active&quot;, (Lease_Expiration_Date__c - TODAY()) / (365 / 12), &quot;Scheduled&quot;,  Lease_Length__c , 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The number of months left in the lease agreement.</inlineHelpText>
+    <label>Lease Remaining (mo)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

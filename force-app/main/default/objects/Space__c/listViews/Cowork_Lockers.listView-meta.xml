@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cowork_Lockers</fullName>
+    <columns>NAME</columns>
+    <columns>Locker_Size__c</columns>
+    <columns>Status__c</columns>
+    <columns>Checked_Out_By__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Space__c.Locker</value>
+    </filters>
+    <label>Cowork Lockers</label>
+    <sharedTo>
+        <group>Cowork_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Link_HS__c</fullName>
+    <description>Created By: HNS
+Business Unit: Salesforce Oakland Apprenticeship
+Purpose:  Will give link, if applicable for the URL of the discovery</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <inlineHelpText>If Applicable.  Also, https:// must be used if you copy and paste URL here.</inlineHelpText>
+    <label>Link HS</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

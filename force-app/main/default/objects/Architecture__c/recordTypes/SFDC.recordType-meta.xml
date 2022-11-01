@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFDC</fullName>
+    <active>true</active>
+    <compactLayoutAssignment>Architecture_Compact_Layout</compactLayoutAssignment>
+    <label>SFDC</label>
+    <picklistValues>
+        <picklist>Analytics__c</picklist>
+        <values>
+            <fullName>Discovery</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EA Industry Products</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prediction Builder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tableau</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Arch_Stages__c</picklist>
+        <values>
+            <fullName>Arch%2E Documentation Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assigned</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Awaiting Arch Documentation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Awaiting Assignment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Move to Build</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Project Created</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2B_Commerce__c</picklist>
+        <values>
+            <fullName>B2B Commerce</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>B2C_Commerce__c</picklist>
+        <values>
+            <fullName>B2C Commerce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commerce Portals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Einstein for Commerce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce Order Management</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Community_Cloud__c</picklist>
+        <values>
+            <fullName>CMS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Portal %28incl%2E Self Service%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partner Relationship Management</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Company_Type__c</picklist>
+        <values>
+            <fullName>Nonprofit and Nonprofit Higher Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Private Sector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Sector</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Customer_360_Platform__c</picklist>
+        <values>
+            <fullName>Flow</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heroku</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ISV AppExchange</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Next Best Action</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Platform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shield</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sustainability Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vision %26 Language</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Education_Cloud__c</picklist>
+        <values>
+            <fullName>Advancement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>K-12</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Recruiting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Student Success</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Engagement_Type__c</picklist>
+        <values>
+            <fullName>Advisory Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lightning Migration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Managed Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ongoing Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PDO %2F AppExchange App Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Implementation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Red Account Resolution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry_Products__c</picklist>
+        <values>
+            <fullName>Consumer Goods Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Services Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Sector Cloud %28LPI%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Industry__c</picklist>
+        <values>
+            <fullName>Agriculture %26 Mining</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Automotive</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communications</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Consumer Goods</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Education %28for profit%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Energy</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Engineering%2C Construction%2C %26 Real Estate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Healthcare %26 Life Sciences</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High Tech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media %26 Entertainment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Sector</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce%2Eorg Sectors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Travel%2C Transportation%2C and Hospitality</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Integration_Mulesoft__c</picklist>
+        <values>
+            <fullName>MuleSoft Anypoint Platform</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lead_Type__c</picklist>
+        <values>
+            <fullName>Referral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resale</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Marketing_Cloud__c</picklist>
+        <values>
+            <fullName>Advertising Studio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Audience Studio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Core Messaging%2FJourneys</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Datorama</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Distributed Marketing %26 MC Connect</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Einstein for Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Interaction Studio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Studio</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Nonprofit_Cloud__c</picklist>
+        <values>
+            <fullName>Engagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fundraising</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Grantmaking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Program Management</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Number_of_Users__c</picklist>
+        <values>
+            <fullName>1-5 users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>101-500 users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21-100 users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3500%2B users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>501-3%2C500 users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6-20 users</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>PDO_Product_Development_Outsourcers__c</picklist>
+        <values>
+            <fullName>AppExchange Listing%2C Trials and Demo</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Architecture %26 UX Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Development%2FA%2FRelease Management%2FSecurity Review</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ideation%2FBusiness Model%2FValue Prop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Package Review %26 Optimization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Support</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Pardot__c</picklist>
+        <values>
+            <fullName>Account Based Marketing %28ABM%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Units</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pardot</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Potential_Sale_Value__c</picklist>
+        <values>
+            <fullName>%24100%2C000 %2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2425001-%2450%2C000</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2450%2C001-%24100%2C000</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%245001- %2425%2C000</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Less than %245000</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Primary_Product_of_Interest__c</picklist>
+        <values>
+            <fullName>Analytics Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>B2B Commerce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>C360 Data Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CPQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chatter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commerce Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data Studio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Datorama</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Desk%2Ecom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial Service Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heroku</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Integration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>My Trailhead</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pardot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Qiup</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce 1 Platform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce DMP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce Maps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce Platform</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce%2Eorg HEDA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce%2Eorg NPSP</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sustainability Cloud</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Work%2Ecom</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Project_Health__c</picklist>
+        <values>
+            <fullName>At Risk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On Track</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Project_Status__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Submitted to Partner</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Purchasing_Time_Frame__c</picklist>
+        <values>
+            <fullName>1-3 months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>12%2B months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3-6 months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6-12 months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Immediately</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sales_Cloud__c</picklist>
+        <values>
+            <fullName>Billing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CPQ</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Core Salesforce Maps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Einstein for Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Cloud</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sales_Type__c</picklist>
+        <values>
+            <fullName>New Sign Up</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Upgrade</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sector__c</picklist>
+        <values>
+            <fullName>Education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Profit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Send_Survey_to_Contact__c</picklist>
+        <values>
+            <fullName>Executive Sponsor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce Admin</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Service_Cloud__c</picklist>
+        <values>
+            <fullName>ClickSoftware FSE</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Digital Engagement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Field Service Lightning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Cloud</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Total_Potential_Users__c</picklist>
+        <values>
+            <fullName>1-5 users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>101-500 users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>21-100 users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3500%2B users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>501-3500 users</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6-20 users</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type_of_Website_Pick_one__c</picklist>
+        <values>
+            <fullName>Corporate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>E-Commerce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Informational%2FBrochure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lead Generation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media%2FPublishing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Membership</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Who_Should_Be_Contacted_First_Pick_one__c</picklist>
+        <values>
+            <fullName>Potential Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shift3</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

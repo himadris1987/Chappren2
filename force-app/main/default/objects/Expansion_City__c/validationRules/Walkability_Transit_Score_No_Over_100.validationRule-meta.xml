@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Walkability_Transit_Score_No_Over_100</fullName>
+    <active>true</active>
+    <description>GS
+Business Unit: City Expansion
+Purpose: To prevent a walkability/transit score of over 100.</description>
+    <errorConditionFormula>OR( Walkability_Score__c &gt; 100,
+Transit_Score__c &gt; 100
+)</errorConditionFormula>
+    <errorMessage>The transit and/or walkability score cannot be over 100.</errorMessage>
+</ValidationRule>

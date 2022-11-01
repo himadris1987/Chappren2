@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Carrier__c</fullName>
+    <description>Created By: NH
+Business Unit: BLDG Design Users
+Purpose: To track the carrier that is shipping the supply.</description>
+    <externalId>false</externalId>
+    <label>Carrier</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Amazon</fullName>
+                <default>false</default>
+                <label>Amazon</label>
+            </value>
+            <value>
+                <fullName>Freight</fullName>
+                <default>false</default>
+                <label>Freight</label>
+            </value>
+            <value>
+                <fullName>FedEX</fullName>
+                <default>false</default>
+                <label>FedEX</label>
+            </value>
+            <value>
+                <fullName>UPS</fullName>
+                <default>false</default>
+                <label>UPS</label>
+            </value>
+            <value>
+                <fullName>USPS</fullName>
+                <default>false</default>
+                <label>USPS</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>DHL</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>DHL</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

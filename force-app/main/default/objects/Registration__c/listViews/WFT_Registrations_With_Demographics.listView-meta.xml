@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WFT_Registrations_With_Demographics</fullName>
+    <columns>NAME</columns>
+    <columns>Registrant__c</columns>
+    <columns>Class__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Market__c</columns>
+    <columns>PostalCode__c</columns>
+    <columns>Student_Source__c</columns>
+    <columns>Student_Source_Fill_In__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>WFT Registrations - With Demographics</label>
+    <sharedTo>
+        <group>SF_Admin_Team</group>
+        <group>VP_Team</group>
+        <group>Workforce_Training_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Self_Assessment__c</fullName>
+    <description>Created By: HNS
+Business Unit: Salesforce Oakland Apprenticeships 2021
+Purpose:  Will allow an apprentice to rate themselves on how well they understood the assignment</description>
+    <externalId>false</externalId>
+    <label>Self Assessment</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>1 (Beginner or Not Started)</fullName>
+                <default>false</default>
+                <label>1 (Beginner or Not Started)</label>
+            </value>
+            <value>
+                <fullName>2</fullName>
+                <default>false</default>
+                <label>2</label>
+            </value>
+            <value>
+                <fullName>3</fullName>
+                <default>false</default>
+                <label>3</label>
+            </value>
+            <value>
+                <fullName>4</fullName>
+                <default>false</default>
+                <label>4</label>
+            </value>
+            <value>
+                <fullName>5 (Expert)</fullName>
+                <default>false</default>
+                <label>5 (Expert)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

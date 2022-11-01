@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Scopes</fullName>
+    <columns>NAME</columns>
+    <columns>Synced_w_Opp__c</columns>
+    <columns>RECORDTYPE</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Scope_Billable_Total__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Scopes- All</label>
+    <sharedTo>
+        <group>SF_Admin_Team</group>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Percentage_Complete_Limit</fullName>
+    <active>true</active>
+    <description>Created by: EK</description>
+    <errorConditionFormula>Percentage_Complete__c &gt; 1.00</errorConditionFormula>
+    <errorDisplayField>Percentage_Complete__c</errorDisplayField>
+    <errorMessage>Percentage Complete cannot exceed 100%.</errorMessage>
+</ValidationRule>

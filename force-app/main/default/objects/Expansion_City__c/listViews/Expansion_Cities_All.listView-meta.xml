@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expansion_Cities_All</fullName>
+    <columns>NAME</columns>
+    <columns>State__c</columns>
+    <columns>Status__c</columns>
+    <columns>Bitwise_Match_Percentage__c</columns>
+    <columns>Potential_Value_of_Opportunities_Total__c</columns>
+    <columns>Value_of_Opportunities_Committed__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Expansion Cities - All</label>
+</ListView>

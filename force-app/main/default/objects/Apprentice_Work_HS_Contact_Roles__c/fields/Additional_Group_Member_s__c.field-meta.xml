@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_Group_Member_s__c</fullName>
+    <description>Created By: HNS
+Business Unit: Salesforce Oakland Apprenticeship 2021
+Purpose:  Will show any additional gorup memebrs for an apprentice work</description>
+    <externalId>false</externalId>
+    <label>Additional Group Member(s)</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Apprentice Work HS Contact Roles</relationshipLabel>
+    <relationshipName>Apprentice_Work_HS_Contact_Roles</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

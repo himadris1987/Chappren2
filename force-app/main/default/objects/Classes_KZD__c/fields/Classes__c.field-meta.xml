@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Classes__c</fullName>
+    <description>Created By: Kehali Demsash
+Purpose: To make available all the preschool classes for students to choose.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Choose classes from the list</inlineHelpText>
+    <label>Classes</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Calendar</fullName>
+                <default>false</default>
+                <label>Calendar</label>
+            </value>
+            <value>
+                <fullName>Coloring</fullName>
+                <default>false</default>
+                <label>Coloring</label>
+            </value>
+            <value>
+                <fullName>Colors</fullName>
+                <default>false</default>
+                <label>Colors</label>
+            </value>
+            <value>
+                <fullName>Cutting</fullName>
+                <default>false</default>
+                <label>Cutting</label>
+            </value>
+            <value>
+                <fullName>Drawing and painting</fullName>
+                <default>false</default>
+                <label>Drawing and painting</label>
+            </value>
+            <value>
+                <fullName>Letters</fullName>
+                <default>false</default>
+                <label>Letters</label>
+            </value>
+            <value>
+                <fullName>Listening</fullName>
+                <default>false</default>
+                <label>Listening</label>
+            </value>
+            <value>
+                <fullName>Numbers</fullName>
+                <default>false</default>
+                <label>Numbers</label>
+            </value>
+            <value>
+                <fullName>Physical activity</fullName>
+                <default>false</default>
+                <label>Physical activity</label>
+            </value>
+            <value>
+                <fullName>Shapes</fullName>
+                <default>false</default>
+                <label>Shapes</label>
+            </value>
+            <value>
+                <fullName>Sorting objects</fullName>
+                <default>false</default>
+                <label>Sorting objects</label>
+            </value>
+            <value>
+                <fullName>Writing letters and numbers</fullName>
+                <default>false</default>
+                <label>Writing letters and numbers</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

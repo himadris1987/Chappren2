@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Supply_Purchase__c</fullName>
+    <deleteConstraint>Restrict</deleteConstraint>
+    <description>Created By: NH
+Business Unit: BLDG Design Users
+Purpose: To identify what item is associated with the Supply Purchase object</description>
+    <externalId>false</externalId>
+    <label>Supply Purchase</label>
+    <referenceTo>Supply_Purchase__c</referenceTo>
+    <relationshipLabel>Supplies</relationshipLabel>
+    <relationshipName>Supplies</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Career_Ready_Checks_All</fullName>
+    <columns>NAME</columns>
+    <columns>Apprentice__c</columns>
+    <columns>Apprenticeship__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>Career Ready Checks - All</label>
+    <sharedTo>
+        <group>BW_Executive_Team</group>
+        <group>Tech_Support_Team</group>
+        <group>VP_Team</group>
+        <role>System_Administrator</role>
+    </sharedTo>
+</ListView>

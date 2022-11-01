@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Number_of_Books_Reserved__c</fullName>
+    <description>Created By: MCC
+Business Unit: Salesforce Admin Apprenticeship 2021 (AlphaforceTeam)
+Purpose: To check how many books are being reserved/borrowed by the customers.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Leave blank. It will automatically get filled out.</inlineHelpText>
+    <label>Number of Books Reserved</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

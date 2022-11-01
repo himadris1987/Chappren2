@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Child_Caregiver__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Created by: JA
+Purpose: Capture if an individual is a primary caregiver of a child of 17 years or younger</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Are they the primary caregiver of at least 1 child who is 17 years old or younger?</inlineHelpText>
+    <label>Child Caregiver?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Single_Parent__c</fullName>
+    <description>GS
+Business: WFT
+Purpose: For WFT Student Survey. Checks if the field is selected in Applicable Groups multiselect picklist.</description>
+    <externalId>false</externalId>
+    <formula>INCLUDES( Applicable_Groups__c, &quot;Single Parent&quot;)</formula>
+    <label>Single Parent</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

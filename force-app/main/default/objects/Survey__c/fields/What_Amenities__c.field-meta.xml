@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>What_Amenities__c</fullName>
+    <description>Created by: CC
+Department: CW
+Purpose: Capture data on ammenities.</description>
+    <externalId>false</externalId>
+    <label>What Amenities</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>High Speed Internet</fullName>
+                <default>false</default>
+                <label>High Speed Internet</label>
+            </value>
+            <value>
+                <fullName>Lounge Area</fullName>
+                <default>false</default>
+                <label>Lounge Area</label>
+            </value>
+            <value>
+                <fullName>Conference Rooms</fullName>
+                <default>false</default>
+                <label>Conference Rooms</label>
+            </value>
+            <value>
+                <fullName>Podcast Rooms</fullName>
+                <default>false</default>
+                <label>Podcast Rooms</label>
+            </value>
+            <value>
+                <fullName>Coffee Bar</fullName>
+                <default>false</default>
+                <label>Coffee Bar</label>
+            </value>
+            <value>
+                <fullName>Lockers</fullName>
+                <default>false</default>
+                <label>Lockers</label>
+            </value>
+            <value>
+                <fullName>Kitchen</fullName>
+                <default>false</default>
+                <label>Kitchen</label>
+            </value>
+            <value>
+                <fullName>Amphitheater</fullName>
+                <default>false</default>
+                <label>Amphitheater</label>
+            </value>
+            <value>
+                <fullName>Free Parking</fullName>
+                <default>false</default>
+                <label>Free Parking</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

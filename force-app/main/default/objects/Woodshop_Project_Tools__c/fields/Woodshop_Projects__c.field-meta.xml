@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Woodshop_Projects__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Created By: HNS
+Business Unit: Salesforce Oakland Apprenticeship 2021
+Purpose: Will allow a user to show what tools are being used on what projects</description>
+    <externalId>false</externalId>
+    <label>Woodshop Projects</label>
+    <referenceTo>Woodshop_Projects__c</referenceTo>
+    <relationshipLabel>Woodshop Project Tools</relationshipLabel>
+    <relationshipName>Woodshop_Project_Tools</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

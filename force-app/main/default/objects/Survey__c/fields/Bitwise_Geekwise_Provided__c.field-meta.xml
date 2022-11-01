@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bitwise_Geekwise_Provided__c</fullName>
+    <description>Created By: RS
+Purpose: Field for Baseline Student Survey</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Bitwise/Geekwise helped the student access the following services.</inlineHelpText>
+    <label>Bitwise/Geekwise Provided These Services</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bitwise/Geekwise shuttle/bus service</fullName>
+                <default>false</default>
+                <label>Bitwise/Geekwise shuttle/bus service</label>
+            </value>
+            <value>
+                <fullName>Transportation or access to city bus tokens</fullName>
+                <default>false</default>
+                <label>Transportation or access to city bus tokens</label>
+            </value>
+            <value>
+                <fullName>Childcare options</fullName>
+                <default>false</default>
+                <label>Childcare options</label>
+            </value>
+            <value>
+                <fullName>Connection to wraparound service organizations related to veterans&apos; services</fullName>
+                <default>false</default>
+                <label>Connection to wraparound service organizations related to veterans&apos; services</label>
+            </value>
+            <value>
+                <fullName>Formerly incarcerated services</fullName>
+                <default>false</default>
+                <label>Formerly incarcerated services</label>
+            </value>
+            <value>
+                <fullName>Finding resources that provided me a safer environment</fullName>
+                <default>false</default>
+                <label>Finding resources that provided me a safer environment</label>
+            </value>
+            <value>
+                <fullName>Legal services</fullName>
+                <default>false</default>
+                <label>Legal services</label>
+            </value>
+            <value>
+                <fullName>Connection to organizations that assist with housing</fullName>
+                <default>false</default>
+                <label>Connection to organizations that assist with housing</label>
+            </value>
+            <value>
+                <fullName>Free or low-cost broadband services</fullName>
+                <default>false</default>
+                <label>Free or low-cost broadband services</label>
+            </value>
+            <value>
+                <fullName>Connection to food banks</fullName>
+                <default>false</default>
+                <label>Connection to food banks</label>
+            </value>
+            <value>
+                <fullName>Connection to self-help organizations</fullName>
+                <default>false</default>
+                <label>Connection to self-help organizations</label>
+            </value>
+            <value>
+                <fullName>Assistance paying utility bills</fullName>
+                <default>false</default>
+                <label>Assistance paying utility bills</label>
+            </value>
+            <value>
+                <fullName>Access to a computer</fullName>
+                <default>false</default>
+                <label>Access to a computer</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

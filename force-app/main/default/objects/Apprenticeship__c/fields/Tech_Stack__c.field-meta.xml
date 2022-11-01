@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tech_Stack__c</fullName>
+    <description>GS
+Purpose: For WFT Apprenticeship Dashboard.</description>
+    <externalId>false</externalId>
+    <label>Tech Stack</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Apprentice_Pathway__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetName>Apprentice_Tech_Stack</valueSetName>
+        <valueSettings>
+            <controllingFieldValue>Application Developer</controllingFieldValue>
+            <valueName>DevOps</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Application Developer</controllingFieldValue>
+            <valueName>Django/Python</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Application Developer</controllingFieldValue>
+            <valueName>iOS Dev</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Application Developer</controllingFieldValue>
+            <valueName>MEAN Stack</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Application Developer</controllingFieldValue>
+            <valueName>.NET</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Application Developer</controllingFieldValue>
+            <valueName>QA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Application Developer</controllingFieldValue>
+            <valueName>React Native</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Application Developer</controllingFieldValue>
+            <valueName>React Web</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Application Developer</controllingFieldValue>
+            <valueName>Salesforce Development</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Application Developer</controllingFieldValue>
+            <valueName>Solutions Engineer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Application Developer</controllingFieldValue>
+            <valueName>Web Development</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Application Developer</controllingFieldValue>
+            <valueName>Wordpress</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

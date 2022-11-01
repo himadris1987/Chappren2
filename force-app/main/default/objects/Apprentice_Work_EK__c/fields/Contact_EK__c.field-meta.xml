@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact_EK__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Created by: EK</description>
+    <externalId>false</externalId>
+    <label>Contact EK</label>
+    <referenceTo>Contact_EK__c</referenceTo>
+    <relationshipLabel>Apprentice Work EK</relationshipLabel>
+    <relationshipName>Apprentice_Work_EK</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

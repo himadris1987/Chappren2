@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Created by DKM 12/15/2021
+Business Unit: QB
+Purpose: For an Out of Office Days, Holidays, Breaks</description>
+    <label>Out of Office Day</label>
+    <pluralLabel>Out of Office Days</pluralLabel>
+    <visibility>Public</visibility>
+</CustomObject>

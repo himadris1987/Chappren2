@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cowork_Member_Name__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Created by:MS, Business Unit: Cowork User, Purpose: tracking the cowork membership.</description>
+    <externalId>false</externalId>
+    <label>Cowork Member Name</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Cowork Memberships Folder</relationshipLabel>
+    <relationshipName>Cowork_Memberships_Folder</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

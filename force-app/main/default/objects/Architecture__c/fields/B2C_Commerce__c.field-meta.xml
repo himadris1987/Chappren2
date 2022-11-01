@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>B2C_Commerce__c</fullName>
+    <description>Created by: YB, Business Unit:BWTC,Purpose: for architecture app</description>
+    <externalId>false</externalId>
+    <label>B2C Commerce</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>B2C Commerce</fullName>
+                <default>false</default>
+                <label>B2C Commerce</label>
+            </value>
+            <value>
+                <fullName>Commerce Portals</fullName>
+                <default>false</default>
+                <label>Commerce Portals</label>
+            </value>
+            <value>
+                <fullName>Einstein for Commerce</fullName>
+                <default>false</default>
+                <label>Einstein for Commerce</label>
+            </value>
+            <value>
+                <fullName>Salesforce Order Management</fullName>
+                <default>false</default>
+                <label>Salesforce Order Management</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

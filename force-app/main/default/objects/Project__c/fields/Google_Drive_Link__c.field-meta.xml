@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Google_Drive_Link__c</fullName>
+    <description>Created By: RG
+Business Unit: BLDG - Design
+Purpose: Link to design renders stored in google drive
+Populated: Manually</description>
+    <encryptionScheme>None</encryptionScheme>
+    <externalId>false</externalId>
+    <label>Google Drive Link</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>

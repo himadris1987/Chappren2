@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BLDG_Design_Supplies</fullName>
+    <columns>NAME</columns>
+    <columns>Type__c</columns>
+    <columns>Cost__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Status__c</columns>
+    <columns>Account__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Supply__c.BLDG_Design</value>
+    </filters>
+    <label>BLDG Design Supplies</label>
+    <sharedTo>
+        <group>BLDG_Team</group>
+        <group>Tech_Support_Team</group>
+    </sharedTo>
+</ListView>

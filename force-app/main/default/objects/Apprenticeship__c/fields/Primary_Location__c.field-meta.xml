@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Location__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Created by JW</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Which Bitwise building is the primary location for this Apprenticeship?</inlineHelpText>
+    <label>Primary Location</label>
+    <lookupFilter>
+        <active>true</active>
+        <errorMessage>The Primary Location must be a Bitwise Building.</errorMessage>
+        <filterItems>
+            <field>Space__c.RecordType.Name</field>
+            <operation>equals</operation>
+            <value>Property</value>
+        </filterItems>
+        <isOptional>false</isOptional>
+    </lookupFilter>
+    <referenceTo>Space__c</referenceTo>
+    <relationshipLabel>Apprenticeships</relationshipLabel>
+    <relationshipName>Apprenticeships</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

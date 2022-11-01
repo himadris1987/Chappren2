@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cowork_Poppy_CR_Active_Upcoming</fullName>
+    <columns>NAME</columns>
+    <columns>Space__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Status__c</columns>
+    <columns>Start__c</columns>
+    <columns>End__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Space__c</field>
+        <operation>equals</operation>
+        <value>Poppy Conference Room</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <label>Cowork-Poppy CR-Active &amp; Upcoming</label>
+    <sharedTo>
+        <group>Cowork_Team</group>
+    </sharedTo>
+</ListView>

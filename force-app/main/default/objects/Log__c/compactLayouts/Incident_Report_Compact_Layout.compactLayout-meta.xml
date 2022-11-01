@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Incident_Report_Compact_Layout</fullName>
+    <fields>RecordTypeId</fields>
+    <fields>Date__c</fields>
+    <fields>Location_of_Incident__c</fields>
+    <fields>Incident_Case_Num__c</fields>
+    <fields>Name_of_Reporting_Officer__c</fields>
+    <label>Incident Report Compact Layout</label>
+</CompactLayout>

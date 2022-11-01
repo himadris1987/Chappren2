@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lease__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Created by: JA
+Business Unit: Leasing
+Purpose: Track the lease the walk through is for</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Which lease is the walk through for?</inlineHelpText>
+    <label>Lease</label>
+    <referenceTo>Lease__c</referenceTo>
+    <relationshipName>Walk_Throughs</relationshipName>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

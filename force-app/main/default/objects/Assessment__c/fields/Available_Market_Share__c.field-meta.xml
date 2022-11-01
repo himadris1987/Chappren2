@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Available_Market_Share__c</fullName>
+    <description>CC BWRD Available Market Share Manual</description>
+    <externalId>false</externalId>
+    <label>Available Market Share</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>(1) 5% or less</fullName>
+                <default>false</default>
+                <label>(1) 5% or less</label>
+            </value>
+            <value>
+                <fullName>(2) 5%-10%</fullName>
+                <default>false</default>
+                <label>(2) 5%-10%</label>
+            </value>
+            <value>
+                <fullName>(3) 25%-50%</fullName>
+                <default>false</default>
+                <label>(3) 25%-50%</label>
+            </value>
+            <value>
+                <fullName>(4) 10%-25%</fullName>
+                <default>false</default>
+                <label>(4) 10%-25%</label>
+            </value>
+            <value>
+                <fullName>(5) 50% or more</fullName>
+                <default>false</default>
+                <label>(5) 50% or more</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

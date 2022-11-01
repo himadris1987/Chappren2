@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_DARs</fullName>
+    <columns>NAME</columns>
+    <columns>Employee__c</columns>
+    <columns>Date__c</columns>
+    <columns>Shift_Start_Time__c</columns>
+    <columns>Shift_End_Time__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Log__c.Daily_Action_Report</value>
+    </filters>
+    <label>All DARs</label>
+</ListView>

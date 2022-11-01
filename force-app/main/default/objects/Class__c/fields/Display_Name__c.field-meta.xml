@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Display_Name__c</fullName>
+    <description>CC For Displaying a simplified name on the website</description>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(Class__c, &apos;Other&apos;), Other__c, TEXT(Class__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>For Displaying a Simplified Name on the website</inlineHelpText>
+    <label>Display Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

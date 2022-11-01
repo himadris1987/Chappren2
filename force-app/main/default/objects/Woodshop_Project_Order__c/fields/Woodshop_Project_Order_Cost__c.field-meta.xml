@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Woodshop_Project_Order_Cost__c</fullName>
+    <description>Created By: HNS
+Business Unit: Salesforce Oakland Apprenticeship
+Purpose:  Will give the cost of any resources that are ordered for a woodshop project</description>
+    <externalId>false</externalId>
+    <label>Woodshop Project Order Cost</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

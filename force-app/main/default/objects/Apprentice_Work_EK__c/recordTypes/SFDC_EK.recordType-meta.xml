@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SFDC_EK</fullName>
+    <active>true</active>
+    <description>This Record Type is for SFDC Work.</description>
+    <label>SFDC EK</label>
+    <picklistValues>
+        <picklist>Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Self_Assessment_EK__c</picklist>
+        <values>
+            <fullName>1 %28Beginner or Not Started%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 %28Expert%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stage__c</picklist>
+        <values>
+            <fullName>Assignment Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Brainstorming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Build Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Build In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clarification Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Document Learning</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Final Testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Next Steps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Shipped</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specs Submitted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Topic Picked</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wireframe Submitted</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

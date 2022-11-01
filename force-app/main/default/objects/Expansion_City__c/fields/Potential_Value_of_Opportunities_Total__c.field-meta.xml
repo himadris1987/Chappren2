@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Potential_Value_of_Opportunities_Total__c</fullName>
+    <description>Created by: VC
+Business Unit: City Expansion
+Purpose: Calculated via Flow Roll-up</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The total amount of all Opportunities except Closed/Lost.</inlineHelpText>
+    <label>Potential Value of Opportunities (Total)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

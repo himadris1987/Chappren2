@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Employees__c</fullName>
+    <description>Created by: EK
+This is the employee of Woodshop Company.</description>
+    <externalId>false</externalId>
+    <label>Employees</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Christopher Smith</fullName>
+                <default>false</default>
+                <label>Christopher Smith</label>
+            </value>
+            <value>
+                <fullName>Abera Gezmu</fullName>
+                <default>false</default>
+                <label>Abera Gezmu</label>
+            </value>
+            <value>
+                <fullName>Celine Pham</fullName>
+                <default>false</default>
+                <label>Celine Pham</label>
+            </value>
+            <value>
+                <fullName>Lupa Brown</fullName>
+                <default>false</default>
+                <label>Lupa Brown</label>
+            </value>
+            <value>
+                <fullName>Himadri Sinha</fullName>
+                <default>false</default>
+                <label>Himadri Sinha</label>
+            </value>
+            <value>
+                <fullName>Karma Drukpa</fullName>
+                <default>false</default>
+                <label>Karma Drukpa</label>
+            </value>
+            <value>
+                <fullName>Kehali Demsash</fullName>
+                <default>false</default>
+                <label>Kehali Demsash</label>
+            </value>
+            <value>
+                <fullName>Mimia Chen</fullName>
+                <default>false</default>
+                <label>Mimia Chen</label>
+            </value>
+            <value>
+                <fullName>Rhieanne Saumnders</fullName>
+                <default>false</default>
+                <label>Rhieanne Saumnders</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

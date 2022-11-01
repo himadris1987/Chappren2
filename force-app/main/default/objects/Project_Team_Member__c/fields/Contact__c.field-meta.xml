@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contact__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Created by: MV
+Business Unit: Shift3
+Purpose: Track which contact for taskray project</description>
+    <externalId>false</externalId>
+    <label>Contact</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>Project Team Members</relationshipLabel>
+    <relationshipName>Project_Team_Members</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

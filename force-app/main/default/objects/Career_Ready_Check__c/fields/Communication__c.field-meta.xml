@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Communication__c</fullName>
+    <description>Created by BN
+For Geekwise Users
+To track Cohortian readiness</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Responds to mtg reqs, leads, team members
+Engages in productive conversations 
+Encourages others &amp; other’s ideas in conversations
+Willing to ask for help
+Clearly comms orally and in writing.
+Active listener
+Appropriate body lang/facial expressions</inlineHelpText>
+    <label>Communication</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Career_Ready_Scoring</valueSetName>
+    </valueSet>
+</CustomField>

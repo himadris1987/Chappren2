@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Apprentice_Pathway__c</fullName>
+    <description>Created By: RS
+Purpose: Apprenticeship dashboard build.</description>
+    <externalId>false</externalId>
+    <label>Apprentice Pathway</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Apprentice_Pathway</valueSetName>
+    </valueSet>
+</CustomField>

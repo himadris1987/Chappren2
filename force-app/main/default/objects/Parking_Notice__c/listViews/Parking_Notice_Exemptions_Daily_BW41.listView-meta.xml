@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Parking_Notice_Exemptions_Daily_BW41</fullName>
+    <columns>NAME</columns>
+    <columns>Location__c</columns>
+    <columns>Date_Time__c</columns>
+    <columns>Vehicle__c</columns>
+    <columns>Description_Notes__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Type__c</field>
+        <operation>equals</operation>
+        <value>Exemption</value>
+    </filters>
+    <filters>
+        <field>Location__c</field>
+        <operation>contains</operation>
+        <value>41</value>
+    </filters>
+    <filters>
+        <field>Date_Filter__c</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Parking Notice - Exemptions Daily - BW41</label>
+</ListView>

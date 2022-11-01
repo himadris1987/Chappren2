@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Membership_Length__c</fullName>
+    <description>Created By: MV 
+Business Unit: Hashtag Users 
+Purpose: To get the number of days as a member
+Populated: automatic</description>
+    <externalId>false</externalId>
+    <formula>CASE(Status__c, 
+      &quot;Active&quot;, TODAY() - Membership_Start_Date__c, 
+      &quot;Inactive&quot;,  Membership_End_Date__c -  Membership_Start_Date__c,
+      0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Membership Length</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

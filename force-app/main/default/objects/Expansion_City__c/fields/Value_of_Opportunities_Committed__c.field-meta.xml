@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Value_of_Opportunities_Committed__c</fullName>
+    <description>Created by: VC
+Business Unit: City Expansion
+Purpose: Calculated via Flow Roll-Up</description>
+    <externalId>false</externalId>
+    <inlineHelpText>The total amount of only Closed Won Opportunities.</inlineHelpText>
+    <label>Value of Opportunities (Committed)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

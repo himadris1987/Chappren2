@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TAM__c</fullName>
+    <description>CC BWRD TAM Score Manual</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Total Available Market. What is the total amount of dollars spent on products annually in this market? New markets are also possible. Think Airbnb. Sometimes an existing TAM can be non-existent, but a product can still have legs.</inlineHelpText>
+    <label>TAM</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>(1) $100M or less</fullName>
+                <default>false</default>
+                <label>(1) $100M or less</label>
+            </value>
+            <value>
+                <fullName>(2) $100M-$500M</fullName>
+                <default>false</default>
+                <label>(2) $100M-$500M</label>
+            </value>
+            <value>
+                <fullName>(3) $550M-$1B</fullName>
+                <default>false</default>
+                <label>(3) $550M-$1B</label>
+            </value>
+            <value>
+                <fullName>(4) $1B</fullName>
+                <default>false</default>
+                <label>(4) $1B</label>
+            </value>
+            <value>
+                <fullName>(5) $2B+</fullName>
+                <default>false</default>
+                <label>(5) $2B+</label>
+            </value>
+            <value>
+                <fullName>1 - $100M or less</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>1 - $100M or less</label>
+            </value>
+            <value>
+                <fullName>2 - $100M - $500M</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>2 - $100M - $500M</label>
+            </value>
+            <value>
+                <fullName>3 - $550M - $1B</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>3 - $550M - $1B</label>
+            </value>
+            <value>
+                <fullName>4 - $1B</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>4 - $1B</label>
+            </value>
+            <value>
+                <fullName>5 - $2B+</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>5 - $2B+</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

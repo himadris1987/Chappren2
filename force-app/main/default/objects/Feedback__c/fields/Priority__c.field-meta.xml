@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Priority__c</fullName>
+    <description>Created by: DA
+Business Unit(s): All
+Purpose: To identify the priority of the Feedback request.</description>
+    <externalId>false</externalId>
+    <label>Priority</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Critical (required for Go-Live)</fullName>
+                <default>false</default>
+                <label>Critical (required for Go-Live)</label>
+            </value>
+            <value>
+                <fullName>Urgent (future Go-Live)</fullName>
+                <default>false</default>
+                <label>Urgent (future Go-Live)</label>
+            </value>
+            <value>
+                <fullName>Valuable addition (but not required)</fullName>
+                <default>false</default>
+                <label>Valuable addition (but not required)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

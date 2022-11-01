@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CoTeach_OR_TA</fullName>
+    <active>false</active>
+    <description>Created By: AF
+Business Unit: Geekwise Users
+Purpose: Only have the ability to choose a co-teacher OR a TA, NOT BOTH</description>
+    <errorConditionFormula>NOT(ISBLANK( Co_Teacher__c)) 
+&amp;&amp; 
+NOT(ISBLANK(Teachers_Assistant__c ))</errorConditionFormula>
+    <errorDisplayField>Co_Teacher__c</errorDisplayField>
+    <errorMessage>Please only select a Teacher&apos;s Assistant OR a Co-Teacher. Not both.</errorMessage>
+</ValidationRule>

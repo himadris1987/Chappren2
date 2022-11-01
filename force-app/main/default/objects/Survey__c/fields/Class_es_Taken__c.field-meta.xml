@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class_es_Taken__c</fullName>
+    <description>Created By: RS
+Business Purpose: Apprentice Survey</description>
+    <externalId>false</externalId>
+    <label>Class(es) Taken</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Websites for Beginners</fullName>
+                <default>false</default>
+                <label>Websites for Beginners</label>
+            </value>
+            <value>
+                <fullName>Websites for Beginners II</fullName>
+                <default>false</default>
+                <label>Websites for Beginners II</label>
+            </value>
+            <value>
+                <fullName>Mobile Friendly Websites</fullName>
+                <default>false</default>
+                <label>Mobile Friendly Websites</label>
+            </value>
+            <value>
+                <fullName>Javascript for Beginners</fullName>
+                <default>false</default>
+                <label>Javascript for Beginners</label>
+            </value>
+            <value>
+                <fullName>React</fullName>
+                <default>false</default>
+                <label>React</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Specialized Course (Wordpress)</fullName>
+                <default>false</default>
+                <label>Specialized Course (Wordpress)</label>
+            </value>
+            <value>
+                <fullName>Specialized Course (Salesforce Administration)</fullName>
+                <default>false</default>
+                <label>Specialized Course (Salesforce Administration)</label>
+            </value>
+            <value>
+                <fullName>Specialized Course (Quality Assurance)</fullName>
+                <default>false</default>
+                <label>Specialized Course (Quality Assurance)</label>
+            </value>
+            <value>
+                <fullName>Intro to Backend</fullName>
+                <default>false</default>
+                <label>Intro to Backend</label>
+            </value>
+            <value>
+                <fullName>Partnership Course (Bakersfield College)</fullName>
+                <default>false</default>
+                <label>Partnership Course (Bakersfield College)</label>
+            </value>
+            <value>
+                <fullName>Partnership Course (TGR)</fullName>
+                <default>false</default>
+                <label>Partnership Course (TGR)</label>
+            </value>
+            <value>
+                <fullName>Partnership Course (SMASH)</fullName>
+                <default>false</default>
+                <label>Partnership Course (SMASH)</label>
+            </value>
+            <value>
+                <fullName>Specialized Course (Intro to Web Development)</fullName>
+                <default>false</default>
+                <label>Specialized Course (Intro to Web Development)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

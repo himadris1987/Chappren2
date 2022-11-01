@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scopes_Need_Review</fullName>
+    <columns>NAME</columns>
+    <columns>Scope_Number__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Solutions Engineer Review,Senior Engineer Review,Final Internal Review</value>
+    </filters>
+    <label>Scopes - Need Review</label>
+    <sharedTo>
+        <group>SF_Admin_Team</group>
+    </sharedTo>
+</ListView>

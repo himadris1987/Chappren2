@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Leasing_Project_Tasks_Open</fullName>
+    <columns>NAME</columns>
+    <columns>Status__c</columns>
+    <columns>Milestone__c</columns>
+    <columns>Project__c</columns>
+    <columns>Assignee__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>0123i000000QHMU</value>
+    </filters>
+    <filters>
+        <field>Project__c</field>
+        <operation>equals</operation>
+        <value>BW - Leasing - Phase 1</value>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>New,In-Progress,In Review,Blocked,On Hold</value>
+    </filters>
+    <label>Leasing Project Tasks - Open</label>
+    <sharedTo>
+        <group>SF_Admin_Team</group>
+        <group>Tech_Support_Team</group>
+    </sharedTo>
+</ListView>

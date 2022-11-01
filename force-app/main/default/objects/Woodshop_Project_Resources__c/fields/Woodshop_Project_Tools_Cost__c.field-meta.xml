@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Woodshop_Project_Tools_Cost__c</fullName>
+    <description>Created By: HNS
+Business Unit:  Salesforce Oakland Apprenticeship 2021
+Purpose: This will create a tool cost for tools that are selected as a project resource</description>
+    <externalId>false</externalId>
+    <formula>Woodshop_Project_Tools__r.Tool_Cost__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Woodshop Project Tools Cost</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

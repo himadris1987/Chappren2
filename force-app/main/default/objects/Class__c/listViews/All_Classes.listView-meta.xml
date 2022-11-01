@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Classes</fullName>
+    <columns>NAME</columns>
+    <columns>Class__c</columns>
+    <columns>Section_Number__c</columns>
+    <columns>Time_Zone__c</columns>
+    <columns>Instructor__c</columns>
+    <columns>Co_Teacher__c</columns>
+    <columns>Num_Students_Registered__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Class_Nights__c</columns>
+    <columns>Attendance_Type__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Class__c.General</value>
+    </filters>
+    <label>All Classes</label>
+    <sharedTo>
+        <group>SF_Admin_Team</group>
+        <group>Tech_Support_Team</group>
+    </sharedTo>
+</ListView>

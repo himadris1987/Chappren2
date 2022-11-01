@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Validation_of_customer_Consent__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Created By:YB Business Unit:BWTC Purpose:</description>
+    <externalId>false</externalId>
+    <inlineHelpText>I&apos;ve obtained consent from the person whose personal data I&apos;m providing and I will share evidence of this consent with Salesforce upon request. I agree that the submission of personal data is subject to the Salesforce Partner Program Agreement.</inlineHelpText>
+    <label>Validation of Customer Consent</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

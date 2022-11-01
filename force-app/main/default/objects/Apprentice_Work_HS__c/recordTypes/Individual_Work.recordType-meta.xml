@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Individual_Work</fullName>
+    <active>true</active>
+    <description>Created By: HNS, Business Unit: Salesforce Oakland Apprenticeship 2021, Purpose:  Will allow a user to create individual assignment records</description>
+    <label>Individual Work</label>
+    <picklistValues>
+        <picklist>Approval_Status__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Self_Assessment__c</picklist>
+        <values>
+            <fullName>1 %28Beginner or Not Started%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 %28Expert%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Stage__c</picklist>
+        <values>
+            <fullName>Assignment Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clarification Needed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Research</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

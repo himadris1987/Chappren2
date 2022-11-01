@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Amount_Paid__c</fullName>
+    <description>The total amount paid on all charges</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Shows the total amount paid on all lease charges</inlineHelpText>
+    <label>Amount Paid</label>
+    <summarizedField>Lease_Charge__c.Amount_Paid__c</summarizedField>
+    <summaryForeignKey>Lease_Charge__c.Lease__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,3021 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>CW_Surveys</fullName>
+    <active>true</active>
+    <label>CW Surveys</label>
+    <picklistValues>
+        <picklist>Age__c</picklist>
+        <values>
+            <fullName>12-17 years old</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>18-21 years old</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>22-24 years old</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>25-34 years old</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>35-44 years old</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>45-54 years old</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>55-64 years old</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>65-74 years old</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Over 75 years old</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under 12 years old</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Annual_Household_Income__c</picklist>
+        <values>
+            <fullName>%24100K-%24150K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24150K-%24200K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2415K-%2425K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24200K%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2425K-%2435K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2435K-%2450K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2450K-%2475K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2475K-%24100K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%3C%2415K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I do not currently work outside the home%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Annual_Individual_Income_Before_Bitwise__c</picklist>
+        <values>
+            <fullName>%24100K-%24150K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24150K-%24200K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2415K-%2425K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24200K%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2425K-%2435K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2435K-%2450K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2450K-%2475K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2475K-%24100K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%3C%2415K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I do not currently work outside the home%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Annual_Individual_Income_Before_Tax_Now__c</picklist>
+        <values>
+            <fullName>%24100K-%24150K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24150K-%24200K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2415K-%2425K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24200K%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2425K-%2435K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2435K-%2450K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2450K-%2475K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2475K-%24100K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%3C%2415K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I do not currently work outside the home%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Applicable_Groups__c</picklist>
+        <values>
+            <fullName>English learner with a low level of literacy and%2For facing substantial cultural barriers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>First-generation American</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Formerly Incarcerated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack secure%2C stable housing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Long-term unemployed %28you have been looking for work for 27 weeks or longer%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Migrant or seasonal farmworker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Military spouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No%2C I do not belong to any of these groups</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single Parent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U%2ES%2E Military Veteran</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under-employed or unemployed family caregiver %28you are struggling to find paid work outside the home due to diminished marketable skills and%2For caregiving responsibilities%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Youth in or aged out of foster care</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Application_Developer_Pathway__c</picklist>
+        <values>
+            <fullName>%2ENET</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DevOps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Django%2FPython</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MEAN Stack</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>QA</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>React Native</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>React Web</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Solutions Engineer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web Development</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wordpress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>iOS Dev</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Apprenticeship_Pursue_Reason__c</picklist>
+        <values>
+            <fullName>Apprentice pay</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Beautiful buildings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Convenience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunities available to students%2Fapprentices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>People and atmosphere</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support available to students%2Fapprentices</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>BW_Apprentice_Pathway__c</picklist>
+        <values>
+            <fullName>Application Developer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call Center Agent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cybersecurity Technician</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Founder</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inside Salesperson</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online Marketing Specialist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Project Manager</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce Administrator</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech Support Specialist</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>UX Designer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Biggest_Apprenticeship_Barrier__c</picklist>
+        <values>
+            <fullName>I do not face any of these barriers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of access to a high-speed internet connection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of childcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of funds for a computer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of funds to pay for training courses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of interest in the apprenticeship pathway you are taking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of time due to family obligations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of time due to work obligations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of transportation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Biggest_Class_Completion_Barrier__c</picklist>
+        <values>
+            <fullName>I do not face any of these barriers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of access to a high-speed internet connection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of childcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of funds for a computer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of funds to pay for training courses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of time due to work obligations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of transportation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Biggest_Registration_Barrier__c</picklist>
+        <values>
+            <fullName>I do not face any of these barriers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of access to a high-speed internet connection</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of childcare</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of funds for a computer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of funds to pay for training courses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lack of time due to work obligations</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Bitwise_Courses_Completed__c</picklist>
+        <values>
+            <fullName>%2ENet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alexa skills</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Django</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Express</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intro to Angular2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>JavaScript for Beginners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Friendly Sites %28responsive design%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MongoDB</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MySQL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Node</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Online marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Python</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rails</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>React%2Ejs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ruby</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Swift</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Websites for Beginners %28HTML%2FCSS%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WordPress</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Bitwise_Geekwise_Buildings_Inspire_Me__c</picklist>
+        <values>
+            <fullName>Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somewhat agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somewhat disagree</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Bitwise_Geekwise_Cared_For_My_Wellbeing__c</picklist>
+        <values>
+            <fullName>Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somewhat agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somewhat disagree</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Bitwise_Geekwise_Is_Supportive__c</picklist>
+        <values>
+            <fullName>Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somewhat agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somewhat disagree</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Bitwise_Geekwise_Made_Me_Feel_Included__c</picklist>
+        <values>
+            <fullName>Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somewhat agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somewhat disagree</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Bitwise_Geekwise_Prepared_Me_For_My_Job__c</picklist>
+        <values>
+            <fullName>Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somewhat agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somewhat disagree</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Bitwise_Geekwise_Provided__c</picklist>
+        <values>
+            <fullName>Access to a computer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assistance paying utility bills</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bitwise%2FGeekwise shuttle%2Fbus service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Childcare options</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connection to food banks</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connection to organizations that assist with housing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connection to self-help organizations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connection to wraparound service organizations related to veterans%27 services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finding resources that provided me a safer environment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Formerly incarcerated services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Free or low-cost broadband services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Legal services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation or access to city bus tokens</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Class_Enrolled__c</picklist>
+        <values>
+            <fullName>Javascript for Beginners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Friendly Websites</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>React</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Websites for Beginners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Websites for Beginners II</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Class_es_Taken__c</picklist>
+        <values>
+            <fullName>Intro to Backend</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Javascript for Beginners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mobile Friendly Websites</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partnership Course %28Bakersfield College%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partnership Course %28SMASH%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partnership Course %28TGR%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>React</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specialized Course %28Intro to Web Development%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specialized Course %28Quality Assurance%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specialized Course %28Salesforce Administration%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Specialized Course %28Wordpress%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Websites for Beginners</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Websites for Beginners II</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Classes_Pursue_Reason__c</picklist>
+        <values>
+            <fullName>Beautiful buildings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Convenience</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low cost courses</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunities available to students%2Fapprentices</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Opportunity to earn more</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>People and atmosphere</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Support available to students%2Fapprentices</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Course_Reason__c</picklist>
+        <values>
+            <fullName>Career Advancement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Career Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entrepreneurship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Have An Idea For A Tech Product Or Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Increase Earning Potential</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need A Community Of Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tried Getting Technical Education Elsewhere But Haven%27t Found A Program That Works</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workforce Re-entry</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Current_Living_Situation__c</picklist>
+        <values>
+            <fullName>Live in household with other people who are not relative %28e%2Eg%2E roommates%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Live with parents%2For family members</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Own home</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Temporarily staying in a shelter or homeless</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Current_Market__c</picklist>
+        <values>
+            <fullName>Bakersfield</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fresno</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Current_Title__c</picklist>
+        <values>
+            <fullName>Chief executive %28CEO%2C COO%2C CFO%2C GM or principal in a business or other organization%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entry level</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Executive level %28except chief executive%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mid%E2%80%90level</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Senior level</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Currently_Work_From_Home__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sometimes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Disabilities_Requiring_Accommodations__c</picklist>
+        <values>
+            <fullName>Ambulatory Difficulty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cognitive Difficulty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hearing Difficulty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Independent Living Difficulty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Learning Difficulty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self-Care Difficulty</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vision Difficulty</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Do_You_Belong_To_A_Disadvantage_Group__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Do_You_Belong_To_Any_Of_These_Groups__c</picklist>
+        <values>
+            <fullName>Child of an immigrant</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>English language learner</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Formerly incarcerated</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Long-term unemployed %28you have been looking for work for 27 weeks or longer%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Military spouse</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No%2C I do not belong to any of these groups</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Seasonal farmworker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Single parent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Struggle with secure%2C stable housing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>U%2ES%2E military veteran</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Under-employed or unemployed family caregiver %28you are struggling to find paid Work outside the home due to time out of work and%2For caregiving responsibilities%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Youth in or aged out of foster care</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Do_You_Have_A_Disability__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Employed_Industry__c</picklist>
+        <values>
+            <fullName>For%E2%80%90profit corporation%2Fcompany%2Fgroup%E2%80%90practice</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Government or other public institution or agency%2C including military</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non%E2%80%90profit organization%2C institution or NGO %28e%2Eg%2E%2C arts%2Fhuman services%2Finternational organizations%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self%E2%80%90employed in own business or professional non%E2%80%90group practice</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Employment_Status__c</picklist>
+        <values>
+            <fullName>Apprenticeship%2FInternship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Full time employment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not seeking work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Part time employment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Self employed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Student</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unemployed</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Enjoy_Networking__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>First_Generation__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gender_Identity__c</picklist>
+        <values>
+            <fullName>Cisgender female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cisgender male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gender non-conforming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transgender female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transgender male</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Gender__c</picklist>
+        <values>
+            <fullName>Female</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Genderqueer%2FGender Non-conforming</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Male</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to answer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer to Self-Describe %28use field below%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transfemale</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transmale</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>HS_Diploma__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Highest_Education_Completed__c</picklist>
+        <values>
+            <fullName>Bachelor%27s Degree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Doctoral Degree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High School %2F GED</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I am currently a student in high school</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I am currently a student in junior high school</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Master%27s Degree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional Degree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Some College</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Home_Amenities__c</picklist>
+        <values>
+            <fullName>Access to Zoom Account for Large Meetings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly Snack Box</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outdoor Coworking Spaces</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal Hotspot</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual %22Grab A Drink%22 Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Accountability Cafe %28Allows for a virtual space to work and take breaks together%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Events %28Scavenger%2C Trivia%2C Raffles%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Networking Events</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Weekly Yoga Session</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virtual Workshops %28Resume%2C Skills%2C Craft%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>How_Often_Do_You_Use_The_Skills_Taught__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Never</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yearly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>How_Satisfied_Are_You_With_Your_Life__c</picklist>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Satisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unsatisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very satisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very unsatisfied</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Improve_Priority_One__c</picklist>
+        <values>
+            <fullName>Offer a certificate of completion for your apprenticeship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer more career counseling services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer more opportunities to build your professional network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer more opportunities to find mentors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer more professional development opportunities %28e%2Eg%2E trainings%2C conferences%2C workshops%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Improve_Priority_Three__c</picklist>
+        <values>
+            <fullName>Offer a certificate of completion for your apprenticeship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer more career counseling services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer more opportunities to build your professional network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer more opportunities to find mentors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer more professional development opportunities %28e%2Eg%2E trainings%2C conferences%2C workshops%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Improve_Priority_Two__c</picklist>
+        <values>
+            <fullName>Offer a certificate of completion for your apprenticeship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer more career counseling services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer more opportunities to build your professional network</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer more opportunities to find mentors</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Offer more professional development opportunities %28e%2Eg%2E trainings%2C conferences%2C workshops%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Initiate_Conversations__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Interested_in_Apprenticeship__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Sure</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Job_Industry__c</picklist>
+        <values>
+            <fullName>Accommodation and Food Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Administrative%2C Support%2C Waste Management%2C and Remediation Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Agriculture%2C Forestry%2C Fishing %26 Hunting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arts%2C Entertainment%2C and Recreation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Educational Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finance and Insurance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Health Care and Social Assistance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Management of Companies and Enterprises</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Media %28Broadcasting%2C Publishing%2C Motion Picture %26 Video%2C Telecommunications%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mining%2C Quarrying%2C and Oil and Gas Extraction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non-profit %28Civic%2C Grantmaking%2C Professional%2C Religious%2C or Social Advocacy Organization%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal %26 Laundry Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Professional%2C Scientific%2C and Technical Services</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Public Administration %28Government%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Real Estate and Rental and Leasing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Repair %26 Maintenance %28Automotive%2C Industrial or Household Machines and Equipment%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Retail Trade</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transportation and Warehousing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utilities %28Electric or Natural Gas Transmission%2C Generation%2C or Distribution%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wholesale Trade</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Lead_a_Discussion_On__c</picklist>
+        <values>
+            <fullName>Coding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction%2FManufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finances</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Graphic Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Office Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Photography%2FVideography</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resume%2FCover letters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Starting a Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sustainability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Time Management</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Leading_Discussions__c</picklist>
+        <values>
+            <fullName>Maybe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Learn_More_About__c</picklist>
+        <values>
+            <fullName>Coding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Construction%2FManufacturing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Finances</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Graphic Design</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Microsoft Office Suite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Photography%2FVideography</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resume%2FCover Letters</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salesforce</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Social Media</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Starting a Business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sustainability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Time Management</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Location_Of_Bitwise_Geekwise_Course__c</picklist>
+        <values>
+            <fullName>Fresno</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Have not taken Bitwise%2FGeekwise Course</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remote</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Marketing_Feature_Opt_in__c</picklist>
+        <values>
+            <fullName>Maybe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>My_Experience_Changed_My_Career_Ideas__c</picklist>
+        <values>
+            <fullName>Agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Disagree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somewhat agree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somewhat disagree</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Num_of_Children_In_Home_Under_18__c</picklist>
+        <values>
+            <fullName>0</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%2B</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Outside_Home_Employment__c</picklist>
+        <values>
+            <fullName>Employed almost full-time %28up to 35 hrs%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employed full-time %2835 hrs%2B%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Employed part-time %28under 20 hrs%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No%2C currently not employed outside the home</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Post_Secondary_School__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Previous_Year_Household_Income__c</picklist>
+        <values>
+            <fullName>%24100K-%24150K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24150K-%24200K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2415K-%2425K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%24200K%2B</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2425K-%2435K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2435K-%2450K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2450K-%2475K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%2475K-%24100K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>%3C%2415K</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I do not currently work outside the home%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Primary_Activity__c</picklist>
+        <values>
+            <fullName>Caring for children</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Caring for other family members</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Furthering my education</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other reasons</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Planning%2Fstarting a business</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taking time for my own health</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Traveling or taking time off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Volunteering%2C engaging in service or unpaid work</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Working on a personal project %28e%2Eg%2E%2C book%2C artistic endeavor%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Privacy_Policy__c</picklist>
+        <values>
+            <fullName>I have reviewed Bitwise Industries%27 privacy policy and agree to its terms and conditions%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Race__c</picklist>
+        <values>
+            <fullName>Asian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black or African-American</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Decline to self-identify</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hispanic or Latinx</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Native American or Alaskan Native</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Native Hawaiian or Other Pacific Islander</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Two or more races</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White or Caucasian</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Racial_Ethnic_Category__c</picklist>
+        <values>
+            <fullName>American Indian or Alaska Native %28Not Hispanic or Latino%2FLatina%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asian %28Not Hispanic or Latino%2FLatina%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black or African American %28Not Hispanic or Latino%2FLatina%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hispanic%2FLatino%2FLatina</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Eastern%2FNorth African %28Not Hispanic or Latino%2FLatina%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Native Hawaiian or Other Pacific Islander %28Not Hispanic or Latino%2FLatina%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White or Caucasian %28Not Hispanic or Latino%2FLatina%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Racial_Ethnic_Group__c</picklist>
+        <values>
+            <fullName>American Indian or Alaska Native %28Not Hispanic or Latino%2FLatina%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asian %28Not Hispanic or Latino%2FLatina%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Black or African American %28Not Hispanic or Latino%2FLatina%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hispanic%2FLatino%2FLatina</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Middle Eastern%2FNorth African %28Not Hispanic or Latino%2FLatina%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Native Hawaiian or Other Pacific Islander %28Not Hispanic or Latino%2FLatina%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>White or Caucasian %28Not Hispanic or Latino%2FLatina%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rate_How_Bitwise_Courses_Prepared_You__c</picklist>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Satisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unsatisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very satisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very unsatisfied</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rate_The_Preparation_For_The_Industry__c</picklist>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Satisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unsatisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very satisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very unsatisfied</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rate_The_Skills_Learned_At_BW_Geekwise__c</picklist>
+        <values>
+            <fullName>Neutral</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Satisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unsatisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very satisfied</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Very unsatisfied</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Received_Financial_Assistance__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reliable_Computer__c</picklist>
+        <values>
+            <fullName>No%2C I do not have consistent and reliable access to a computer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No%2C I do not have consistent and reliable access to a laptop computer I can use for class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C I use a Mac laptop that I borrowed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C I use a Mac laptop that I own</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C I use a PC laptop that I borrowed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C I use a PC laptop that I own</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C I%2Fmy family can borrow a computer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C I%2Fmy family own a computer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reliable_Internet_Access__c</picklist>
+        <values>
+            <fullName>No%2C I do not have consistent and reliable access to a high-speed internet connection at home</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C I have consistent and reliable access to a high-speed internet connection at home</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reliable_Laptop__c</picklist>
+        <values>
+            <fullName>No%2C I do not have consistent and reliable access to a laptop computer I can use for class</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C I use a Mac laptop that I borrowed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C I use a Mac laptop that I own</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C I use a PC laptop that I borrowed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C I use a PC laptop that I own</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reopening_Excitement__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Scholarship_Received__c</picklist>
+        <values>
+            <fullName>No%2C I did not receive a scholarship%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C I received a full scholarship%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes%2C I received a partial scholarship%2E</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sexual_Orientation__c</picklist>
+        <values>
+            <fullName>Asexual %2F Aromantic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bisexual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gay %2F Lesbian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Heterosexual %2F Straight</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pansexual%2C Demisexual%2C or Omnisexual</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prefer not to say</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Queer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>State__c</picklist>
+        <values>
+            <fullName>Alabama</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alaska</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arizona</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Arkansas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>California</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Colorado</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Connecticut</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delaware</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>District of Columbia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Florida</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Georgia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hawaii</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Idaho</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Illinois</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Indiana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iowa</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kansas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kentucky</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Louisiana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maine</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maryland</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Massachusetts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Michigan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Minnesota</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mississippi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Missouri</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Montana</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nebraska</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nevada</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Hampshire</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Jersey</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Mexico</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New York</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North Carolina</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>North Dakota</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ohio</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oklahoma</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Oregon</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pennsylvania</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rhode Island</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Carolina</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South Dakota</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tennessee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Texas</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Utah</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vermont</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Virginia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Washington</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>West Virginia</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wisconsin</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wyoming</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sent</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Student_Source__c</picklist>
+        <values>
+            <fullName>Advertisement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bitwise Employee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bitwise Industries Download Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bitwise Industries Student Info Event</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bitwise Student or Graduate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bus Wrap</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Community-based%2Fnonprofit organization</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Facebook</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Friends%2FFamily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instagram</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Partnership%2FOrg</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Streaming Stations%3A Spotify or Pandora</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Twitter</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WFT Outreach%2FConference</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Subcategory_Race_Ethnicity__c</picklist>
+        <values>
+            <fullName>Afghanian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>African American</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Alaska Native</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Algerian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>American Indian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Asian Indian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Barbadian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cambodian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Central or South American Indian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chamorro</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chinese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Columbian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cuban</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dominican</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dutch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ecuadorian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Egyptian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>English</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ethiopian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fijian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Filipino</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>French</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>German</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ghanian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Guatemalan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Haitian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Hmong</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iranian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Iraqi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Irish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Israeli</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Italian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Jamaican</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Japanese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Korean</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lebanese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marshallese</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mexican or Mexican American</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moroccan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Native Hawaiian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nigerian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Norwegian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pakistani</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Palestinian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Polish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Puerto Rican</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Salvadorian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Samoan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Scottish</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Singaporean</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somali</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>South African</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Syrian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tahitian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thai</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tibetan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tongan</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tunisian</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Turkic</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vietnamese</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Top_Course_Reason__c</picklist>
+        <values>
+            <fullName>Career advancement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Career change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Entrepreneurship</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Have an idea for a tech product or service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Increase earning potential</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need a community of support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tried getting technical education elsewhere but haven%27t found a program that works%2E</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workforce re-entry</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>What_Amenities__c</picklist>
+        <values>
+            <fullName>Amphitheater</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Coffee Bar</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Conference Rooms</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Free Parking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High Speed Internet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Kitchen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lockers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lounge Area</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Podcast Rooms</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Work_Outside__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Working_But_Not_Using_Skills_Taught_Why__c</picklist>
+        <values>
+            <fullName>Haven%27t sought%2Fdon%27t want an IT job</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>I am using skills I learned at Bitwise%2FGeekwise</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Logistical conflicts</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Need more qualifications or degree</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No jobs available</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Personal obligations</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Would_You_Recommend_Bitwise_Courses__c</picklist>
+        <values>
+            <fullName>Definitely Would</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Definitely Would Not</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maybe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Probably Would</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Probably Would Not</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Would_You_Recommend_The_Apprenticeships__c</picklist>
+        <values>
+            <fullName>Definitely Would</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Definitely Would Not</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Maybe</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Probably Would</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Probably Would Not</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Would_you_recommend_BW_Apprenticeship__c</picklist>
+        <values>
+            <fullName>Extremely Likely</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Likely</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not Likely</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Somewhat Likely</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Year_Completed_As_An_Apprentice__c</picklist>
+        <values>
+            <fullName>2013</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2015</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2016</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2017</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2018</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2019</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2020</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2021</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Year_You_Took_Bitwise_Geekwise_Courses__c</picklist>
+        <values>
+            <fullName>2013</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2014</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2015</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2016</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2017</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2018</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2019</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2020</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2021</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

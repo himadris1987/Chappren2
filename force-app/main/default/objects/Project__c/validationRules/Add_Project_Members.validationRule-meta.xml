@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_Project_Members</fullName>
+    <active>true</active>
+    <description>Created By:CMP Business Unit:BWTC Purpose:Checks to see if you have added Project Members before moving Status to &quot;Internal Kickoff&quot;+</description>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName = &apos;BWTC&apos;, 
+Number_of_Project_Members__c  = 0, 
+  NOT(ISPICKVAL( Status__c , &quot;New&quot;) )
+)</errorConditionFormula>
+    <errorMessage>BWTC Projects must have Project Members before changing status from New.</errorMessage>
+</ValidationRule>

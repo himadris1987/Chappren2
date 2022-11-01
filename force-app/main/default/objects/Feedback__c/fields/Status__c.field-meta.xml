@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>Created by: DA
+Business Unit(s): All
+Purpose: To capture the Status of the request</description>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>false</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>In Review</fullName>
+                <default>false</default>
+                <label>In Review</label>
+            </value>
+            <value>
+                <fullName>Waiting on Client</fullName>
+                <default>false</default>
+                <label>Waiting on Client</label>
+            </value>
+            <value>
+                <fullName>Approved for Build</fullName>
+                <default>false</default>
+                <label>Approved for Build</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Waiting on Deployment</fullName>
+                <default>false</default>
+                <label>Waiting on Deployment</label>
+            </value>
+            <value>
+                <fullName>Deployed</fullName>
+                <default>false</default>
+                <label>Deployed</label>
+            </value>
+            <value>
+                <fullName>Denied</fullName>
+                <default>false</default>
+                <label>Denied</label>
+            </value>
+            <value>
+                <fullName>Needs Training</fullName>
+                <default>false</default>
+                <label>Needs Training</label>
+            </value>
+            <value>
+                <fullName>Closed</fullName>
+                <default>false</default>
+                <label>Closed</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <label>Duplicate</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

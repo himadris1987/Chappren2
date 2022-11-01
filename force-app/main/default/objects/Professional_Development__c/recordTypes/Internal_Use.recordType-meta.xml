@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_Use</fullName>
+    <active>true</active>
+    <label>Internal Use</label>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancelled</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Planned</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type__c</picklist>
+        <values>
+            <fullName>Salary%2FTitle Change</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+</RecordType>

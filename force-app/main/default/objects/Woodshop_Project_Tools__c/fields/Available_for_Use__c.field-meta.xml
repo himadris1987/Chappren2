@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Available_for_Use__c</fullName>
+    <description>Created By: HNS
+Business Unit: Salesforce Oakland Apprentice 2021
+Purpose:  Will show whether a tool is available for use IF, Quantity_Available__c&gt;0</description>
+    <externalId>false</externalId>
+    <formula>Quantity_Available__c &gt; 0</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Available for Use?</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

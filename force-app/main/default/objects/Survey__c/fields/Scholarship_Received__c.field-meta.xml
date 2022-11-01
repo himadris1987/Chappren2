@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scholarship_Received__c</fullName>
+    <externalId>false</externalId>
+    <label>Scholarship Received</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Yes, I received a full scholarship.</fullName>
+                <default>false</default>
+                <label>Yes, I received a full scholarship.</label>
+            </value>
+            <value>
+                <fullName>Yes, I received a partial scholarship.</fullName>
+                <default>false</default>
+                <label>Yes, I received a partial scholarship.</label>
+            </value>
+            <value>
+                <fullName>No, I did not receive a scholarship.</fullName>
+                <default>false</default>
+                <label>No, I did not receive a scholarship.</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

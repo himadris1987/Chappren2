@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hiring_Status__c</fullName>
+    <description>Created by BN
+Geekwise Users
+Track Cohortian career readiness</description>
+    <externalId>false</externalId>
+    <label>Hiring Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Needs More Time</fullName>
+                <default>false</default>
+                <label>Needs More Time</label>
+            </value>
+            <value>
+                <fullName>Almost There</fullName>
+                <default>false</default>
+                <label>Almost There</label>
+            </value>
+            <value>
+                <fullName>Ready to Hire</fullName>
+                <default>false</default>
+                <label>Ready to Hire</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FeeRS__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE ( GroupingRS__c, &quot;2s&quot;, 7500,
+&quot;3s&quot;, 5250,
+&quot;4s&quot;, 3750,
+0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Fee</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <description>Created By: BN
+Business Unit: Geekwise Users
+Purpose: To Track what kind of device Geekwise Supplies are. More options to be added later.
+Populated: Manually</description>
+    <externalId>false</externalId>
+    <label>Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Materials</fullName>
+                <default>false</default>
+                <label>Materials</label>
+            </value>
+            <value>
+                <fullName>Furniture</fullName>
+                <default>false</default>
+                <label>Furniture</label>
+            </value>
+            <value>
+                <fullName>Electronics</fullName>
+                <default>false</default>
+                <label>Electronics</label>
+            </value>
+            <value>
+                <fullName>Laptop</fullName>
+                <default>false</default>
+                <label>Laptop</label>
+            </value>
+            <value>
+                <fullName>Dongle (Adapter)</fullName>
+                <default>false</default>
+                <label>Dongle (Adapter)</label>
+            </value>
+            <value>
+                <fullName>iPads</fullName>
+                <default>false</default>
+                <label>iPads</label>
+            </value>
+            <value>
+                <fullName>Mouse</fullName>
+                <default>false</default>
+                <label>Mouse</label>
+            </value>
+            <value>
+                <fullName>Keyboard</fullName>
+                <default>false</default>
+                <label>Keyboard</label>
+            </value>
+            <value>
+                <fullName>Monitor</fullName>
+                <default>false</default>
+                <label>Monitor</label>
+            </value>
+            <value>
+                <fullName>Laptop Stand</fullName>
+                <default>false</default>
+                <label>Laptop Stand</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Office Keys</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Office Keys</label>
+            </value>
+            <value>
+                <fullName>Parking Pass</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Parking Pass</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

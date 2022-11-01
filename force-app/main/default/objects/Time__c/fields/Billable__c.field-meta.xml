@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billable__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Created By: MH
+Business Unit: BTC-PM
+Purpose: If the Checkbox is checked, the time collected is billable.</description>
+    <externalId>false</externalId>
+    <label>Billable</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Expected_Sales__c</fullName>
+    <description>CC BWRD Expected Sales Manual</description>
+    <externalId>false</externalId>
+    <label>Expected Sales Cycle</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>(1) 1 Year+</fullName>
+                <default>false</default>
+                <label>(1) 1 Year+</label>
+            </value>
+            <value>
+                <fullName>(3) Months</fullName>
+                <default>false</default>
+                <label>(3) Months</label>
+            </value>
+            <value>
+                <fullName>(4) Weeks</fullName>
+                <default>false</default>
+                <label>(4) Weeks</label>
+            </value>
+            <value>
+                <fullName>(5) Days</fullName>
+                <default>false</default>
+                <label>(5) Days</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Community_Engagement__c</fullName>
+    <description>Created by BN
+For Geekwise Users
+To track Cohortian career readiness</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Attendance and presence in GKW community
+Attends events
+Involved in team activities
+Active on Slack
+Brings friends and family into the community/events</inlineHelpText>
+    <label>Community Engagement</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Career_Ready_Scoring</valueSetName>
+    </valueSet>
+</CustomField>

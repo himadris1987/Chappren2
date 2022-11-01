@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bitwise_Courses_Completed__c</fullName>
+    <description>GS
+Purpose: Baseline Survey</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Which Bitwise courses have you completed? check all that apply</inlineHelpText>
+    <label>Bitwise Courses Completed</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Websites for Beginners (HTML/CSS)</fullName>
+                <default>false</default>
+                <label>Websites for Beginners (HTML/CSS)</label>
+            </value>
+            <value>
+                <fullName>Mobile Friendly Sites (responsive design)</fullName>
+                <default>false</default>
+                <label>Mobile Friendly Sites (responsive design)</label>
+            </value>
+            <value>
+                <fullName>JavaScript for Beginners</fullName>
+                <default>false</default>
+                <label>JavaScript for Beginners</label>
+            </value>
+            <value>
+                <fullName>Intro to Angular2</fullName>
+                <default>false</default>
+                <label>Intro to Angular2</label>
+            </value>
+            <value>
+                <fullName>React.js</fullName>
+                <default>false</default>
+                <label>React.js</label>
+            </value>
+            <value>
+                <fullName>Node</fullName>
+                <default>false</default>
+                <label>Node</label>
+            </value>
+            <value>
+                <fullName>MongoDB</fullName>
+                <default>false</default>
+                <label>MongoDB</label>
+            </value>
+            <value>
+                <fullName>Express</fullName>
+                <default>false</default>
+                <label>Express</label>
+            </value>
+            <value>
+                <fullName>Python</fullName>
+                <default>false</default>
+                <label>Python</label>
+            </value>
+            <value>
+                <fullName>Django</fullName>
+                <default>false</default>
+                <label>Django</label>
+            </value>
+            <value>
+                <fullName>Ruby</fullName>
+                <default>false</default>
+                <label>Ruby</label>
+            </value>
+            <value>
+                <fullName>Rails</fullName>
+                <default>false</default>
+                <label>Rails</label>
+            </value>
+            <value>
+                <fullName>Closure</fullName>
+                <default>false</default>
+                <label>Closure</label>
+            </value>
+            <value>
+                <fullName>MySQL</fullName>
+                <default>false</default>
+                <label>MySQL</label>
+            </value>
+            <value>
+                <fullName>.Net</fullName>
+                <default>false</default>
+                <label>.Net</label>
+            </value>
+            <value>
+                <fullName>Swift</fullName>
+                <default>false</default>
+                <label>Swift</label>
+            </value>
+            <value>
+                <fullName>WordPress</fullName>
+                <default>false</default>
+                <label>WordPress</label>
+            </value>
+            <value>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+                <label>Salesforce</label>
+            </value>
+            <value>
+                <fullName>Online marketing</fullName>
+                <default>false</default>
+                <label>Online marketing</label>
+            </value>
+            <value>
+                <fullName>Alexa skills</fullName>
+                <default>false</default>
+                <label>Alexa skills</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

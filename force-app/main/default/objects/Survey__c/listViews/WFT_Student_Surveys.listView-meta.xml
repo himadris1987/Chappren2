@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WFT_Student_Surveys</fullName>
+    <columns>NAME</columns>
+    <columns>Contact__c</columns>
+    <columns>Status__c</columns>
+    <columns>Last_Sent_Date__c</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Survey__c.WFT_Student_Surveys</value>
+    </filters>
+    <label>WFT Student Surveys</label>
+    <sharedTo>
+        <group>BW_Executive_Team</group>
+        <group>SF_Admin_Team</group>
+        <group>Tech_Support_Team</group>
+        <group>VP_Team</group>
+        <group>Workforce_Training_Team</group>
+    </sharedTo>
+</ListView>

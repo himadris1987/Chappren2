@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Target_Buyer__c</fullName>
+    <description>CC BWRD Target Buyer Manual</description>
+    <externalId>false</externalId>
+    <label>Target Buyer</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>(1) C-Suite</fullName>
+                <default>false</default>
+                <label>(1) C-Suite</label>
+            </value>
+            <value>
+                <fullName>(2) VP</fullName>
+                <default>false</default>
+                <label>(2) VP</label>
+            </value>
+            <value>
+                <fullName>(3) Director</fullName>
+                <default>false</default>
+                <label>(3) Director</label>
+            </value>
+            <value>
+                <fullName>(4) Manager</fullName>
+                <default>false</default>
+                <label>(4) Manager</label>
+            </value>
+            <value>
+                <fullName>(5) User</fullName>
+                <default>false</default>
+                <label>(5) User</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

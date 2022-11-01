@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bitwise_Match_Score__c</fullName>
+    <description>GS
+Purpose: The total score of all scoring criteria&apos;s for an expansion city record.</description>
+    <externalId>false</externalId>
+    <formula>Per_Capita_Income_Score__c + Median_Household_Income_Score__c + City_Population_Score__c + Metro_Population_Score__c + Diversity_of_Population_POC_Score__c + Top_50_University_Score__c + Walkability_Score_Score__c + Transit_Score_Score__c + Major_Airport_Score__c + Distance_From_Nearest_Top_10_Metro_Score__c + Level_Of_Tech_Activity_Score__c + Non_Traditional_Tech_Educator_Score__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Scores of 10 or higher are a &quot;Go.&quot;
+Max score is 15.75</inlineHelpText>
+    <label>Bitwise Match Score</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

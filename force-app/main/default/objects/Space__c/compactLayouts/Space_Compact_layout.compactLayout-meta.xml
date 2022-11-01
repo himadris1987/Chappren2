@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompactLayout xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Space_Compact_layout</fullName>
+    <fields>Name</fields>
+    <fields>Status__c</fields>
+    <fields>Site_Location__c</fields>
+    <fields>Size_Sq__c</fields>
+    <fields>Tenant__c</fields>
+    <label>Space Compact layout</label>
+</CompactLayout>

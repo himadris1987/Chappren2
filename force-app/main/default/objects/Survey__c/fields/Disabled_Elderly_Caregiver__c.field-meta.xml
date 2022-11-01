@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disabled_Elderly_Caregiver__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Created by: JA
+Purpose: Capture if the individual is the primary caregiver of a disabled or elderly family member</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Are they the primary caregiver of a disabled or elderly family member?</inlineHelpText>
+    <label>Disabled/Elderly Caregiver?</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

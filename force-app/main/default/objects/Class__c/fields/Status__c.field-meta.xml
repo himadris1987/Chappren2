@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>Created By: AF; Business Unit: Geekwise Users; Purpose: Updates Class Status based on Start and End date; Populated: Auto via Formula</description>
+    <externalId>false</externalId>
+    <formula>IF( Start_Date__c &gt; TODAY(), &apos;Upcoming&apos;, 
+IF( End_Date__c &lt; TODAY(), &apos;Past&apos;, &apos;Active&apos; ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

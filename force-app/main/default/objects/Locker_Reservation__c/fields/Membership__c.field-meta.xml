@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Membership__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Created by JW
+The membership that this locker/lock are assigned to.</description>
+    <externalId>false</externalId>
+    <label>Membership</label>
+    <referenceTo>Membership__c</referenceTo>
+    <relationshipLabel>Locker Reservations</relationshipLabel>
+    <relationshipName>Member_Lockers</relationshipName>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

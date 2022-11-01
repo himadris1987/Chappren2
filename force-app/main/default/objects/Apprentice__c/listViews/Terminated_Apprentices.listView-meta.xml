@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Terminated_Apprentices</fullName>
+    <columns>NAME</columns>
+    <columns>Apprenticeship__c</columns>
+    <columns>Contact__c</columns>
+    <columns>Pronouns__c</columns>
+    <columns>Phone__c</columns>
+    <columns>Email__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Terminated</value>
+    </filters>
+    <label>Terminated Apprentices</label>
+    <sharedTo>
+        <group>HR_Team</group>
+        <group>Tech_Support_Team</group>
+        <group>WFT_Instructor_Team</group>
+        <group>WFT_TA_Team</group>
+    </sharedTo>
+</ListView>

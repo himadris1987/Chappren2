@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Community_Cloud__c</fullName>
+    <description>Created by: YB, Business Unit:BWTC,Purpose: for architecture app</description>
+    <externalId>false</externalId>
+    <label>Community Cloud</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>CMS</fullName>
+                <default>false</default>
+                <label>CMS</label>
+            </value>
+            <value>
+                <fullName>Customer Portal (incl. Self Service)</fullName>
+                <default>false</default>
+                <label>Customer Portal (incl. Self Service)</label>
+            </value>
+            <value>
+                <fullName>Partner Relationship Management</fullName>
+                <default>false</default>
+                <label>Partner Relationship Management</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

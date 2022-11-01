@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Skill_Icon__c</fullName>
+    <externalId>false</externalId>
+    <formula>IMAGE(
+CASE(
+     Class_Skill_Level__c,
+     &quot;Beginner&quot;, &quot;https://i.imgur.com/qqSed7J.png&quot;,
+     &quot;Intermediate&quot;, &quot;https://i.imgur.com/wqQJEJM.png&quot;,
+     &quot;Advanced&quot;, &quot;https://i.imgur.com/bzT8cG7.png&quot;,
+    null), TEXT(Class_Skill_Level__c))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Skill Icon</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

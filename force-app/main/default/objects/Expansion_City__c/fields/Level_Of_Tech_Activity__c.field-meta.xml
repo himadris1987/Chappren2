@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Level_Of_Tech_Activity__c</fullName>
+    <description>GS</description>
+    <externalId>false</externalId>
+    <label>Level Of Tech Activity</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Tech Success Here</fullName>
+                <default>false</default>
+                <label>Tech Success Here</label>
+            </value>
+            <value>
+                <fullName>Some Tech Activity</fullName>
+                <default>false</default>
+                <label>Some Tech Activity</label>
+            </value>
+            <value>
+                <fullName>No Tech Activity</fullName>
+                <default>false</default>
+                <label>No Tech Activity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

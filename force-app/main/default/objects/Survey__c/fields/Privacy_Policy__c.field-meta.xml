@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Privacy_Policy__c</fullName>
+    <description>GS
+Business Unit: WFT
+Purpose: Students agreement when submitting survey.</description>
+    <externalId>false</externalId>
+    <label>Privacy Policy</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>I have reviewed Bitwise Industries&apos; privacy policy and agree to its terms and conditions.</fullName>
+                <default>false</default>
+                <label>I have reviewed Bitwise Industries&apos; privacy policy and agree to its terms and conditions.</label>
+            </value>
+            <value>
+                <fullName>I have reviewed and agree to BW Industries, Inc.&apos;s Privacy Policy and Terms of Use.</fullName>
+                <default>false</default>
+                <label>I have reviewed and agree to BW Industries, Inc.&apos;s Privacy Policy and Terms of Use.</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

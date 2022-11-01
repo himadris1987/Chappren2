@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status__c</fullName>
+    <description>Created By: YB
+Business Unit: BTC
+Purpose: The status of the Project.</description>
+    <externalId>false</externalId>
+    <label>Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New</fullName>
+                <default>true</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>Internal Kickoff</fullName>
+                <default>false</default>
+                <label>Internal Kickoff</label>
+            </value>
+            <value>
+                <fullName>Architecture</fullName>
+                <default>false</default>
+                <label>Architecture</label>
+            </value>
+            <value>
+                <fullName>Ready for Development</fullName>
+                <default>false</default>
+                <label>Ready for Development</label>
+            </value>
+            <value>
+                <fullName>QA</fullName>
+                <default>false</default>
+                <label>QA</label>
+            </value>
+            <value>
+                <fullName>Project Complete</fullName>
+                <default>false</default>
+                <label>Project Complete</label>
+            </value>
+            <value>
+                <fullName>Archived</fullName>
+                <default>false</default>
+                <label>Archived</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

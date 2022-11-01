@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Student_Milestone_Type__c</fullName>
+    <description>Created By: BN
+Business Unit: Geekwise Users
+Purpose: Track what kind of success milestone is being logged
+Populated: Auto from process</description>
+    <externalId>false</externalId>
+    <label>Student Milestone Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Registered for a Class</fullName>
+                <default>false</default>
+                <label>Registered for a Class</label>
+            </value>
+            <value>
+                <fullName>Completed a Class</fullName>
+                <default>false</default>
+                <label>Completed a Class</label>
+            </value>
+            <value>
+                <fullName>Cohort Candidate</fullName>
+                <default>false</default>
+                <label>Cohort Candidate</label>
+            </value>
+            <value>
+                <fullName>Hired (Cohort)</fullName>
+                <default>false</default>
+                <label>Hired (Cohort)</label>
+            </value>
+            <value>
+                <fullName>Hired (Internal)</fullName>
+                <default>false</default>
+                <label>Hired (Internal)</label>
+            </value>
+            <value>
+                <fullName>Hired (External)</fullName>
+                <default>false</default>
+                <label>Hired (External)</label>
+            </value>
+            <value>
+                <fullName>Student Engagement</fullName>
+                <default>false</default>
+                <label>Student Engagement</label>
+            </value>
+            <value>
+                <fullName>Class Taught</fullName>
+                <default>false</default>
+                <label>Class Taught</label>
+            </value>
+            <value>
+                <fullName>LinkedIn Connected</fullName>
+                <default>false</default>
+                <label>LinkedIn Connected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

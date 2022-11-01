@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WFT_Classes_Active_Only</fullName>
+    <columns>Num_Students_Registered__c</columns>
+    <columns>NAME</columns>
+    <columns>Instructor__c</columns>
+    <columns>Zoom_Link__c</columns>
+    <columns>Posted_to_Website__c</columns>
+    <columns>Market__c</columns>
+    <columns>Time_Zone__c</columns>
+    <columns>Class_Nights__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Class__c.General</value>
+    </filters>
+    <label>WFT Classes - Active Only</label>
+    <sharedTo>
+        <group>SF_Admin_Team</group>
+        <group>Tech_Support_Team</group>
+        <group>Workforce_Training_Team</group>
+    </sharedTo>
+</ListView>
