@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#2884A1</headerColor>
+        <logo>daily_journal1</logo>
+        <logoVersion>1</logoVersion>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Created By: MCC
+Business Unit: Salesforce Admin Apprenticeship 2021 (Alphaforce Team)
+Purpose: This is where apprentices can submit and review their daily reflections and leads can review the whole apprentices&apos; progress.</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>true</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Reflections App - MCC</label>
+    <navType>Standard</navType>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Reflections_Record_Page_MCC</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Reflection_MCC__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Alphaforce Salesforce Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Reflections_Record_Page_MCC</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Reflection_MCC__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Alphaforce Salesforce Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Reflections_Record_Page_MCC</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Reflection_MCC__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Apprentice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Reflections_Record_Page_MCC</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Reflection_MCC__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Apprentice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Reflections_Record_Page_MCC</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Reflection_MCC__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>System Admin Lite</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Reflections_Record_Page_MCC</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Reflection_MCC__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>System Admin Lite</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Reflections_Record_Page_MCC</content>
+        <formFactor>Small</formFactor>
+        <pageOrSobjectType>Reflection_MCC__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>View</actionName>
+        <content>Reflections_Record_Page_MCC</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Reflection_MCC__c</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Reflections_App_Home_Page_MCC</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Alphaforce Salesforce Admin</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Reflections_App_Home_Page_MCC</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Apprentice</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Reflections_App_Home_Page_MCC</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>System Admin Lite</profile>
+    </profileActionOverrides>
+    <profileActionOverrides>
+        <actionName>Tab</actionName>
+        <content>Reflections_App_Home_Page_MCC</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+        <profile>Admin</profile>
+    </profileActionOverrides>
+    <tabs>standard-home</tabs>
+    <tabs>Reflection_MCC__c</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>standard-Feed</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Reflections_App_MCC_UtilityBar</utilityBar>
+</CustomApplication>

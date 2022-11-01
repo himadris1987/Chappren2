@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>HR Department Org</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Leasing HR</label>
+    <navType>Standard</navType>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Opportunity</tabs>
+    <tabs>standard-Lead</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>Lease__c</tabs>
+    <tabs>Lease_Charge__c</tabs>
+    <tabs>Lease_Payment__c</tabs>
+    <tabs>Lease_Space__c</tabs>
+    <tabs>Tuition_Payments_KZD__c</tabs>
+    <tabs>Classes_KZD__c</tabs>
+    <tabs>Registration_KZD__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Leasing_HR_UtilityBar</utilityBar>
+</CustomApplication>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Created By: HNS
+Business Unit: Salesforce Oakland Apprenticeship
+Purpose:  App for Himadri Sinha&apos;s QB eval project for the Christopher&apos;s Woodshop Project</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Himadri&apos;s Woodshop Project</label>
+    <navType>Standard</navType>
+    <tabs>standard-home</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>Woodshop_Projects__c</tabs>
+    <tabs>Woodshop_Project_Resources__c</tabs>
+    <tabs>Woodshop_Project_Supplies__c</tabs>
+    <tabs>Woodshop_Project_Tools__c</tabs>
+    <tabs>Woodshop_Project_Order__c</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Himadri_s_Woodshop_Project_UtilityBar</utilityBar>
+</CustomApplication>

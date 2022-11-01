@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description>Created By: HNS
+Business Unit: Salesforce Oakland Apprenticeship 2021
+Purpose: Place to house the Himadri&apos;s Portfolio Contacts custom object</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <label>Himadri&apos;s Portfolio</label>
+    <navType>Standard</navType>
+    <uiType>Lightning</uiType>
+    <utilityBar>Himadri_s_Portfolio_UtilityBar</utilityBar>
+</CustomApplication>
